@@ -1,0 +1,8 @@
+http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number [L]
+http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language [L]
+http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&c=$components [L]
+http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$format [L]
+http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$format&fn=$file [L]
+http://www.site.com/ontologyquery.php?tlc=$tlc&c=$classes&id=$id [L]
+http://www.site.com/error.php [L]
+../html/
