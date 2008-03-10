@@ -1,8 +1,9 @@
-http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number [L]
-http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language [L]
-http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&c=$components [L]
-http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$format [L]
-http://www.site.com/script.php?c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$format&fn=$file [L]
-http://www.site.com/ontologyquery.php?tlc=$tlc&c=$classes&id=$id [L]
+http://www.site.com/script.php?ut=$uritype&c=$country&d=$date&t=$type&n=$number&c=$components [L]
+http://www.site.com/script.php?ut=$uritype&c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&c=$components [L]
+http://www.site.com/script.php?ut=$uritype&c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$forkingdate&c=$components [L]
+http://www.site.com/script.php?ut=$uritype&c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&fo=$format&lf=$localfilename&c=$components [L]
+http://www.site.com/script.php?ut=$uritype&c=$country&d=$date&t=$type&n=$number&v=$version&l=$language&f=$forkingdate&fo=$format&lf=$localfilename&c=$components [L]
+http://www.site.com/ontologyquery.php?tlc=$ut=$uritype&tlc&c=$subclasses&id=$id [L]
 http://www.site.com/error.php [L]
 ../html/
+resolver,data,cgi-bin
