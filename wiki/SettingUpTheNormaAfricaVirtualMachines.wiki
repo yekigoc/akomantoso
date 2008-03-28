@@ -32,6 +32,15 @@ sudo vmware-config.pl
 
 == Running the NormaServer virtual machine for the first time == 
 
+ * Extract the compressed virtual machine archive. The archive uses 7zip. To install 7zip use the following command :
+{{{
+sudo apt-get install p7zip-full
+}}}
+ * After this you can extract the virtual machine from the archive using the command :
+{{{
+7z -e <7zip-archive-file-name-of-virtual-machine>
+}}}
+ * Launch vmware workstation, go to File->Open and browse to the folder with the extracted virtual machine.
 
 
 = Details =
