@@ -40,12 +40,9 @@ sudo apt-get install p7zip-full
 {{{
 7z -e <7zip-archive-file-name-of-virtual-machine>
 }}}
- * Launch vmware workstation, go to File->Open and browse to the folder with the extracted virtual machine.
+ * Launch vmware workstation, go to File->Open and browse to the folder with the extracted virtual machine, and open the file called Ubuntu-jeos.vmx.
+ * Click "Edit virtual machine settings" , and ensure that "Ethernet" has been set to "NAT"
+ * CLick "Startup this guest operating system" to launch the virtual machine. Vmware will prompt you with a question - have you "moved" or "copied" the virtual machine ? Select copied.
+ * The virtual machine will now boot and after the bootup process present you with a Ubuntu login prompt
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Configuring NAT == 
