@@ -1,0 +1,42 @@
+#summary How to install the norma africa virtual machines for client and server
+
+= Introduction =
+
+This page documents the setting up activities for Norma server and the Norma virtual machines.
+
+== Installing VMware workstation == 
+
+*Pre-requisities* - a build environment. You can install the ubuntu build-essential package, by running the following in a terminal window :
+{{{
+sudo apt-get install build-essential
+}}}
+
+ * Open a terminal window, and extract the vmware workstation archive (`tar xvf vmware*.tar.gz`)
+ * Change directory to the extracted vmware folder
+ * Run the vmware installer :
+{{{ 
+sudo vmware-install.pl
+}}}
+ * Use the default settings to install vmware
+
+== Configuring VMware == 
+
+ * After the installation has finished, configure the vmware installation using the command:
+{{{ 
+sudo vmware-config.pl
+}}}
+
+ * Use the default suggestions, say "Yes" to both "Bridged networking" and "NAT networking".  Say "No" for "Host networking".
+
+ * The configurator will compile the required drivers, and finish.
+
+== Running the NormaServer virtual machine for the first time == 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
