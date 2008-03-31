@@ -54,3 +54,30 @@ sudo apt-get install p7zip-full
 {{{
  gksudo gedit  /etc/vmware/vmnet8/nat/nat.conf
 }}}
+ # Scroll down to the section titled [incomingtcp], the contents of which should like this:
+{{{
+[incomingtcp]
+# Use these with care - anyone can enter into your VM through these...
+
+# FTP (both active and passive FTP is always enabled)
+#      ftp localhost 8887
+#8887 = 192.168.221.128:21
+
+# WEB (make sure that if you are using named webhosting, names point to
+#     your host, not to guest... And if you are forwarding port other
+#     than 80 make sure that your server copes with mismatched port 
+#     number in Host: header)
+#      lynx http://localhost:8888
+#BUNGENI - uncomment the line below
+#8888 = 192.168.221.129:8080  
+
+# SSH
+#      ssh -p 8889 root@localhost
+#8889 = 192.168.221.128:22
+}}}
+ # uncomment the line indicated above, and change the ip address to the one you had noted down in step 8 of the previous section:
+{{{
+8888 = ip-noted-down-in-step-8:8080
+}}}
+ # save the file and restart the computer 
+ # the virtual machine should now be accessible from any computer on the network by browsing to : http://host-ip:8888 from a web browser.
