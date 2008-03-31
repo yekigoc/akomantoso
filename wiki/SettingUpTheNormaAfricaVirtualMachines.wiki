@@ -32,17 +32,25 @@ sudo vmware-config.pl
 
 == Running the NormaServer virtual machine for the first time == 
 
- * Extract the compressed virtual machine archive. The archive uses 7zip. To install 7zip use the following command :
+ # Extract the compressed virtual machine archive. The archive uses 7zip. To install 7zip use the following command :
 {{{
 sudo apt-get install p7zip-full
 }}}
- * After this you can extract the virtual machine from the archive using the command :
+ # After this you can extract the virtual machine from the archive using the command :
 {{{
 7z -e <7zip-archive-file-name-of-virtual-machine>
 }}}
- * Launch vmware workstation, go to File->Open and browse to the folder with the extracted virtual machine, and open the file called Ubuntu-jeos.vmx.
- * Click "Edit virtual machine settings" , and ensure that "Ethernet" has been set to "NAT"
- * CLick "Startup this guest operating system" to launch the virtual machine. Vmware will prompt you with a question - have you "moved" or "copied" the virtual machine ? Select copied.
- * The virtual machine will now boot and after the bootup process present you with a Ubuntu login prompt
+ # Launch vmware workstation, go to File->Open and browse to the folder with the extracted virtual machine, and open the file called Ubuntu-jeos.vmx.
+ # Click "Edit virtual machine settings" , and ensure that "Ethernet" has been set to "NAT"
+ # CLick "Startup this guest operating system" to launch the virtual machine. Vmware will prompt you with a question - have you "moved" or "copied" the virtual machine ? Select copied.
+ # The virtual machine will now boot and after the bootup process present you with a Ubuntu login prompt
+ # log in with user name: undesa, password: undesa
+ # run `ifconfig` and note down the ip address assigned to eth0
 
 == Configuring NAT == 
+
+ # To access the virtual machine from an external computer, you need to enabled NAT forwarding.
+ # To do this,run :
+{{{
+ gksudo gedit  /etc/vmware/vmnet8/nat/nat.conf
+}}}
