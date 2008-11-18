@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % PredefinedSimpleTypes SYSTEM "./pst.dtd">
+%PredefinedSimpleTypes;
+
+<!ENTITY % a "EMPTY" >
+<!ELEMENT b %a; >
+<!ATTLIST b x %STRING; #IMPLIED >
+<!ELEMENT c (#PCDATA)>
+
+<!ENTITY % extension_entity "(%a;,(b,c)+)" >
+<!ELEMENT extension %extension_entity;>
+<!ATTLIST extension x %STRING; #IMPLIED >

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY @ a  ""  "x #STRING #IMPLIED" >
+
+<!ELEMENT b @a; >
+<!ELEMENT c (#PCDATA) >
+
+<!ELEMENT extension (@a;, (b,c)+)>
+

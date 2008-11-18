@@ -1,0 +1,34 @@
+Cambiare ActPurpose in ActLongTitle
+Introdurre sidenote ovunque ci sia title
+Cambiare il content model di block in modo da aggiungere 
+
+<block>
+   <title> @inline </title>
+    <content> @inline </content>
+ </block>
+ 
+ <!ELEMENT block (num?, title?, sidenote?, content)>
+ <!ELEMENT sidenote  %inline; >
+ <!ELEMENT content  %inline; >
+ 
+ item diventa speechItem
+ Introdurre liste di elementi con modello 
+ 
+ <!ELEMENT list (item+) >
+ <!ELEMENT item (num?, title?, sidenote?, content) >
+ 
+ introdurre mquotedtext e mquotestructure e anche mrif (anche i*)
+ introdurre ins e del e omissis
+ Introdurre un attributo globale che identifichi le parti di testo del bill che scompariranno nell'act finito
+ inserire id in tabella e riga
+ 
+ introdurre un elemento foreign all'interno del quale inserire (cm: ANY) elementi di altri namesoace, in particolare MathML, SVG ecc. 
+ 
+ Nel modello UML la classe component diventa sottoclassata in MainDocument, Annex e Report
+ 
+  Modificare il documento di technical note in modo che dica che gli identificatori riportano esattamente la dizione tipografica e non il loro significato numerico. Ad esempio
+  zD) non è più <clause id="cla30"> ma <clause id="clazD">
+  
+  gli id delle parti quoted structure sono globali sul documento e non dipendono dalla parte gerarchica in cui compaiono.- 
+  
+ 
