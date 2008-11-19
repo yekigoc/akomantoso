@@ -14,7 +14,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		Akoma Ntoso main schema
 		
 		
-		Release  01/02/2007
+		Release  14/03/2007
 		technical supervision Fabio Vitali - University of Bologna
 		legal domain supervision Monica Palmirani - University of Bologna
 		
@@ -739,47 +739,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="def"  type="inline" />
-
-	<xsd:element name="ins"  type="inline" />
-
-	<xsd:element name="del"  type="inline" />
-
-	<xsd:element name="omissis"  type="inline" />
-
-	<xsd:element name="noteref"  >
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:extension base="markeropt">
-					<xsd:attributeGroup ref="link"/>
-					<xsd:attribute name="num" type="xsd:string" use="required"/>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:element name="recordedTime"  >
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:extension base="markeropt">
-					<xsd:attributeGroup ref="time"/>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:complexType name="eolType"  >
-		<xsd:complexContent>
-			<xsd:extension base="markeropt">
-				<xsd:attribute name="breakat" type="xsd:integer"/>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-
-	<xsd:element name="eol"  type="eolType" />
-
-	<xsd:element name="eop"  type="eolType" />
-
 	<xsd:element name="mod"  >
 		<xsd:complexType mixed="true">
 			<xsd:complexContent>
@@ -826,12 +785,54 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		<xsd:complexType >
 			<xsd:choice minOccurs="1" maxOccurs="unbounded" >
 				<xsd:group ref="hierElements" />
+				<xsd:element ref="clause" />
 				<xsd:group ref="blockElements" />
 				<xsd:group ref="containerElements" />
 			</xsd:choice>
 				<xsd:attributeGroup ref="corereq"/>
 		</xsd:complexType>
 	</xsd:element>
+
+	<xsd:element name="def"  type="inline" />
+
+	<xsd:element name="ins"  type="inline" />
+
+	<xsd:element name="del"  type="inline" />
+
+	<xsd:element name="omissis"  type="inline" />
+
+	<xsd:element name="noteref"  >
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="markeropt">
+					<xsd:attributeGroup ref="link"/>
+					<xsd:attribute name="num" type="xsd:string" use="required"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recordedTime"  >
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="markeropt">
+					<xsd:attributeGroup ref="time"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="eolType"  >
+		<xsd:complexContent>
+			<xsd:extension base="markeropt">
+				<xsd:attribute name="breakat" type="xsd:integer"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="eol"  type="eolType" />
+
+	<xsd:element name="eop"  type="eolType" />
 
 	<xsd:annotation>
 		<xsd:documentation>

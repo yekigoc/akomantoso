@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  01/02/2007                                                 
+       Release  14/03/2007                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -271,7 +271,7 @@
 <!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
 
 <!ELEMENT quotedText        @inline; >
-<!ELEMENT quotedStructure   (@@hierElements; | @@blockElements; | @@containerElements;)+ >
+<!ELEMENT quotedStructure   (@@hierElements; | clause | @@blockElements; | @@containerElements;)+ >
 <!ATTLIST quotedStructure   ##corereq; >
 
 <!ELEMENT def          @inline; >

@@ -7,7 +7,7 @@
 Akoma Ntoso main schema
 
 
-Release  01/02/2007
+Release  14/03/2007
 technical supervision Fabio Vitali - University of Bologna
 legal domain supervision Monica Palmirani - University of Bologna
 
@@ -286,6 +286,20 @@ legal structure, regardless of their position in the document.
 <!ATTLIST rref %coreopt;  >
 
 <!ATTLIST rref %link;  upTo %ANYURI; #REQUIRED >
+ <!ENTITY   % mod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT mod (%mod_entity;)*>
+<!ATTLIST mod %coreopt;  >
+ <!ENTITY  % mmod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT mmod (%mmod_entity;)*>
+<!ATTLIST mmod %coreopt;  >
+ <!ENTITY  % rmod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT rmod (%rmod_entity;)*>
+<!ATTLIST rmod %coreopt;  >
+
+<!ATTLIST rmod upTo %ANYURI; #REQUIRED >
+
+<!ELEMENT quotedText        %inline; >
+<!ATTLIST quotedText %coreopt;  >
+<!ELEMENT quotedStructure   (%hierElements; | clause | %blockElements; | %containerElements;)+>
+
+<!ATTLIST quotedStructure %corereq;  >
 
 <!ELEMENT def          %inline; >
 <!ATTLIST def %coreopt;  >
@@ -295,9 +309,6 @@ legal structure, regardless of their position in the document.
 <!ATTLIST del %coreopt;  >
 <!ELEMENT omissis      %inline; >
 <!ATTLIST omissis %coreopt;  >
-
-
-
 
 <!ELEMENT noteref      %markeropt; >
 <!ATTLIST noteref %coreopt;  >
@@ -314,22 +325,6 @@ legal structure, regardless of their position in the document.
 <!ATTLIST eol breakat %INTEGER; #IMPLIED %coreopt;  >
 <!ELEMENT eop   %eolType; >
 <!ATTLIST eop breakat %INTEGER; #IMPLIED %coreopt;  >
-
-
- <!ENTITY   % mod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT mod (%mod_entity;)*>
-<!ATTLIST mod %coreopt;  >
- <!ENTITY  % mmod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT mmod (%mmod_entity;)*>
-<!ATTLIST mmod %coreopt;  >
- <!ENTITY  % rmod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" ><!ELEMENT rmod (%rmod_entity;)*>
-<!ATTLIST rmod %coreopt;  >
-
-<!ATTLIST rmod upTo %ANYURI; #REQUIRED >
-
-<!ELEMENT quotedText        %inline; >
-<!ATTLIST quotedText %coreopt;  >
-<!ELEMENT quotedStructure   (%hierElements; | %blockElements; | %containerElements;)+>
-
-<!ATTLIST quotedStructure %corereq;  >
 
 <!--  =====================================================================
 
