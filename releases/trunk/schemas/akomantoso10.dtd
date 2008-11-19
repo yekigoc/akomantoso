@@ -7,7 +7,7 @@
 Akoma Ntoso main schema
 
 
-Release  23/11/2006
+Release  30/11/2006
 technical supervision Fabio Vitali - University of Bologna
 legal domain supervision Monica Palmirani - University of Bologna
 
@@ -63,7 +63,7 @@ Attribute groups
 <!ENTITY % speechAtts   " by %ANYURI; #REQUIRED as %ANYURI; #IMPLIED to %ANYURI; #IMPLIED" >
 <!ENTITY % show         " showAs %STRING; #REQUIRED shortForm %STRING; #IMPLIED" >
 
-<!ENTITY % period " start %ANYURI; #IMPLIED end %ANYURI; #IMPLIED"
+<!ENTITY % period " start %ANYURI; #IMPLIED end %ANYURI; #IMPLIED startEfficacy %ANYURI; #IMPLIED endEfficacy %ANYURI; #IMPLIED"
 >
 <!ENTITY % statusType   "(omissis|repealed|suspended)" >
 <!ENTITY % EstatusType "((omissis|repealed|suspended))" ><!ENTITY % enactment " %period;  status %statusType; #IMPLIED" >
@@ -231,6 +231,8 @@ Elements for debates documents
 <!ELEMENT comment             %inline; >
 <!ATTLIST comment %coreopt;  >
 <!ELEMENT list                (item+)>
+
+<!ATTLIST list %corereq;  >
 <!ELEMENT tblock              %clauseType; >
 <!ATTLIST tblock %corereq;  >
 <!ELEMENT item                %clauseType; >
@@ -269,6 +271,8 @@ legal structure, regardless of their position in the document.
 <!ATTLIST ActProponent %coreopt;  >
 <!ELEMENT ActDate      %inline; >
 <!ATTLIST ActDate %coreopt;  >
+
+<!ATTLIST ActDate %date;  >
 <!ELEMENT ActPurpose   %inline; >
 <!ATTLIST ActPurpose %coreopt;  >
 
@@ -407,12 +411,15 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 
 <!ATTLIST img src %ANYURI; #REQUIRED alt %STRING; #IMPLIED width %INTEGER; #IMPLIED height %INTEGER; #IMPLIED >
 
-<!ELEMENT ul   (li+)>
-<!ELEMENT ol   (li+)>
+<!ENTITY % listItems "(li+)" >
+<!ELEMENT ul   %listItems; >
+<!ATTLIST ul %corereq;  >
+<!ELEMENT ol   %listItems; >
+<!ATTLIST ol %corereq;  >
 
 <!ELEMENT table (tr+)>
 
-<!ATTLIST table %HTMLattrs;  %idreq;  width %INTEGER; #IMPLIED border %INTEGER; #IMPLIED cellspacing %INTEGER; #IMPLIED cellpadding %INTEGER; #IMPLIED >
+<!ATTLIST table %corereq;  width %INTEGER; #IMPLIED border %INTEGER; #IMPLIED cellspacing %INTEGER; #IMPLIED cellpadding %INTEGER; #IMPLIED >
 <!ELEMENT tr (th | td)+>
 
 <!ATTLIST tr %HTMLattrs;  %idreq;  >

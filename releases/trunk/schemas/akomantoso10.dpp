@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  23/11/2006                                                 
+       Release  30/11/2006                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -63,8 +63,10 @@
                           shortForm    #STRING        #IMPLIED">
 
 <!ENTITY ## period "
-    start      #ANYURI        #IMPLIED
-    end        #ANYURI        #IMPLIED"
+    start           #ANYURI        #IMPLIED
+    end             #ANYURI        #IMPLIED
+    startEfficacy   #ANYURI        #IMPLIED
+    endEfficacy     #ANYURI        #IMPLIED"
 >
 <!ENTITY ## enactment "
     ##period;
@@ -224,6 +226,7 @@
 <!ELEMENT other               @blocksopt; >
 <!ELEMENT comment             @inline; >
 <!ELEMENT list                (item+) >
+<!ATTLIST list                ##corereq; >
 <!ELEMENT tblock              @clauseType; >
 <!ELEMENT item                @clauseType; >
 
@@ -253,6 +256,7 @@
 <!ELEMENT ActNumber    @inline; >
 <!ELEMENT ActProponent @inline; >
 <!ELEMENT ActDate      @inline; >
+<!ATTLIST ActDate      ##date; >
 <!ELEMENT ActPurpose   @inline; >
 
 <!ELEMENT mref         @inline; >
@@ -282,9 +286,9 @@
 <!ELEMENT eop   @eolType; >
 
 
-<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure ))*>
-<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure ))*>
-<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure ))*>
+<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure )*)>
 <!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
 
 <!ELEMENT quotedText        @inline; >
@@ -358,13 +362,13 @@
     height #INTEGER      #IMPLIED
 >
 
-<!ELEMENT ul   (li+) >
-<!ELEMENT ol   (li+) >
+<!ENTITY @ listItems "(li+)" "##corereq;">
+<!ELEMENT ul   @listItems; >
+<!ELEMENT ol   @listItems; >
 
 <!ELEMENT table (tr+)>
 <!ATTLIST table
-    ##HTMLattrs;
-    ##idreq;
+    ##corereq;
     width       #INTEGER #IMPLIED
     border      #INTEGER #IMPLIED
     cellspacing #INTEGER #IMPLIED

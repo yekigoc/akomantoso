@@ -14,7 +14,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		Akoma Ntoso main schema
 		
 		
-		Release  23/11/2006
+		Release  30/11/2006
 		technical supervision Fabio Vitali - University of Bologna
 		legal domain supervision Monica Palmirani - University of Bologna
 		
@@ -229,6 +229,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:attributeGroup name="period">
 		<xsd:attribute name="start" type="xsd:anyURI"/>
 		<xsd:attribute name="end" type="xsd:anyURI"/>
+		<xsd:attribute name="startEfficacy" type="xsd:anyURI"/>
+		<xsd:attribute name="endEfficacy" type="xsd:anyURI"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="enactment">
@@ -641,6 +643,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 			<xsd:sequence >
 				<xsd:element ref="item" minOccurs="1" maxOccurs="unbounded" />
 			</xsd:sequence>
+				<xsd:attributeGroup ref="corereq"/>
 		</xsd:complexType>
 	</xsd:element>
 
@@ -701,7 +704,15 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 
 	<xsd:element name="ActProponent"  type="inline" />
 
-	<xsd:element name="ActDate"  type="inline" />
+	<xsd:element name="ActDate"  >
+		<xsd:complexType mixed="true">
+			<xsd:complexContent>
+				<xsd:extension base="inline">
+					<xsd:attributeGroup ref="date"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
 
 	<xsd:element name="ActPurpose"  type="inline" />
 
@@ -773,7 +784,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		<xsd:complexType mixed="true">
 			<xsd:complexContent>
 				<xsd:extension base="inline">
-					<xsd:choice >
+					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
 						<xsd:element ref="quotedText" />
 						<xsd:element ref="quotedStructure" />
 					</xsd:choice>
@@ -786,7 +797,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		<xsd:complexType mixed="true">
 			<xsd:complexContent>
 				<xsd:extension base="inline">
-					<xsd:choice >
+					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
 						<xsd:element ref="quotedText" />
 						<xsd:element ref="quotedStructure" />
 					</xsd:choice>
@@ -799,7 +810,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		<xsd:complexType mixed="true">
 			<xsd:complexContent>
 				<xsd:extension base="inline">
-					<xsd:choice >
+					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
 						<xsd:element ref="quotedText" />
 						<xsd:element ref="quotedStructure" />
 					</xsd:choice>
@@ -961,29 +972,23 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="ul" >
-		<xsd:complexType >
-			<xsd:sequence >
-				<xsd:element ref="li" minOccurs="1" maxOccurs="unbounded" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:complexType name="listItems"  >
+		<xsd:sequence >
+			<xsd:element ref="li" minOccurs="1" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attributeGroup ref="corereq"/>
+	</xsd:complexType>
 
-	<xsd:element name="ol" >
-		<xsd:complexType >
-			<xsd:sequence >
-				<xsd:element ref="li" minOccurs="1" maxOccurs="unbounded" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:element name="ul"  type="listItems" />
+
+	<xsd:element name="ol"  type="listItems" />
 
 	<xsd:element name="table" >
 		<xsd:complexType >
 			<xsd:sequence >
 				<xsd:element ref="tr" minOccurs="1" maxOccurs="unbounded" />
 			</xsd:sequence>
-				<xsd:attributeGroup ref="HTMLattrs"/>
-				<xsd:attributeGroup ref="idreq"/>
+				<xsd:attributeGroup ref="corereq"/>
 				<xsd:attribute name="width" type="xsd:integer"/>
 				<xsd:attribute name="border" type="xsd:integer"/>
 				<xsd:attribute name="cellspacing" type="xsd:integer"/>
