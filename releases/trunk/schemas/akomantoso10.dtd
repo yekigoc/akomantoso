@@ -7,7 +7,7 @@
 Akoma Ntoso main schema
 
 
-Release  08/06/2007
+Release  17/09/2007
 technical supervision Fabio Vitali - University of Bologna
 legal domain supervision Monica Palmirani - University of Bologna
 
@@ -61,6 +61,7 @@ Attribute groups
 <!ENTITY % date         " date %DATE; #REQUIRED" >
 <!ENTITY % time         " time %TIME; #REQUIRED" >
 <!ENTITY % link         " href %ANYURI; #REQUIRED" >
+<!ENTITY % linkopt      " href %ANYURI; #IMPLIED" >
 <!ENTITY % value        " value %STRING; #REQUIRED" >
 <!ENTITY % optvalue     " value %STRING; #IMPLIED" >
 <!ENTITY % speechAtts   " by %ANYURI; #REQUIRED as %ANYURI; #IMPLIED to %ANYURI; #IMPLIED" >
@@ -118,6 +119,7 @@ Complex types (markup structures)
 <!ENTITY % referenceType     "EMPTY" >
 <!ENTITY % argumentType      "EMPTY" >
 <!ENTITY % periodType        "EMPTY" >
+<!ENTITY % anyOtherType      "ANY" >
 
 <!--  =====================================================================
 
@@ -554,12 +556,16 @@ Metadata elements for acts, bills and generic documents
 <!ATTLIST application %idopt;  %period;  >
 <!ELEMENT duration         %periodType; >
 <!ATTLIST duration %idopt;  %period;  >
-<!ELEMENT condition        %anyOther; >
+<!ELEMENT condition        %anyOtherType; >
+<!ATTLIST condition %idopt;  %linkopt;  >
 
 <!ATTLIST condition frozen %BOOLEAN; #IMPLIED >
-<!ELEMENT old              %anyOther; >
-<!ELEMENT new              %anyOther; >
-<!ELEMENT domain           %anyOther; >
+<!ELEMENT old              %anyOtherType; >
+<!ATTLIST old %idopt;  %linkopt;  >
+<!ELEMENT new              %anyOtherType; >
+<!ATTLIST new %idopt;  %linkopt;  >
+<!ELEMENT domain           %anyOtherType; >
+<!ATTLIST domain %idopt;  %linkopt;  >
 
 
 <!ENTITY % refItems          "Original | PassiveRef | ActiveRef | Jurisprudence | Attachment | AttachmentOf | Person | Role | Organization | Reference" >

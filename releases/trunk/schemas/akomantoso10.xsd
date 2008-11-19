@@ -14,7 +14,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		Akoma Ntoso main schema
 		
 		
-		Release  08/06/2007
+		Release  17/09/2007
 		technical supervision Fabio Vitali - University of Bologna
 		legal domain supervision Monica Palmirani - University of Bologna
 		
@@ -212,6 +212,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 
 	<xsd:attributeGroup name="link">
 		<xsd:attribute name="href" type="xsd:anyURI" use="required"/>
+	</xsd:attributeGroup>
+
+	<xsd:attributeGroup name="linkopt">
+		<xsd:attribute name="href" type="xsd:anyURI"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="value">
@@ -417,8 +421,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	</xsd:complexType>
 
 	<xsd:complexType name="anyOther"  >
-		<xsd:choice>
-			<xsd:any  namespace="##other"/>
+		<xsd:choice minOccurs="0">
+			<xsd:any  processContents="skip" namespace="##other"/>
 		</xsd:choice>
 	</xsd:complexType>
 
@@ -448,6 +452,14 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:complexType name="periodType"  >
 		<xsd:attributeGroup ref="idopt"/>
 		<xsd:attributeGroup ref="period"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="anyOtherType"  >
+		<xsd:choice minOccurs="0">
+			<xsd:any  processContents="skip" namespace="##other"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="idopt"/>
+		<xsd:attributeGroup ref="linkopt"/>
 	</xsd:complexType>
 
 	<xsd:annotation>
@@ -1384,18 +1396,18 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="condition"  >
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:extension base="anyOther">
+				<xsd:extension base="anyOtherType">
 					<xsd:attribute name="frozen" type="xsd:boolean"/>
 				</xsd:extension>
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="old"  type="anyOther" />
+	<xsd:element name="old"  type="anyOtherType" />
 
-	<xsd:element name="new"  type="anyOther" />
+	<xsd:element name="new"  type="anyOtherType" />
 
-	<xsd:element name="domain"  type="anyOther" />
+	<xsd:element name="domain"  type="anyOtherType" />
 
 	<xsd:group name="refItems">
 		<xsd:choice>
