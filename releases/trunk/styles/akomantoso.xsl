@@ -70,9 +70,9 @@
        Because of a bug in Internet Explorer, they CAN NEVER be empty. 
        A stupid comment has been inserted instead. -->
  <!-- <!ENTITY debug  '<xsl:comment xmlns:xsl="http://www.w3.org/1999/XSL/Transform">debug message</xsl:comment>'>
- 	<!ENTITY sdebug  '<xsl:comment xmlns:xsl="http://www.w3.org/1999/XSL/Transform">special debug message</xsl:comment>'> -->
+ 	<!ENTITY debug  '<xsl:comment xmlns:xsl="http://www.w3.org/1999/XSL/Transform">special debug message</xsl:comment>'> -->
  	
- 	 <!ENTITY sdebug  '<span style="color:red;"><xsl:value-of select="{name()}"/></span>'>
+ 	<!ENTITY debug  '<xsl:comment xmlns:xsl="http://www.w3.org/1999/XSL/Transform">special debug message</xsl:comment>'>
  		<!ENTITY debug  '<xsl:comment xmlns:xsl="http://www.w3.org/1999/XSL/Transform">special debug message</xsl:comment>'> 
  		
   ]>
@@ -242,7 +242,7 @@
 	</xsl:template>
 	<xsl:template match="@by" />
 	<xsl:template match="an:span" priority="1">
-		&sdebug;
+		&debug;
 		<!--br/--><span class="unknown">[<xsl:apply-templates/>]</span>
 	</xsl:template>
 
@@ -251,21 +251,21 @@
 	<!--  Template for main content type patterns of an         -->
 	<!--                                                          -->
 	<!-- ======================================================== -->
-	<xsl:template match="&containerElements;"> &sdebug; <div class="{name()}">
+	<xsl:template match="&containerElements;"> &debug; <div class="{name()}">
 			<a name="{name()}-{count(preceding::*[name()=name(current())])+1}">
 				<xsl:apply-templates />
 			</a>
 		</div>
 	</xsl:template>
 	<xsl:template match="&blockElements;" priority="0.25"> 
-		&sdebug; 
+		&debug; 
 		<div class="{name()}">
 			<xsl:apply-templates select="@*" />
 			<xsl:apply-templates />
 		</div>
 	</xsl:template>
 	<xsl:template match="*" priority="0.25" mode="first"> 
-		&sdebug;
+		&debug;
 		<xsl:apply-templates />
 	</xsl:template>
 	<xsl:template match="&inlineElements;" priority="0.25"> &debug; <span class="{name()}">
@@ -283,7 +283,7 @@
 				><xsl:apply-templates select="@*" />[]</span>
 	</xsl:template>
 	<xsl:template match="&htmlElements;" priority="0.25">
-		&sdebug;
+		&debug;
 		<xsl:element name="{name()}">
 			<xsl:apply-templates select="@*" />
 			<xsl:apply-templates />
