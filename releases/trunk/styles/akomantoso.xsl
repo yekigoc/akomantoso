@@ -85,11 +85,20 @@
 	<!--                                                          -->
 	<!-- ======================================================== -->
 	<xsl:template match="/">
+		<xsl:apply-templates/>
+	</xsl:template>
+	<xsl:template match="an:akomantoso">
+		<xsl:variable name="prefix">
+			<xsl:choose>
+				<xsl:when test="an:act | an:bill">../../../../../..</xsl:when>
+				<xsl:otherwise>../../../../..</xsl:otherwise>
+			</xsl:choose>			
+		</xsl:variable>
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<xsl:call-template name="title-&title;" />
 				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-				<link href="../../../../styles/style.css" rel="stylesheet" />
+				<link href="{$prefix}/styles/style.css" rel="stylesheet" />
 			</head>
 			<body>
 				<xsl:apply-templates />
