@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  25/04/2006                                                 
+       Release  16/05/2006                                                 
        Fabio Vitali - University of Bologna                                
                                                                            
        The present schema uses systematically XML design patterns as       
@@ -23,7 +23,7 @@
 
 <!ENTITY @@ ANhier          "(section|part|paragraph|chapter|article)" >
 <!ENTITY @@ ANcontainers    "(div)" >
-<!ENTITY @@ ANblock         "(toc)" >
+<!ENTITY @@ ANblock         "(toc | comment)" >
 <!ENTITY @@ ANinline        "(ref | def)" >
 <!ENTITY @@ ANtitleInline   "(ActType | ActTitle | ActNumber | ActProponent | ActDate | ActPurpose)" >
 <!ENTITY @@ ANmarker        "(noteref | recordedTime)" >
@@ -34,10 +34,14 @@
 <!ENTITY @@ HTMLmarker        "(img)" >
 
 <!ENTITY @@ hierElements      "(@@ANhier;   |                     hcontainer)">
-<!ENTITY @@ containerElements "(                @@HTMLcontainers; | container)">
+<!ENTITY @@ containerElements "(              @@HTMLcontainers; | container)">
 <!ENTITY @@ blockElements     "(@@ANblock;  | @@HTMLblock;      | block)">
 <!ENTITY @@ inlineElements    "(@@ANinline; | @@HTMLinline;     | inline        | @@ANtitleInline; )">
 <!ENTITY @@ markerElements    "(@@ANmarker; | @@HTMLmarker;     | marker  )">
+
+<!ENTITY @@ speechItems       "(speech | question | answer | other | comment)">
+<!ENTITY @@ refItems          "(Original|PassiveRef|ActiveRef|Jurisprudence|Attachment|AttachmentOf|Person|Role|Organization|Reference)" >
+
 
 <!-- =====================================================================
 
@@ -46,15 +50,20 @@
      ===================================================================== -->
 
 <!ENTITY ## name         "name         #STRING        #REQUIRED" >
-<!ENTITY ## source       "source       IDREF          #REQUIRED" >
+<!ENTITY ## source       "source       #IDREF         #REQUIRED" >
 <!ENTITY ## date         "date         #DATE          #REQUIRED" >
 <!ENTITY ## time         "time         #TIME          #REQUIRED" >
 <!ENTITY ## link         "href         #ANYURI        #REQUIRED" >
 <!ENTITY ## numb         "numbering    (on|off)       'off'" >
+<!ENTITY ## speechAtts   "by           #IDREF         #REQUIRED 
+                          as           #IDREF         #IMPLIED
+                          to           #IDREF         #IMPLIED ">
+<!ENTITY ## show         "showAs       #STRING        #REQUIRED  
+                          shortForm    #STRING        #IMPLIED">
 
 <!ENTITY ## enactment "
-    start      IDREF         #IMPLIED
-    end        IDREF         #IMPLIED
+    start      #IDREF         #IMPLIED
+    end        #IDREF         #IMPLIED
     status     #statusType;  #IMPLIED
 ">
 
@@ -63,9 +72,9 @@
 <!ENTITY ## HTMLattrs    "class        #STRING      #IMPLIED    
                           style        #STRING      #IMPLIED
                           title        #STRING      #IMPLIED">
-<!ENTITY ## idref        "idref        IDREF        #REQUIRED">
-<!ENTITY ## idreq        "id           ID           #REQUIRED">
-<!ENTITY ## idopt        "id           ID           #IMPLIED">
+<!ENTITY ## idref        "idref        #IDREF        #REQUIRED">
+<!ENTITY ## idreq        "id           #ID           #REQUIRED">
+<!ENTITY ## idopt        "id           #ID           #IMPLIED">
 
 <!ENTITY ## corereq      "##HTMLattrs; ##enactment; ##idreq;" >
 <!ENTITY ## coreopt      "##HTMLattrs; ##enactment; ##idopt;" >
@@ -77,7 +86,6 @@
      ===================================================================== -->
 <!ENTITY # VersionType  "#STRING(OriginalVersion|SingleVersion|MultipleVersions)" >
 <!ENTITY # EventType    "#STRING(Generation|Amendment|Repeal)" >
-<!ENTITY # RefType      "#STRING(Original|Passive|Active|Jurisprudence|HasAttachment|IsAttachment)" >
 <!ENTITY # statusType   "#STRING(omissis|repealed|suspended)">
 
 <!-- =====================================================================
@@ -87,13 +95,17 @@
      ===================================================================== -->
 
 <!ENTITY @ hierarchy         "(num?, title?, (@@hierElements;)+)" "##corereq;">
-<!ENTITY @ althierarchy      "(num?, title?, (subdivision | speech | question)*)" "##corereq;">
+<!ENTITY @ althierarchy      "(num?, title?, (subdivision | @@speechItems;)*)" "##corereq;">
 <!ENTITY @ blocksreq         "(@@blockElements;)+" "##corereq;">
 <!ENTITY @ blocksopt         "(@@blockElements;)+" "##coreopt;">
 <!ENTITY @ inline            "(#PCDATA | @@inlineElements; | @@markerElements;)*" "##coreopt;">
 <!ENTITY @ markerreq         "" "##corereq;">
 <!ENTITY @ markeropt         "" "##coreopt;">
-<!ENTITY @ referenceType     "" "##corereq; ##link; type   #RefType;   #REQUIRED" >
+
+
+<!ENTITY @ speechType        "(@@blockElements;)+" "##coreopt; ##speechAtts;" >
+<!ENTITY @ publicationType   ""                    "##coreopt; ##date; ##show; ##name;">
+<!ENTITY @ referenceType     ""                    "##corereq; ##link; ##show;" >
 
 <!-- =====================================================================
 
@@ -189,12 +201,13 @@
      ===================================================================== -->
 <!ELEMENT subdivision         @althierarchy; >
 
-<!ELEMENT speech              @blocksreq; >
-<!ATTLIST speech              by IDREF #REQUIRED>
-<!ELEMENT question            @blocksreq; >
-<!ATTLIST question            by IDREF #REQUIRED>
+<!ELEMENT speech              @speechType; >
+<!ELEMENT question            @speechType; >
+<!ELEMENT answer              @speechType; >
+<!ELEMENT other               @blocksopt; >
+<!ELEMENT comment             @inline; >
 
-<!ENTITY @ itemType      "(num?, title?, subtitle?, (item | @@blockElements;)+)" "##corereq;">
+<!ENTITY @ itemType           "(num?, title?, subtitle?, (item | @@blockElements;)+)" "##corereq;">
 <!ELEMENT item                @itemType; >
 <!ATTLIST item  ##numb; >
 
@@ -233,7 +246,7 @@
 <!ELEMENT noteref      @markeropt; >
 <!ATTLIST noteref
         num    #STRING   #REQUIRED
-        ##link;
+        ##idref;
 >
 <!ELEMENT recordedTime   @markeropt; >
 <!ATTLIST recordedTime   ##time; >
@@ -292,7 +305,7 @@
 <!ELEMENT div  @blocksreq; >
 
 <!ELEMENT p    @inline; >
-<!ELEMENT li   (@inline;, (#PCDATA | ul | ol)*) >
+<!ELEMENT li   (@inline;, (#PCDATA | ul | ol | p)*) >
 
 <!ELEMENT span @inline; >
 <!ELEMENT b    @inline; >
@@ -342,17 +355,11 @@
         Metadata elements for acts, bills and generic documents
 
      ===================================================================== -->
-<!ENTITY @ MetaSection  "(descriptor, lifecycle?, persons?, notes*, proprietary*)">
+<!ENTITY @ MetaSection  "(descriptor, lifecycle?, references?, notes*, proprietary*)">
 <!ELEMENT meta   @MetaSection; >
 <!ELEMENT descriptor  (publication, otherpublications?, 
                        enactmentDate, editors, 
                        uri+, alias*, keywords?) >
-
-<!ENTITY @ publicationType "" 
-       "##coreopt;
-        ##date;    
-        type   #STRING     #REQUIRED 
-        num    #STRING     #IMPLIED  ">
 
 <!ELEMENT otherpublications  (ripublication | errata )+>
 <!ELEMENT publication        @publicationType;>
@@ -386,8 +393,7 @@
     value #STRING #REQUIRED
 >
 
-<!ELEMENT lifecycle (events?, references)>
-<!ELEMENT events (event+)>
+<!ELEMENT lifecycle (event+)>
 <!ELEMENT event @markerreq;>
 <!ATTLIST event
     ##date;
@@ -395,15 +401,18 @@
     type   #EventType; #IMPLIED
 >
 
-<!ELEMENT references (reference+)>
-<!ELEMENT reference  @referenceType; >
-
-<!ELEMENT persons (person+) >
-<!ELEMENT person  @markerreq; >
-<!ATTLIST person  
-          short #STRING #IMPLIED 
-          long  #STRING #REQUIRED 
->
+<!ELEMENT references     (@@refItems;)+>
+<!ELEMENT Original       @referenceType; >
+<!ELEMENT PassiveRef     @referenceType; >
+<!ELEMENT ActiveRef      @referenceType; >
+<!ELEMENT Jurisprudence  @referenceType; >
+<!ELEMENT Attachment     @referenceType; >
+<!ELEMENT AttachmentOf   @referenceType; >
+<!ELEMENT Person         @referenceType; >
+<!ELEMENT Role           @referenceType; >
+<!ELEMENT Organization   @referenceType; >
+<!ELEMENT Reference      @referenceType; >
+<!ATTLIST Reference      ##name; >
 
 <!ELEMENT notes        (note)+>
 <!ELEMENT note         @blocksreq;>

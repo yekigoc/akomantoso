@@ -6,7 +6,7 @@
 Akoma Ntoso main schema
 
 
-Release  25/04/2006
+Release  16/05/2006
 Fabio Vitali - University of Bologna
 
 The present schema uses systematically XML design patterns as
@@ -22,7 +22,7 @@ Main element groups
 =====================================================================  -->
 <!ENTITY % ANhier "section | part | paragraph | chapter | article" >
 <!ENTITY % ANcontainers "div" >
-<!ENTITY % ANblock "toc" >
+<!ENTITY % ANblock "toc | comment" >
 <!ENTITY % ANinline "ref | def" >
 <!ENTITY % ANtitleInline "ActType | ActTitle | ActNumber | ActProponent | ActDate | ActPurpose" >
 <!ENTITY % ANmarker "noteref | recordedTime" >
@@ -35,24 +35,28 @@ Main element groups
 <!ENTITY % blockElements "%ANblock; | %HTMLblock; | block" >
 <!ENTITY % inlineElements "%ANinline; | %HTMLinline; | inline | %ANtitleInline;" >
 <!ENTITY % markerElements "%ANmarker; | %HTMLmarker; | marker" >
+<!ENTITY % speechItems "speech | question | answer | other | comment" >
+<!ENTITY % refItems "Original | PassiveRef | ActiveRef | Jurisprudence | Attachment | AttachmentOf | Person | Role | Organization | Reference" >
 <!--  =====================================================================
 
 Attribute groups
 
 =====================================================================  -->
-<!ENTITY % name " name  CDATA #REQUIRED" >
-<!ENTITY % source " source  CDATA #REQUIRED" >
-<!ENTITY % date " date  CDATA #REQUIRED" >
-<!ENTITY % time " time  CDATA #REQUIRED" >
-<!ENTITY % link " href  CDATA #REQUIRED" >
+<!ENTITY % name " name CDATA #REQUIRED" >
+<!ENTITY % source " source IDREF #REQUIRED" >
+<!ENTITY % date " date CDATA #REQUIRED" >
+<!ENTITY % time " time CDATA #REQUIRED" >
+<!ENTITY % link " href CDATA #REQUIRED" >
 <!ENTITY % numb " numbering (on|off) 'off' " >
+<!ENTITY % speechAtts " by IDREF #REQUIRED as IDREF #IMPLIED to IDREF #IMPLIED" >
+<!ENTITY % show " showAs CDATA #REQUIRED shortForm CDATA #IMPLIED" >
 <!ENTITY % statusType "(omissis|repealed|suspended)" >
-<!ENTITY % enactment " start  CDATA #IMPLIED end  CDATA #IMPLIED status %statusType; #IMPLIED" >
-<!ENTITY % cellattrs " rowspan  CDATA '1'  colspan  CDATA '1' " >
-<!ENTITY % HTMLattrs " class  CDATA #IMPLIED style  CDATA #IMPLIED title  CDATA #IMPLIED" >
-<!ENTITY % idref " idref  CDATA #REQUIRED" >
-<!ENTITY % idreq " id  CDATA #REQUIRED" >
-<!ENTITY % idopt " id  CDATA #IMPLIED" >
+<!ENTITY % enactment " start IDREF #IMPLIED end IDREF #IMPLIED status CDATA #IMPLIED" >
+<!ENTITY % cellattrs " rowspan CDATA '1'  colspan CDATA '1' " >
+<!ENTITY % HTMLattrs " class CDATA #IMPLIED style CDATA #IMPLIED title CDATA #IMPLIED" >
+<!ENTITY % idref " idref IDREF #REQUIRED" >
+<!ENTITY % idreq " id ID #REQUIRED" >
+<!ENTITY % idopt " id ID #IMPLIED" >
 <!ENTITY % corereq " %HTMLattrs;  %enactment;  %idreq; " >
 <!ENTITY % coreopt " %HTMLattrs;  %enactment;  %idopt; " >
 <!--  =====================================================================
@@ -62,19 +66,20 @@ Simple types (data values)
 =====================================================================  -->
 <!ENTITY % VersionType "(OriginalVersion|SingleVersion|MultipleVersions)" >
 <!ENTITY % EventType "(Generation|Amendment|Repeal)" >
-<!ENTITY % RefType "(Original|Passive|Active|Jurisprudence|HasAttachment|IsAttachment)" >
 <!--  =====================================================================
 
 Complex types (markup structures)
 
 =====================================================================  -->
 <!ENTITY % hierarchy "(num?,title?,(%hierElements;)+)" >
-<!ENTITY % althierarchy "(num?,title?,(subdivision | speech | question)*)" >
+<!ENTITY % althierarchy "(num?,title?,(subdivision | %speechItems;)*)" >
 <!ENTITY % blocksreq "(%blockElements;)+" >
 <!ENTITY % blocksopt "(%blockElements;)+" >
 <!ENTITY % inline "(#PCDATA |%inlineElements; | %markerElements;)*" >
 <!ENTITY % markerreq "EMPTY" >
 <!ENTITY % markeropt "EMPTY" >
+<!ENTITY % speechType "(%blockElements;)+" >
+<!ENTITY % publicationType "EMPTY" >
 <!ENTITY % referenceType "EMPTY" >
 <!--  =====================================================================
 
@@ -99,20 +104,29 @@ Reference: http://www.xmlpatterns.com/ConsistentElementSetMain.shtml
 <!ENTITY % OpenStructure "(meta,preface?,preamble?,maincontent,conclusions?,attachments?)" >
 <!ENTITY % DebateStructure "(meta,preface?,debate,conclusions?,attachments?)" >
 <!ELEMENT act %HierarchicalStructure; >
+<!ATTLIST act contains CDATA 'OriginalVersion'  >
 <!ELEMENT bill %HierarchicalStructure; >
+<!ATTLIST bill contains CDATA 'OriginalVersion'  >
 <!ELEMENT doc %OpenStructure; >
+<!ATTLIST doc contains CDATA 'OriginalVersion'  >
 <!ELEMENT report %OpenStructure; >
+<!ATTLIST report contains CDATA 'OriginalVersion'  >
 <!ELEMENT minutes %DebateStructure; >
+<!ATTLIST minutes contains CDATA 'OriginalVersion'  >
 <!--  =====================================================================
 
 AN common containers elements
 
 =====================================================================  -->
 <!ELEMENT preface %blocksopt; >
+<!ATTLIST preface %coreopt;  >
 <!ELEMENT preamble %blocksopt; >
+<!ATTLIST preamble %coreopt;  >
 <!ELEMENT conclusions %blocksopt; >
+<!ATTLIST conclusions %coreopt;  >
 <!ELEMENT attachments (attachment+)>
 <!ELEMENT attachment %referenceType; >
+<!ATTLIST attachment %corereq;  %link;  %show;  >
 <!ELEMENT clauses (%hierElements;)+>
 <!ELEMENT debate (subdivision+)>
 <!ELEMENT maincontent (%hierElements; | subdivision | item | %blockElements;)+>
@@ -123,28 +137,45 @@ Elements for hierarchical documents
 
 =====================================================================  -->
 <!ELEMENT section %hierarchy; >
+<!ATTLIST section %corereq;  >
 <!ELEMENT part %hierarchy; >
+<!ATTLIST part %corereq;  >
 <!ELEMENT paragraph %hierarchy; >
+<!ATTLIST paragraph %corereq;  >
 <!ELEMENT chapter %hierarchy; >
+<!ATTLIST chapter %corereq;  >
 <!ENTITY % ArticleType "(num?,title?,clause+)" >
 <!ELEMENT article %ArticleType; >
+<!ATTLIST article %corereq;  >
 <!ENTITY % ClauseType "(num?,title?,(%blockElements;)+)" >
 <!ELEMENT clause %ClauseType; >
+<!ATTLIST clause %corereq;  >
 <!ELEMENT num %inline; >
+<!ATTLIST num %coreopt;  >
 <!ELEMENT title %inline; >
+<!ATTLIST title %coreopt;  >
 <!ELEMENT subtitle %inline; >
+<!ATTLIST subtitle %coreopt;  >
 <!--  =====================================================================
 
 Elements for debates documents
 
 =====================================================================  -->
 <!ELEMENT subdivision %althierarchy; >
-<!ELEMENT speech %blocksreq; >
-<!ATTLIST speech by  CDATA #REQUIRED >
-<!ELEMENT question %blocksreq; >
-<!ATTLIST question by  CDATA #REQUIRED >
+<!ATTLIST subdivision %corereq;  >
+<!ELEMENT speech %speechType; >
+<!ATTLIST speech %coreopt;  %speechAtts;  >
+<!ELEMENT question %speechType; >
+<!ATTLIST question %coreopt;  %speechAtts;  >
+<!ELEMENT answer %speechType; >
+<!ATTLIST answer %coreopt;  %speechAtts;  >
+<!ELEMENT other %blocksopt; >
+<!ATTLIST other %coreopt;  >
+<!ELEMENT comment %inline; >
+<!ATTLIST comment %coreopt;  >
 <!ENTITY % itemType "(num?,title?,subtitle?,(item | %blockElements;)+)" >
 <!ELEMENT item %itemType; >
+<!ATTLIST item %corereq;  >
 <!ATTLIST item %numb;  >
 <!--  =====================================================================
 
@@ -156,7 +187,8 @@ main document.
 =====================================================================  -->
 <!ELEMENT toc (tocitem+)>
 <!ELEMENT tocitem %inline; >
-<!ATTLIST tocitem %idref;  level  CDATA #REQUIRED >
+<!ATTLIST tocitem %coreopt;  >
+<!ATTLIST tocitem %idref;  level CDATA #REQUIRED >
 <!--  =====================================================================
 
 AN inline elements
@@ -166,23 +198,34 @@ legal structure, regardless of their position in the document.
 
 =====================================================================  -->
 <!ELEMENT ActType %inline; >
+<!ATTLIST ActType %coreopt;  >
 <!ELEMENT ActTitle %inline; >
+<!ATTLIST ActTitle %coreopt;  >
 <!ELEMENT ActNumber %inline; >
+<!ATTLIST ActNumber %coreopt;  >
 <!ELEMENT ActProponent %inline; >
+<!ATTLIST ActProponent %coreopt;  >
 <!ELEMENT ActDate %inline; >
+<!ATTLIST ActDate %coreopt;  >
 <!ELEMENT ActPurpose %inline; >
+<!ATTLIST ActPurpose %coreopt;  >
 <!ELEMENT ref %inline; >
+<!ATTLIST ref %coreopt;  >
 <!ATTLIST ref %link;  >
 <!ELEMENT def %inline; >
+<!ATTLIST def %coreopt;  >
 <!ELEMENT noteref %markeropt; >
-<!ATTLIST noteref num  CDATA #REQUIRED %link;  >
+<!ATTLIST noteref %coreopt;  >
+<!ATTLIST noteref num CDATA #REQUIRED %idref;  >
 <!ELEMENT recordedTime %markeropt; >
+<!ATTLIST recordedTime %coreopt;  >
 <!ATTLIST recordedTime %time;  >
 <!ENTITY % mod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" >
 
 <!ELEMENT mod (%mod_entity;)*>
 <!ATTLIST mod %coreopt;  >
 <!ELEMENT quotedText %inline; >
+<!ATTLIST quotedText %coreopt;  >
 <!ELEMENT quotedStructure (%hierElements; | %blockElements; | %containerElements;)+>
 <!ATTLIST quotedStructure %corereq;  >
 <!--  =====================================================================
@@ -206,10 +249,15 @@ http://www.xmlpatterns.com/RoleAttributeMain.shtml
 
 =====================================================================  -->
 <!ELEMENT hcontainer %hierarchy; >
+<!ATTLIST hcontainer %corereq;  >
 <!ELEMENT container %blocksreq; >
+<!ATTLIST container %corereq;  >
 <!ELEMENT block %inline; >
+<!ATTLIST block %coreopt;  >
 <!ELEMENT inline %inline; >
+<!ATTLIST inline %coreopt;  >
 <!ELEMENT marker %markerreq; >
+<!ATTLIST marker %corereq;  >
 <!ATTLIST hcontainer %name;  >
 <!ATTLIST container %name;  >
 <!ATTLIST block %name;  >
@@ -224,26 +272,35 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 
 =====================================================================  -->
 <!ELEMENT div %blocksreq; >
+<!ATTLIST div %corereq;  >
 <!ELEMENT p %inline; >
-<!ENTITY % li_entity "#PCDATA |ul | ol | %inlineElements; | %markerElements;" >
+<!ATTLIST p %coreopt;  >
+<!ENTITY % li_entity "#PCDATA |ul | ol | p | %inlineElements; | %markerElements;" >
 
 <!ELEMENT li (%li_entity;)*>
 <!ATTLIST li %coreopt;  >
 <!ELEMENT span %inline; >
+<!ATTLIST span %coreopt;  >
 <!ELEMENT b %inline; >
+<!ATTLIST b %coreopt;  >
 <!ELEMENT i %inline; >
+<!ATTLIST i %coreopt;  >
 <!ELEMENT a %inline; >
-<!ATTLIST a %link;  target  CDATA #IMPLIED >
+<!ATTLIST a %coreopt;  >
+<!ATTLIST a %link;  target CDATA #IMPLIED >
 <!ELEMENT img %markeropt; >
-<!ATTLIST img src  CDATA #REQUIRED alt  CDATA #IMPLIED width  CDATA #IMPLIED height  CDATA #IMPLIED >
+<!ATTLIST img %coreopt;  >
+<!ATTLIST img src CDATA #REQUIRED alt CDATA #IMPLIED width CDATA #IMPLIED height CDATA #IMPLIED >
 <!ELEMENT ul (li+)>
 <!ELEMENT ol (li+)>
 <!ELEMENT table (tr+)>
-<!ATTLIST table %HTMLattrs;  width  CDATA #IMPLIED border  CDATA #IMPLIED cellspacing  CDATA #IMPLIED cellpadding  CDATA #IMPLIED >
+<!ATTLIST table %HTMLattrs;  width CDATA #IMPLIED border CDATA #IMPLIED cellspacing CDATA #IMPLIED cellpadding CDATA #IMPLIED >
 <!ELEMENT tr (th | td)+>
 <!ATTLIST tr %HTMLattrs;  >
 <!ELEMENT th %inline; >
+<!ATTLIST th %coreopt;  >
 <!ELEMENT td %inline; >
+<!ATTLIST td %coreopt;  >
 <!ATTLIST th %cellattrs;  >
 <!ATTLIST td %cellattrs;  >
 <!--  =====================================================================
@@ -251,38 +308,63 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 Metadata elements for acts, bills and generic documents
 
 =====================================================================  -->
-<!ENTITY % MetaSection "(descriptor,lifecycle?,persons?,notes*,proprietary*)" >
+<!ENTITY % MetaSection "(descriptor,lifecycle?,references?,notes*,proprietary*)" >
 <!ELEMENT meta %MetaSection; >
 <!ELEMENT descriptor (publication,otherpublications?,enactmentDate,editors,uri+,alias*,keywords?)>
-<!ENTITY % publicationType "EMPTY" >
 <!ELEMENT otherpublications (ripublication | errata)+>
 <!ELEMENT publication %publicationType; >
+<!ATTLIST publication %coreopt;  %date;  %show;  %name;  >
 <!ELEMENT ripublication %publicationType; >
+<!ATTLIST ripublication %coreopt;  %date;  %show;  %name;  >
 <!ELEMENT errata %publicationType; >
+<!ATTLIST errata %coreopt;  %date;  %show;  %name;  >
 <!ELEMENT enactmentDate %markeropt; >
+<!ATTLIST enactmentDate %coreopt;  >
 <!ATTLIST enactmentDate %date;  >
 <!ELEMENT editors (editor+)>
 <!ELEMENT editor %markerreq; >
-<!ATTLIST editor %date;  name  CDATA #REQUIRED uri  CDATA #IMPLIED contribution  CDATA #IMPLIED >
+<!ATTLIST editor %corereq;  >
+<!ATTLIST editor %date;  name CDATA #REQUIRED uri CDATA #IMPLIED contribution CDATA #IMPLIED >
 <!ELEMENT uri %markeropt; >
+<!ATTLIST uri %coreopt;  >
 <!ATTLIST uri %link;  >
 <!ELEMENT alias %markeropt; >
-<!ATTLIST alias value  CDATA #REQUIRED >
+<!ATTLIST alias %coreopt;  >
+<!ATTLIST alias value CDATA #REQUIRED >
 <!ELEMENT keywords (keyword+)>
-<!ATTLIST keywords dictionary  CDATA #REQUIRED >
+<!ATTLIST keywords dictionary CDATA #REQUIRED >
 <!ELEMENT keyword %markeropt; >
-<!ATTLIST keyword value  CDATA #REQUIRED >
-<!ELEMENT lifecycle (events?,references)>
-<!ELEMENT events (event+)>
+<!ATTLIST keyword %coreopt;  >
+<!ATTLIST keyword value CDATA #REQUIRED >
+<!ELEMENT lifecycle (event+)>
 <!ELEMENT event %markerreq; >
-<!ATTLIST event %date;  %source;  type %EventType; #IMPLIED >
-<!ELEMENT references (reference+)>
-<!ELEMENT reference %referenceType; >
-<!ELEMENT persons (person+)>
-<!ELEMENT person %markerreq; >
-<!ATTLIST person short  CDATA #IMPLIED long  CDATA #REQUIRED >
+<!ATTLIST event %corereq;  >
+<!ATTLIST event %date;  %source;  type CDATA #IMPLIED >
+<!ELEMENT references (%refItems;)+>
+<!ELEMENT Original %referenceType; >
+<!ATTLIST Original %corereq;  %link;  %show;  >
+<!ELEMENT PassiveRef %referenceType; >
+<!ATTLIST PassiveRef %corereq;  %link;  %show;  >
+<!ELEMENT ActiveRef %referenceType; >
+<!ATTLIST ActiveRef %corereq;  %link;  %show;  >
+<!ELEMENT Jurisprudence %referenceType; >
+<!ATTLIST Jurisprudence %corereq;  %link;  %show;  >
+<!ELEMENT Attachment %referenceType; >
+<!ATTLIST Attachment %corereq;  %link;  %show;  >
+<!ELEMENT AttachmentOf %referenceType; >
+<!ATTLIST AttachmentOf %corereq;  %link;  %show;  >
+<!ELEMENT Person %referenceType; >
+<!ATTLIST Person %corereq;  %link;  %show;  >
+<!ELEMENT Role %referenceType; >
+<!ATTLIST Role %corereq;  %link;  %show;  >
+<!ELEMENT Organization %referenceType; >
+<!ATTLIST Organization %corereq;  %link;  %show;  >
+<!ELEMENT Reference %referenceType; >
+<!ATTLIST Reference %corereq;  %link;  %show;  >
+<!ATTLIST Reference %name;  >
 <!ELEMENT notes (note)+>
 <!ELEMENT note %blocksreq; >
+<!ATTLIST note %corereq;  >
 <!ELEMENT proprietary ANY>
 <!ATTLIST proprietary %source;  >
 <!--  =====================================================================
@@ -290,63 +372,3 @@ Metadata elements for acts, bills and generic documents
 End of Schema
 
 =====================================================================  -->
-<!ATTLIST section %corereq;  >
-<!ATTLIST part %corereq;  >
-<!ATTLIST paragraph %corereq;  >
-<!ATTLIST chapter %corereq;  >
-<!ATTLIST hcontainer %corereq;  >
-<!ATTLIST subdivision %corereq;  >
-<!ATTLIST speech %corereq;  >
-<!ATTLIST question %corereq;  >
-<!ATTLIST container %corereq;  >
-<!ATTLIST div %corereq;  >
-<!ATTLIST note %corereq;  >
-<!ATTLIST preface %coreopt;  >
-<!ATTLIST preamble %coreopt;  >
-<!ATTLIST conclusions %coreopt;  >
-<!ATTLIST num %coreopt;  >
-<!ATTLIST title %coreopt;  >
-<!ATTLIST subtitle %coreopt;  >
-<!ATTLIST tocitem %coreopt;  >
-<!ATTLIST ActType %coreopt;  >
-<!ATTLIST ActTitle %coreopt;  >
-<!ATTLIST ActNumber %coreopt;  >
-<!ATTLIST ActProponent %coreopt;  >
-<!ATTLIST ActDate %coreopt;  >
-<!ATTLIST ActPurpose %coreopt;  >
-<!ATTLIST ref %coreopt;  >
-<!ATTLIST def %coreopt;  >
-<!ATTLIST quotedText %coreopt;  >
-<!ATTLIST block %coreopt;  >
-<!ATTLIST inline %coreopt;  >
-<!ATTLIST p %coreopt;  >
-<!ATTLIST span %coreopt;  >
-<!ATTLIST b %coreopt;  >
-<!ATTLIST i %coreopt;  >
-<!ATTLIST a %coreopt;  >
-<!ATTLIST th %coreopt;  >
-<!ATTLIST td %coreopt;  >
-<!ATTLIST marker %corereq;  >
-<!ATTLIST editor %corereq;  >
-<!ATTLIST event %corereq;  >
-<!ATTLIST person %corereq;  >
-<!ATTLIST noteref %coreopt;  >
-<!ATTLIST recordedTime %coreopt;  >
-<!ATTLIST img %coreopt;  >
-<!ATTLIST enactmentDate %coreopt;  >
-<!ATTLIST uri %coreopt;  >
-<!ATTLIST alias %coreopt;  >
-<!ATTLIST keyword %coreopt;  >
-<!ATTLIST attachment %corereq;  %link;  type %RefType; #REQUIRED >
-<!ATTLIST reference %corereq;  %link;  type %RefType; #REQUIRED >
-<!ATTLIST act contains %VersionType; 'OriginalVersion'  >
-<!ATTLIST bill contains %VersionType; 'OriginalVersion'  >
-<!ATTLIST doc contains %VersionType; 'OriginalVersion'  >
-<!ATTLIST report contains %VersionType; 'OriginalVersion'  >
-<!ATTLIST minutes contains %VersionType; 'OriginalVersion'  >
-<!ATTLIST article %corereq;  >
-<!ATTLIST clause %corereq;  >
-<!ATTLIST item %corereq;  >
-<!ATTLIST publication %coreopt;  %date;  type  CDATA #REQUIRED num  CDATA #IMPLIED >
-<!ATTLIST ripublication %coreopt;  %date;  type  CDATA #REQUIRED num  CDATA #IMPLIED >
-<!ATTLIST errata %coreopt;  %date;  type  CDATA #REQUIRED num  CDATA #IMPLIED >

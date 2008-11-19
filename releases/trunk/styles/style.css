@@ -70,12 +70,28 @@ body {
     font-style: italic; 
 }
 
+.question {
+    margin-left: 100 px; 
+    margin-right: 100 px;
+}
+.comment {
+    text-align: center; 
+    font-style: italic;
+}
 .speech-by {
-    font-style: italic; 
+    font-weight: bold; 
+}
+.unknown {
+    font-weight: bold; 
 }
 .head-article {
     font-weight: bold; 
     font-style: italic; 
+}
+
+.noteref {
+    font-size: 70%;
+    vertical-align: top;
 }
 
 .tocitem-1 {
@@ -104,7 +120,7 @@ body {
 	text-align: left ;
     font-size: 90%;
 }
-.toc-meta {
+.toc-meta, .toc-notes {
 	font-family: Verdana, Arial, Helvetica, sans-serif ;
 	text-align: left ;
     font-size: 75%;
@@ -133,7 +149,7 @@ body {
 .toc-subdivision-4, .toc-item-4, .toc-subdivision-5, .toc-item-5 {
 	display:none; 
 }
-.meta {
+.meta, .notes {
 	font-family: Verdana, Arial, Helvetica, sans-serif ;
     font-size: 80%;
     margin-left: 5pt; 

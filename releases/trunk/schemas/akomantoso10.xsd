@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xsd:schema targetNamespace="http://www.akomantoso.org/1.0" xmlns="http://www.akomantoso.org/1.0" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
@@ -10,7 +9,7 @@
 		Akoma Ntoso main schema
 		
 		
-		Release  25/04/2006
+		Release  16/05/2006
 		Fabio Vitali - University of Bologna
 		
 		The present schema uses systematically XML design patterns as
@@ -49,9 +48,10 @@
 	</xsd:group>
 
 	<xsd:group name="ANblock">
-		<xsd:sequence>
+		<xsd:choice>
 			<xsd:element ref="toc"/>
-		</xsd:sequence>
+			<xsd:element ref="comment"/>
+		</xsd:choice>
 	</xsd:group>
 
 	<xsd:group name="ANinline">
@@ -148,6 +148,31 @@
 		</xsd:choice>
 	</xsd:group>
 
+	<xsd:group name="speechItems">
+		<xsd:choice>
+			<xsd:element ref="speech"/>
+			<xsd:element ref="question"/>
+			<xsd:element ref="answer"/>
+			<xsd:element ref="other"/>
+			<xsd:element ref="comment"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:group name="refItems">
+		<xsd:choice>
+			<xsd:element ref="Original"/>
+			<xsd:element ref="PassiveRef"/>
+			<xsd:element ref="ActiveRef"/>
+			<xsd:element ref="Jurisprudence"/>
+			<xsd:element ref="Attachment"/>
+			<xsd:element ref="AttachmentOf"/>
+			<xsd:element ref="Person"/>
+			<xsd:element ref="Role"/>
+			<xsd:element ref="Organization"/>
+			<xsd:element ref="Reference"/>
+		</xsd:choice>
+	</xsd:group>
+
 	<xsd:annotation>
 		<xsd:documentation>
 		 =====================================================================
@@ -163,11 +188,7 @@
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="source">
-		<xsd:attribute name="source"  use="required">
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:IDREF"/>
-			</xsd:simpleType>
-		</xsd:attribute>
+		<xsd:attribute name="source" type="xsd:IDREF" use="required"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="date">
@@ -193,17 +214,20 @@
 		</xsd:attribute>
 	</xsd:attributeGroup>
 
+	<xsd:attributeGroup name="speechAtts">
+		<xsd:attribute name="by" type="xsd:IDREF" use="required"/>
+		<xsd:attribute name="as" type="xsd:IDREF"/>
+		<xsd:attribute name="to" type="xsd:IDREF"/>
+	</xsd:attributeGroup>
+
+	<xsd:attributeGroup name="show">
+		<xsd:attribute name="showAs" type="xsd:string" use="required"/>
+		<xsd:attribute name="shortForm" type="xsd:string"/>
+	</xsd:attributeGroup>
+
 	<xsd:attributeGroup name="enactment">
-		<xsd:attribute name="start" >
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:IDREF"/>
-			</xsd:simpleType>
-		</xsd:attribute>
-		<xsd:attribute name="end" >
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:IDREF"/>
-			</xsd:simpleType>
-		</xsd:attribute>
+		<xsd:attribute name="start" type="xsd:IDREF"/>
+		<xsd:attribute name="end" type="xsd:IDREF"/>
 		<xsd:attribute name="status" type="statusType"/>
 	</xsd:attributeGroup>
 
@@ -219,27 +243,15 @@
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="idref">
-		<xsd:attribute name="idref"  use="required">
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:IDREF"/>
-			</xsd:simpleType>
-		</xsd:attribute>
+		<xsd:attribute name="idref" type="xsd:IDREF" use="required"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="idreq">
-		<xsd:attribute name="id"  use="required">
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:ID"/>
-			</xsd:simpleType>
-		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="idopt">
-		<xsd:attribute name="id" >
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:ID"/>
-			</xsd:simpleType>
-		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:ID"/>
 	</xsd:attributeGroup>
 
 	<xsd:attributeGroup name="corereq">
@@ -280,17 +292,6 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 
-	<xsd:simpleType name="RefType">
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="Original" />
-			<xsd:enumeration value="Passive" />
-			<xsd:enumeration value="Active" />
-			<xsd:enumeration value="Jurisprudence" />
-			<xsd:enumeration value="HasAttachment" />
-			<xsd:enumeration value="IsAttachment" />
-		</xsd:restriction>
-	</xsd:simpleType>
-
 	<xsd:simpleType name="statusType">
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="omissis" />
@@ -326,8 +327,7 @@
 			<xsd:element ref="title" minOccurs="0" maxOccurs="1" />
 			<xsd:choice minOccurs="0" maxOccurs="unbounded" >
 				<xsd:element ref="subdivision" />
-				<xsd:element ref="speech" />
-				<xsd:element ref="question" />
+				<xsd:group ref="speechItems" />
 			</xsd:choice>
 		</xsd:sequence>
 		<xsd:attributeGroup ref="corereq"/>
@@ -363,10 +363,25 @@
 		<xsd:attributeGroup ref="coreopt"/>
 	</xsd:complexType>
 
+	<xsd:complexType name="speechType" >
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded" >
+			<xsd:group ref="blockElements" />
+		</xsd:sequence>
+		<xsd:attributeGroup ref="coreopt"/>
+		<xsd:attributeGroup ref="speechAtts"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="publicationType" >
+		<xsd:attributeGroup ref="coreopt"/>
+		<xsd:attributeGroup ref="date"/>
+		<xsd:attributeGroup ref="show"/>
+		<xsd:attributeGroup ref="name"/>
+	</xsd:complexType>
+
 	<xsd:complexType name="referenceType" >
 		<xsd:attributeGroup ref="corereq"/>
 		<xsd:attributeGroup ref="link"/>
-		<xsd:attribute name="type" type="RefType" use="required"/>
+		<xsd:attributeGroup ref="show"/>
 	</xsd:complexType>
 
 	<xsd:annotation>
@@ -566,33 +581,15 @@
 
 	<xsd:element name="subdivision" type="althierarchy" />
 
-	<xsd:element name="speech">
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:extension base="blocksreq">
-					<xsd:attribute name="by"  use="required">
-						<xsd:simpleType>
-							<xsd:restriction base="xsd:IDREF"/>
-						</xsd:simpleType>
-					</xsd:attribute>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:element name="speech" type="speechType" />
 
-	<xsd:element name="question">
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:extension base="blocksreq">
-					<xsd:attribute name="by"  use="required">
-						<xsd:simpleType>
-							<xsd:restriction base="xsd:IDREF"/>
-						</xsd:simpleType>
-					</xsd:attribute>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:element name="question" type="speechType" />
+
+	<xsd:element name="answer" type="speechType" />
+
+	<xsd:element name="other" type="blocksopt" />
+
+	<xsd:element name="comment" type="inline" />
 
 	<xsd:complexType name="itemType" >
 		<xsd:sequence >
@@ -691,7 +688,7 @@
 			<xsd:complexContent>
 				<xsd:extension base="markeropt">
 					<xsd:attribute name="num" type="xsd:string" use="required"/>
-					<xsd:attributeGroup ref="link"/>
+					<xsd:attributeGroup ref="idref"/>
 				</xsd:extension>
 			</xsd:complexContent>
 		</xsd:complexType>
@@ -832,6 +829,7 @@
 					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
 						<xsd:element ref="ul" />
 						<xsd:element ref="ol" />
+						<xsd:element ref="p" />
 					</xsd:choice>
 				</xsd:extension>
 			</xsd:complexContent>
@@ -941,7 +939,7 @@
 		<xsd:sequence >
 			<xsd:element ref="descriptor" />
 			<xsd:element ref="lifecycle" minOccurs="0" maxOccurs="1" />
-			<xsd:element ref="persons" minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="references" minOccurs="0" maxOccurs="1" />
 			<xsd:element ref="notes" minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element ref="proprietary" minOccurs="0" maxOccurs="unbounded" />
 		</xsd:sequence>
@@ -962,13 +960,6 @@
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
-
-	<xsd:complexType name="publicationType" >
-		<xsd:attributeGroup ref="coreopt"/>
-		<xsd:attributeGroup ref="date"/>
-		<xsd:attribute name="type" type="xsd:string" use="required"/>
-		<xsd:attribute name="num" type="xsd:string"/>
-	</xsd:complexType>
 
 	<xsd:element name="otherpublications">
 		<xsd:complexType >
@@ -1058,15 +1049,6 @@
 	<xsd:element name="lifecycle">
 		<xsd:complexType >
 			<xsd:sequence >
-				<xsd:element ref="events" minOccurs="0" maxOccurs="1" />
-				<xsd:element ref="references" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:element name="events">
-		<xsd:complexType >
-			<xsd:sequence >
 				<xsd:element ref="event" minOccurs="1" maxOccurs="unbounded" />
 			</xsd:sequence>
 		</xsd:complexType>
@@ -1086,28 +1068,35 @@
 
 	<xsd:element name="references">
 		<xsd:complexType >
-			<xsd:sequence >
-				<xsd:element ref="reference" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:sequence minOccurs="1" maxOccurs="unbounded" >
+				<xsd:group ref="refItems" />
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="reference" type="referenceType" />
+	<xsd:element name="Original" type="referenceType" />
 
-	<xsd:element name="persons">
-		<xsd:complexType >
-			<xsd:sequence >
-				<xsd:element ref="person" minOccurs="1" maxOccurs="unbounded" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:element name="PassiveRef" type="referenceType" />
 
-	<xsd:element name="person">
+	<xsd:element name="ActiveRef" type="referenceType" />
+
+	<xsd:element name="Jurisprudence" type="referenceType" />
+
+	<xsd:element name="Attachment" type="referenceType" />
+
+	<xsd:element name="AttachmentOf" type="referenceType" />
+
+	<xsd:element name="Person" type="referenceType" />
+
+	<xsd:element name="Role" type="referenceType" />
+
+	<xsd:element name="Organization" type="referenceType" />
+
+	<xsd:element name="Reference">
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:extension base="markerreq">
-					<xsd:attribute name="short" type="xsd:string"/>
-					<xsd:attribute name="long" type="xsd:string" use="required"/>
+				<xsd:extension base="referenceType">
+					<xsd:attributeGroup ref="name"/>
 				</xsd:extension>
 			</xsd:complexContent>
 		</xsd:complexType>
