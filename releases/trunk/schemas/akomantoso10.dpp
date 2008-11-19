@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  30/11/2006                                                 
+       Release  01/02/2007                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -133,7 +133,7 @@
 
      ===================================================================== -->
 
-<!ENTITY @ DocumentTypes "(act | bill | doc | report | minutes)">
+<!ENTITY @ DocumentTypes "(act | bill | doc | report | debaterecord)">
 <!ROOT akomantoso           @DocumentTypes; >
           
 <!-- =====================================================================
@@ -167,11 +167,11 @@
                                    attachments?)" 
                                  " contains #VersionType; 'OriginalVersion'">
 
-<!ELEMENT act     @HierarchicalStructure; >
-<!ELEMENT bill    @HierarchicalStructure; >
-<!ELEMENT doc     @OpenStructure; >
-<!ELEMENT report  @OpenStructure; >
-<!ELEMENT minutes @DebateStructure; >
+<!ELEMENT act           @HierarchicalStructure; >
+<!ELEMENT bill          @HierarchicalStructure; >
+<!ELEMENT doc           @OpenStructure; >
+<!ELEMENT report        @OpenStructure; >
+<!ELEMENT debaterecord  @DebateStructure; >
 
 <!-- =====================================================================
 
@@ -265,14 +265,19 @@
 <!ELEMENT rref         @inline; >
 <!ATTLIST rref         ##link; 
                        upTo   #ANYURI        #REQUIRED >
+<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure )*)>
+<!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
+
+<!ELEMENT quotedText        @inline; >
+<!ELEMENT quotedStructure   (@@hierElements; | @@blockElements; | @@containerElements;)+ >
+<!ATTLIST quotedStructure   ##corereq; >
 
 <!ELEMENT def          @inline; >
 <!ELEMENT ins          @inline; >
 <!ELEMENT del          @inline; >
 <!ELEMENT omissis      @inline; >
-
-
-
 
 <!ELEMENT noteref      @markeropt; >
 <!ATTLIST noteref      ##link;
@@ -284,16 +289,6 @@
 <!ENTITY @ eolType  "@markeropt;" "breakat  #INTEGER #IMPLIED">
 <!ELEMENT eol   @eolType; >
 <!ELEMENT eop   @eolType; >
-
-
-<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure )*)>
-<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure )*)>
-<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure )*)>
-<!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
-
-<!ELEMENT quotedText        @inline; >
-<!ELEMENT quotedStructure   (@@hierElements; | @@blockElements; | @@containerElements;)+ >
-<!ATTLIST quotedStructure   ##corereq; >
 
 <!-- =====================================================================
 
