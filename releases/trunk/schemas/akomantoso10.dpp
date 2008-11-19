@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  16/05/2006                                                 
+       Release  25/06/2006                                                 
        Fabio Vitali - University of Bologna                                
                                                                            
        The present schema uses systematically XML design patterns as       
@@ -24,7 +24,7 @@
 <!ENTITY @@ ANhier          "(section|part|paragraph|chapter|article)" >
 <!ENTITY @@ ANcontainers    "(div)" >
 <!ENTITY @@ ANblock         "(toc | comment)" >
-<!ENTITY @@ ANinline        "(ref | def)" >
+<!ENTITY @@ ANinline        "(ref | def | mod)" >
 <!ENTITY @@ ANtitleInline   "(ActType | ActTitle | ActNumber | ActProponent | ActDate | ActPurpose)" >
 <!ENTITY @@ ANmarker        "(noteref | recordedTime)" >
 
@@ -171,7 +171,7 @@
 
 <!ELEMENT clauses     (@@hierElements;)+ >
 <!ELEMENT debate      (subdivision+) >
-<!ELEMENT maincontent (@@hierElements; | subdivision | item | @@blockElements;)+ >
+<!ELEMENT maincontent (@@hierElements; | subdivision | item | @@blockElements; | @@containerElements; )+ >
 <!ATTLIST maincontent ##numb; >
  
 <!-- =====================================================================
@@ -306,6 +306,9 @@
 
 <!ELEMENT p    @inline; >
 <!ELEMENT li   (@inline;, (#PCDATA | ul | ol | p)*) >
+<!ATTLIST li
+  value        #STRING       #IMPLIED
+>
 
 <!ELEMENT span @inline; >
 <!ELEMENT b    @inline; >

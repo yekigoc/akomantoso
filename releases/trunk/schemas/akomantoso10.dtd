@@ -6,7 +6,7 @@
 Akoma Ntoso main schema
 
 
-Release  16/05/2006
+Release  25/06/2006
 Fabio Vitali - University of Bologna
 
 The present schema uses systematically XML design patterns as
@@ -23,7 +23,7 @@ Main element groups
 <!ENTITY % ANhier "section | part | paragraph | chapter | article" >
 <!ENTITY % ANcontainers "div" >
 <!ENTITY % ANblock "toc | comment" >
-<!ENTITY % ANinline "ref | def" >
+<!ENTITY % ANinline "ref | def | mod" >
 <!ENTITY % ANtitleInline "ActType | ActTitle | ActNumber | ActProponent | ActDate | ActPurpose" >
 <!ENTITY % ANmarker "noteref | recordedTime" >
 <!ENTITY % HTMLcontainers "div" >
@@ -42,18 +42,18 @@ Main element groups
 Attribute groups
 
 =====================================================================  -->
-<!ENTITY % name " name CDATA #REQUIRED" >
+<!ENTITY % name " name %STRING; #REQUIRED" >
 <!ENTITY % source " source IDREF #REQUIRED" >
-<!ENTITY % date " date CDATA #REQUIRED" >
-<!ENTITY % time " time CDATA #REQUIRED" >
-<!ENTITY % link " href CDATA #REQUIRED" >
+<!ENTITY % date " date %DATE; #REQUIRED" >
+<!ENTITY % time " time %TIME; #REQUIRED" >
+<!ENTITY % link " href %ANYURI; #REQUIRED" >
 <!ENTITY % numb " numbering (on|off) 'off' " >
 <!ENTITY % speechAtts " by IDREF #REQUIRED as IDREF #IMPLIED to IDREF #IMPLIED" >
-<!ENTITY % show " showAs CDATA #REQUIRED shortForm CDATA #IMPLIED" >
+<!ENTITY % show " showAs %STRING; #REQUIRED shortForm %STRING; #IMPLIED" >
 <!ENTITY % statusType "(omissis|repealed|suspended)" >
-<!ENTITY % enactment " start IDREF #IMPLIED end IDREF #IMPLIED status CDATA #IMPLIED" >
-<!ENTITY % cellattrs " rowspan CDATA '1'  colspan CDATA '1' " >
-<!ENTITY % HTMLattrs " class CDATA #IMPLIED style CDATA #IMPLIED title CDATA #IMPLIED" >
+<!ENTITY % enactment " start IDREF #IMPLIED end IDREF #IMPLIED status %statusType; #IMPLIED" >
+<!ENTITY % cellattrs " rowspan %INTEGER; '1'  colspan %INTEGER; '1' " >
+<!ENTITY % HTMLattrs " class %STRING; #IMPLIED style %STRING; #IMPLIED title %STRING; #IMPLIED" >
 <!ENTITY % idref " idref IDREF #REQUIRED" >
 <!ENTITY % idreq " id ID #REQUIRED" >
 <!ENTITY % idopt " id ID #IMPLIED" >
@@ -75,7 +75,8 @@ Complex types (markup structures)
 <!ENTITY % althierarchy "(num?,title?,(subdivision | %speechItems;)*)" >
 <!ENTITY % blocksreq "(%blockElements;)+" >
 <!ENTITY % blocksopt "(%blockElements;)+" >
-<!ENTITY % inline "(#PCDATA |%inlineElements; | %markerElements;)*" >
+<!ENTITY % inline_mixed "%inlineElements; | %markerElements;" >
+<!ENTITY % inline "(#PCDATA | %inline_mixed;)*" >
 <!ENTITY % markerreq "EMPTY" >
 <!ENTITY % markeropt "EMPTY" >
 <!ENTITY % speechType "(%blockElements;)+" >
@@ -104,15 +105,15 @@ Reference: http://www.xmlpatterns.com/ConsistentElementSetMain.shtml
 <!ENTITY % OpenStructure "(meta,preface?,preamble?,maincontent,conclusions?,attachments?)" >
 <!ENTITY % DebateStructure "(meta,preface?,debate,conclusions?,attachments?)" >
 <!ELEMENT act %HierarchicalStructure; >
-<!ATTLIST act contains CDATA 'OriginalVersion'  >
+<!ATTLIST act contains %VersionType; 'OriginalVersion'  >
 <!ELEMENT bill %HierarchicalStructure; >
-<!ATTLIST bill contains CDATA 'OriginalVersion'  >
+<!ATTLIST bill contains %VersionType; 'OriginalVersion'  >
 <!ELEMENT doc %OpenStructure; >
-<!ATTLIST doc contains CDATA 'OriginalVersion'  >
+<!ATTLIST doc contains %VersionType; 'OriginalVersion'  >
 <!ELEMENT report %OpenStructure; >
-<!ATTLIST report contains CDATA 'OriginalVersion'  >
+<!ATTLIST report contains %VersionType; 'OriginalVersion'  >
 <!ELEMENT minutes %DebateStructure; >
-<!ATTLIST minutes contains CDATA 'OriginalVersion'  >
+<!ATTLIST minutes contains %VersionType; 'OriginalVersion'  >
 <!--  =====================================================================
 
 AN common containers elements
@@ -129,7 +130,7 @@ AN common containers elements
 <!ATTLIST attachment %corereq;  %link;  %show;  >
 <!ELEMENT clauses (%hierElements;)+>
 <!ELEMENT debate (subdivision+)>
-<!ELEMENT maincontent (%hierElements; | subdivision | item | %blockElements;)+>
+<!ELEMENT maincontent (%hierElements; | subdivision | item | %blockElements; | %containerElements;)+>
 <!ATTLIST maincontent %numb;  >
 <!--  =====================================================================
 
@@ -188,7 +189,7 @@ main document.
 <!ELEMENT toc (tocitem+)>
 <!ELEMENT tocitem %inline; >
 <!ATTLIST tocitem %coreopt;  >
-<!ATTLIST tocitem %idref;  level CDATA #REQUIRED >
+<!ATTLIST tocitem %idref;  level %INTEGER; #REQUIRED >
 <!--  =====================================================================
 
 AN inline elements
@@ -216,12 +217,12 @@ legal structure, regardless of their position in the document.
 <!ATTLIST def %coreopt;  >
 <!ELEMENT noteref %markeropt; >
 <!ATTLIST noteref %coreopt;  >
-<!ATTLIST noteref num CDATA #REQUIRED %idref;  >
+<!ATTLIST noteref num %STRING; #REQUIRED %idref;  >
 <!ELEMENT recordedTime %markeropt; >
 <!ATTLIST recordedTime %coreopt;  >
 <!ATTLIST recordedTime %time;  >
-<!ENTITY % mod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" >
 
+<!ENTITY % mod_entity "#PCDATA |quotedText | quotedStructure | %inlineElements; | %markerElements;" >
 <!ELEMENT mod (%mod_entity;)*>
 <!ATTLIST mod %coreopt;  >
 <!ELEMENT quotedText %inline; >
@@ -275,10 +276,11 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 <!ATTLIST div %corereq;  >
 <!ELEMENT p %inline; >
 <!ATTLIST p %coreopt;  >
-<!ENTITY % li_entity "#PCDATA |ul | ol | p | %inlineElements; | %markerElements;" >
 
+<!ENTITY % li_entity "#PCDATA |ul | ol | p | %inlineElements; | %markerElements;" >
 <!ELEMENT li (%li_entity;)*>
 <!ATTLIST li %coreopt;  >
+<!ATTLIST li value %STRING; #IMPLIED >
 <!ELEMENT span %inline; >
 <!ATTLIST span %coreopt;  >
 <!ELEMENT b %inline; >
@@ -287,14 +289,14 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 <!ATTLIST i %coreopt;  >
 <!ELEMENT a %inline; >
 <!ATTLIST a %coreopt;  >
-<!ATTLIST a %link;  target CDATA #IMPLIED >
+<!ATTLIST a %link;  target %STRING; #IMPLIED >
 <!ELEMENT img %markeropt; >
 <!ATTLIST img %coreopt;  >
-<!ATTLIST img src CDATA #REQUIRED alt CDATA #IMPLIED width CDATA #IMPLIED height CDATA #IMPLIED >
+<!ATTLIST img src %ANYURI; #REQUIRED alt %STRING; #IMPLIED width %INTEGER; #IMPLIED height %INTEGER; #IMPLIED >
 <!ELEMENT ul (li+)>
 <!ELEMENT ol (li+)>
 <!ELEMENT table (tr+)>
-<!ATTLIST table %HTMLattrs;  width CDATA #IMPLIED border CDATA #IMPLIED cellspacing CDATA #IMPLIED cellpadding CDATA #IMPLIED >
+<!ATTLIST table %HTMLattrs;  width %INTEGER; #IMPLIED border %INTEGER; #IMPLIED cellspacing %INTEGER; #IMPLIED cellpadding %INTEGER; #IMPLIED >
 <!ELEMENT tr (th | td)+>
 <!ATTLIST tr %HTMLattrs;  >
 <!ELEMENT th %inline; >
@@ -324,22 +326,22 @@ Metadata elements for acts, bills and generic documents
 <!ELEMENT editors (editor+)>
 <!ELEMENT editor %markerreq; >
 <!ATTLIST editor %corereq;  >
-<!ATTLIST editor %date;  name CDATA #REQUIRED uri CDATA #IMPLIED contribution CDATA #IMPLIED >
+<!ATTLIST editor %date;  name %STRING; #REQUIRED uri %STRING; #IMPLIED contribution %STRING; #IMPLIED >
 <!ELEMENT uri %markeropt; >
 <!ATTLIST uri %coreopt;  >
 <!ATTLIST uri %link;  >
 <!ELEMENT alias %markeropt; >
 <!ATTLIST alias %coreopt;  >
-<!ATTLIST alias value CDATA #REQUIRED >
+<!ATTLIST alias value %STRING; #REQUIRED >
 <!ELEMENT keywords (keyword+)>
-<!ATTLIST keywords dictionary CDATA #REQUIRED >
+<!ATTLIST keywords dictionary %STRING; #REQUIRED >
 <!ELEMENT keyword %markeropt; >
 <!ATTLIST keyword %coreopt;  >
-<!ATTLIST keyword value CDATA #REQUIRED >
+<!ATTLIST keyword value %STRING; #REQUIRED >
 <!ELEMENT lifecycle (event+)>
 <!ELEMENT event %markerreq; >
 <!ATTLIST event %corereq;  >
-<!ATTLIST event %date;  %source;  type CDATA #IMPLIED >
+<!ATTLIST event %date;  %source;  type %EventType; #IMPLIED >
 <!ELEMENT references (%refItems;)+>
 <!ELEMENT Original %referenceType; >
 <!ATTLIST Original %corereq;  %link;  %show;  >

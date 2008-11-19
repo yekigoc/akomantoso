@@ -9,7 +9,7 @@
 		Akoma Ntoso main schema
 		
 		
-		Release  16/05/2006
+		Release  25/06/2006
 		Fabio Vitali - University of Bologna
 		
 		The present schema uses systematically XML design patterns as
@@ -58,6 +58,7 @@
 		<xsd:choice>
 			<xsd:element ref="ref"/>
 			<xsd:element ref="def"/>
+			<xsd:element ref="mod"/>
 		</xsd:choice>
 	</xsd:group>
 
@@ -516,6 +517,7 @@
 				<xsd:element ref="subdivision" />
 				<xsd:element ref="item" />
 				<xsd:group ref="blockElements" />
+				<xsd:group ref="containerElements" />
 			</xsd:choice>
 				<xsd:attributeGroup ref="numb"/>
 		</xsd:complexType>
@@ -831,6 +833,7 @@
 						<xsd:element ref="ol" />
 						<xsd:element ref="p" />
 					</xsd:choice>
+					<xsd:attribute name="value" type="xsd:string"/>
 				</xsd:extension>
 			</xsd:complexContent>
 		</xsd:complexType>
