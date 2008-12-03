@@ -14,7 +14,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		Akoma Ntoso main schema
 		
 		
-		Release  01/02/2007
+		Release  08/06/2007
 		technical supervision Fabio Vitali - University of Bologna
 		legal domain supervision Monica Palmirani - University of Bologna
 		
@@ -164,6 +164,13 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 			<xsd:group ref="ANmarker" />
 			<xsd:group ref="HTMLmarker" />
 			<xsd:element ref="marker"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:group name="InlineCM">
+		<xsd:choice>
+			<xsd:group ref="inlineElements" />
+			<xsd:group ref="markerElements" />
 		</xsd:choice>
 	</xsd:group>
 
@@ -388,8 +395,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 
 	<xsd:complexType name="inline"  mixed="true">
 		<xsd:choice minOccurs="0" maxOccurs="unbounded" >
-			<xsd:group ref="inlineElements" />
-			<xsd:group ref="markerElements" />
+			<xsd:group ref="InlineCM" />
 		</xsd:choice>
 		<xsd:attributeGroup ref="coreopt"/>
 	</xsd:complexType>
@@ -739,6 +745,43 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		</xsd:complexType>
 	</xsd:element>
 
+	<xsd:complexType name="modType"  mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded" >
+			<xsd:group ref="InlineCM" />
+			<xsd:element ref="quotedText" />
+			<xsd:element ref="quotedStructure" />
+		</xsd:choice>
+		<xsd:attributeGroup ref="coreopt"/>
+	</xsd:complexType>
+
+	<xsd:element name="mod"  type="modType" />
+
+	<xsd:element name="mmod"  type="modType" />
+
+	<xsd:element name="rmod"  >
+		<xsd:complexType mixed="true">
+			<xsd:complexContent>
+				<xsd:extension base="modType">
+					<xsd:attribute name="upTo" type="xsd:anyURI" use="required"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="quotedText"  type="inline" />
+
+	<xsd:element name="quotedStructure" >
+		<xsd:complexType >
+			<xsd:choice minOccurs="1" maxOccurs="unbounded" >
+				<xsd:group ref="hierElements" />
+				<xsd:element ref="clause" />
+				<xsd:group ref="blockElements" />
+				<xsd:group ref="containerElements" />
+			</xsd:choice>
+				<xsd:attributeGroup ref="corereq"/>
+		</xsd:complexType>
+	</xsd:element>
+
 	<xsd:element name="def"  type="inline" />
 
 	<xsd:element name="ins"  type="inline" />
@@ -779,59 +822,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="eol"  type="eolType" />
 
 	<xsd:element name="eop"  type="eolType" />
-
-	<xsd:element name="mod"  >
-		<xsd:complexType mixed="true">
-			<xsd:complexContent>
-				<xsd:extension base="inline">
-					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
-						<xsd:element ref="quotedText" />
-						<xsd:element ref="quotedStructure" />
-					</xsd:choice>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:element name="mmod"  >
-		<xsd:complexType mixed="true">
-			<xsd:complexContent>
-				<xsd:extension base="inline">
-					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
-						<xsd:element ref="quotedText" />
-						<xsd:element ref="quotedStructure" />
-					</xsd:choice>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:element name="rmod"  >
-		<xsd:complexType mixed="true">
-			<xsd:complexContent>
-				<xsd:extension base="inline">
-					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
-						<xsd:element ref="quotedText" />
-						<xsd:element ref="quotedStructure" />
-					</xsd:choice>
-					<xsd:attribute name="upTo" type="xsd:anyURI" use="required"/>
-				</xsd:extension>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-
-	<xsd:element name="quotedText"  type="inline" />
-
-	<xsd:element name="quotedStructure" >
-		<xsd:complexType >
-			<xsd:choice minOccurs="1" maxOccurs="unbounded" >
-				<xsd:group ref="hierElements" />
-				<xsd:group ref="blockElements" />
-				<xsd:group ref="containerElements" />
-			</xsd:choice>
-				<xsd:attributeGroup ref="corereq"/>
-		</xsd:complexType>
-	</xsd:element>
 
 	<xsd:annotation>
 		<xsd:documentation>
@@ -927,18 +917,16 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 
 	<xsd:element name="p"  type="inline" />
 
-	<xsd:element name="li"  >
+	<xsd:element name="li" >
 		<xsd:complexType mixed="true">
-			<xsd:complexContent>
-				<xsd:extension base="inline">
-					<xsd:choice minOccurs="0" maxOccurs="unbounded" >
-						<xsd:element ref="ul" />
-						<xsd:element ref="ol" />
-						<xsd:element ref="p" />
-					</xsd:choice>
-					<xsd:attributeGroup ref="optvalue"/>
-				</xsd:extension>
-			</xsd:complexContent>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" >
+				<xsd:group ref="InlineCM" />
+				<xsd:element ref="ul" />
+				<xsd:element ref="ol" />
+				<xsd:element ref="p" />
+			</xsd:choice>
+				<xsd:attributeGroup ref="optvalue"/>
+				<xsd:attributeGroup ref="coreopt"/>
 		</xsd:complexType>
 	</xsd:element>
 
@@ -1228,7 +1216,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		</xsd:choice>
 	</xsd:complexType>
 
-	<xsd:complexType name="modType"  >
+	<xsd:complexType name="modificationType"  >
 		<xsd:sequence >
 			<xsd:element ref="source" minOccurs="1" maxOccurs="unbounded" />
 			<xsd:element ref="destination" minOccurs="1" maxOccurs="unbounded" />
@@ -1314,7 +1302,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="Textual"  >
 		<xsd:complexType >
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:sequence >
 						<xsd:element ref="old" minOccurs="0" maxOccurs="1" />
 						<xsd:element ref="new" minOccurs="0" maxOccurs="1" />
@@ -1328,7 +1316,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="Meaning"  >
 		<xsd:complexType >
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:sequence >
 						<xsd:element ref="domain" minOccurs="0" maxOccurs="1" />
 					</xsd:sequence>
@@ -1341,7 +1329,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="Scope"  >
 		<xsd:complexType >
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:sequence >
 						<xsd:element ref="domain" minOccurs="0" maxOccurs="1" />
 					</xsd:sequence>
@@ -1354,7 +1342,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="Force"  >
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:attribute name="type" type="ForceMods" use="required"/>
 				</xsd:extension>
 			</xsd:complexContent>
@@ -1364,7 +1352,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="Efficacy"  >
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:attribute name="type" type="EfficacyMods" use="required"/>
 				</xsd:extension>
 			</xsd:complexContent>
@@ -1374,7 +1362,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	<xsd:element name="LegalSystem"  >
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:extension base="modType">
+				<xsd:extension base="modificationType">
 					<xsd:attribute name="type" type="LegalSystemMods" use="required"/>
 				</xsd:extension>
 			</xsd:complexContent>

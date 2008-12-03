@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  01/02/2007                                                 
+       Release  08/06/2007                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -39,6 +39,9 @@
 <!ENTITY @@ blockElements     "(@@ANblock;  | @@HTMLblock;      | block      | foreign)">
 <!ENTITY @@ inlineElements    "(@@ANinline; | @@HTMLinline;     | inline        | @@ANtitleInline; )">
 <!ENTITY @@ markerElements    "(@@ANmarker; | @@HTMLmarker;     | marker  )">
+
+<!ENTITY @@ InlineCM          "(@@inlineElements; | @@markerElements;)">
+
 
 <!ENTITY @@ speechItems       "(speech | question | answer | other | comment)">
 
@@ -109,10 +112,10 @@
 <!ENTITY @ hierarchy         "@basehierarchy;, (@@hierElements;+)"              "##corereq;">
 <!ENTITY @ althierarchy      "@basehierarchy;, (subdivision | @@speechItems;)*" "##corereq;">
 <!ENTITY @ articleType       "@basehierarchy;, (clause+)"                       "##corereq;">
-<!ENTITY @ clauseType        "@basehierarchy;, (@@blockElements;)+"      "##corereq;">
+<!ENTITY @ clauseType        "@basehierarchy;, (@@blockElements;)+"             "##corereq;">
 <!ENTITY @ blocksreq         "(@@blockElements;)+" "##corereq;">
 <!ENTITY @ blocksopt         "(@@blockElements;)+" "##coreopt;">
-<!ENTITY @ inline            "(#PCDATA | @@inlineElements; | @@markerElements;)*" "##coreopt;">
+<!ENTITY @ inline            "(#PCDATA | @@InlineCM;)*" "##coreopt;">
 <!ENTITY @ markerreq         "" "##corereq;">
 <!ENTITY @ markeropt         "" "##coreopt;">
 <!ENTITY @ metareq           "" "##idreq;">
@@ -265,13 +268,15 @@
 <!ELEMENT rref         @inline; >
 <!ATTLIST rref         ##link; 
                        upTo   #ANYURI        #REQUIRED >
-<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure )*)>
-<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure )*)>
-<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure )*)>
+                       
+<!ENTITY @ modType  "(#PCDATA | @@InlineCM; | quotedText | quotedStructure )*" "##coreopt;" >
+<!ELEMENT mod   @modType;>
+<!ELEMENT mmod  @modType;>
+<!ELEMENT rmod  @modType;>
 <!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
 
 <!ELEMENT quotedText        @inline; >
-<!ELEMENT quotedStructure   (@@hierElements; | @@blockElements; | @@containerElements;)+ >
+<!ELEMENT quotedStructure   (@@hierElements; | clause | @@blockElements; | @@containerElements;)+ >
 <!ATTLIST quotedStructure   ##corereq; >
 
 <!ELEMENT def          @inline; >
@@ -337,8 +342,8 @@
 <!ELEMENT div  @blocksreq; >
 
 <!ELEMENT p    @inline; >
-<!ELEMENT li   (@inline;, (#PCDATA | ul | ol | p)*) >
-<!ATTLIST li   ##optvalue; >
+<!ELEMENT li   (#PCDATA | @@InlineCM; | ul | ol | p)* >
+<!ATTLIST li   ##optvalue;  ##coreopt;>
 
 <!ELEMENT span @inline; >
 <!ELEMENT b    @inline; >
@@ -442,7 +447,7 @@
 <!ATTLIST analysis              ##source; >
 
 <!ENTITY @ Amendments          "(Textual | Meaning | Scope | Force | Efficacy | LegalSystem)+" >
-<!ENTITY @ modType             "(source+, destination+, force?, efficacy?, application?, duration?, condition?)" "##idreq; ##enactment; ##modifiers;" >
+<!ENTITY @ modificationType             "(source+, destination+, force?, efficacy?, application?, duration?, condition?)" "##idreq; ##enactment; ##modifiers;" >
                                  
 <!ENTITY # TextualMods         "#STRING(Repeal|Substitution|Insertion|Replacement|Renumbering)" >
 <!ENTITY # MeaningMods         "#STRING(Variation|TermModification|AuthenticInterpretation)" >
@@ -457,17 +462,17 @@
 
 <!ELEMENT ActiveModifications   @Amendments; >
 <!ELEMENT PassiveModifications  @Amendments; >
-<!ELEMENT Textual               (@modType;, (old?, new?)) > 
+<!ELEMENT Textual               (@modificationType;, (old?, new?)) > 
 <!ATTLIST Textual               type #TextualMods; #REQUIRED >
-<!ELEMENT Meaning               (@modType;, (domain?)) > 
+<!ELEMENT Meaning               (@modificationType;, (domain?)) > 
 <!ATTLIST Meaning               type #MeaningMods; #REQUIRED >
-<!ELEMENT Scope                 (@modType;, (domain?)) > 
+<!ELEMENT Scope                 (@modificationType;, (domain?)) > 
 <!ATTLIST Scope                 type #ScopeMods; #REQUIRED >
-<!ELEMENT Force                 @modType; > 
+<!ELEMENT Force                 @modificationType; > 
 <!ATTLIST Force                 type #ForceMods; #REQUIRED >
-<!ELEMENT Efficacy              @modType; > 
+<!ELEMENT Efficacy              @modificationType; > 
 <!ATTLIST Efficacy              type #EfficacyMods; #REQUIRED >
-<!ELEMENT LegalSystem           @modType; > 
+<!ELEMENT LegalSystem           @modificationType; > 
 <!ATTLIST LegalSystem           type #LegalSystemMods; #REQUIRED >
 
 <!ELEMENT source           @argumentType;>
