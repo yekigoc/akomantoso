@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  08/06/2007                                                 
+       Release  17/09/2007                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -57,6 +57,7 @@
 <!ENTITY ## date         "date         #DATE          #REQUIRED" >
 <!ENTITY ## time         "time         #TIME          #REQUIRED" >
 <!ENTITY ## link         "href         #ANYURI        #REQUIRED" >
+<!ENTITY ## linkopt      "href         #ANYURI        #IMPLIED" >
 <!ENTITY ## value        "value        #STRING        #REQUIRED" >
 <!ENTITY ## optvalue     "value        #STRING        #IMPLIED" >
 <!ENTITY ## speechAtts   "by           #ANYURI        #REQUIRED 
@@ -126,6 +127,7 @@
 <!ENTITY @ referenceType     ""                            "##idreq; ##link; ##show;" >
 <!ENTITY @ argumentType      ""                            "##idopt; ##link; upTo   #ANYURI #IMPLIED" >
 <!ENTITY @ periodType        ""                            "##idopt; ##period;" >                 
+<!ENTITY @ anyOtherType      "ANY{##other}"                "##idopt; ##linkopt;" >                 
 
 <!-- =====================================================================
 
@@ -481,11 +483,11 @@
 <!ELEMENT efficacy         @periodType; >
 <!ELEMENT application      @periodType; >
 <!ELEMENT duration         @periodType; >
-<!ELEMENT condition        @anyOther; >
+<!ELEMENT condition        @anyOtherType; >
 <!ATTLIST condition        frozen #BOOLEAN #IMPLIED >
-<!ELEMENT old              @anyOther; >
-<!ELEMENT new              @anyOther; >
-<!ELEMENT domain           @anyOther; >
+<!ELEMENT old              @anyOtherType; >
+<!ELEMENT new              @anyOtherType; >
+<!ELEMENT domain           @anyOtherType; >
 
 
 <!ENTITY @@ refItems          "(Original|PassiveRef|ActiveRef|
