@@ -3,8 +3,9 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  25/06/2006                                                 
-       Fabio Vitali - University of Bologna                                
+       Release  24/10/2006                                                 
+       technical supervision Fabio Vitali - University of Bologna
+       legal domain supervision Monica Palmirani - University of Bologna
                                                                            
        The present schema uses systematically XML design patterns as       
        described in http://www.xmlpatterns.com/                            
@@ -23,10 +24,10 @@
 
 <!ENTITY @@ ANhier          "(section|part|paragraph|chapter|article)" >
 <!ENTITY @@ ANcontainers    "(div)" >
-<!ENTITY @@ ANblock         "(toc | comment)" >
-<!ENTITY @@ ANinline        "(ref | def | mod)" >
+<!ENTITY @@ ANblock         "(toc | comment | list | tblock)" >
+<!ENTITY @@ ANinline        "(def | ref | mref | rref | mod | mmod | rmod | ins | del | omissis)" >
 <!ENTITY @@ ANtitleInline   "(ActType | ActTitle | ActNumber | ActProponent | ActDate | ActPurpose)" >
-<!ENTITY @@ ANmarker        "(noteref | recordedTime)" >
+<!ENTITY @@ ANmarker        "(noteref | recordedTime | eol | eop )" >
 
 <!ENTITY @@ HTMLcontainers    "( div )" >
 <!ENTITY @@ HTMLblock         "(p|ul|ol|table)" >
@@ -35,12 +36,11 @@
 
 <!ENTITY @@ hierElements      "(@@ANhier;   |                     hcontainer)">
 <!ENTITY @@ containerElements "(              @@HTMLcontainers; | container)">
-<!ENTITY @@ blockElements     "(@@ANblock;  | @@HTMLblock;      | block)">
+<!ENTITY @@ blockElements     "(@@ANblock;  | @@HTMLblock;      | block      | foreign)">
 <!ENTITY @@ inlineElements    "(@@ANinline; | @@HTMLinline;     | inline        | @@ANtitleInline; )">
 <!ENTITY @@ markerElements    "(@@ANmarker; | @@HTMLmarker;     | marker  )">
 
 <!ENTITY @@ speechItems       "(speech | question | answer | other | comment)">
-<!ENTITY @@ refItems          "(Original|PassiveRef|ActiveRef|Jurisprudence|Attachment|AttachmentOf|Person|Role|Organization|Reference)" >
 
 
 <!-- =====================================================================
@@ -50,20 +50,24 @@
      ===================================================================== -->
 
 <!ENTITY ## name         "name         #STRING        #REQUIRED" >
-<!ENTITY ## source       "source       #IDREF         #REQUIRED" >
+<!ENTITY ## source       "source       #ANYURI        #REQUIRED" >
 <!ENTITY ## date         "date         #DATE          #REQUIRED" >
 <!ENTITY ## time         "time         #TIME          #REQUIRED" >
 <!ENTITY ## link         "href         #ANYURI        #REQUIRED" >
-<!ENTITY ## numb         "numbering    (on|off)       'off'" >
-<!ENTITY ## speechAtts   "by           #IDREF         #REQUIRED 
-                          as           #IDREF         #IMPLIED
-                          to           #IDREF         #IMPLIED ">
+<!ENTITY ## value        "value        #STRING        #REQUIRED" >
+<!ENTITY ## optvalue     "value        #STRING        #IMPLIED" >
+<!ENTITY ## speechAtts   "by           #ANYURI        #REQUIRED 
+                          as           #ANYURI        #IMPLIED
+                          to           #ANYURI        #IMPLIED ">
 <!ENTITY ## show         "showAs       #STRING        #REQUIRED  
                           shortForm    #STRING        #IMPLIED">
 
+<!ENTITY ## period "
+    start      #ANYURI        #IMPLIED
+    end        #ANYURI        #IMPLIED"
+>
 <!ENTITY ## enactment "
-    start      #IDREF         #IMPLIED
-    end        #IDREF         #IMPLIED
+    ##period;
     status     #statusType;  #IMPLIED
 ">
 
@@ -72,7 +76,6 @@
 <!ENTITY ## HTMLattrs    "class        #STRING      #IMPLIED    
                           style        #STRING      #IMPLIED
                           title        #STRING      #IMPLIED">
-<!ENTITY ## idref        "idref        #IDREF        #REQUIRED">
 <!ENTITY ## idreq        "id           #ID           #REQUIRED">
 <!ENTITY ## idopt        "id           #ID           #IMPLIED">
 
@@ -94,18 +97,24 @@
 
      ===================================================================== -->
 
-<!ENTITY @ hierarchy         "(num?, title?, (@@hierElements;)+)" "##corereq;">
-<!ENTITY @ althierarchy      "(num?, title?, (subdivision | @@speechItems;)*)" "##corereq;">
+<!ENTITY @ basehierarchy     "(num?, title?, subtitle?, sidenote?)" >
+<!ENTITY @ hierarchy         "@basehierarchy;, (@@hierElements;+)"              "##corereq;">
+<!ENTITY @ althierarchy      "@basehierarchy;, (subdivision | @@speechItems;)*" "##corereq;">
+<!ENTITY @ articleType       "@basehierarchy;, (clause+)"                       "##corereq;">
+<!ENTITY @ clauseType        "@basehierarchy;, (@@blockElements;)+"      "##corereq;">
 <!ENTITY @ blocksreq         "(@@blockElements;)+" "##corereq;">
 <!ENTITY @ blocksopt         "(@@blockElements;)+" "##coreopt;">
 <!ENTITY @ inline            "(#PCDATA | @@inlineElements; | @@markerElements;)*" "##coreopt;">
 <!ENTITY @ markerreq         "" "##corereq;">
 <!ENTITY @ markeropt         "" "##coreopt;">
+<!ENTITY @ metareq           "" "##idreq;">
+<!ENTITY @ metaopt           "" "##idopt;">
+<!ENTITY @ anyOther          "ANY{##other}">
 
-
-<!ENTITY @ speechType        "(@@blockElements;)+" "##coreopt; ##speechAtts;" >
-<!ENTITY @ publicationType   ""                    "##coreopt; ##date; ##show; ##name;">
-<!ENTITY @ referenceType     ""                    "##corereq; ##link; ##show;" >
+<!ENTITY @ speechType        "(from, (@@blockElements;)+)" "##coreopt; ##speechAtts;" >
+<!ENTITY @ referenceType     ""                            "##idreq; ##link; ##show;" >
+<!ENTITY @ argumentType      ""                            "##idopt; ##link;" >
+<!ENTITY @ periodType        ""                            "##idopt; ##period;" >                 
 
 <!-- =====================================================================
 
@@ -171,8 +180,7 @@
 
 <!ELEMENT clauses     (@@hierElements;)+ >
 <!ELEMENT debate      (subdivision+) >
-<!ELEMENT maincontent (@@hierElements; | subdivision | item | @@blockElements; | @@containerElements; )+ >
-<!ATTLIST maincontent ##numb; >
+<!ELEMENT maincontent (@@hierElements; | subdivision | @@blockElements; | @@containerElements; )+ >
  
 <!-- =====================================================================
 
@@ -184,15 +192,14 @@
 <!ELEMENT paragraph  @hierarchy; >
 <!ELEMENT chapter    @hierarchy; >
 
-<!ENTITY @ ArticleType     "(num?, title?, clause+)" "##corereq;">
-<!ELEMENT article          @ArticleType; >
-
-<!ENTITY @ ClauseType      "(num?, title?, (@@blockElements;)+)" "##corereq;">
-<!ELEMENT clause           @ClauseType; >
+<!ELEMENT article          @articleType; >
+<!ELEMENT clause           @clauseType; >
 
 <!ELEMENT num              @inline; >
 <!ELEMENT title            @inline; >
 <!ELEMENT subtitle         @inline; >
+<!ELEMENT sidenote         @inline; >
+<!ELEMENT from             @inline; >
 
 <!-- =====================================================================
 
@@ -206,10 +213,9 @@
 <!ELEMENT answer              @speechType; >
 <!ELEMENT other               @blocksopt; >
 <!ELEMENT comment             @inline; >
-
-<!ENTITY @ itemType           "(num?, title?, subtitle?, (item | @@blockElements;)+)" "##corereq;">
-<!ELEMENT item                @itemType; >
-<!ATTLIST item  ##numb; >
+<!ELEMENT list                (item+) >
+<!ELEMENT tblock              @clauseType; >
+<!ELEMENT item                @clauseType; >
 
 <!-- =====================================================================
 
@@ -222,7 +228,7 @@
 
 <!ELEMENT toc       (tocitem+) >
 <!ELEMENT tocitem   @inline; >
-<!ATTLIST tocitem   ##idref; level #INTEGER #REQUIRED >
+<!ATTLIST tocitem   ##link; level #INTEGER #REQUIRED >
 
 <!-- =====================================================================
 
@@ -239,26 +245,41 @@
 <!ELEMENT ActDate      @inline; >
 <!ELEMENT ActPurpose   @inline; >
 
+<!ELEMENT mref         @inline; >
 <!ELEMENT ref          @inline; >
 <!ATTLIST ref          ##link; >
+<!ELEMENT rref         @inline; >
+<!ATTLIST rref         ##link; 
+                       upTo   #ANYURI        #REQUIRED >
 
 <!ELEMENT def          @inline; >
+<!ELEMENT ins          @inline; >
+<!ELEMENT del          @inline; >
+<!ELEMENT omissis      @inline; >
+
+
+
+
 <!ELEMENT noteref      @markeropt; >
-<!ATTLIST noteref
-        num    #STRING   #REQUIRED
-        ##idref;
->
+<!ATTLIST noteref      ##link;
+                       num    #STRING        #REQUIRED >
+                       
 <!ELEMENT recordedTime   @markeropt; >
 <!ATTLIST recordedTime   ##time; >
 
-<!ELEMENT mod (@inline;, ( quotedText | quotedStructure ))*>
+<!ENTITY @ eolType  "@markeropt;" "breakat  #INTEGER #IMPLIED">
+<!ELEMENT eol   @eolType; >
+<!ELEMENT eop   @eolType; >
 
-<!ELEMENT quotedText @inline; >
-<!ELEMENT quotedStructure (@@hierElements; | @@blockElements; | @@containerElements;)+ >
 
-<!ATTLIST quotedStructure
-    ##corereq;
->
+<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure ))*>
+<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure ))*>
+<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure ))*>
+<!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
+
+<!ELEMENT quotedText        @inline; >
+<!ELEMENT quotedStructure   (@@hierElements; | @@blockElements; | @@containerElements;)+ >
+<!ATTLIST quotedStructure   ##corereq; >
 
 <!-- =====================================================================
 
@@ -286,6 +307,8 @@
 <!ELEMENT block      @inline; >
 <!ELEMENT inline     @inline; >
 <!ELEMENT marker     @markerreq; >
+<!ELEMENT foreign    @anyOther; >
+
 
 <!ATTLIST hcontainer ##name; >
 <!ATTLIST container  ##name; >
@@ -306,9 +329,7 @@
 
 <!ELEMENT p    @inline; >
 <!ELEMENT li   (@inline;, (#PCDATA | ul | ol | p)*) >
-<!ATTLIST li
-  value        #STRING       #IMPLIED
->
+<!ATTLIST li   ##optvalue; >
 
 <!ELEMENT span @inline; >
 <!ELEMENT b    @inline; >
@@ -327,13 +348,13 @@
     height #INTEGER      #IMPLIED
 >
 
-
 <!ELEMENT ul   (li+) >
 <!ELEMENT ol   (li+) >
 
 <!ELEMENT table (tr+)>
 <!ATTLIST table
     ##HTMLattrs;
+    ##idreq;
     width       #INTEGER #IMPLIED
     border      #INTEGER #IMPLIED
     cellspacing #INTEGER #IMPLIED
@@ -342,6 +363,7 @@
 <!ELEMENT tr (th | td)+>
 <!ATTLIST tr
     ##HTMLattrs;
+    ##idreq;
 >
 <!ELEMENT th (@inline;)>
 <!ELEMENT td (@inline;)>
@@ -358,53 +380,104 @@
         Metadata elements for acts, bills and generic documents
 
      ===================================================================== -->
-<!ENTITY @ MetaSection  "(descriptor, lifecycle?, references?, notes*, proprietary*)">
-<!ELEMENT meta   @MetaSection; >
-<!ELEMENT descriptor  (publication, otherpublications?, 
-                       enactmentDate, editors, 
-                       uri+, alias*, keywords?) >
 
-<!ELEMENT otherpublications  (ripublication | errata )+>
-<!ELEMENT publication        @publicationType;>
-<!ELEMENT ripublication      @publicationType;>
-<!ELEMENT errata             @publicationType;>
+<!ELEMENT meta             (identification, publication, classification*, lifecycle*, 
+                            analysis*, references*, notes*, proprietary*) >
 
-<!ELEMENT enactmentDate @markeropt; >
-<!ATTLIST enactmentDate
-    ##date; 
->
+<!ELEMENT identification   (Work, Expression, Manifestation, Item?) >
+<!ATTLIST identification   ##source; >
 
-<!ELEMENT editors          (editor+)>
-<!ELEMENT editor           @markerreq;>
-<!ATTLIST editor 
-    ##date; 
-    name         #STRING   #REQUIRED
-    uri          #STRING   #IMPLIED
-    contribution #STRING   #IMPLIED
->
-<!ELEMENT uri   @markeropt;>
-<!ATTLIST uri   ##link; >
-<!ELEMENT alias @markeropt;>
-<!ATTLIST alias value #STRING #REQUIRED>
+<!ENTITY @ coreProperties  "(uri+, alias*, date, author+, preservation?)" >
+<!ENTITY @ extProperties   "(uri+, alias*, date, author+, components?, preservation?)" >
+<!ELEMENT Work             @coreProperties; >
+<!ELEMENT Expression       @extProperties; >
+<!ELEMENT Manifestation    @extProperties; >
+<!ELEMENT Item             @extProperties; >
 
-<!ELEMENT keywords (keyword+)>
-<!ATTLIST keywords
-    dictionary #STRING #REQUIRED
->
-<!ELEMENT keyword @markeropt;>
-<!ATTLIST keyword
-    value #STRING #REQUIRED
+<!ELEMENT uri              @metaopt;>
+<!ATTLIST uri              ##link; >
+<!ELEMENT alias            @metaopt;>
+<!ATTLIST alias            ##value; >
+<!ELEMENT date             @metaopt;>
+<!ATTLIST date             ##date; ##name; >
+<!ELEMENT author           @metaopt;>
+<!ATTLIST author           ##link; 
+                           as #ANYURI  #IMPLIED>
+<!ELEMENT components       (component+)>
+<!ELEMENT component        @metareq;>
+<!ATTLIST component        ##link; ##show;>  
+<!ELEMENT preservation     @anyOther; >
+
+<!ENTITY @ publicationType ""                    "##idopt; ##date; ##show; ##name;">
+<!ELEMENT publication      @publicationType;>
+
+<!ELEMENT classification   (keyword+)>
+<!ATTLIST classification   ##source; >
+<!ELEMENT keyword @metaopt;>
+<!ATTLIST keyword 
+            ##value;
+            ##show;
+            dictionary  #ANYURI  #REQUIRED
 >
 
 <!ELEMENT lifecycle (event+)>
-<!ELEMENT event @markerreq;>
+<!ATTLIST lifecycle ##source; >
+<!ELEMENT event @metareq;>
 <!ATTLIST event
     ##date;
     ##source;
     type   #EventType; #IMPLIED
 >
 
+<!ELEMENT analysis              (amendments) >
+<!ATTLIST analysis              ##source; >
+
+<!ENTITY @ Amendments          "(Textual | Meaning | Scope | Force | Efficacy | LegalSystem)+" >
+<!ENTITY @ modType             "(source, destination, force?, efficacy?, application?, duration?, condition?)" "##idreq; ##enactment;" >
+                                 
+<!ENTITY # TextualMods         "#STRING(Repeal|Substitution|Insertion|Replacement)" >
+<!ENTITY # MeaningMods         "#STRING(Variation|TermModification|AuthenticInterpretation)" >
+<!ENTITY # ScopeMods           "#STRING(ExceptionOfScope|ExtensionOfScope)" >
+<!ENTITY # ForceMods           "#STRING(EntryIntoForce|EndOfEnactment|PostponementOfEntryIntoForce|
+                                 ProrogationOfForce|ReEnactment|Uncostitutionality)" >
+<!ENTITY # EfficacyMods        "#STRING(Suspension|Inapplication|Retroactivity|Extraefficacy|
+                                 PostponementOfEfficacy|ProrogationOfEfficacy)" >
+<!ENTITY # LegalSystemMods     "#STRING(StaticReference|Implementation|Ratification|Application|
+                                 LegislativeDelegation|Deregulation|Conversion|Expiration|
+                                 Reiteration|Remaking|Republication|Coordination)" >
+
+<!ELEMENT amendments            @Amendments; >
+<!ELEMENT Textual               (@modType;, (oldText?, newText?)) > 
+<!ATTLIST Textual               type #TextualMods; #REQUIRED >
+<!ELEMENT Meaning               (@modType;, (domain?)) > 
+<!ATTLIST Meaning               type #MeaningMods; #REQUIRED >
+<!ELEMENT Scope                 (@modType;, (domain?)) > 
+<!ATTLIST Scope                 type #ScopeMods; #REQUIRED >
+<!ELEMENT Force                 @modType; > 
+<!ATTLIST Force                 type #ForceMods; #REQUIRED >
+<!ELEMENT Efficacy              @modType; > 
+<!ATTLIST Efficacy              type #EfficacyMods; #REQUIRED >
+<!ELEMENT LegalSystem           @modType; > 
+<!ATTLIST LegalSystem           type #LegalSystemMods; #REQUIRED >
+
+<!ELEMENT source           @argumentType;>
+<!ELEMENT destination      @argumentType;>
+<!ELEMENT force            @periodType; >
+<!ELEMENT efficacy         @periodType; >
+<!ELEMENT application      @periodType; >
+<!ELEMENT duration         @periodType; >
+<!ELEMENT condition        @anyOther; >
+<!ELEMENT oldText          @anyOther; >
+<!ELEMENT newText          @anyOther; >
+<!ELEMENT domain           @anyOther; >
+
+
+<!ENTITY @@ refItems          "(Original|PassiveRef|ActiveRef|
+                                Jurisprudence|Attachment|AttachmentOf|
+                                Person|Role|Organization|Reference)" >
 <!ELEMENT references     (@@refItems;)+>
+<!ATTLIST references     ##source; >
+
 <!ELEMENT Original       @referenceType; >
 <!ELEMENT PassiveRef     @referenceType; >
 <!ELEMENT ActiveRef      @referenceType; >
@@ -418,9 +491,10 @@
 <!ATTLIST Reference      ##name; >
 
 <!ELEMENT notes        (note)+>
+<!ATTLIST notes        ##source; >
 <!ELEMENT note         @blocksreq;>
 
-<!ELEMENT proprietary ANY >
+<!ELEMENT proprietary @anyOther; >
 <!ATTLIST proprietary ##source; >
 
 
