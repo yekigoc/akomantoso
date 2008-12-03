@@ -3,7 +3,7 @@
        Akoma Ntoso main schema                                                  
                                                                            
                                                                            
-       Release  24/10/2006                                                 
+       Release  30/11/2006                                                 
        technical supervision Fabio Vitali - University of Bologna
        legal domain supervision Monica Palmirani - University of Bologna
                                                                            
@@ -63,12 +63,18 @@
                           shortForm    #STRING        #IMPLIED">
 
 <!ENTITY ## period "
-    start      #ANYURI        #IMPLIED
-    end        #ANYURI        #IMPLIED"
+    start           #ANYURI        #IMPLIED
+    end             #ANYURI        #IMPLIED
+    startEfficacy   #ANYURI        #IMPLIED
+    endEfficacy     #ANYURI        #IMPLIED"
 >
 <!ENTITY ## enactment "
     ##period;
     status     #statusType;  #IMPLIED
+">
+<!ENTITY ## modifiers "
+    exclusion  #BOOLEAN #IMPLIED
+    incomplete #BOOLEAN #IMPLIED
 ">
 
 <!ENTITY ## cellattrs    "rowspan      #INTEGER     '1'
@@ -90,6 +96,8 @@
 <!ENTITY # VersionType  "#STRING(OriginalVersion|SingleVersion|MultipleVersions)" >
 <!ENTITY # EventType    "#STRING(Generation|Amendment|Repeal)" >
 <!ENTITY # statusType   "#STRING(omissis|repealed|suspended)">
+
+
 
 <!-- =====================================================================
 
@@ -113,7 +121,7 @@
 
 <!ENTITY @ speechType        "(from, (@@blockElements;)+)" "##coreopt; ##speechAtts;" >
 <!ENTITY @ referenceType     ""                            "##idreq; ##link; ##show;" >
-<!ENTITY @ argumentType      ""                            "##idopt; ##link;" >
+<!ENTITY @ argumentType      ""                            "##idopt; ##link; upTo   #ANYURI #IMPLIED" >
 <!ENTITY @ periodType        ""                            "##idopt; ##period;" >                 
 
 <!-- =====================================================================
@@ -175,13 +183,17 @@
 <!ELEMENT preamble    @blocksopt; >
 <!ELEMENT conclusions @blocksopt; >
 <!ELEMENT attachments (attachment+) >
+<!ATTLIST attachments ##coreopt; >
 <!ELEMENT attachment  @referenceType; >
 
 
 <!ELEMENT clauses     (@@hierElements;)+ >
+<!ATTLIST clauses     ##coreopt; >
 <!ELEMENT debate      (subdivision+) >
+<!ATTLIST debate      ##coreopt; >
 <!ELEMENT maincontent (@@hierElements; | subdivision | @@blockElements; | @@containerElements; )+ >
- 
+<!ATTLIST maincontent ##coreopt; >
+
 <!-- =====================================================================
 
         Elements for hierarchical documents
@@ -214,6 +226,7 @@
 <!ELEMENT other               @blocksopt; >
 <!ELEMENT comment             @inline; >
 <!ELEMENT list                (item+) >
+<!ATTLIST list                ##corereq; >
 <!ELEMENT tblock              @clauseType; >
 <!ELEMENT item                @clauseType; >
 
@@ -243,6 +256,7 @@
 <!ELEMENT ActNumber    @inline; >
 <!ELEMENT ActProponent @inline; >
 <!ELEMENT ActDate      @inline; >
+<!ATTLIST ActDate      ##date; >
 <!ELEMENT ActPurpose   @inline; >
 
 <!ELEMENT mref         @inline; >
@@ -272,9 +286,9 @@
 <!ELEMENT eop   @eolType; >
 
 
-<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure ))*>
-<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure ))*>
-<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure ))*>
+<!ELEMENT mod   (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT mmod  (@inline;, ( quotedText | quotedStructure )*)>
+<!ELEMENT rmod  (@inline;, ( quotedText | quotedStructure )*)>
 <!ATTLIST rmod  upTo   #ANYURI        #REQUIRED >
 
 <!ELEMENT quotedText        @inline; >
@@ -348,13 +362,13 @@
     height #INTEGER      #IMPLIED
 >
 
-<!ELEMENT ul   (li+) >
-<!ELEMENT ol   (li+) >
+<!ENTITY @ listItems "(li+)" "##corereq;">
+<!ELEMENT ul   @listItems; >
+<!ELEMENT ol   @listItems; >
 
 <!ELEMENT table (tr+)>
 <!ATTLIST table
-    ##HTMLattrs;
-    ##idreq;
+    ##corereq;
     width       #INTEGER #IMPLIED
     border      #INTEGER #IMPLIED
     cellspacing #INTEGER #IMPLIED
@@ -429,13 +443,13 @@
     type   #EventType; #IMPLIED
 >
 
-<!ELEMENT analysis              (amendments) >
+<!ELEMENT analysis              (ActiveModifications?, PassiveModifications?) >
 <!ATTLIST analysis              ##source; >
 
 <!ENTITY @ Amendments          "(Textual | Meaning | Scope | Force | Efficacy | LegalSystem)+" >
-<!ENTITY @ modType             "(source, destination, force?, efficacy?, application?, duration?, condition?)" "##idreq; ##enactment;" >
+<!ENTITY @ modType             "(source+, destination+, force?, efficacy?, application?, duration?, condition?)" "##idreq; ##enactment; ##modifiers;" >
                                  
-<!ENTITY # TextualMods         "#STRING(Repeal|Substitution|Insertion|Replacement)" >
+<!ENTITY # TextualMods         "#STRING(Repeal|Substitution|Insertion|Replacement|Renumbering)" >
 <!ENTITY # MeaningMods         "#STRING(Variation|TermModification|AuthenticInterpretation)" >
 <!ENTITY # ScopeMods           "#STRING(ExceptionOfScope|ExtensionOfScope)" >
 <!ENTITY # ForceMods           "#STRING(EntryIntoForce|EndOfEnactment|PostponementOfEntryIntoForce|
@@ -446,8 +460,9 @@
                                  LegislativeDelegation|Deregulation|Conversion|Expiration|
                                  Reiteration|Remaking|Republication|Coordination)" >
 
-<!ELEMENT amendments            @Amendments; >
-<!ELEMENT Textual               (@modType;, (oldText?, newText?)) > 
+<!ELEMENT ActiveModifications   @Amendments; >
+<!ELEMENT PassiveModifications  @Amendments; >
+<!ELEMENT Textual               (@modType;, (old?, new?)) > 
 <!ATTLIST Textual               type #TextualMods; #REQUIRED >
 <!ELEMENT Meaning               (@modType;, (domain?)) > 
 <!ATTLIST Meaning               type #MeaningMods; #REQUIRED >
@@ -467,8 +482,9 @@
 <!ELEMENT application      @periodType; >
 <!ELEMENT duration         @periodType; >
 <!ELEMENT condition        @anyOther; >
-<!ELEMENT oldText          @anyOther; >
-<!ELEMENT newText          @anyOther; >
+<!ATTLIST condition        frozen #BOOLEAN #IMPLIED >
+<!ELEMENT old              @anyOther; >
+<!ELEMENT new              @anyOther; >
 <!ELEMENT domain           @anyOther; >
 
 
@@ -483,7 +499,9 @@
 <!ELEMENT ActiveRef      @referenceType; >
 <!ELEMENT Jurisprudence  @referenceType; >
 <!ELEMENT Attachment     @referenceType; >
+<!ATTLIST Attachment     type CDATA  #IMPLIED >
 <!ELEMENT AttachmentOf   @referenceType; >
+<!ATTLIST AttachmentOf   type CDATA  #IMPLIED >
 <!ELEMENT Person         @referenceType; >
 <!ELEMENT Role           @referenceType; >
 <!ELEMENT Organization   @referenceType; >

@@ -7,7 +7,7 @@
 Akoma Ntoso main schema
 
 
-Release  24/10/2006
+Release  30/11/2006
 technical supervision Fabio Vitali - University of Bologna
 legal domain supervision Monica Palmirani - University of Bologna
 
@@ -63,10 +63,11 @@ Attribute groups
 <!ENTITY % speechAtts   " by %ANYURI; #REQUIRED as %ANYURI; #IMPLIED to %ANYURI; #IMPLIED" >
 <!ENTITY % show         " showAs %STRING; #REQUIRED shortForm %STRING; #IMPLIED" >
 
-<!ENTITY % period " start %ANYURI; #IMPLIED end %ANYURI; #IMPLIED"
+<!ENTITY % period " start %ANYURI; #IMPLIED end %ANYURI; #IMPLIED startEfficacy %ANYURI; #IMPLIED endEfficacy %ANYURI; #IMPLIED"
 >
 <!ENTITY % statusType   "(omissis|repealed|suspended)" >
 <!ENTITY % EstatusType "((omissis|repealed|suspended))" ><!ENTITY % enactment " %period;  status %statusType; #IMPLIED" >
+<!ENTITY % modifiers " exclusion %BOOLEAN; #IMPLIED incomplete %BOOLEAN; #IMPLIED" >
 
 <!ENTITY % cellattrs    " rowspan %INTEGER; '1'  colspan %INTEGER; '1' " >
 <!ENTITY % HTMLattrs    " class %STRING; #IMPLIED style %STRING; #IMPLIED title %STRING; #IMPLIED" >
@@ -85,6 +86,8 @@ Simple types (data values)
 <!ENTITY % EVersionType "((OriginalVersion|SingleVersion|MultipleVersions))" >
 <!ENTITY % EventType    "(Generation|Amendment|Repeal)" >
 <!ENTITY % EEventType "((Generation|Amendment|Repeal))" >
+
+
 
 
 <!--  =====================================================================
@@ -163,13 +166,21 @@ AN common containers elements
 <!ELEMENT conclusions %blocksopt; >
 <!ATTLIST conclusions %coreopt;  >
 <!ELEMENT attachments (attachment+)>
+
+<!ATTLIST attachments %coreopt;  >
 <!ELEMENT attachment  %referenceType; >
 <!ATTLIST attachment %idreq;  %link;  %show;  >
 
 
 <!ELEMENT clauses     (%hierElements;)+>
+
+<!ATTLIST clauses %coreopt;  >
 <!ELEMENT debate      (subdivision+)>
+
+<!ATTLIST debate %coreopt;  >
 <!ELEMENT maincontent (%hierElements; | subdivision | %blockElements; | %containerElements;)+>
+
+<!ATTLIST maincontent %coreopt;  >
 
 <!--  =====================================================================
 
@@ -220,6 +231,8 @@ Elements for debates documents
 <!ELEMENT comment             %inline; >
 <!ATTLIST comment %coreopt;  >
 <!ELEMENT list                (item+)>
+
+<!ATTLIST list %corereq;  >
 <!ELEMENT tblock              %clauseType; >
 <!ATTLIST tblock %corereq;  >
 <!ELEMENT item                %clauseType; >
@@ -258,6 +271,8 @@ legal structure, regardless of their position in the document.
 <!ATTLIST ActProponent %coreopt;  >
 <!ELEMENT ActDate      %inline; >
 <!ATTLIST ActDate %coreopt;  >
+
+<!ATTLIST ActDate %date;  >
 <!ELEMENT ActPurpose   %inline; >
 <!ATTLIST ActPurpose %coreopt;  >
 
@@ -396,12 +411,15 @@ Reference: http://www.xmlpatterns.com/ReuseDocumentTypesMain.shtml
 
 <!ATTLIST img src %ANYURI; #REQUIRED alt %STRING; #IMPLIED width %INTEGER; #IMPLIED height %INTEGER; #IMPLIED >
 
-<!ELEMENT ul   (li+)>
-<!ELEMENT ol   (li+)>
+<!ENTITY % listItems "(li+)" >
+<!ELEMENT ul   %listItems; >
+<!ATTLIST ul %corereq;  >
+<!ELEMENT ol   %listItems; >
+<!ATTLIST ol %corereq;  >
 
 <!ELEMENT table (tr+)>
 
-<!ATTLIST table %HTMLattrs;  %idreq;  width %INTEGER; #IMPLIED border %INTEGER; #IMPLIED cellspacing %INTEGER; #IMPLIED cellpadding %INTEGER; #IMPLIED >
+<!ATTLIST table %corereq;  width %INTEGER; #IMPLIED border %INTEGER; #IMPLIED cellspacing %INTEGER; #IMPLIED cellpadding %INTEGER; #IMPLIED >
 <!ELEMENT tr (th | td)+>
 
 <!ATTLIST tr %HTMLattrs;  %idreq;  >
@@ -477,15 +495,15 @@ Metadata elements for acts, bills and generic documents
 
 <!ATTLIST event %date;  %source;  type %EventType; #IMPLIED >
 
-<!ELEMENT analysis              (amendments)>
+<!ELEMENT analysis              (ActiveModifications?,PassiveModifications?)>
 
 <!ATTLIST analysis %source;  >
 
 <!ENTITY % Amendments          "(Textual | Meaning | Scope | Force | Efficacy | LegalSystem)+" >
-<!ENTITY % modType             "(source,destination,force?,efficacy?,application?,duration?,condition?)" >
+<!ENTITY % modType             "(source+,destination+,force?,efficacy?,application?,duration?,condition?)" >
 
-<!ENTITY % TextualMods         "(Repeal|Substitution|Insertion|Replacement)" >
-<!ENTITY % ETextualMods "((Repeal|Substitution|Insertion|Replacement))" >
+<!ENTITY % TextualMods         "(Repeal|Substitution|Insertion|Replacement|Renumbering)" >
+<!ENTITY % ETextualMods "((Repeal|Substitution|Insertion|Replacement|Renumbering))" >
 <!ENTITY % MeaningMods         "(Variation|TermModification|AuthenticInterpretation)" >
 <!ENTITY % EMeaningMods "((Variation|TermModification|AuthenticInterpretation))" >
 <!ENTITY % ScopeMods           "(ExceptionOfScope|ExtensionOfScope)" >
@@ -497,36 +515,37 @@ Metadata elements for acts, bills and generic documents
 <!ENTITY % LegalSystemMods     "(StaticReference|Implementation|Ratification|Application|LegislativeDelegation|Deregulation|Conversion|Expiration|Reiteration|Remaking|Republication|Coordination)" >
 <!ENTITY % ELegalSystemMods "((StaticReference|Implementation|Ratification|Application|LegislativeDelegation|Deregulation|Conversion|Expiration|Reiteration|Remaking|Republication|Coordination))" >
 
-<!ELEMENT amendments            %Amendments; >
- <!ENTITY               % Textual_entity "(%modType;,(oldText?,newText?))" ><!ELEMENT Textual %Textual_entity;>
-<!ATTLIST Textual %idreq;  %enactment;  >
+<!ELEMENT ActiveModifications   %Amendments; >
+<!ELEMENT PassiveModifications  %Amendments; >
+ <!ENTITY               % Textual_entity "(%modType;,(old?,new?))" ><!ELEMENT Textual %Textual_entity;>
+<!ATTLIST Textual %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST Textual type %TextualMods; #REQUIRED >
  <!ENTITY               % Meaning_entity "(%modType;,(domain?))" ><!ELEMENT Meaning %Meaning_entity;>
-<!ATTLIST Meaning %idreq;  %enactment;  >
+<!ATTLIST Meaning %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST Meaning type %MeaningMods; #REQUIRED >
  <!ENTITY                 % Scope_entity "(%modType;,(domain?))" ><!ELEMENT Scope %Scope_entity;>
-<!ATTLIST Scope %idreq;  %enactment;  >
+<!ATTLIST Scope %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST Scope type %ScopeMods; #REQUIRED >
 <!ELEMENT Force                 %modType; >
-<!ATTLIST Force %idreq;  %enactment;  >
+<!ATTLIST Force %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST Force type %ForceMods; #REQUIRED >
 <!ELEMENT Efficacy              %modType; >
-<!ATTLIST Efficacy %idreq;  %enactment;  >
+<!ATTLIST Efficacy %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST Efficacy type %EfficacyMods; #REQUIRED >
 <!ELEMENT LegalSystem           %modType; >
-<!ATTLIST LegalSystem %idreq;  %enactment;  >
+<!ATTLIST LegalSystem %idreq;  %enactment;  %modifiers;  >
 
 <!ATTLIST LegalSystem type %LegalSystemMods; #REQUIRED >
 
 <!ELEMENT source           %argumentType; >
-<!ATTLIST source %idopt;  %link;  >
+<!ATTLIST source %idopt;  %link;  upTo %ANYURI; #IMPLIED >
 <!ELEMENT destination      %argumentType; >
-<!ATTLIST destination %idopt;  %link;  >
+<!ATTLIST destination %idopt;  %link;  upTo %ANYURI; #IMPLIED >
 <!ELEMENT force            %periodType; >
 <!ATTLIST force %idopt;  %period;  >
 <!ELEMENT efficacy         %periodType; >
@@ -536,8 +555,10 @@ Metadata elements for acts, bills and generic documents
 <!ELEMENT duration         %periodType; >
 <!ATTLIST duration %idopt;  %period;  >
 <!ELEMENT condition        %anyOther; >
-<!ELEMENT oldText          %anyOther; >
-<!ELEMENT newText          %anyOther; >
+
+<!ATTLIST condition frozen %BOOLEAN; #IMPLIED >
+<!ELEMENT old              %anyOther; >
+<!ELEMENT new              %anyOther; >
 <!ELEMENT domain           %anyOther; >
 
 
@@ -556,8 +577,12 @@ Metadata elements for acts, bills and generic documents
 <!ATTLIST Jurisprudence %idreq;  %link;  %show;  >
 <!ELEMENT Attachment     %referenceType; >
 <!ATTLIST Attachment %idreq;  %link;  %show;  >
+
+<!ATTLIST Attachment type CDATA #IMPLIED >
 <!ELEMENT AttachmentOf   %referenceType; >
 <!ATTLIST AttachmentOf %idreq;  %link;  %show;  >
+
+<!ATTLIST AttachmentOf type CDATA #IMPLIED >
 <!ELEMENT Person         %referenceType; >
 <!ATTLIST Person %idreq;  %link;  %show;  >
 <!ELEMENT Role           %referenceType; >
