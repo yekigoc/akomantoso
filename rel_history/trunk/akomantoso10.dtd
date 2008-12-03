@@ -7,7 +7,7 @@
 Akoma Ntoso main schema
 
 
-Release  30/11/2006
+Release  01/02/2007
 technical supervision Fabio Vitali - University of Bologna
 legal domain supervision Monica Palmirani - University of Bologna
 
@@ -125,7 +125,7 @@ Reference: http://www.xmlpatterns.com/UniversalRootMain.shtml
 
 =====================================================================  -->
 
-<!ENTITY % DocumentTypes "(act | bill | doc | report | minutes)" >
+<!ENTITY % DocumentTypes "(act | bill | doc | report | debaterecord)" >
 <!ELEMENT akomantoso           %DocumentTypes; ><!ATTLIST akomantoso xmlns CDATA #FIXED "http://www.akomantoso.org/1.0" >
 
 <!--  =====================================================================
@@ -142,16 +142,16 @@ Reference: http://www.xmlpatterns.com/ConsistentElementSetMain.shtml
 
 <!ENTITY % DebateStructure        "(meta,preface?,debate,conclusions?,attachments?)" >
 
-<!ELEMENT act     %HierarchicalStructure; >
+<!ELEMENT act           %HierarchicalStructure; >
 <!ATTLIST act contains %VersionType; 'OriginalVersion'  >
-<!ELEMENT bill    %HierarchicalStructure; >
+<!ELEMENT bill          %HierarchicalStructure; >
 <!ATTLIST bill contains %VersionType; 'OriginalVersion'  >
-<!ELEMENT doc     %OpenStructure; >
+<!ELEMENT doc           %OpenStructure; >
 <!ATTLIST doc contains %VersionType; 'OriginalVersion'  >
-<!ELEMENT report  %OpenStructure; >
+<!ELEMENT report        %OpenStructure; >
 <!ATTLIST report contains %VersionType; 'OriginalVersion'  >
-<!ELEMENT minutes %DebateStructure; >
-<!ATTLIST minutes contains %VersionType; 'OriginalVersion'  >
+<!ELEMENT debaterecord  %DebateStructure; >
+<!ATTLIST debaterecord contains %VersionType; 'OriginalVersion'  >
 
 <!--  =====================================================================
 
