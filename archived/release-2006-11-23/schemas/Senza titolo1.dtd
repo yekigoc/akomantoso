@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!ENTITY % PredefinedSimpleTypes SYSTEM "./pst.dtd">
-%PredefinedSimpleTypes;
-
-
-
-<!ELEMENT a (%EDECIMAL;) >
-<!ELEMENT b (%EDATETIME;) >
-<!ELEMENT c (%EINTEGER;) >
