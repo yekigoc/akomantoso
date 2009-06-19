@@ -9,7 +9,7 @@
                     <FRBRdate date="2007-03-22" name="Generation"/>
                     <FRBRauthor href="#parliament" as="#author"/>
                     <components>
-                        <component id="wmain" href="/za/report/2007-03-22/main" name="main" showAs="Main document"/>
+                        <component id="wmain" href="#emain" name="main" showAs="Main document"/>
                     </components>
                 </FRBRWork>
                 <FRBRExpression>
@@ -18,7 +18,7 @@
                     <FRBRdate date="2009-02-21" name="Generation"/>
                     <FRBRauthor href="#cervone" as="#editor"/>
                     <components>
-                        <component id="emain" href="/za/report/2007-03-22/eng@/main" name="main" showAs="Main document"/>
+                        <component id="emain" href="#mmain" name="main" showAs="Main document"/>
                     </components>
                 </FRBRExpression>
                 <FRBRManifestation>

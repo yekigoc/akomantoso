@@ -9,7 +9,7 @@
                     <FRBRdate date="2007-03-22" name="Generation"/>
                     <FRBRauthor href="#parliament" as="#author"/>
                     <components>
-                        <component id="wappendix2" href="#wappendix2" name="appendix2" showAs="APPENDIX 2"/>
+                        <component id="wappendix2" href="#eappendix2" name="appendix2" showAs="APPENDIX 2"/>
                     </components>
                 </FRBRWork>
                 <FRBRExpression>
@@ -18,7 +18,7 @@
                     <FRBRdate date="2009-02-21" name="Generation"/>
                     <FRBRauthor href="#cervone" as="#editor"/>
                     <components>
-                        <component id="eappendix2" href="#eappendix2" name="appendix2" showAs="APPENDIX 2"/>
+                        <component id="eappendix2" href="#mappendix2" name="appendix2" showAs="APPENDIX 2"/>
                     </components>
                 </FRBRExpression>
                 <FRBRManifestation>

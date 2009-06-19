@@ -8,6 +8,9 @@
 					<FRBRuri value="/ke/act/1993-12-31/9"/>
 					<FRBRdate date="2007-07-27" name="Generation"/>
 					<FRBRauthor id="au1" href="parliament"/>
+					<components>
+						<component name="annex3" id="cw3" href="#ce3" showAs="_schedule03"/>
+					</components>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule03"/>
@@ -15,7 +18,7 @@
 					<FRBRdate date="2007-07-27" name="generation"/>
 					<FRBRauthor id="au2" href="parliament"/>
 					<components>
-						<component name="annex3" id="ce1" href="/ke/act/1993-12-31/9/eng@/main/schedule03" showAs="_schedule03"/>
+						<component name="annex3" id="ce3" href="#cm3" showAs="_schedule03"/>
 					</components>
 				</FRBRExpression>
 				<FRBRManifestation>
@@ -24,7 +27,7 @@
 					<FRBRdate date="2007-07-27" name="generation"/>
 					<FRBRauthor id="au3" href="parliament"/>
 					<components>
-						<component  name="annex3"  id="cm1" href="schedule03.xml" showAs="_schedule03"/>
+						<component  name="annex3"  id="cm3" href="schedule03.xml" showAs="_schedule03"/>
 					</components>
 				</FRBRManifestation>
 			</identification>

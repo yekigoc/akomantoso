@@ -8,6 +8,9 @@
 					<FRBRuri  value="/ke/act/1993-12-31/9"/>
 					<FRBRdate date="2007-07-27" name="Generation"/>
 					<FRBRauthor id="au1" href="parliament"/>
+				      <components>
+			                        <component id="cw1" name="main" href="#ce1"  showAs="Main document"/>
+			                    </components>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main"/>
@@ -15,7 +18,7 @@
 					<FRBRdate date="2007-07-27" name="Generation"/>
 					<FRBRauthor id="au2" href="http://www.cirsfid.unibo.it"/>
 					<components>
-						<component id="ce1" name="main"  href="/ke/act/1993-12-31/9/eng@/main" showAs="main"/>
+						<component id="ce1" name="main"  href="#cm1" showAs="main"/>
 					</components>
 				</FRBRExpression>
 				<FRBRManifestation>
