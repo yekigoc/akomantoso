@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
+	<doc contains="originalVersion">
+		<meta>
+			<identification source="#au1">
+				<FRBRWork>
+					<FRBRthis value="/ke/act/1993-12-31/9/main/schedule02"/>
+					<FRBRuri value="/ke/act/1993-12-31/9"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au1" href="parliament"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule02"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au2" href="http://www.cirsfid.unibo.it"/>
+					<components>
+						<component name="annex2" id="ce1" href="/ke/act/1993-12-31/9/eng@/main/schedule02" showAs="_schedule02"/>
+					</components>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule02.xml"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng@.akn"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor href="#au2"/>
+					<components>
+						<component name="annex2" id="cm1" href="schedule02.xml" showAs="_schedule02"/>
+					</components>
+				</FRBRManifestation>
+			</identification>
+			<publication name="internal" date="1993-12-31" showAs=""/>
+			<lifecycle source="#au1">
+				<event id="e1" date="1993-12-31" source="#ro1" type="generation"/>
+			</lifecycle>
+			<references source="#au1">
+				<original id="ro1" href="/ke/act/1993-12-31/9/eng@/main/schedule02" showAs="Original"/>
+				<attachmentOf id="rpr" href="/ke/act/1993-12-31/9/eng@/main" type="integralAttachment" showAs=""/>
+			</references>
+		</meta>
+		<preface>
+			<p>
+				<docTitle id="docTitle">SECOND SCHEDULE</docTitle>                 (Section 4)</p>
+		</preface>
+		<mainContent>
+			<table id="tb1">
+				<tr id="tr0">
+					<td>THE ROAD MAINTENANCE LEVY FUND ACT, 1993</td>
+					<td/>
+				</tr>
+				<tr id="tr1">
+					<td>Form 1</td>
+					<td/>
+				</tr>
+				<tr id="tr2">
+					<td>Registration Form</td>
+					<td/>
+				</tr>
+				<tr id="tr3">
+					<td>Registration of marketeer as required by section 4 of the Road Maintenance Levy Fund Act, 1993.<eol/>1. Name of Marketeer ..................................................................<eol/>2. Postal   Address ..........................................................................<eol/>3. Place of Business ................................................................<eol/>Road/Street ....................................................................................<eol/>Town ......................................................................................<eol/>4. Date ........................      Signed .....................................................</td>
+					<td/>
+				</tr>
+				<tr id="tr4">
+					<td>Note. - This   registration   form    must be   forwarded    to   Chief Engineer    Roads,    Ministry    of    Public    Works    and Housing, P.O. Box 30260, Nairobi.</td>
+					<td/>
+				</tr>
+			</table>
+		</mainContent>
+	</doc>
+</akomaNtoso>

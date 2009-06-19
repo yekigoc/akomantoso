@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
+	<act contains="originalVersion">
+		<meta>
+			<identification source="#au1">
+				<FRBRWork>
+					<FRBRthis value="/ke/act/1993-12-31/9/main"/>
+					<FRBRuri  value="/ke/act/1993-12-31/9"/>
+					<FRBRdate date="2007-07-27" name="Generation"/>
+					<FRBRauthor id="au1" href="parliament"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng@"/>
+					<FRBRdate date="2007-07-27" name="Generation"/>
+					<FRBRauthor id="au2" href="http://www.cirsfid.unibo.it"/>
+					<components>
+						<component id="ce1" name="main"  href="/ke/act/1993-12-31/9/eng@/main" showAs="main"/>
+					</components>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main.xml"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng@.akn"/>
+					<FRBRdate date="2007-07-27" name="Generation"/>
+					<FRBRauthor href="#au2"/>
+					<components>
+						<component name="main" id="cm1" href="main.xml" showAs="main"/>
+					</components>
+				</FRBRManifestation>
+			</identification>
+			<publication name="internal" date="1993-12-31" showAs=""/>
+			<lifecycle source="#au1">
+				<event id="e1" date="1993-12-31" source="#ro1" type="generation"/>
+			</lifecycle>
+			<references source="#au1">
+				<original id="ro1" href="/ke/act/1993-12-31/9/en/main" showAs="original"/>
+				<hasAttachment id="ran1" href="main/schedule01" type="integralAttachment" showAs=""/>
+				<hasAttachment id="ran2" href="main/schedule02" type="integralAttachment" showAs=""/>
+				<hasAttachment id="ran3" href="main/schedule03" type="integralAttachment" showAs=""/>
+			</references>
+		</meta>
+		<preface>
+			<p>Kenya Gazette Supplement No. 86 {Acts No. 7)<eol/>
+				<docTitle id="ActTitle">THE ROAD MAINTENANCE LEVY FUND ACT, 1993</docTitle>
+				<eol/>No. <docNumber>9</docNumber> of 1993<eol/>Date of Assent: 16th December, 1993<eol/>Date of Commencement: <docDate date="1993-12-31">31st December, 1993</docDate>
+			</p>
+		</preface>
+		<preamble id="preamble">
+			<p>ARRANGEMENT OF SECTIONS<eol/>
+			</p>
+			<toc>
+				<tocItem href="#" level="0">Section</tocItem>
+				<tocItem href="#art1" level="6">1 - Short title.</tocItem>
+				<tocItem href="#art2" level="6">2 - Interpretation.</tocItem>
+				<tocItem href="#art3" level="6">3 - Imposition of levy. </tocItem>
+				<tocItem href="#art4" level="6">4 - Registration of remitters.</tocItem>
+				<tocItem href="#art5" level="6">5 - Levies collected to be remitted to the collector. </tocItem>
+				<tocItem href="#art6" level="6">6 - Defaulting remitters to pay penalty. </tocItem>
+				<tocItem href="#art7" level="6">7 - Establishment of Road Maintenance Levy Fund.</tocItem>
+				<tocItem href="#art8" level="6">8 - Functions and powers of the officer administering the Fund.</tocItem>
+				<tocItem href="#art9" level="6">9 - Offences. </tocItem>
+				<tocItem href="#art10" level="6">10 - Amendment of Schedules.</tocItem>
+				<tocItem href="#art11" level="6">11 - Regulations.</tocItem>
+				<tocItem href="#" level="0"/>
+				<tocItem href="#" level="0">Schedules.</tocItem>
+			</toc>
+			<p>.<eol/>An Act of Parliament to provide for the imposition of a road maintenance levy on petroleum fuels and for the establishment and administration of a Road Maintenance Levy Fund and for connected purposes<eol/>ENACTED by the Parliament of Kenya as follows: -</p>
+		</preamble>
+		<body>
+			<article id="art1">
+				<num>1.</num>
+				<heading>Short title.</heading>
+				<clause id="art1-cla1">
+				<content>
+					<p>This Act may be cited as the Road Maintenance Levy Fund Act, 1993.</p>
+				</content>
+				</clause>
+			</article>
+			<article id="art2">
+				<num>2.</num>
+				<clause id="art2-cla1">
+					<content>
+					<p>-In this Act, unless the context otherwise requires - <eol/>"classified road" means any public road which on or before the commencement of this Act is maintained by or under the authority of the Ministry of Public Works and Housing or which is dissatisfied as such with the approval of the Minister or any adopted street under the Streets Adoption Act;<eol/>"collector" means  the Commissioner of Customs and Excuse;<eol/>"levy" means the road maintenance fuel levy imposed under section 3;<eol/>"marketeer" means a person who engages in the business of importing, processing and marketing of petroleum products and for the time being specified in the First Schedule;<eol/>"Minister" means the Minister for the time being responsible for Public Works and Housing or for public roads;<eol/>Cap. 403. <eol/>"motor vehicle" has the meaning assigned to it in section 2 of the Traffic Act;<eol/>"officer administering the Fund" means the Permanent Secretary to the Treasury or any person appointed by him in writing for that purpose;<eol/>"petroleum fuel" means automotive diesel, ordinary petrol, super petrol or such other petroleum products as the Minister may from time to time by notice in the Gazette determine;<eol/>Cap. 399.<eol/>"public road" has the meaning assigned to it in the Public Roads and Roads of Access Act;<eol/>"remitter" means a marketeer registered under section 4;<eol/>"vehicle" includes a motor vehicle, a trailer or such other conveyance as the Minister may from time to time determine by notice in the Gazette.</p>
+					</content>
+				</clause>
+			</article>
+			<article id="art3">
+				<num>3.</num>
+				<heading>Imposition of the levy.</heading>
+				<clause id="art3-cla1">
+					<num>(1)</num>
+					<content>
+										<p>The Minister may, by  Order published  in the Gazette, impose on any or all petroleum fuels consumed in Kenya a road maintenance fuel levy (in this Act referred to as the "levy") which may be determined from time to time and in such manner as the Minister may specify in the Order.</p>
+					</content>
+				</clause>
+				<clause id="art3-cla2">
+					<num>(2)</num>
+					<content>
+					<p>The levy shall be payable in respect of any vehicle for use on any classified road and shall be collected on behalf of the collector by the remitter.</p>
+					</content>
+				</clause>
+			</article>
+			<article id="art4">
+				<num>4.</num>
+				<heading>Registration of remitters.</heading>
+				<clause id="art4-cla1">
+					<num>(1)</num>
+					<content>
+					<p>Any person who -</p>
+					<list id="art4-cla1-lst1">
+						<item id="art4-cla1-itma">
+							<num>(a)</num>
+							<p>at the commencement of this Act is a marketeer shall, on or before the expiration of thirty days after such commencement register as a remitter; or</p>
+						</item>
+						<item id="art4-cla1-itmb">
+							<num>(b)</num>
+							<p>on or after the commencement of this Act becomes a marketeer, shall before the last day of the month immediately following the month in which he becomes a marketeer register as a remitter.</p>
+						</item>
+					</list>
+					</content>
+
+				</clause>
+				<clause id="art4-cla2">
+					<num>(2)</num>
+					<content>
+					<p>Registration under subsection (1) shall be effected when the marketeer has duly completed the registration form set out in the Second Schedule and lodged the original with the Chief Roads Engineer, Ministry of Public Works and Housing.</p>
+					</content>
+				</clause>
+				<clause id="art4-cla3">
+					<num>(3)</num>
+					<content>
+					<p>A remitter who ceases either permanently or temporarily to be a marketeer shall, within thirty days of so ceasing, notify the collector accordingly in writing stating the reasons for his ceasing to be a remitter.</p>
+					</content>
+				</clause>
+			</article>
+			<article id="art5">
+				<num>5.</num>
+				<heading>Levies collected to be remitted to the collector.</heading>
+				<clause id="art5-cla1">
+					<num>(1)</num>
+					<content><p>On or before tine tenth day of each succeeding month a remitter shall pay to the collector in the manner prescribed by the collector all monies of the levy collected by him in respect of the immediately preceding month.</p></content>
+				</clause>
+				<clause id="art5-cla2">
+					<num>(2)</num>
+					<content><p>A remitter shall maintain or cause to be maintained in the form set out in the Third Schedule a monthly record of each petroleum fuel processed from domestic crude oil or imported and marketed and the levy payable in respect of each such petroleum fuel.</p></content>
+				</clause>
+				<clause id="art5-cla3">
+					<num>(3)</num>
+					<content><p>Each monthly payment of the monies collected to be made to the collector shall be accompanied by the original of the monthly return form duly completed by the remitter.</p></content>
+				</clause>
+			</article>
+			<article id="art6">
+				<num>6.</num>
+				<heading>Defaulting remitters to pay penalty.</heading>
+				<clause id="art6-cla1">
+					<content><p>If any monies payable under section 5 remains unpaid for a period of thirty days after the date such payment has become due, a penalty equal to three per cent of the unpaid amount shall be added to that amount for each month or part thereof during which the amount remains unpaid.</p></content>
+				</clause>
+			</article>
+			<article id="art7">
+				<num>7.</num>
+				<heading>Establishment of the Road Maintenance Levy Fund.</heading>
+				<clause id="art7-cla1">
+					<content><p>There is hereby established a fund to be known as the Road Maintenance Levy Fund (in this Act referred to as the "Fund") which shall be administered by the officer administering the Fund.</p></content>
+				</clause>
+				<clause id="art7-cla2">
+					<num>(2)</num>
+					<content><p>The Fund shall consist of the proceeds from the levy and the transit tolls levied under the Public Roads Toll Act</p></content>
+				</clause>
+				<clause id="art7-cla3">
+					<num>(3)</num>
+					<content><p>All monies accruing to the Fund from the levy and the. transit tolls shall be paid into a special account established by the Treasury. -</p></content>
+				</clause>
+				<clause id="art7-cla4">
+					<num>(4)</num>
+					<content><p>There shall be paid out of the Fund such monies as are approved for the repair and maintenance of classified roads.</p></content>
+				</clause>
+				<clause id="art7-cla5">
+					<num>(5)</num>
+					<content><p>All receipts, savings and accruals to the Fund and the balance of the Fund at the end of each financial year shall be retained for the purposes for which the Fund is established.</p></content>
+				</clause>
+				<clause id="art7-cla6">
+					<num>(6)</num>
+					<content><p>The expenditure on maintenance of any classified road to be financed from the Fund shall be based on and limited to the annual budget submitted to the Treasury for approval before the beginning of the financial year to which the budget relates.</p></content>
+				</clause>
+			</article>
+			<article id="art8">
+				<num>8.</num>
+				<heading>Functions and powers of the officer administering the Fund.</heading>
+				<clause id="art8-cla1">
+					<content><p>The officer administering the Fund shall -</p>
+					<list id="art8-cla1-lst1">
+						<item id="art8-cla1-itma">
+							<num>(a)</num>
+							<p>supervise and control the administration of the Fund;</p>
+						</item>
+						<item id="art8-cla1-itmb">
+							<num>(b)</num>
+							<p>impose conditions on the use of any expenditure authorized by the Treasury and impose any reasonable prohibition, restriction or any other requirements on the use of such expenditure;</p>
+						</item>
+						<item id="art8-cla1-itmc">
+							<num>(c)</num>
+							<p>keep proper books of account and other books and records related to the Fund;</p>
+						</item>
+						<item id="art8-cla1-itmd">
+							<num>(d)</num>
+							<p>prepare, sign and transmit to the Controller and Auditor-General an account of the Fund or such accounts in such form as the Treasury may from time to time direct in accordance with section 18 (2) of the Exchequer and Audit Act.</p>
+						</item>
+					</list>
+					</content>
+				</clause>
+			</article>
+			<article id="art9">
+				<num>9.</num>
+				<heading>Offences</heading>
+				<clause id="art9-cla1">
+					<num>(1)</num>
+					<content><p>Any person who, without reasonable cause, fails to comply with an Order made under section 3 or refuses to pay the levy, shall be guilty of an offence and liable to a fine not exceeding three thousand shillings or. to imprisonment not exceeding three months or to both.</p></content>
+				</clause>
+				<clause id="art9-cla2">
+					<num>(2)</num>
+					<content><p>A marketeer who,'without reasonable cause, fails or refuses to register under section 4 as a remitter or to collect the levy shall be guilty of an offence and liable to a fine not exceeding fifty thousand shillings or to imprisonment not exceeding one year or to both.</p></content>
+				</clause>
+			</article>
+			<article id="art10">
+				<num>10.</num>
+				<heading>Amendment of Schedule.</heading>
+				<clause id="art10-cla1">
+					<content><p>The Minister may by notice published in 'the Gazette amend any of the Schedules.</p></content>
+				</clause>
+			</article>
+			<article id="art11">
+				<num>11.</num>
+				<heading>Regulations</heading>
+				<clause id="art11-cla1">
+					<content><p>The Minister  may make  regulations  generally as may appear to him necessary or expedient for the proper carrying out of the intent and purposes of this Act.</p></content>
+				</clause>
+			</article>
+		</body>
+<outOfLines>
+	<outOfLine id="out1" href="#art2-cla1" type="sideNote">
+			<p>Cap. 406.</p>
+		</outOfLine>
+		<outOfLine id="out10" href="#art7-cla2" type="sideNote">
+			<p>Cap. 407</p>
+		</outOfLine>
+		<outOfLine id="out11" href="#art8-cla1" type="sideNote">
+			<p>Cap. 412.</p>
+		</outOfLine>
+	</outOfLines>		
+		<attachments>
+			<attachment id="at1" href="main/schedule01" showAs="SCHEDULES FIRST SCHEDULE (Section 2)"/>
+			<attachment id="at2" href="main/schedule02" showAs="SECOND SCHEDULE (Section 4) "/>
+			<attachment id="at3" href="main/schedule03" showAs="Form 2 THIRD SCHEDULE (Section 5 (2)) MONTHLY RECORD REQUIRED UNDER SECTION 5 (2)"/>
+		</attachments>
+	</act>
+</akomaNtoso>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
+	<doc contains="originalVersion">
+		<meta>
+			<identification source="#au1">
+				<FRBRWork>
+					<FRBRthis value="/ke/act/1993-12-31/9/main/schedule03"/>
+					<FRBRuri value="/ke/act/1993-12-31/9"/>
+					<FRBRdate date="2007-07-27" name="Generation"/>
+					<FRBRauthor id="au1" href="parliament"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule03"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au2" href="parliament"/>
+					<components>
+						<component name="annex3" id="ce1" href="/ke/act/1993-12-31/9/eng@/main/schedule03" showAs="_schedule03"/>
+					</components>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule03.xml"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng@.akn"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au3" href="parliament"/>
+					<components>
+						<component  name="annex3"  id="cm1" href="schedule03.xml" showAs="_schedule03"/>
+					</components>
+				</FRBRManifestation>
+			</identification>
+			<publication name="internal" date="1993-12-31" showAs=""/>
+			<lifecycle source="#au1">
+				<event id="e1" date="1993-12-31" source="#ro1" type="generation"/>
+			</lifecycle>
+			<references source="#au1">
+				<original id="ro1" href="/ke/act/1993-12-31/9/eng@/main/schedule03" showAs="Original"/>
+				<attachmentOf id="rpr" href="/ke/act/1993-12-31/9/eng@/main" type="integralAttachment" showAs=""/>
+			</references>
+		</meta>
+		<preface>
+			<p>Form 2                        <docTitle id="docTitle">THIRD SCHEDULE</docTitle>              (Section 5 (2))<eol/>MONTHLY RECORD REQUIRED UNDER SECTION 5 (2)</p>
+		</preface>
+		<mainContent>
+			<table id="tb1">
+				<tr id="tr0">
+					<td>MINISTRY OF PUBLIC WORKS AND HOUSING</td>
+				</tr>
+				<tr id="tr1">
+					<td>The Road Maintenance Levy Fund Act, 1993</td>
+				</tr>
+				<tr id="tr2">
+					<td>Name and address of the remitter ..............................................<eol/>Total volumes obtained from domestic crude oil processing and/<eol/>or imported and consumed during the month of............................<eol/>19...............</td>
+				</tr>
+				<tr id="tr3">
+					<td>
+						<img src="main/schedule03/media/ke_act_1993-12-16_9_en_image.jpg" title="multimedia"/>view image</td>
+				</tr>
+				<tr id="tr4">
+					<td>I CERTIFY that the levy payable to Commissioner of Customs<eol/>and Excise is KSh ........................................ for which a cheque<eol/>No .............................. dated ........................ is issued.</td>
+				</tr>
+				<tr id="tr5">
+					<td>Date........................................Signed .......................................................<eol/>{Authorized Officer)</td>
+				</tr>
+				<tr id="tr6">
+					<td>The levy payable together with the original of this form must reach Commissioner of Customs and Excise, P.O. Box 40160, Nairobi on or before the tenth day of the month following the month to which the record relates.</td>
+				</tr>
+			</table>
+		</mainContent>
+	</doc>
+</akomaNtoso>

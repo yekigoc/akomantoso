@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
+	<doc contains="originalVersion">
+		<meta>
+			<identification source="#au1">
+				<FRBRWork>
+					<FRBRthis value="/ke/act/1993-12-31/9/main/schedule01"/>
+					<FRBRuri value="/ke/act/1993-12-31/9"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au1" href="parliament"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule01"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor id="au2" href="http://www.bungeni.org"/>
+					<components>
+						<component name="annex1" id="ce1" href="/ke/act/1993-12-31/9/eng@/main/schedule01" showAs="_schedule01"/>
+					</components>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value="/ke/act/1993-12-31/9/eng@/main/schedule01.xml"/>
+					<FRBRuri value="/ke/act/1993-12-31/9/eng@.akn"/>
+					<FRBRdate date="2007-07-27" name="generation"/>
+					<FRBRauthor href="#au2"/>
+					<components>
+						<component name="annex1" id="cm1" href="schedule01.xml" showAs="_schedule01"/>
+					</components>
+				</FRBRManifestation>
+			</identification>
+			<publication name="internal" date="1993-12-31" showAs=""/>
+			<lifecycle source="#au1">
+				<event id="e1" date="1993-12-31" source="#ro1" type="generation"/>
+			</lifecycle>
+			<references source="#au1">
+				<original id="ro1" href="/ke/act/1993-12-31/9/eng/main/schedule01" showAs="Original"/>
+				<attachmentOf id="rpr" href="/ke/act/1993-12-31/9/eng/main" type="integralAttachment" showAs=""/>
+			</references>
+		</meta>
+		<preface>
+			<p>SCHEDULES<eol/>
+				<docTitle id="docTitle">FIRST SCHEDULE</docTitle>                   (Section 2)</p>
+		</preface>
+		<mainContent>
+			<table id="tb1">
+				<tr id="tr0">
+					<td>List of Marketeers</td>
+					<td/>
+				</tr>
+				<tr id="tr1">
+					<td>1. Esso Kenya Limited.<eol/>2. Kenya Shell Limited.<eol/>3. Total Kenya Limited.<eol/>4. Caltex Oil (Kenya) Limited.<eol/>5. Agip (Kenya) Limited. G. Kobil Petroleum Limited.<eol/>7. Kenya Oil Company.<eol/>8. British Petroleum (BP Kenya) Limited.</td>
+					<td/>
+				</tr>
+			</table>
+		</mainContent>
+	</doc>
+</akomaNtoso>
