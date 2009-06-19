@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
+<akomaNtoso xsi:schemaLocation="http://www.akomantoso.org/1.0 ../../akomantoso10.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.akomantoso.org/1.0">
 	<act contains="singleVersion">
 		<meta>
 			<identification source="#bungeni">
