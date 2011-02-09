@@ -1,6 +1,0 @@
-#summary page describing norma server
-
-= Introduction =
-
-Norma server is the server component of the NormaAfrica application.
-It is a server-based document repository for documents created by the NormaEditor.
