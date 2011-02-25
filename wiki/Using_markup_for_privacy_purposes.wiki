@@ -20,8 +20,7 @@ Where 'John Smith' is a minor person part of the fact of this judgment.
 = Method 2 = 
 
 In case you would like to provide an XML to other institutions as interchange format you need to obfuscate the text directly, but have some metadata for the searching (es. give me all the judgments that have minor persons involved):
-
+{{{
 <omissis status="omissis" refersTo="#minorPerson" class="anonimizer">....</omissis>
-
+}}}
 We use omissis for stressed the point that the document has a missing part with respect the original version and for connecting the metadata/ontology.
-
