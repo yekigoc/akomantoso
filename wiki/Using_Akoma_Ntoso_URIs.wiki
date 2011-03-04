@@ -1,3 +1,5 @@
+<wiki:toc max_depth="5" />
+
 == Resolving Akoma Ntoso URIs ==
 
 The AKOMA NTOSO naming architecture is built so as not to rely on the existence of a single storage architecture, since the URIs stored within documents are differentiated from the ones physically representing the resource being sought.
