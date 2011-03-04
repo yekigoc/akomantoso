@@ -1,5 +1,6 @@
 #summary table of contents
 
+ * [Using_Akoma_Ntoso_URIs Using URIs in Akoma Ntoso]
  * [Using_Questions_typology Questions Typology]
  * [Using_the_by_attribute Uses of @by attribute]
  * [Using_Proprietary  Proprietary]
