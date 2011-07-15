@@ -25,5 +25,10 @@ Step two splits up the file and places the files in a docs folder in the current
 
 {{{
 mkdir docs
-./akoma-scripts/step_one.php newakoma.html
+./akoma-scripts/step_two.php newakoma.html
+}}}
+
+Move the img folder to the docs folder
+{{{
+mv img docs/img
 }}}
