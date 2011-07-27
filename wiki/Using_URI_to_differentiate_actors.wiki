@@ -7,9 +7,8 @@ Sometimes acts may have the same number and year, its also possible for differen
 = Emanating Actors = 
 
 This differentiation is done by using the emanating actor part of the URI :
-{{{
-"The emanating actor, unless implicitly deducible by the document type (e.g. acts and bills do not usually require actor, while ministerial decrees do)"
-}}}
+
+*"The emanating actor, unless implicitly deducible by the document type (e.g. acts and bills do not usually require actor, while ministerial decrees do)"*
 
 So the URIs could be differentiated as follows :
 
@@ -17,7 +16,7 @@ Judgement :
 http://authority.org/sc/judgment/constitutional-court/2003/2003-sccc-1
 
 Legislation : 
-
 http://authority.org/sc/legislation/statutory-instrument/1966/22
+
 
  
