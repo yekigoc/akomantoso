@@ -1,6 +1,7 @@
 #summary table of contents
 
  * [Using_Akoma_Ntoso_URIs Using URIs in Akoma Ntoso]
+ * [Using_URI_to_differentiate_actors Using URI naming conventions: an example]
  * [Using_Questions_typology Questions Typology]
  * [Using_the_by_attribute Uses of @by attribute]
  * [Using_Proprietary  Proprietary]
