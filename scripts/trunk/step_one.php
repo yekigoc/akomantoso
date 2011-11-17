@@ -57,7 +57,7 @@
 	    $map[$id] = $filename;
 	    if ( $type != "Attribute")
 	    {
-	        $csv = $elementName.",".$filename.",".$type."\n";
+	        $csv = $elementName.",".$filename.",".$type."s\n";
 	        fwrite($fp, $csv);
 	    }
 	}	
