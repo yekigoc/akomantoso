@@ -8,3 +8,4 @@
  * [Using_debaterecord_elements_in_standalone_documents DebateRecord elements in stand-alone documents]
  * [Using_RDF_with_Akoma_Ntoso RDF in Akoma Ntoso]
  * [Using_markup_for_privacy_purposes Marking private content]
+ * [Using_recital Using Recital ]
