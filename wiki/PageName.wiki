@@ -1,0 +1,12 @@
+#summary Dates in AkomaNtoso documents
+
+= Semantics =
+
+ * Dates in the body regards dates IN the document 
+ * Dates in the metadata regards date OF the document
+ * Dates not mentioned in the document about facts, entities or people do not belong to the document nor the metadata
+
+
+= Details =
+
+TO DO 
