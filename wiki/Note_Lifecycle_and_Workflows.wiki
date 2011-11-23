@@ -1,10 +1,10 @@
-#summary Dates in AkomaNtoso documents
+#summary The difference between Lifecycle and Workflow
 
-= Semantics =
+= Introduction =
 
- * Dates in the body regards dates IN the document 
- * Dates in the metadata regards date OF the document
- * Dates not mentioned in the document about facts, entities or people do not belong to the document nor the metadata
+Lifecycle refers to events of the document (e.g. a document was created, the document was amended by Amendment "x" )
+
+Workflow refers to steps in a sequence of steps (a workflow) affecting a document. (e.g. an editorial workflow on a bill )
 
 
 = Details =
