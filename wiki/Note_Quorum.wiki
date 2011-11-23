@@ -27,6 +27,7 @@ The rules for calculating the quorum are complex and different from tradition, s
 
 First option:
 
+{{{
 <speech>
 	<from>The Temporary Deputy Speaker (Mrs. Ndetei):</from>
 	<p>No, <quorum result="negative" refersTo="#majorityOfMemebers" value="129">
@@ -37,10 +38,11 @@ we do not have a quorum</quorum>. Ring the Division Bell.</p>
 	<from>The Temporary Deputy Speaker (Mrs. Ndetei):</from>
 	<p>There is now a <quorum result="positive" refersTo="#majorityOfAttendees" value="234">quorum</quorum>. Continue, Mr. Muhoho</p>
 </speech>
-
+}}}
 
 Second option (preferable, because we have more flexibility, cleaness, and separation between content and semantic, without redundancy):
 
+{{{
 <analysis>
 	<parliamentary>
 		<quorum id="q1" refersTo="#majorityOfMemebers" result="negative" value="129"/>
@@ -60,3 +62,4 @@ quorum</quantity>. Ring the Division Bell.</p>
 	<from>The Temporary Deputy Speaker (Mrs. Ndetei):</from>
 	<p>There is now a <quantity href="#q2">quorum</quantity>. Continue, Mr. Muhoho</p>
 </speech>
+}}}

@@ -8,4 +8,4 @@ e.g. - A bill still in a draft stage undergoing review between the clerk and a m
 
 = Usage =
 
-Permissions are NOT currently managed by Akoma Ntoso, and should best be placed in the proprietary or, better yet, in the <preservation> element within the <FRBRManifestation> element.
+Permissions are NOT currently managed by Akoma Ntoso, and should best be placed in the proprietary or, better yet, in the `<preservation>` element within the `<FRBRManifestation>` element.
