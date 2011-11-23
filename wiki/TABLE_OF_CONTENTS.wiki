@@ -9,3 +9,8 @@
  * [Using_RDF_with_Akoma_Ntoso RDF in Akoma Ntoso]
  * [Using_markup_for_privacy_purposes Marking private content]
  * [Using_recital Using Recital ]
+ * [Using_dates Dates in Akoma Ntoso documents]
+ * [Note_Quorum Marking up Quorum in Debates ]
+ * [Note_Lifecycle_and_Workflows Difference between lifecycle and workflow ]
+ * [Note_country_code_for_non_country_entities Representing non-national authorities ] 
+ * [Note_permissions Permissions in Akoma Ntoso documents ]
