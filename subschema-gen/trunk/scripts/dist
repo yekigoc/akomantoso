@@ -1,0 +1,37 @@
+#!/bin/sh
+
+test=""
+
+[ "$1" = "--test" ] && test="-test" && shift
+[ ! -d "$1" ] && echo "ERROR: '$1' not a directory\nUsage $0 [--test] root_web_dir"  && exit 1
+[ ! -d "./html" ] && echo "ERROR: `pwd` is not the aknssg root directory\nTry 'cd ..'" && exit 1
+
+root=$1
+
+cp='cp -u'
+
+data="$root/data/aknssg$test"
+cgi_bin="$root/cgi-bin/aknssg$test"
+
+echo "Root = '${root}'"
+
+echo "Deploying data..."
+mkdir -p "$data"
+$cp -r version-info.xml support/ subschema/ akn-schema/ scripts/ "$data"
+mkdir -p "$data/html"
+$cp -r html/*.css html/*.js html/*.x* html/template.html html/jquery-ui/ "$data/html"
+find "$data" -type d -exec chmod g=rw,a+rx {} \;
+find "$data" -type f -exec chmod g=rw,a+r {} \;
+find "$data/scripts" -type f -exec chmod a+x {} \;
+
+echo "Deploying cgi-bin..."
+mkdir -p "$cgi_bin"
+$cp web/cgi-bin/*.php "$cgi_bin"
+if [ ! -e "$cgi_bin/aknssg-conf.php" ] ; then
+	echo "<?php"                >> "$cgi_bin/aknssg-conf.php"
+	echo "\$root_dir_path = '';" >> "$cgi_bin/aknssg-conf.php"
+	echo "?>"                   >> "$cgi_bin/aknssg-conf.php"
+fi
+find "$cgi_bin" -type d -exec chmod a+rx {} \;
+find "$cgi_bin" -type f -exec chmod g=rw,a+r {} \;
+find "$cgi_bin" -name '*.php' -exec chmod a+x {} \;
