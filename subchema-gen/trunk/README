@@ -1,0 +1,84 @@
+Aknssg: the AKoma Ntoso SubSchema Generator
+===========================================
+
+Aknssg is an XProc-based application for the generation of subschemas
+of Akoma Ntoso.
+
+It is composed of two parts: a standalone generator of subschemas and
+a web-based frontend.
+
+
+Installation
+------------
+
+The standalone generator does not require installation. It can be run
+by launching the script `scripts/generate` with the appropriate
+parameters.
+
+The web-based frontend must be installed on a web server that supports
+PHP5, Apache's .htaccess rewrite rules (Apache 2.2.x is suggested) and
+Java 6.
+
+The `deploy` script can be used to install the web-based frontend on
+a new web server. It expects the following directory layout:
+
+    Root directory
+      └ cgi-bin/
+      └ html/
+      └ data/
+        └ tmp/
+
+The `cgi-bin` directory will hold all the executable PHP files, the
+`html` directory will contain the static files and the `data` directory
+will be used to store generated files and temporary files.
+
+To install the frontend in the `/srv/web` directory run
+
+    ./scripts/deploy /srv/web/
+
+Once the frontend files have been deployed, the frontend must be
+configured. To configure the frontend open the file
+`/srv/web/cgi-bin/aknssg/aknssg-conf.php` and make the
+`$root_dir_path` variable point to `/srv/web/data/aknssg`.
+
+The last installation step is the addition of the URI rewrite rules.
+The rules contained in the file `web/html/htaccess` must be copied to
+an `.htaccess` file recognized by the web server.
+
+
+License
+-------
+
+Except where noted, all the files are licensed under the following terms:
+
+Akoma Ntoso subschema generator
+Copyright (C) 2011 Africa i-Parliaments, a project of UN/DESA
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+### jQuery
+
+The embedded copy of the jQuery library is licensed under the terms of
+either the MIT License or the GNU General Public License (GPL) Version 2.
+
+
+Authors
+-------
+
+The Akoma Ntoso subschema generator has been written by Fabio Vitali
+and Gioele Barabucci of the University of Bologna.
+
+Contact: <mailto:fabio@cs.unibo.it>
+

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+ver="$1"
+
+[ -z "$ver" ] && echo "Usage: $0 VERSION" && exit 1
+
+basedir="`dirname $0`/.."
+
+(
+	projname="akn-subschema-gen-$ver"
+	targetdir="/tmp/${projname}"
+
+	cp -r "${basedir}" "${targetdir}"
+	rm -Rf "${targetdir}/.git/"
+	cd "${targetdir}/.."
+	tar -cf "${projname}.tar" "${projname}"
+	gzip -9 "${projname}.tar"
+
+	echo "Generated ${targetdir}.tar.gz"
+)
