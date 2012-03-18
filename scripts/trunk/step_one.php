@@ -21,11 +21,13 @@
 	print("Please wait, this will take a while\n");
 	$divs = $xpath->query('//div[@class="componentTitle"]');
 	$fp = fopen($csv_output, 'w+');
+        print("Processing documentation sections..");
 	foreach ($divs as $div){
 	    $anchor = $div->previousSibling;
 	    $id = $anchor->getAttribute("id");
 	    $type = trim($div->firstChild->nodeValue);
 	    $elementName = $div->firstChild->nextSibling->nodeValue;
+            print("...");
 	    if ( $type === "Element")
 	    {
 	        $filename = $elementName."E.html";
@@ -61,7 +63,9 @@
 	        fwrite($fp, $csv);
 	    }
 	}	
+        print("\nFinished processing documentation sections!\n");
 	$mapElements = $dom->getElementsByTagName( "area" );
+        print("Processing diagrams..");
 	foreach ($mapElements as $mapElement)
 	{
 	    $link = $mapElement->getAttribute("href");
@@ -71,7 +75,10 @@
 	        $reallink = $map[$anchorlink];
 	        $mapElement->setAttribute('href',$reallink);
 	    }
+	    print("...");
 	}
+	print("\nFinished processing diagrams !\n");
+        print("Processing links...");
 	$aElements = $dom->getElementsByTagName( "a" );
 	foreach ($aElements as $aElement)
 	{
@@ -85,7 +92,9 @@
 	        $aElement->removeAttribute("target");
 	        $aElement->removeAttribute("title");
 	    }
+            print("...");
 	}
+        print("\nFinished processing links !\n");
 	$dom->save($output);
 	echo "Finished \n";
 ?>

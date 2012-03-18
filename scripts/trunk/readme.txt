@@ -1,22 +1,21 @@
 1)
 
-You will need to install xsltproc and wget
+You will need to install xsltproc wget and php5-cli
 
 Run :
 
-sudo apt-get install xsltproc wget
+sudo apt-get install xsltproc wget php5-cli
+
+You will also need to install Oxygen 13.1
 
 
 2)
+From the folder with this readme, run :
 
-Run generate_xsd.sh
-
-3) 
-
-Use the generated akomantoso20.xsd as the input for the step_one and step_two scripts.
-
-The original schema is also provided as akomantoso20_original.xsd
+OXYGEN=/path/to/oxygen/13.1 ./generate_docs.sh
 
 
-4)
-The provided settings.xml is the exported documentation generation config for Oxygen
+3) The above (2) will generate a folder called ./docs 
+with the generated and reformatted documentation.
+
+
