@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AKOMA NTOSO Technical Documentation - Alphabetical Listing</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/boilerplate.css"/>
+        <link type="text/css" rel="stylesheet" href="css/SideBySide.css"/>
+        <link type="text/css" rel="stylesheet" href="css/ANDocumentation.css"/>
+        <link type="text/css" rel="stylesheet" href="css/oxygen.css"/>
+        <link type="text/css" rel="stylesheet" href="css/docHtml.css"/>
+        <link type="text/css" rel="stylesheet" href="css/index.css"/>   
+        <link type="text/css" rel="stylesheet" href="css/jquery.qtip.css"/>
+        
+        <script type="text/javascript" language="javascript" src="script/jquery.js"></script>  
+        <script type="text/javascript" language="javscript" src="script/jquery.scrollTo-min.js"></script>
+        <script type="text/javascript" language="javascript" src="script/jquery.cookie.js"></script>   
+        <script type="text/javascript" language="javascript" src="script/splitter.js"></script>
+        <script type="text/javascript" language="javascript" src="script/jquery.qtip.min.js"></script>  
+        
+        <script type="text/javascript" language="javascript" src="script/config.js"></script>
+        <script type="text/javascript" language="javascript" src="script/schema-toggle.js"></script>
+        <script type="text/javascript" language="javascript" src="script/application.js"></script>        
+        <script type="text/javascript" language="javascript" src="script/listings.js"></script> 
+    </head>
+    <body >
+        <div id="docu-header">
+        <div id="portaltop">
+            <div id="wip-tip">The content on this site is still under revision. For clarifications and suggestions please contact us on this email address: <a href='mailto:info@parliaments.info?subject=Akoma Ntoso Documentation'>info@parliaments.info</a></div>
+            <img src="./images/akoma-banner-docu.png" border="0" usemap="#map" />
+            <map name="map">
+                <area shape="rect" coords="11,4,192,106" href="http://www.akomantoso.org" />
+                <area shape="rect" coords="841,9,956,52" alt="Africa i-Parliaments website" href="http://www.parliaments.info" />
+                <area shape="rect" coords="840,70,957,115" alt="Bungeni - Parliamentary Information System" href="http://www.bungeni.org" />                      
+            </map>    		
+            </div>
+               <span class="related-sites">
+                   <a class="menu-external" title="external link to www.akomantoso.org" href="http://www.akomantoso.org/">akoma ntoso</a> | 
+                   <a class="menu-external" title="Schema releases" href="schema-releases.html">schema releases</a> |                     
+                   <a class="menu-external" title="An assortment of Akoma Ntoso legislative documents." href="index.html">akoma ntoso examples</a> |                    
+                   <a class="menu-external this" title="Alphabetical listing of all Akoma Ntoso elements." href="alphabetical.html">alphabetical listing</a> | 
+                   <a class="menu-external" title="Schema categories of all Akoma Ntoso elements" href="categorical.html">schema categories</a>
+               </span>
+                <div id="doc_select_text">  
+               				<br/>Expand an alphabet on the left pane to view available elements, click on any element to view its technical documentation on the right pane.<br/><br/>
+                    <span class="smallprint"> <i>(best viewed with Firefox 10 or older, Opera or Safari - they can be viewed with IE 9 too but performance 
+                        will be 
+                        slow.)</i><br/>
+        		    </span>
+                </div>
+            <div class="helpers-wrapper">
+                <div id="leftist" style="float:left;" class="helpers">
+                    <img src="images/information.png" alt="Left Info"/>
+                </div>
+                <div id="rightist" style="float:right;" class="helpers">
+                    <img src="images/information.png" alt="Right Info"/>
+                </div>
+            </div>
+            <div style="clear:none;"></div> 
+            <div style="display:none;" id="list-type">alphabetical</div>
+        </div>
+        
+        <div id="documaincontainer" class="rounded-eigh splitter-section">
+            
+            <div id="DocuLeftPane" class="xmlcode">
+                    <div id="intro_xml" style="display:none;">
+                        <ul>
+                            <li>Clicking on any element on this pane will open the techincal documentation describing the element 
+                                on the right pane</li>
+                            <li> Click on the [-] or [+] signs to expand a category.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="doc-pane-area">
+                        <div class="doc-pane-title-holder rounded-five-top">
+                            <p class="doc-pane-title">alphabetical listing </p>
+                        </div>
+                        <div id="alisting_doc" class="toggle-content-b doc-pane-content-holder rounded-five-bottom">&nbsp;</div>
+                    </div>                    
+            </div>
+            
+            <div id="DocuRightPane">
+                <div id='scrn-toggle'>
+                    <img class='contained' id="toggling-scrn" src='images/img_trans.gif' width="1" height="1" alt="fullcreen" onclick='fullscreen();' />
+                </div>                  
+                <div id="ajax_loader" class="loader rounded-five-bottom" style="">
+                    <img class="loader" src="loader/ajax-loader-g.gif" />
+                </div>
+                <div id="intro_html" style="display:none;">
+                    <ul>
+                        <li>Clicking on any element link on this pane will open the element on the very pane.</li>
+                        <li>Clicking on any element with this <img src="images/img-link.png" /> link symbol on the diagram will open the element on the very pane.</li>
+                    </ul>
+                </div>
+                <div id="loader_div" class="loader rounded-five-bottom"><img class="loader" src="loader/ajax-loader.gif" /></div>
+                <div class="doc-pane-area">
+                    <div class="doc-pane-title-holder rounded-five-top">
+                        <p class="doc-pane-title">technical documentation </p>
+                    </div>
+                    <div id="tec_doc" class="toggle-content-b doc-pane-tech-content-holder rounded-five-bottom">&nbsp;</div>
+                </div>
+            </div>
+        </div>   
+        <div style="clear:both"></div>
+        <div id="portal-colophon"> 
+            <div id="ex-footer" class="rounded-eigh">
+                <p>&copy;2000 - 2012</p>
+            </div>    
+          <div class="colophonWrapper">      
+          an initiative of <a href="http://www.un.org/esa/desa/">United Nations Department of Economic and Social Affairs (UNDESA)</a>
+          </div>
+        </div>
+    </body>
+</html>
+

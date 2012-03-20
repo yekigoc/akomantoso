@@ -1,0 +1,335 @@
+/*
+	Copyright (c) 2008, Luca Cervone (cervoneluca@gmail.com)
+
+	All rights reserved.
+
+	Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+	Neither the name of the University of Bologna nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+	IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.	
+*/
+
+.header{
+    margin-top:0px;
+    width:1169px;
+    height:149px;
+    margin-left:auto;
+    margin-right:auto;
+	margin-bottom:0px;
+	padding:0px;
+}
+
+.header_left{
+    background-image:url("../images/top_left.png");
+    height:149px;
+    width:646px;
+    float:left;
+}
+
+.home_link{
+    position:relative;
+    z-index:3;
+    width:650px;
+    height:110px;
+    left:10px;
+    border:none;
+}
+.an_link{
+    position:relative;
+    top:20px;
+    left:20px;
+    z-index:3;
+    text-align:left;
+    width:200px;
+    height:18px;
+    float:left;
+}
+
+.and_link{
+    position:relative;
+    top:20px;
+    left:0px;
+    z-index:3;
+    text-align:left;
+    width:170px;
+    height:18px;
+    float:left;
+}
+
+.anqr_link{
+    position:relative;
+    top:20px;
+    left:0px;
+    z-index:3;
+    text-align:left;
+    width:200px;
+    height:18px;
+    float:left;
+}
+
+.an_link a{
+    color:#ffffff;
+}
+
+.and_link a{
+    color:#ffffff;
+}
+
+.anqr_link a{
+    color:#ffffff;
+}
+
+.header_center{
+    background-image:url("../images/top_center.png");
+    background-repeat:repeat-x;
+    height:149px;
+    width:300px;
+    float:left;
+    border:none;
+}
+
+.header_right{
+    background-image:url("../images/top_right.png");
+    height:149px;
+    width:211px;
+    float:left;
+}
+
+.content_left{
+    float:left;
+    width:260px;
+    margin-left:10px;
+    overflow:auto;
+    margin-top:30px;
+}
+
+.content_center{
+    /*width:1110px;*/
+    width:870px;
+	margin-left:280px;	
+}
+
+.contenti .content_center{
+    width:1110px;
+    margin-left:30px;
+    /*width:870px;
+	margin-left:280px;*/	
+}
+
+.content_right{
+    background-image:url("../images/center_right.png");
+    background-repeat:repeat-y;
+    float:left;
+    width:17px;
+	display:none;
+}
+
+.clearboth{ 
+	clear: both; 
+}
+
+.footer{
+    width:1169px;
+    height:77px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.footer_left{
+    background-image:url("../images/bottom_left.png");
+    float:left;
+    width:17px;
+    height:77px;
+}
+
+.footer_middle{
+    background-image:url("../images/bottom_middle.png");
+    background-repeat:repeat-x;
+    float:left;
+    width:293px;
+    height:77px;
+}
+
+.footer_center{
+    background-image:url("../images/bottom_center.png");
+    float:left;
+    width:537px;
+    height:77px;
+}
+
+.footer_right{
+    background-image:url("../images/bottom_right.png");
+    float:left;
+    width:17px;
+    height:77px;
+}
+
+img {
+    border: solid thin;
+    padding:0px;    
+}
+
+h1, h2, h3, h4 {
+}
+
+h1 {
+	background-image:url('../loader/bullet.jpg');
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-left:25px;
+    font-size:16pt;
+    color:#CB1508;
+    width:98%;
+}
+
+h2 {
+    margin-bottom:0px;
+    padding:5px;
+    font-size:15pt;
+    color:#DC0808;
+    background-color:#CDC197;
+    border:1px solid #000000;
+    width:98%;
+}
+
+h3 {
+	border-bottom:0 none;
+	color:#000000;
+	font-size:100%;
+	font-weight:bold;
+	margin-top:0.3em;
+	padding-bottom:0.2em;
+	padding-left:0;
+}
+
+h4 {
+    font-size:10pt;
+}
+
+.banner{
+	position:fixed;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	cursor:pointer;
+	top:0px;
+	left:0px;	
+}
+
+.element_documentation{
+    width:853px;
+}
+
+div.heads{
+    background-repeat:no-repeat;
+    width:100%;
+}
+
+
+a.rti {
+    font-size:10pt;
+}
+
+a.image{
+    padding:0px;
+}
+
+.imgcontainer{
+    background: #e2e2e2;
+    border: solid 1px;
+    text-align:center;
+    padding:20px;
+}
+.legal_text{
+    border: solid 1px;
+    padding:30px;
+}
+
+.legal_text *{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.justified{
+    text-align:justify;
+}
+
+.italic_and_centered_and_bold{
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+}
+
+.italic{
+    font-style:italic;
+}
+
+
+.content {
+    text-align:justify;
+    margin-left:auto;
+    margin-right:auto;
+    width:1169px;
+	background-image:url("../images/center_all.png");
+    background-repeat:repeat-y;
+	margin-top:0px;
+	padding-top:1px;
+	padding-bottom:20px;
+ 
+}
+
+.contenti {
+    text-align:justify;
+    margin-left:auto;
+    margin-right:auto;
+    width:1169px;
+	background-image:url("../images/center_all.png");
+    background-repeat:repeat-y;
+	margin-top:0px;
+	padding-top:1px;
+	padding-bottom:20px;
+ 
+}
+
+
+.technical {
+	border-top:1px solid;
+    background-color:#ffffff;
+    margin-top:0px;
+    width:96.7%;
+	padding:10px;
+}
+
+.semantical {
+	border-top:1px solid;
+    background-color:#ffffff;
+    margin-top:0px;
+    width:96.7%;
+	padding:10px;
+}
+
+.page_index ul.first{
+  padding-left:10px;
+  margin-left:10px;
+}
+
+ul.second{
+  list-style-type:circle;  
+  padding-left:10px;
+  margin-left:10px;
+}
+
+ul.third{
+  list-style-type:square;  
+  padding-left:10px;
+  margin-left:10px;
+}
+
+ul.fourth{
+  list-style-type:circle;  
+  padding-left:10px;
+  margin-left:10px;
+}

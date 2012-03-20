@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Copyright (c) 2008, Luca Cervone (cervoneluca@gmail.com)
+
+	All rights reserved.
+
+	Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+	Neither the name of the University of Bologna nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+	IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.	
+-->
+    <head>
+        <title>AKOMA NTOSO Example Documents</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+        <link type="text/css" rel="stylesheet" href="css/boilerplate.css"/>
+        <link type="text/css" rel="stylesheet" href="css/SideBySide.css"/>
+        <link type="text/css" rel="stylesheet" href="css/ANDocumentation.css"/>
+        <link type="text/css" rel="stylesheet" href="css/oxygen.css"/>
+        <link type="text/css" rel="stylesheet" href="css/docHtml.css"/>
+        <link type="text/css" rel="stylesheet" href="css/index.css"/>    
+        <link type="text/css" rel="stylesheet" href="css/jquery.qtip.css"/>
+        
+        <script type="text/javascript" language="javascript" src="script/jquery.js"></script>  
+        <script type="text/javascript" language="javscript" src="script/jquery.scrollTo-min.js"></script>
+        <script type="text/javascript" language="javascript" src="script/jquery.cookie.js"></script>   
+        <script type="text/javascript" language="javascript" src="script/splitter.js"></script>
+        <script type="text/javascript" language="javascript" src="script/jquery.qtip.min.js"></script> 
+        
+        <script type="text/javascript" language="javascript" src="script/config.js"></script>
+        <script type="text/javascript" language="javascript" src="script/SideBySide.js"></script>
+        <script type="text/javascript" language="javascript" src="script/schema-toggle.js"></script>
+        <script type="text/javascript" language="javascript" src="script/application.js"></script>
+        <script type="text/javascript" language="javascript" src="script/custom.js"></script>
+    </head>
+    <body onload="initialize()">
+        <div id="header">
+            <div id="portaltop">
+                <div id="wip-tip">The content on this site is still under revision. For clarifications and suggestions please contact us on this email address: <a href='mailto:info@parliaments.info?subject=Akoma Ntoso Examples'>info@parliaments.info</a></div>
+                <img src="./images/akoma-banner-2.png" border="0" usemap="#map" />
+                <map name="map">
+                    <area shape="rect" coords="11,4,192,106" href="http://www.akomantoso.org" />
+                    <area shape="rect" coords="841,9,956,52" alt="Africa i-Parliaments website" href="http://www.parliaments.info" />
+                    <area shape="rect" coords="840,70,957,115" alt="Bungeni - Parliamentary Information System" href="http://www.bungeni.org" />                
+                </map>    		
+            </div>
+            <span class="related-sites">
+               <a class="menu-external" title="external link to www.akomantoso.org" href="http://www.akomantoso.org/">akoma ntoso</a> | 
+               <a class="menu-external" title="Schema releases" href="schema-releases.html">schema releases</a> |                 
+               <a class="menu-external this" title="An assortment of Akoma Ntoso legislative documents." href="index.html">akoma ntoso examples</a> |                    
+               <a class="menu-external" title="Alphabetical listing of all Akoma Ntoso elements." href="alphabetical.html">alphabetical listing</a> | 
+               <a class="menu-external" title="Schema categories of all Akoma Ntoso elements" href="categorical.html">schema categories</a>
+            </span>
+            <div id="doc_select_text">  
+                <span id="iefix">
+                        <div class="styled-select"><select id="doc_menu" onchange="getDocument(this)"><option>Loading... </option></select></div>
+                        
+                </span>
+                <div id="doc-notes">&nbsp;</div>
+                <br />The Akoma Ntoso examples are presented using two side by side panes allowing the user to 
+                click on any XML element on the left and see the html representation  of 
+                the text on the right as well as the corresponding technical documentation. Clicking on the 
+                text on the right will display the corresponding XML element on the left.<br/><br/>
+                       <span class="smallprint"> <i>(best viewed with Firefox 10 or older, Opera or Safari - they can be viewed with IE 9 too but performance 
+                        will be 
+                        slow.)</i>
+                </span>
+            </div>
+            <div class="helpers-wrapper">
+                <div id="leftist" style="float:left;" class="helpers">
+                    <img src="images/information.png" alt="Left Info"/>
+                </div>
+                <div id="rightist" style="float:right;" class="helpers">
+                    <img src="images/information.png" alt="Right Info"/>
+                </div>
+            </div>
+            <div style="clear:none;"></div>            
+        </div>
+
+        <div id="maincontainer" class="rounded-eigh splitter-section" style="background-color:white;">
+            
+            <div id="LeftPane">
+                <div id="left">
+                    <div id="intro_xml" style="display:none;">
+                        <ul>
+                            <li>Clicking on any element in the XML behind this pop-in will highlight, in the right HTML Representation 
+                                window, the portion of the html that the element marks up.</li>
+                            <li>You can view XML document hierarchy at any level by selecting in the drop down menu 
+                            below the level/depth of expansion that you want to view.</li>
+                            <li>Cicking on an item that does not hold any textual content will open the "technical 
+                            documentation" window as opposed to "HTML representation" </li>
+                            <li> You can expand or collapse any part by clicking on the [-] or [+] signs.</li>
+                            <li>Finally, drag the bar seperating the windows to stretch this window to your liking</li>
+                        </ul>
+                    </div>
+                    <div id="doc_select" class="rounded-five-top">
+                        <span id="iefix">&nbsp;</span>
+                    </div>
+                    <div id="loader_div" class="loader rounded-five-bottom"><img class="loader" src="loader/ajax-loader.gif" /></div>
+                    <div id="xml_doc" class="rounded-five-bottom"></div>
+                </div>
+            </div>
+            
+            <div id="RightPane">
+                <div id='scrn-toggle'>
+                    <img class='contained' id="toggling-scrn" src='images/img_trans.gif' width="1" height="1" alt="fullcreen" onclick='fullscreen();' />
+                </div>
+                <div id="right">
+                    <div id="intro_html" style="display:none;">
+                        <ul>
+                            <li>Clicking on any part of the text behind this pop-in will highlight, in the left XML window, the 
+                                element 
+                                that contains the relevant portion of the text.</li>
+                            <li>In the "Technical Documentation" tab you can also access the technical documentation of that 
+                            specific element.</li>
+                            <li>Finally, drag the bar seperating the windows to stretch this window to your liking</li>
+                        </ul>
+                    </div>
+                    <div id="tab_switch_container">
+                        <ul id="tab_switch_list">
+                            <li id="html" onclick="switchTab('html_doc')" class="selected">
+                                HTML representation
+                            </li>
+                            <!--	<li id="sem" onclick="switchTab('sem_doc')" class="nselected">
+                                Semantical Documentation
+                                </li> -->
+                            <li id="tec" onclick="switchTab('tec_doc')" class="nselected">
+                                technical documentation
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="html_doc" class="rounded-five-bottom"></div>
+                    <div id="tec_doc" class="right-pane-content rounded-five-bottom"></div>
+                </div>
+            </div>
+        </div>   
+        <div style="clear:both"></div>
+        <div id="portal-colophon"> 
+            <div id="ex-footer" class="rounded-eigh">
+                <p>&copy;2000 - 2012</p>
+            </div>    
+          <div class="colophonWrapper">      
+          an initiative of <a href="http://www.un.org/esa/desa/">United Nations Department of Economic and Social Affairs (UNDESA)</a>
+          </div>
+        </div>
+    </body>
+</html>
