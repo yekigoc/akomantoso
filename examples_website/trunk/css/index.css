@@ -1,0 +1,321 @@
+/* layout and styling for documentation site */
+
+body {
+}
+
+div#portaltop {
+    margin:0 auto;
+    width:100%;   
+    height:158px;
+    z-index:1 !important;
+    background:transparent url(../images/body-bg-2.png) repeat-x top left;
+}
+div#portaltop img {
+    margin-left:auto;
+    margin-right:auto;
+    display:block; 
+}
+
+#portal-colophon {
+    width:100%;
+    height:auto;
+    margin-top:5px;
+}
+
+#ex-footer {
+    margin:0 auto;
+    padding:0;
+    height:30px;
+    width:99.6%;
+    background-color:#b32c13;
+    display: table;
+}
+#ex-footer p {
+    color:#ffffff;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size:1.2em;
+    font-weight:bold;    
+}
+
+.tab_notes {
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+#doc-notes {
+    margin:0 auto;
+    margin-top:3px;
+    color:#ef330e;
+    font-size:1em;
+    width:980px;
+}
+
+/*.styled-select select {
+   background: #b32c13;
+   color:#ffffff;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 24px;
+}*/
+.styled-select select {
+   background: #b32c13;
+   color:#ffffff;
+   width: 268px;
+   padding: 2px 3px 0px 3px;
+   font-size: 16px;
+   font-family: arial, helvetica, sans-serif !important;
+   border: 1px solid #3a3a38;
+   outline: none;
+   height: 24px;
+   
+    -moz-border-radius: 5px; 
+    -webkit-border-radius:5px; 
+    border-radius:5px;   
+}
+.styled-select select:not([size]):not([multiple]) option, 
+.styled-select select[size="0"] option, 
+.styled-select select[size="1"] option {
+    background-color: #b32c13;
+    color:#fff;
+    font-size: 16px;
+}
+
+/* MISC */
+.rounded-eigh {
+    -moz-border-radius: 8px; 
+    -webkit-border-radius:8px; 
+    border-radius:8px;
+}  
+.rounded-eigh-noleft { /* no topleft */
+    -moz-border-radius: 8px; 
+    -webkit-border-radius:8px; 
+    border-radius:8px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;    
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;     
+}    
+
+.rounded-five {
+    -moz-border-radius: 5px; 
+    -webkit-border-radius:5px; 
+    border-radius:5px;
+}  
+.rounded-five-top {
+    border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px !important;    
+} 
+.rounded-five-bottom {
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px !important;    
+} 
+
+div#maincontainer div::-webkit-scrollbar,
+div#documaincontainer div::-webkit-scrollbar{
+    width: 12px;
+}
+div#maincontainer div::-webkit-scrollbar-track,
+div#documaincontainer div::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+div#maincontainer div::-webkit-scrollbar-thumb,
+div#documaincontainer div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.tooltip {
+    position: absolute;
+    margin:0 auto;
+    margin-top:100px;
+    padding: 10px 15px 5px 5px;
+    z-index: 999;
+    color: #303030;
+    background-color: #F5F5B5;
+    border: 1px solid #DECA7E;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    width:450px;
+    
+    -moz-border-radius: 5px; 
+    -webkit-border-radius:5px; 
+    border-radius:5px;    
+}
+#docu-header .tooltip {
+    width:200px;   
+}
+.tooltip ul {
+    width:100%;
+    text-align:left;
+    margin:0;
+    padding-left:15px;
+}
+.helpers-wrapper {
+    margin:0 auto;
+    margin-top:-20px;
+    width:99%;
+    height:20px;
+}
+
+.helpers {
+    margin:0;
+    width:20px;
+    cursor:pointer;
+}
+.menu-external {
+    padding-right:12px;
+    background:transparent url(../images/ext-link.png) no-repeat top right;
+}
+
+/*
+ * Splitter container. Set this to the desired width and height
+ * of the combined left and right panes. In this example, the
+ * height is fixed and the width is the full width of the body,
+ * less the margin on the splitter itself.
+ */
+#maincontainer {
+    margin:0 auto;
+	min-height: 600px;
+	border: 4px solid #3a3a38;
+	overflow: hidden;
+	/* No padding allowed */
+}
+/*
+ * Left-side element of the splitter. Use pixel units for the
+ * min-width and max-width; the splitter plugin parses them to
+ * determine the splitter movement limits. Set the width to
+ * the desired initial width of the element; the plugin changes
+ * the width of this element dynamically.
+ */
+#LeftPane {
+    padding-top:5px;
+	background: transparent;
+	overflow: hidden;
+	/* No margin or border allowed */
+}
+/*
+ * Right-side element of the splitter.
+ */
+#RightPane {
+    padding-top:5px;
+	background: transparent;
+	overflow: hidden;
+	/* No margin or border allowed */
+}
+/* 
+ * Splitter bar style; the .active class is added when the
+ * mouse is over the splitter or the splitter is focused
+ * via the keyboard taborder or an accessKey. 
+ */
+#documaincontainer .splitter-bar-vertical, 
+#maincontainer .splitter-bar-vertical {
+    width: 8px;
+    border: 0 none !important;
+    background: #3a3a38 url(../images/vgrabber.gif) no-repeat top;
+    border-right-color: #434343 !important;
+    border-style: solid !important;
+}
+#documaincontainer .splitter-bar-vertical.active, 
+#maincontainer .splitter-bar-vertical.active {
+	background: #979795 url(../images/vgrabber.gif) no-repeat center;
+	opacity: 0.7;
+}
+
+/* Alphabetical Listinng - Documentation Page*/
+#documaincontainer {
+    margin:0 auto;
+	min-height: 600px;
+	border: 4px solid #3a3a38;
+	overflow: hidden;
+	/* No padding allowed */
+}
+#DocuLeftPane {
+    padding-top:5px;
+	background: transparent;
+	overflow: hidden;
+	/* No margin or border allowed */
+}
+#DocuRightPane {
+    padding-top:5px;
+	background: transparent;
+	overflow: hidden;
+	/* No margin or border allowed */
+}
+
+/*EXPERIMENTS */
+#map {
+  width: 400px;
+  height: 200px;
+}
+
+#map.fullscreen {
+  position: fixed;
+  width:100%;
+  height: 100%;
+}
+
+/* SCREEN TOGGLE */
+#scrn-toggle {
+    width:auto;
+    margin-right:5px;
+    display:inline;
+    z-index:5;
+    float:right;
+    position:absolute !important;
+    right:0;    
+}
+img.contained
+{
+    width:18px;
+    height:13px;
+    background:url(../images/toggle-icon.gif) 0px -22px;
+    cursor:pointer;
+}    
+img.full
+{
+    width:18px;
+    height:13px;
+    background:url(../images/toggle-icon.gif) 0px -4px;
+    cursor:pointer;
+} 
+.diff-legend {
+    float:left;
+    margin-right:50px;
+    height:20px;
+    width:300px;
+    display:none;
+}
+.diff-legend > div {
+    margin-bottom:0;
+}
+.square {
+	height: 10px;
+	width: 10px;
+	display:inline;
+}
+.c-changes {
+    background-color:#ffdd88;
+}
+.c-add {
+    background-color:#99ee99;
+}
+.c-del {
+    background-color:#ee9999;
+}
