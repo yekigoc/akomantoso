@@ -88,7 +88,7 @@
 	function alphabetical_listing() {
 	
         global $result, $optionsA;
-        $cates = array("AG","E","EG","CT","ST");
+        $cates = array("AG","EG","E","CT","ST");
 	   
         foreach (range('a', 'z') as $char) {
             $result .= '<pre class="c">
