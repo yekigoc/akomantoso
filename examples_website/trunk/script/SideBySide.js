@@ -163,6 +163,9 @@ function getElementDocumentation(anElementName,anElement)
 			//alert(htmlElements[y].getAttribute("xp") + "||||" + anElement.getAttribute("xp"));
 		}
 	}
+	//leave the 'head notes' bg as it was/ they were
+	$(".notes-title").css('background-color', '#ededed');
+	
 	//assert the default title as this may change below or from previous click
 	document.getElementById("html").innerHTML = '<div class="loader">HTML representation</div>';	
 		
@@ -996,6 +999,8 @@ function fillDocumentHTML(aDiv,httpRequest)
 					{
 						els[y].style.backgroundColor='transparent';
 					}
+					//leave the 'head notes' bg as it was/ they were
+			        $(".notes-title").css('background-color', '#ededed');
 					
 					//set the background coloro of the selected element to yellow
 					this.style.backgroundColor = 'yellow';
@@ -1116,7 +1121,24 @@ function fillDocumentXML(aDiv,httpRequest)
 							}
 						}
 
-						getElementDocumentation(this.getAttribute("name"),this);
+                        var eleName = this.getAttribute("name");
+                        // if its a note/notes or descendant of note. We may have <p/> tags inside
+                        if(eleName.indexOf("note")!=-1 || $('note '+eleName+'').length == 1)
+                        {
+                            $(".cls_notes").show('fast');
+                        }
+                        else {
+                            $(".cls_notes").hide();
+                        }
+
+                        /*
+                    	//clicking on the 'head notes' has a toggle effect
+                        if(eleName.indexOf("note")!=-1) {
+                            $(".cls_notes").toggle();
+                        });
+                        */
+
+						getElementDocumentation(this.getAttribute("name").toString(),this);
 						if (this.getAttribute("id") != null) 
 						{
 							//get the id of the elment discovering if it is start or end element

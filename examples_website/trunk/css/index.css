@@ -25,7 +25,7 @@ div#portaltop img {
 #ex-footer {
     margin:0 auto;
     padding:0;
-    height:30px;
+    height:auto;
     width:99.6%;
     background-color:#b32c13;
     display: table;
