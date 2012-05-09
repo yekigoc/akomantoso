@@ -1850,7 +1850,10 @@
 	</xsl:template>
 
 	<xsl:template match="akn:meta">
-		<xsl:apply-templates/>
+		<div id="layer-meta">
+			<xsl:attribute name="style">background-color: transparent !important;</xsl:attribute>
+			<xsl:apply-templates/>
+		</div>
 		
 	</xsl:template>
 
@@ -2135,10 +2138,35 @@
 	</xsl:template>
 
 	<xsl:template match="akn:notes">
+		<div>		
+			<div>		
+				<xsl:attribute name="xp">
+					<xsl:for-each select="ancestor-or-self::node()"><xsl:value-of select="concat(name(),count(preceding::*))" />/</xsl:for-each>
+				</xsl:attribute>				
+				<xsl:attribute name="class">rounded-eigh notes-title</xsl:attribute>	
+				<xsl:attribute name="id">head_id</xsl:attribute>				
+				head notes <xsl:value-of select="@source"/>
+			</div>
+			<div id="layer_notes" style="display:none;">
+				<xsl:attribute name="xp">
+					<xsl:for-each select="ancestor-or-self::node()"><xsl:value-of select="concat(name(),count(preceding::*))" />/</xsl:for-each>
+				</xsl:attribute>
+				<xsl:attribute name="class">cls_notes</xsl:attribute>				
+				<xsl:apply-templates/>
+			</div>
+		</div>
+		
 	</xsl:template>
 
 	<xsl:template match="akn:note">
-		<xsl:apply-templates/>
+		<div>
+			<xsl:attribute name="xp">
+				<xsl:for-each select="ancestor-or-self::node()"><xsl:value-of select="concat(name(),count(preceding::*))" />/</xsl:for-each>
+			</xsl:attribute>			
+			<xsl:attribute name="class">note_container note</xsl:attribute>
+			
+			<xsl:apply-templates/>
+		</div>
 		
 	</xsl:template>
 
