@@ -1,18 +1,20 @@
+RewriteEngine On
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule .* - [L]
 
 RewriteCond %{REQUEST_METHOD} GET
-RewriteRule (-test)?/generate-subschema(.*)$ /cgi-bin/aknssg$1/generate-subschema.php [L]
 
-RewriteRule (-test)?$ $1/ [R=301,L]
+RewriteRule ^generate-subschema(.*)$ /aknssg/cgi-bin/aknssg/generate-subschema.php [L]
+RewriteRule ^RABC$ /aknssg/README [L]
+#RewriteRule (-test)?$ $1/ [R=301,L]
 
-RewriteRule (-test)?/$ /cgi-bin/aknssg$1/generate-html.php [L]
+RewriteRule ^$ /aknssg/cgi-bin/aknssg/generate-html.php [L]
 
-RewriteRule (-test)?/download/(.*)/(.*)$ /cgi-bin/aknssg$1/show-outcome.php?status=success&rand=$2&sche
-maname=$3 [L]
-RewriteRule (-test)?/error/(.*)/(.*)$ /cgi-bin/aknssg$1/show-outcome.php?status=error&rand=$2&sche
-maname=$3 [L]
+RewriteRule ^download/(.*)/(.*)$ /aknssg/cgi-bin/aknssg/show-outcome.php?status=success&rand=$1&schemaname=$2 [L]
+RewriteRule ^error/(.*)/(.*)$ /aknssg/cgi-bin/aknssg/show-outcome.php?status=error&rand=$1&schemaname=$2 [L]
 
-RewriteRule (-test)?/archive/(.*)/(.*).zip$ /cgi-bin/aknssg$1/serve-archive.php?rand=$2&schemaname=$3 [L]
+RewriteRule ^archive/(.*)/(.*).zip$ /aknssg/cgi-bin/aknssg/serve-archive.php?rand=$1&schemaname=$2 [L]
 
-RewriteRule (-test)?/([[:alnum:]/-]+(\.[[:alnum:]-]+)+)$ /cgi-bin/aknssg$1/serve-static-file.php?filename=$2 [L]
+RewriteRule ^([[:alnum:]/-]+(\.[[:alnum:]-]+)+)$ /aknssg/cgi-bin/aknssg/serve-static-file.php?filename=$1 [L]
+
