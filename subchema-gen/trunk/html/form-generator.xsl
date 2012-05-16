@@ -130,7 +130,14 @@
 		<xsl:variable name="content" select="@content"/>
 		<div class="basic">
 			<p class="item">
-				<input type="radio" name="combos[]" value="{$content}" id="combo-{@id}" class="combo"/>
+                                <xsl:choose>
+			          <xsl:when test="position() eq 1">
+				   <input type="radio" checked="checked" name="combos[]" value="{$content}" id="combo-{@id}" class="combo"/>
+                                  </xsl:when>
+                                  <xsl:otherwise>
+				   <input type="radio" name="combos[]" value="{$content}" id="combo-{@id}" class="combo"/>
+                                  </xsl:otherwise>
+				</xsl:choose>
 				<xsl:text> </xsl:text>
 				<label for="combo-{@id}">
 					<xsl:value-of select="@name"/>
