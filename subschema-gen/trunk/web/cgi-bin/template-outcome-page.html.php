@@ -30,7 +30,7 @@ if ($status == 'success') {
 			generation of <?php echo $schema_name ?>.</a>
 
 			<p class="content">Please report the following
-			error codes to <a href="mailto:fabio@cs.unibo.it"
+			error codes to <a href="mailto:admin@parliaments.info"
 			>fabio@cs.unibo.it</a>.</p>
 
 			<dl>
@@ -46,11 +46,6 @@ if ($status == 'success') {
 			<p class="content">Return to the <a href="../../aknssg.html">Akoma
 			Ntoso subschema generator homepage</a>.</p>
 
-			<div class="copyright">
-				<p>The Akoma Ntoso subschema generator is an XProc-based
-				application written by Fabio Vitali and Gioele Barabucci of the
-				University of Bologna (contact: <a href="mailto:fabio@cs.unibo.it">fabio@cs.unibo.it</a>).</p>
-			</div>
 		</div>
 	</body>
 </html>
