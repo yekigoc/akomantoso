@@ -4,18 +4,35 @@ die () {
     exit 1
 }
 
-[ "$#" -eq 2 ] || die "1 deployment folder path required, and 1 web root required $# provided"
+if [[ ! -n "$1" ]];
+then
+ die "parameter 1 deployment folder path required ; e.g. ./install.sh ../web_live ";
+fi
+
+
+if [[ -n "$2" ]]
+then 
+  if [[ $2 == /* ]]
+  then 
+     echo "Web root setting to ${2}"
+     export WEB_ROOT=$2;
+  else
+     die "${2} is not a valid web root, it must start with backlash or be left blank";
+  fi
+else
+  export WEB_ROOT=''
+  echo "Web root is set to server root";
+fi
+
 
 if [[ -d $1 ]]
 then echo "Deploying in ${1}";
 else die "${1} is not a folder !";
 fi
 
-
-
 ROOT_DIR=`cd $1 && pwd`
 
-WEB_ROOT=$2
+#WEB_ROOT=$2
 
 ./scripts/deploy $ROOT_DIR
 # delete .svn files
