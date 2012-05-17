@@ -7,6 +7,22 @@ of Akoma Ntoso.
 It is composed of two parts: a standalone generator of subschemas and
 a web-based frontend.
 
+Setup
+-----
+Run the provided install.sh script to deploy the system.
+
+install.sh takes 2 parameters :
+
+install.sh <param 1> <param 2>
+
+param 1 = the path to which you want to deploy to, this can be an absolute path or a relative path
+
+param 2 = web server prefix. if you are deploying as http://domain.com/webprefix/ then set this as /webprefix
+if you are deploying directly under a domain e.g. http://domain.com , dont set param 2.
+
+
+THE BELOW INFORMATION IS OUT OF DATE !
+
 
 Installation
 ------------
@@ -72,13 +88,4 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 The embedded copy of the jQuery library is licensed under the terms of
 either the MIT License or the GNU General Public License (GPL) Version 2.
-
-
-Authors
--------
-
-The Akoma Ntoso subschema generator has been written by Fabio Vitali
-and Gioele Barabucci of the University of Bologna.
-
-Contact: <mailto:fabio@cs.unibo.it>
 
