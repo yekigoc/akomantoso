@@ -30,7 +30,8 @@ $(document).ready(function(){
 				}
 			}
 		} else {
-				$("form input:radio").each(function(index) {this.checked=false});
+		        //!+NOTE (ao, 25-May-2012) uncomment this to have all options deselected
+				//$("form input:radio").each(function(index) {this.checked=false});
 		}
 		if (doCheckbox) {
 			$("#selection")[0].value = ""

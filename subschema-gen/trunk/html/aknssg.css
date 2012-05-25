@@ -1,16 +1,47 @@
 body {
-	background-color: #CD1006;
-	color: #444444;
+	background-color: #ffffff;
+	color: #000000;
 	font-size: 10pt;
 	font-family: "Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif
 }
 
-div#portal-top {
-	background-image: url('http://akn.web.cs.unibo.it/resolver/img/akoma_banner.jpg');
-	margin-left: auto;
-	margin-right: auto;
-	width: 800px;
-	height: 100px;
+div#portaltop {
+    margin:0 auto;
+    width:100%;   
+    height:158px;
+    z-index:1 !important;
+    background:transparent url(./images/body-bg-2.png) repeat-x top left;
+}
+div#portaltop img {
+    margin-left:auto;
+    margin-right:auto;
+    display:block; 
+}
+.related-sites {
+    font-size:9pt;
+    text-align:left;
+    margin-left:5px;
+    margin-bottom:5px;
+    padding-right:0px;
+    margin-top:-20px !important;
+    clear:none;
+    position:absolute;
+    z-index:1 !important;
+}
+.related-sites a:link,
+.related-sites a:visited,
+.related-sites a {
+    color:#000000;
+}
+.related-sites a.this, 
+.related-sites a:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+.menu-external {
+    padding-right:12px;
+    background:transparent url(./images/ext-link.png) no-repeat top right;
 }
 
 div#portal-divisor {
@@ -56,12 +87,13 @@ div.copyright {
 }
 
 th {
-	background-color: #CDC197;
+	background-color: #B32C13;
 	height: 1.8em;
 	line-height: 1.5em;
 	font-size: 94%;
 	padding-top: 0.1em;
 	text-align: center;
+	color:#ffffff;
 }
 
 #tabs {
@@ -70,7 +102,7 @@ th {
 }
 
 table {
-	border: 1px solid #CDC197;
+	border: 1px solid #aaaaaa;
 	font-size: 10pt;
 }
 

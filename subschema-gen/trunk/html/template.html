@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Akoma Ntoso subschema Generator</title>
+		<title>AKOMA NTOSO subschema Generator</title>
+		<link type="text/css" rel="stylesheet" href="css/boilerplate.css"/>		
 		<link rel="stylesheet" type="text/css" href="./aknssg.css"/>
 		<link rel="stylesheet" type="text/css" href="./jquery-ui/css/jquery-ui-1.8.8.custom.css"/>
 
@@ -9,9 +10,25 @@
 		<script type="text/javascript" src="./aknssg.js"></script>
 	</head>
 	<body>
-		<div id="portal-top"></div>
+		<div id="header">
+			<div id="portaltop">
+				<img src="./images/akoma-banner-2.png" border="0" alt="akoma ntoso banner" usemap="#map" />
+				<map name="map" id="map">
+					<area shape="rect" alt="go to akoman ntoso home page" coords="11,4,192,106" href="http://www.akomantoso.org" />
+					<area shape="rect" coords="841,9,956,52" alt="Africa i-Parliaments website" href="http://www.parliaments.info" />
+					<area shape="rect" coords="840,70,957,115" alt="Bungeni - Parliamentary Information System" href="http://www.bungeni.org" />                
+				</map>    		
+			</div>
+			<span class="related-sites">
+				<a class="menu-external" title="external link to www.akomantoso.org" href="http://www.akomantoso.org/">akoma ntoso</a> | 
+				<a class="menu-external" title="Schema releases" href="http://examples.akomantoso.org/schema-releases.html">schema releases</a> |                 
+				<a class="menu-external" title="An assortment of Akoma Ntoso legislative documents." href="http://examples.akomantoso.org/index.html">akoma ntoso examples</a> |                    
+				<a class="menu-external" title="Alphabetical listing of all Akoma Ntoso elements." href="http://examples.akomantoso.org/alphabetical.html">alphabetical listing</a> | 
+				<a class="menu-external" title="Schema categories of all Akoma Ntoso elements" href="http://examples.akomantoso.org/categorical.html">schema categories</a> | 
+				<a class="this" title="Used to generate Subschema for Akoma Ntoso documents" href="http://generator.akomantoso.org">subschema generator</a>				
+			</span>          
+		</div>
 		<div id="main-container">
-			<div id="portal-divisor"></div>
 			
 			<h1>Akoma Ntoso Subschema Generator</h1>
 			
@@ -43,7 +60,7 @@
 						<span id="document-combos"/>
 					</div>
 					<div id="tabs-2">
-						<table width="90%">
+						<table width="100%">
 							<col width="50%" />
 							<col width="50%" />
 							<tr valign="top">
