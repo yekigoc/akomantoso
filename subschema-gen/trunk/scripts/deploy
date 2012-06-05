@@ -19,7 +19,7 @@ echo "Deploying data..."
 mkdir -p "$data"
 $cp -r version-info.xml support/ subschema/ akn-schema/ scripts/ "$data"
 mkdir -p "$data/html"
-$cp -r html/*.css html/*.js html/*.x* html/template.html html/jquery-ui/ "$data/html"
+$cp -r html/css html/images html/*.css html/*.js html/*.x* html/template.html html/jquery-ui/ "$data/html"
 find "$data" -type d -exec chmod g=rw,a+rx {} \;
 find "$data" -type f -exec chmod g=rw,a+r {} \;
 find "$data/scripts" -type f -exec chmod a+x {} \;
