@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/amendmentList/2010-10-28/2010-2088(INI)/"/>
 					<FRBRdate date="2010-10-28" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/amendmentList/2010-10-28/2010-2088(INI)/eng@/main"/>
 					<FRBRuri value="/ak/amendmentList/2010-10-28/2010-2088(INI)/eng@"/>
 					<FRBRdate date="2011-11-24" name="Expression"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/amendmentList/2010-10-28/2010-2088(INI)/eng@/main.xml"/>
@@ -33,7 +35,7 @@
 			</references>
 		</meta>
 		<coverPage>
-			<subdivision>
+			<container id="cont-1" name="coverpageContainer">
 				<p>
 					<docProponent>EUROPEAN PARLIAMENT 2009 - 2014</docProponent>
 				</p>
@@ -47,8 +49,8 @@
 				<p>
 					<docTitle>AMENDMENTS 1 - 53</docTitle>
 				</p>
-			</subdivision>
-			<subdivision>
+			</container>
+			<container id="cont-2" name="coverpageAnotherContainer">
 				<p>Draft opinion</p>
 				<p>Nikolaos Chountis</p>
 				<p>(PE448.956v01-00)</p>
@@ -56,22 +58,22 @@
 (COM(2009)0433 – 2010/2088(INI))</p>
 				<p>AM\837265EN.doc PE450.680v03-00</p>
 				<p>AM_Com_NonLegOpinion	</p>
-			</subdivision>
+			</container>
 		</coverPage>
-		<collectionContent>
+	    <collectionBody>
 			<interstitial id="int1">
 				<p>Amendment 1</p>
 			</interstitial>
-			<componentRef id="refc1" href="#amd1" showAs="Amendment 1"/>
+			<componentRef id="refc1" src="#amd1" showAs="Amendment 1"/>
 			<interstitial id="int2">
 				<p>Introduction</p>
 			</interstitial>
-			<componentRef id="refc2" href="#amd2" showAs="Amendment 2"/>
+			<componentRef id="refc2" src="#amd2" showAs="Amendment 2"/>
 			<interstitial id="int3">
 				<p>Introduction</p>
 			</interstitial>
-			<componentRef id="refc3" href="#amd3" showAs="Amendment 3"/>
-		</collectionContent>
+			<componentRef id="refc3" src="#amd3" showAs="Amendment 3"/>
+		</collectionBody>
 	</amendmentList>
 	<components>
 		<component id="amd1">
@@ -83,12 +85,14 @@
 							<FRBRuri value="/ak/amendment/2010-10-28/1/"/>
 							<FRBRdate date="2010-10-28" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/amendment/2010-10-28/1/eng@/main"/>
 							<FRBRuri value="/ak/amendment/2010-10-28/1/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/amendment/2010-10-28/1/eng@/main.xml"/>
@@ -155,12 +159,14 @@
 							<FRBRuri value="/ak/amendment/2010-10-28/2/"/>
 							<FRBRdate date="2010-10-28" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/amendment/2010-10-28/2/eng@/main"/>
 							<FRBRuri value="/ak/amendment/2010-10-28/2/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/amendment/2010-10-28/2/eng@/main.xml"/>
@@ -243,12 +249,14 @@ improving gross domestic product (GDP) as an indicator for assessing economic ac
 							<FRBRuri value="/ak/amendment/2010-10-28/3/"/>
 							<FRBRdate date="2010-10-28" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/amendment/2010-10-28/3/eng@/main"/>
 							<FRBRuri value="/ak/amendment/2010-10-28/3/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/amendment/2010-10-28/3/eng@/main.xml"/>

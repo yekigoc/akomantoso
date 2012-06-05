@@ -9,12 +9,14 @@
 					<FRBRuri value="/ken/bill/2006-12-19/8"/>
 					<FRBRdate date="2006-12-19" name="Enactment"/>
 					<FRBRauthor href="#Par" as="#author"/>
+				    <FRBRcountry value="ke"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ken/bill/2006-12-19/8/eng@/main"/>
 					<FRBRuri value="/ken/bill/2006-12-19/8/eng@"/>
 					<FRBRdate date="2009-01-10" name="Expression"/>
 					<FRBRauthor href="#cervone" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ken/bill/2006-12-19/8/eng@/main.xml"/>

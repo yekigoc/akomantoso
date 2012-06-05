@@ -8,6 +8,7 @@
 					<FRBRuri value="/ak/judgement/2007-07-25/14-2007"/>
 					<FRBRdate date="2007-03-28" name="Hearing"/>
 					<FRBRauthor href="#Scoz" as="#Author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/judgement/2007-07-25/14-2007/eng@/main"/>
@@ -15,6 +16,7 @@
 					<FRBRdate date="2007-07-25" name="Delivery"/>
 					<FRBRauthor href="#Bungeni" as="#Editor"/>
 					<FRBRauthor href="#Bungeni" as="#Editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/judgement/2007-07-25/14-2007/eng@/main.xml"/>

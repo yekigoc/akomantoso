@@ -12,6 +12,7 @@
 					<componentInfo>
 						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRcountry value="ke"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/2003-12-10/8/eng@/main"/>
@@ -21,6 +22,7 @@
 					<componentInfo>
 						<componentData id="emain" href="#mmain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ke/act/2003-12-10/8/eng@/main.xml"/>

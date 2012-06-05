@@ -12,6 +12,7 @@
 					<componentInfo>
 						<componentData id="wschedule1" href="#wschedule1" name="schedule1" showAs="Schedule 1"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2003-03-22/eng@/main/schedule1"/>
@@ -21,6 +22,7 @@
 					<componentInfo>
 						<componentData id="eappendix1" href="#eschedule1" name="schedule1" showAs="Schedule 1"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2003-03-22/eng@/main/schedule1.xml"/>
@@ -48,7 +50,7 @@
 				</docTitle>
 			</p>
 		</preface>
-		<mainContent>
+		<mainBody>
 			<container id="hco1" class="table" name="table">
 				<p>I certify that the above depositions of C.D. and E.F. were taken and sworn before me in the presence of the accused person A.B. and that A.B. or his advocate had full opportunity of cross-examining the several witnesses,</p>
 				<table id="tab1">
@@ -58,7 +60,7 @@
 						</td>
 						<td>
 							<p>
-								<fillin>............................</fillin>
+							    <fillIn>............................</fillIn>
 							</p>
 						</td>
 						<td>
@@ -66,7 +68,7 @@
 						</td>
 						<td>
 							<p>
-								<fillin>............................</fillin>
+								<fillIn>............................</fillIn>
 							</p>
 						</td>
 						<td>
@@ -74,7 +76,7 @@
 						</td>
 						<td>
 							<p>
-								<fillin>............................</fillin>
+								<fillIn>............................</fillIn>
 							</p>
 						</td>
 						<td>
@@ -82,7 +84,7 @@
 						</td>
 						<td>
 							<p>
-								<fillin>............................</fillin>
+								<fillIn>............................</fillIn>
 							</p>
 						</td>
 					</tr>
@@ -94,6 +96,6 @@ Magistrate.</p>
 					</tr>
 				</table>
 			</container>
-		</mainContent>
+		</mainBody>
 	</doc>
 </akomaNtoso>

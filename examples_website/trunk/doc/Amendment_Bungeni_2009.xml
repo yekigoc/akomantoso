@@ -8,6 +8,7 @@
 					<FRBRuri value="urn:lex:eu:Parliament:EPAmendment:2009:27"/>
 					<FRBRdate date="2009-03-13" name="amendmentTablingDate"/>
 					<FRBRauthor href="#aut1" as="#author"/>
+				    <FRBRcountry value="eu"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="urn:lex:eu:Parliament:EPAmendment:2009:27@1.0-1.0:en"/>
@@ -28,6 +29,7 @@
 					<FRBRuri value="urn:lex:eu:Parliament:EPAmendment:2009:27@1.0-1.0:en$text-xml"/>
 					<FRBRdate date="2009-03-21" name="#generation"/>
 					<FRBRauthor href=""/>
+				    <FRBRformat value="xml"/>
 				</FRBRManifestation>
 			</identification>
 			<publication date="2009-03-13" showAs="Official Journal" name="officialJournal" number="455"/>

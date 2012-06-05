@@ -8,12 +8,14 @@
 					<FRBRuri value="/ak/report/2011-08-04"/>
 					<FRBRdate date="2011-08-04" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/report/2011-08-04/eng@/main"/>
 					<FRBRuri value="/ak/report/2011-08-04/eng@"/>
 					<FRBRdate date="2012-01-05" name="markup"/>
 					<FRBRauthor href="#cervone" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/report/2011-08-04/eng@/main.xml"/>
@@ -46,7 +48,7 @@
 			</notes>
 		</meta>
 		<coverPage id="cp1">
-			<subdivision id="sbd1">
+			<container id="sbd1" name="sbd1">
 				<p>REPUBLIC OF BUNGENI</p>
 				<p>NATIONAL ASSEMBLY</p>
 				<p>PROGRAMME OF PARLIAMENTARY BUSINESS</p>
@@ -54,7 +56,7 @@
 				<p>
 					<session>* 10<sup>TH</sup> PARLIAMENT * 4<sup>ND</sup>SESSION</session>
 				</p>
-			</subdivision>
+			</container>
 		</coverPage>
 		<preface>
 			<p>REF: <docNumber>REF: HB/COMM/2010-2011/VOL.1/(59)</docNumber>
@@ -80,7 +82,7 @@
 				<docTitle>FOR THE WEEK COMMENCING TUESDAY 25<span class="sup">TH</span> MARCH, 2008</docTitle>
 			</p>
 		</preface>
-		<mainContent>
+		<mainBody>
 			<debateSection id="day1" name="day">
 				<heading>
 					<span class="left">
@@ -205,6 +207,6 @@ affected by the prolonged drought in the country.</p>
 					</debateSection>
 				</debateSection>
 			</debateSection>
-		</mainContent>
+		</mainBody>
 	</debateReport>
 </akomaNtoso>

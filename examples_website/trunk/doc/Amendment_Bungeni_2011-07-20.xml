@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/amendment /2011-07-20/B24/"/>
 					<FRBRdate date="2011-07-20" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/amendment /2011-07-20/B24/eng@/main"/>
 					<FRBRuri value="/ak/amendment /2011-07-20/B24//eng@"/>
 					<FRBRdate date="2011-07-25" name="Expression"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/amendment /2011-07-20/B24/eng@/main.xml"/>

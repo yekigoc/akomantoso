@@ -13,18 +13,20 @@
 					<FRBRuri value="/ke/act/1980-01-01/1"/>
 					<FRBRdate date="1980-01-01" name="Generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
-					<componentInfo>
-						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
-					</componentInfo>
+				    <componentInfo>
+				        <componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
+				    </componentInfo>   
+				    <FRBRcountry value="ke" />
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/1980-01-01/1/eng@1989-12-15/main"/>
 					<FRBRuri value="/ke/act/1980-01-01/1/eng@1989-12-15"/>
 					<FRBRdate date="2007-11-23" name="Generation"/>
-					<FRBRauthor href="#bungeni" as="#jurist"/>
-					<componentInfo>
+				  	<FRBRauthor href="#bungeni" as="#jurist"/>
+				 	<componentInfo>
 						<componentData id="emain" href="#mmain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ke/act/1980-01-01/1/eng@1989-12-15/main.xml"/>
@@ -36,6 +38,7 @@
 						<componentData id="mmain" href="main.xml" name="main" showAs="Main document"
 						/>
 					</componentInfo>
+				    <FRBRformat value="xml"/>
 				</FRBRManifestation>
 			</identification>
 			<publication name="Official Journal" date="1980-01-01" showAs="Official Journal of UN"

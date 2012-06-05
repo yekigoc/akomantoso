@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/debaterecord/2011-07-03"/>
 					<FRBRdate date="2011-07-03" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/debaterecord/2011-07-03/eng@/main"/>
 					<FRBRuri value="/ak/debaterecord/2011-07-03/eng@"/>
 					<FRBRdate date="2011-07-03" name="markup"/>
 					<FRBRauthor href="#cervone" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/debaterecord/2011-07-03/eng@/main.xml"/>
@@ -74,7 +76,7 @@ and the Budget </docTitle>
   By <docIntroducer>Hon. KOA Luc, Rapporteur General</docIntroducer>
 			</block>
 		</coverPage>
-		<debateContent>
+		<debateBody>
 			<debateSection name="amendments" id="sub1">
 				<heading>Amendments</heading>
 			</debateSection>
@@ -116,9 +118,9 @@ any other tax, duty, levy and royalty.</quotedText>
 				<scene>SECTION FIVE was adopted after this amendment.</scene>
 			</debateSection>
 			<adjournment id="adj1">
-				<p>The House rose at <recordedTime time="06:30:00" type="endEvent"/>6.30 p.m. <noteRef href="#not01" marker="3"/>
+				<p>The House rose at <recordedTime time="2011-07-03T06:30:00" type="endEvent"/>6.30 p.m. <noteRef href="#not01" marker="3"/>
 				</p>
 			</adjournment>
-		</debateContent>
+		</debateBody>
 	</debate>
 </akomaNtoso>

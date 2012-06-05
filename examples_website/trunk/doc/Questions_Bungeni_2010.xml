@@ -8,12 +8,14 @@
 					<FRBRuri value="/ak/questions/2010-11-11/"/>
 					<FRBRdate date="2010-11-07" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/questions/2010-11-11/eng@/main"/>
 					<FRBRuri value="/ak/questions/2010-11-11/eng@"/>
 					<FRBRdate date="2011-01-23" name="markup"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/questions/2010-11-11/eng@/main.xml"/>
@@ -72,7 +74,7 @@
 				<docDate date="2010-11-11">THURSDAY, 11 NOVEMBER 2010</docDate>
 			</p>
 		</preface>
-		<debateContent>
+	    <debateBody>
 			<questions id="qst1">
 				<num>*19.</num>
 				<heading>DEPUTY PRESIDENT</heading>
@@ -99,11 +101,11 @@ and (d) who attended the meetings?<docNumber refersTo="#identificationCode">CO53
 					</p>
 				</question>
 			</questions>
-		</debateContent>
+		</debateBody>
 		<conclusions>
 			<p class="heading"> ADJOURNMENT</p>
-			<p>The House was adjourned at 2.07 p.m. <recordedTime time="14:07:00" type="endEvent"/> till <date date="2005-07-20">20th July, 2005 </date>at 10.00 a.m.
-				<recordedTime time="14:07:00" type="startEvent"/>
+			<p>The House was adjourned at 2.07 p.m. <recordedTime time="2005-07-20T14:07:00" type="endEvent"/> till <date date="2005-07-20">20th July, 2005 </date>at 10.00 a.m.
+			    <recordedTime time="2005-07-20T14:07:00" type="startEvent"/>
 			</p>
 			<p>
 				<noteRef href="#not01" marker="1" placement="bottom" placementBase="#qst2"/>

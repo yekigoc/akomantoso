@@ -13,6 +13,7 @@
 						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
 						<componentData id="wmemorandum" href="#ememorandum" name="memorandum" showAs="Memorandum on the objects of the higher education laws amendment bill, 2010"/>
 					</componentInfo>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2010-07-10/B24/eng@/main"/>
@@ -23,6 +24,7 @@
 						<componentData id="emain" href="#mmain" name="main" showAs="Main document"/>
 						<componentData id="ememorandum" href="#mmemorandum" name="memorandum" showAs="Memorandum on the objects of the higher education laws amendment bill, 2010"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2010-07-10/B24/eng@/main.xml"/>
@@ -208,7 +210,7 @@ Framework Act.</p>
 			</section>
 		</body>
 		<attachments>
-			<componentRef id="annex1" href="ak/bill/2010-07-10/B24/memorandum" showAs="Memorandum"/>
+			<componentRef id="annex1" src="ak/bill/2010-07-10/B24/memorandum" showAs="Memorandum"/>
 		</attachments>
 	</bill>
 </akomaNtoso>

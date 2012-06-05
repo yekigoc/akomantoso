@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/debaterecord/1995-10-31"/>
 					<FRBRdate date="1995-10-31" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/debaterecord/1995-10-31/eng@/main"/>
 					<FRBRuri value="/ak/debaterecord/1995-10-31/eng@"/>
 					<FRBRdate date="2007-05-31" name="markup"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/debaterecord/1995-10-31/eng@/main.xml"/>
@@ -52,7 +54,7 @@
 			<p class="center">Tuesday, 31st October, 1995</p>
 			<p class="center">The House met at 2.30 p.m.</p>
 		</preface>
-		<debateContent>
+		<debateBody>
 			<debateSection id="sec1" name="preamble">
 				<scene>[Mr. Speaker in the Chair]</scene>
 			</debateSection>
@@ -135,9 +137,9 @@
 						substantiation of that allegation. Hon. Members, the House stands adjourned
 						until tomorrow, Wednesday, 1st November, 1995 at 9.00 a.m.</p>
 				</speech>
-				<p>The House rose at <recordedTime time="06:30:00" type="endEvent"/>6.30 p.m. <noteRef href="#not01" marker="3"/>
+				<p>The House rose at <recordedTime time="1995-11-01T06:30:00" type="endEvent"/>6.30 p.m. <noteRef href="#not01" marker="3"/>
 				</p>
 			</adjournment>
-		</debateContent>
+		</debateBody>
 	</debate>
 </akomaNtoso>

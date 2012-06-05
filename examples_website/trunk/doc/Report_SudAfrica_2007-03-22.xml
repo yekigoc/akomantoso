@@ -13,6 +13,7 @@
                     <componentInfo>
                         <componentData id="wmain" href="#wmain" name="main" showAs="Main document"/>
                     </componentInfo>
+                    <FRBRcountry value="za"/>
                 </FRBRWork>
                 <FRBRExpression>
                     <FRBRthis value="/za/report/2007-03-22/eng@/main"/>
@@ -22,6 +23,7 @@
                     <componentInfo>
                         <componentData id="emain" href="#emain" name="main" showAs="Main document"/>
                     </componentInfo>
+                    <FRBRlanguage language="eng"/>
                 </FRBRExpression>
                 <FRBRManifestation>
                     <FRBRthis value="/za/report/2007-03-22/eng@/main.xml"/>
@@ -69,7 +71,7 @@
                 22 March 2007, reports as follows:
             </p>
         </preamble>
-        <mainContent>
+        <mainBody>
             <hcontainer id="iss1" name="issue">
                 <num>1. </num>
                 <heading>Introduction</heading>
@@ -497,10 +499,10 @@
                      </content>
                 </subsection>
             </section>
-        </mainContent>
+        </mainBody>
         <attachments>
-            <componentRef id="att1" href="/za/report/2007-03-22/eng@/main/appendix1.xml" showAs="APPENDIX 1"/>
-            <componentRef id="att2" href="/za/report/2007-03-22/eng@/main/appendix2.xml" showAs="APPENDIX 2"/>
+            <componentRef id="att1" src="/za/report/2007-03-22/eng@/main/appendix1.xml" showAs="APPENDIX 1"/>
+            <componentRef id="att2" src="/za/report/2007-03-22/eng@/main/appendix2.xml" showAs="APPENDIX 2"/>
         </attachments>
     </debateReport>
 </akomaNtoso>

@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/debaterecord/2011-06-10"/>
 					<FRBRdate date="2011-06-10" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/minutes/2011-06-10/eng@/main"/>
 					<FRBRuri value="/ak/minutes/2011-06-10/eng@"/>
 					<FRBRdate date="2011-06-25" name="markup"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/minutes/2011-06-10/eng@/main.xml"/>
@@ -68,10 +70,10 @@
 			<p>Friday, <docDate date="2011-06-10">10th June 2011</docDate>
 			</p>
 		</preface>
-		<debateContent>
+		<debateBody>
 			<debateSection name="opening" id="dbs0">
 				<!-- example of recordedTime -->
-				<p>The House met at <recordedTime time="10:02:00"> 10.02 a.m.</recordedTime>
+				<p>The House met at <recordedTime time="2011-06-10T10:02:00"> 10.02 a.m.</recordedTime>
 				</p>
 				<!-- example of scene -->
 				<narrative>[MR. SPEAKER IN THE CHAIR]</narrative>
@@ -159,7 +161,7 @@ Mr. Epsilon: </from>
 			<debateSection name="statement" id="sub3">
 				<debateSection id="sub3-sub1" name="recorderdTime">
 					<p>
-						<recordedTime time="10:30:00">10.30 a.m.</recordedTime>
+						<recordedTime time="2011-01-06T10:30:00">10.30 a.m.</recordedTime>
 					</p>
 				</debateSection>
 				<debateSection id="sub3-sub2" name="speech">
@@ -228,10 +230,10 @@ Mr. Epsilon: </from>
 			<adjournment id="sub6">
 				<!-- example of adjournment -->
 				<heading> ADJOURNMENT</heading>
-				<p>The House was  at <recordedTime time="2:07:00">2.07 p.m. </recordedTime> till <date date="2011-06-11">11th 						June, 2011</date>  at <recordedTime time="10:00:00">10.00 a.m. </recordedTime>
+			    <p>The House was  at <recordedTime time="2011-06-11T02:07:00">2.07 p.m. </recordedTime> till <date date="2011-06-11">11th 						June, 2011</date>  at <recordedTime time="2011-06-11T10:00:00">10.00 a.m. </recordedTime>
 				</p>
 			</adjournment>
-		</debateContent>
+		</debateBody>
 		<conclusions>
 			<p>Date, 10th June, 2011</p>
 		</conclusions>

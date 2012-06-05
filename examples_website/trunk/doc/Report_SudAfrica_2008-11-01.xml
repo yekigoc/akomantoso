@@ -11,6 +11,7 @@
 					<componentInfo>
 						<componentData id="wmain" href="#wmain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2008-11-01/eng@/main"/>
@@ -20,6 +21,7 @@
 					<componentInfo>
 						<componentData id="emain" href="#emain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2008-11-01/eng@/main.xml"/>
@@ -229,7 +231,7 @@
 				</tr>
 			</table>
 		</preamble>
-		<mainContent>
+		<mainBody>
 			<chapter id="cha1">
 				<heading>
                     CHAPTER I:  LEGISLATIVE PROCESS
@@ -422,7 +424,7 @@
 					</paragraph>
 				</subchapter>
 			</chapter>
-		</mainContent>
+		</mainBody>
 		<conclusions>
 			<p>
 				<span class="signaturePlace">Signed at <location id="l1" refersTo="#CapeTown">Cape Town</location> on</span>
@@ -437,10 +439,10 @@
 			</p>
 		</conclusions>
 		<attachments>
-			<componentRef id="at1" href="/za/report/2008-11-01/eng@/main/schedule1.xml" showAs="SCHEDULE 1 Constitution of the Republic of South Africa, 1996"/>
-			<componentRef id="at2" href="/za/report/2008-11-01/eng@/main/schedule2.xml" showAs="SCHEDULE 2 Joint Rules of Parliament"/>
-			<componentRef id="at3" href="/za/report/2008-11-01/eng@/main/schedule3.xml" showAs="SCHEDULE 3 Rules of the National Assembly"/>
-			<componentRef id="at4" href="/za/report/2008-11-01/eng@/main/schedule4.xml" showAs="SCHEDULE 4 Rules of the National Council of Provinces"/>
+			<componentRef id="at1" src="/za/report/2008-11-01/eng@/main/schedule1.xml" showAs="SCHEDULE 1 Constitution of the Republic of South Africa, 1996"/>
+			<componentRef id="at2" src="/za/report/2008-11-01/eng@/main/schedule2.xml" showAs="SCHEDULE 2 Joint Rules of Parliament"/>
+			<componentRef id="at3" src="/za/report/2008-11-01/eng@/main/schedule3.xml" showAs="SCHEDULE 3 Rules of the National Assembly"/>
+			<componentRef id="at4" src="/za/report/2008-11-01/eng@/main/schedule4.xml" showAs="SCHEDULE 4 Rules of the National Council of Provinces"/>
 		</attachments>
 	</debateReport>
 </akomaNtoso>

@@ -9,6 +9,7 @@
 					<FRBRuri value="/za/judgement/2008-11-26/653-07"/>
 					<FRBRdate date="2008-11-05" name="Hearing"/>
 					<FRBRauthor href="#Scoa" as="#Author"/>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/judgement/2008-11-26/653-07/eng@/main"/>
@@ -16,6 +17,7 @@
 					<FRBRdate date="2008-11-26" name="Delivery"/>
 					<FRBRauthor href="#Cervone" as="#Editor"/>
 					<FRBRauthor href="#Palmirani" as="#Editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/judgement/2008-11-26/653-07/eng@/main.xml"/>
