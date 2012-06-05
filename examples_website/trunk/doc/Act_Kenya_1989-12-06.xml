@@ -12,6 +12,7 @@
 					<componentInfo>
 						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
 					</componentInfo>
+				    <FRBRcountry value="ke"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/1989-12-06/16/eng@/main"/>
@@ -22,6 +23,7 @@
 						<componentData id="emain" href="#mmain" name="main" showAs="Main document"/>
 						<componentData id="eschedule" href="#mschedule" name="schedule" showAs="SCHEDULE"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ke/act/1989-12-06/16/eng@/main.xml"/>
@@ -33,6 +35,7 @@
 						<componentData id="mmain" href="main.xml" name="main" showAs="Main document"/>
 						<componentData id="mschedule" href="schedule.xml" name="schedule" showAs="SCHEDULE"/>
 					</componentInfo>
+				    <FRBRformat value="xml"/>
 				</FRBRManifestation>
 			</identification>
 			<publication name="officialGazette" date="1989-12-15" showAs="Official Gazette" number="555"/>
@@ -1207,7 +1210,7 @@
 			</section>
 		</body>
 		<attachments>
-			<componentRef id="at1" href="/ke/act/1989-12-06/16/eng@/schedule" showAs="SCHEDULE"/>
+			<componentRef id="at1" src="/ke/act/1989-12-06/16/eng@/schedule" showAs="SCHEDULE"/>
 		</attachments>
 	</act>
 </akomaNtoso>

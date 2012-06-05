@@ -8,12 +8,14 @@
 					<FRBRuri value="/za/bill/2003-09-04/76"/>
 					<FRBRdate date="2003-09-04" name="enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/bill/2003-09-04/76/eng@20051231/main"/>
 					<FRBRuri value="/za/bill/2003-09-04/76/eng@20051231"/>
 					<FRBRdate date="2005-12-31" name="repeal"/>
 					<FRBRauthor href="#cervone" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/bill/2003-09-04/76/eng@20051231/main.xml"/>

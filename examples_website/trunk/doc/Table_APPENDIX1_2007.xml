@@ -12,6 +12,7 @@
 					<componentInfo>
 						<componentData id="wschedule1" href="#wschedule1" name="schedule1" showAs="Schedule 1"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/schedule1"/>
@@ -21,6 +22,7 @@
 					<componentInfo>
 						<componentData id="eappendix1" href="#eschedule1" name="schedule1" showAs="Schedule 1"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/schedule1.xml"/>
@@ -43,18 +45,18 @@
 			</references>
 		</meta>
 		<coverPage>
-			<subdivision id="cover" evolvingId="cover" xml:lang="eng">
+			<container id="cover" name="cover" evolvingId="cover" xml:lang="eng">
 				<p>REPUBLIC OF SOUTH AFRICA</p>
 				<p>
 					<docTitle id="title" evolvingId="title">INDEPENDENT COMMUNICATIONS AUTHORITY OF SOUTH AFRICA ACT</docTitle>
 				</p>
-			</subdivision>
-			<subdivision id="coverAfrikan" evolvingId="cover" xml:lang="afr">
+			</container>
+			<container id="coverAfrikan" name="coverAfrikan" evolvingId="cover" xml:lang="afr">
 				<p>REPUBLIEK VAN SUID-AFRIKA</p>
 				<p>
 					<docTitle id="titleAfrikan" evolvingId="title">WET OP DIE ONAFHANKLIKE KOMMUNIKASIE-OWERHEID VAN SUID-AFRIKA</docTitle>
 				</p>
-			</subdivision>
+			</container>
 		</coverPage>
 		<preface>
 			<p class="heading">
@@ -63,7 +65,7 @@
 				</docTitle>
 			</p>
 		</preface>
-		<mainContent>
+		<mainBody>
 			<container id="hco1" class="table" name="table">
 				<table id="tab1" cellpadding="10" border="1" cellspacing="0" width="100" title="LAWS AMENDED OR REPEALED"  >
 					<caption>LAWS AMENDED OR REPEALED</caption>
@@ -135,6 +137,6 @@ services;’’.</p>
 					</tr>
 				</table>
 			</container>
-		</mainContent>
+		</mainBody>
 	</doc>
 </akomaNtoso>

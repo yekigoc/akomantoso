@@ -14,6 +14,7 @@
 						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
 						<componentData id="wmemorandum" href="#ememorandum" name="memorandum" showAs="Memorandum on the objects of the higher education laws amendment bill, 2010"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/bill/2010-07-10/B24/eng@/main"/>
@@ -24,6 +25,7 @@
 						<componentData id="emain" href="#mmain" name="main" showAs="Main document"/>
 						<componentData id="ememorandum" href="#mmemorandum" name="memorandum" showAs="Memorandum on the objects of the higher education laws amendment bill, 2010"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/bill/2010-07-10/B24/eng@/main.xml"/>
@@ -58,7 +60,7 @@
 LAWS AMENDMENT BILL, 2010 </docTitle>
 
 			</p></preface>
-				<mainContent>
+				<mainBody>
 				<blockList id="lst1">
 					<item id="lst1-itm1">
 					<num>1.</num>
@@ -83,6 +85,6 @@ referred to above.</p></item>
 						</blockList>
 					</item>
 				</blockList>
-					</mainContent>
+					</mainBody>
 	</doc>
 </akomaNtoso>

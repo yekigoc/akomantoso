@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/bill/2011-12-19/8"/>
 					<FRBRdate date="2011-12-19" name="Enactment"/>
 					<FRBRauthor href="#Par" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2011-12-19/100/eng@/main"/>
 					<FRBRuri value="/ak/bill/2011-12-19/100/eng@"/>
 					<FRBRdate date="2009-01-10" name="Expression"/>
 					<FRBRauthor href="#cervone" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2011-12-19/100/eng@/main.xml"/>
@@ -42,7 +44,7 @@
 			</references>
 		</meta>
 		<coverPage>
-			<subdivision id="sub1" xml:lang="fra">
+			<container name="csub1" id="sub1" xml:lang="fra">
 				<p>
 					<docProponent>Republique de Cameroun</docProponent>
 				</p>
@@ -57,8 +59,8 @@
 					<session>3<sup>ème</sup>Session Ordinare</session>
 				</p>
 				<p>Novembre</p>
-			</subdivision>
-			<subdivision id="sub2" alternativeTo="sub1" xml:lang="eng">
+			</container>
+			<container name="csub2" id="sub2" alternativeTo="sub1" xml:lang="eng">
 				<p>
 					<docProponent>Republic of Cameroon</docProponent>
 				</p>
@@ -73,7 +75,7 @@
 					<session>3<sup>rd</sup>Regular Session </session>
 				</p>
 				<p>November</p>
-			</subdivision>
+			</container>
 		</coverPage>
 		<preface>
 			<p>

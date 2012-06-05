@@ -12,6 +12,7 @@
 						<componentData href="#emain" id="wmain" name="main" showAs="Main document"/>
 						<componentData href="#eschedule1" id="wschedule1" name="schedule" showAs="Schedule First"/>
 					</componentInfo>
+				    <FRBRcountry value="ke"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/2010-08-27/1/eng@/main"/>
@@ -22,6 +23,7 @@
 						<componentData href="#mmain" id="emain" name="main" showAs="Main document"/>
 						<componentData href="#mschedule1" id="eschedule1" name="schedule" showAs="Schedule First"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ke/act/2010-08-27/1/eng@/main.xml"/>

@@ -10,12 +10,14 @@
 					<FRBRuri value="/ak/bill/2011-06-30/1234/"/>
 					<FRBRdate date="2011-06-30" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2011-06-30/1234/eng@/main"/>
 					<FRBRuri value="/ak/bill/2011-06-30/1234/eng@"/>
 					<FRBRdate date="2011-11-24" name="Expression"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2011-06-30/1234/eng@/main.xml"/>
@@ -33,20 +35,20 @@
 				<TLCRole id="editor" href="/ontology/roles/akn/editor" showAs="Editor of Document"/>
 			</references>
 		</meta>
-		<collectionContent>
+	    <collectionBody>
 			<interstitial id="int1">
 				<p>Introduction</p>
 			</interstitial>
-			<componentRef id="refc1" href="#bill" showAs="bill"/>
+			<componentRef id="refc1" src="#bill" showAs="bill"/>
 			<interstitial id="int2">
 				<p>Introduction</p>
 			</interstitial>
-			<componentRef id="refc2" href="#memorandum" showAs="memorandum"/>
+			<componentRef id="refc2" src="#memorandum" showAs="memorandum"/>
 			<interstitial id="int3">
 				<p>Introduction</p>
 			</interstitial>
-			<componentRef id="refc3" href="#annex" showAs="annex"/>
-		</collectionContent>
+			<componentRef id="refc3" src="#annex" showAs="annex"/>
+		</collectionBody>
 	</documentCollection>
 	<components>
 		<component id="bill1">
@@ -58,12 +60,14 @@
 							<FRBRuri value="/ak/billBody/2011-06-30/1234/"/>
 							<FRBRdate date="2011-06-30" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/billBody/2011-06-30/1234/eng@/main"/>
 							<FRBRuri value="/ak/billBody/2011-06-30/1234/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/billBody/2011-06-30/1234/eng@/main.xml"/>
@@ -199,12 +203,14 @@ the opportunity to ratify the draft Constitution.</p>
 							<FRBRuri value="/ak/billReport/2011-06-30/1234/"/>
 							<FRBRdate date="2011-06-30" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/billReport/2011-06-30/1234/eng@/main"/>
 							<FRBRuri value="/ak/billReport/2011-06-30/1234/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/billReport/2011-06-30/1234/eng@/main.xml"/>
@@ -224,7 +230,7 @@ the opportunity to ratify the draft Constitution.</p>
 						<docTitle>MEMORANDUM OF OBJECTS AND REASONS</docTitle>
 					</p>
 				</preface>
-				<mainContent>
+				<mainBody>
 					<container id="ctn1" name="objects">
 						<p>
 					The objective of this Bill is to amend the Constitution to facilitate
@@ -245,7 +251,7 @@ expenditure of public funds to be provided for through the
 estimates.
 					</p>
 					</container>
-				</mainContent>
+				</mainBody>
 				<conclusions>
 					<p>
 						<date date="2011-06-30"> the 30th June, 2011.</date>
@@ -267,12 +273,14 @@ estimates.
 							<FRBRuri value="/ak/billInfo/2011-06-30/1234/"/>
 							<FRBRdate date="2011-06-30" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/billInfo/2011-06-30/1234/eng@/main"/>
 							<FRBRuri value="/ak/billBody/2011-06-30/1234/eng@"/>
 							<FRBRdate date="2011-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/billInfo/2011-06-30/1234/eng@/main.xml"/>
@@ -287,7 +295,7 @@ estimates.
 						<docTitle>Section 47A which it is proposed to amend—</docTitle>
 					</p>
 				</preface>
-				<mainContent>
+				<mainBody>
 					<section id="sec47A">
 						<num>47A. </num>
 						<subsection id="sec47A-subsct1">
@@ -354,7 +362,7 @@ people of Bungeni the opportunity to ratify the draft Constitution.
 							</content>
 						</subsection>
 					</section>
-				</mainContent>
+				</mainBody>
 			</doc>
 		</component>
 	</components>

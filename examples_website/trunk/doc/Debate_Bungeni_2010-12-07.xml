@@ -10,12 +10,14 @@
 					<FRBRuri value="/ak/debaterecord/2010-12-07"/>
 					<FRBRdate date="2010-12-07" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main"/>
 					<FRBRuri value="/ak/debaterecord/2010-12-07/eng@"/>
 					<FRBRdate date="2010-12-07" name="markup"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main.xml"/>
@@ -47,7 +49,7 @@
 			<p class="center">Tuesday, 7th December, 2010</p>
 			<p class="center">The House met at 2.30 p.m.</p>
 		</preface>
-		<debateContent>
+		<debateBody>
 			<debateSection id="sec1" name="preamble">
 				<narrative>[Mr. Speaker in the Chair]</narrative>
 			</debateSection>
@@ -155,7 +157,7 @@ recently concluded CECAFA Cup Tournament held in Dar es Salaam.</p>
 				<heading>PRESENTATION  OF PETITION</heading>
 				<debateSection id="pts1-dbs1" name="petition">
 					<p>
-						<recordedTime time="03:50:00" type="endEvent"/>3.50</p>
+						<recordedTime time="2010-12-07T03:50:00" type="endEvent"/>3.50</p>
 				</debateSection>
 				<debateSection id="pts1-dbs2" name="petition">
 					<speech by="gamma">
@@ -229,11 +231,11 @@ House on Thursday, 25th November 2010.</p>
 					<from>Mr. Wetangula</from>
 					<p>Order hon. Members! Tomorrow, hon. Dr. Kituyi, you must start with
 						substantiation of that allegation. Hon. Members, the House stands adjourned
-						until tomorrow, Wednesday, 1st November, 1995 at <recordedTime time="09:00:00" type="startEvent"/>9.00 a.m.</p>
+						until tomorrow, Wednesday, 1st November, 1995 at <recordedTime time="1995-11-01T09:00:00" type="startEvent"/>9.00 a.m.</p>
 				</speech>
-				<p>The House rose at <recordedTime time="06:30:00" type="endEvent"/>6.30 p.m. 
+			    <p>The House rose at <recordedTime time="1995-11-01T06:30:00" type="endEvent"/>6.30 p.m. 
 				</p>
 			</adjournment>
-		</debateContent>
+		</debateBody>
 	</debate>
 </akomaNtoso>

@@ -12,6 +12,7 @@
 					<componentInfo>
 						<componentData id="wappendix1" href="#wappendix1" name="appendix1" showAs="APPENDIX 1"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix1"/>
@@ -21,6 +22,7 @@
 					<componentInfo>
 						<componentData id="eappendix1" href="#eappendix1" name="appendix1" showAs="APPENDIX 1"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix1.xml"/>
@@ -68,7 +70,7 @@
 				</docTitle>
 			</p>
 		</preface>
-		<mainContent>
+		<mainBody>
 			<container id="hco1" name="members" class="memberslist">
 				<ol id="hco1-oli1">
 					<li>
@@ -93,6 +95,6 @@
 						<span refersTo="mn">Ms Ntsaluba </span>(Director Strategy)</li>
 				</ol>
 			</container>
-		</mainContent>
+		</mainBody>
 	</doc>
 </akomaNtoso>

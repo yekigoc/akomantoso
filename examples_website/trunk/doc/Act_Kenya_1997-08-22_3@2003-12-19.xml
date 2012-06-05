@@ -13,6 +13,7 @@
 						<componentData id="wmain" href="#emain" name="main" showAs="Main document"/>
 						<componentData id="wschedule" href="#eschedule" name="schedule" showAs="SCHEDULE (s.S) PROVISIONS AS TOTHE CONDUCT OF BUSINESS AND AFFAIRS OF THE BOARD."/>
 					</componentInfo>
+				    <FRBRcountry value="ke"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ke/act/1997-08-22/3/eng@2003-12-19/main"/>
@@ -37,6 +38,7 @@
 						<componentData id="mmain" href="main.xml" name="main" showAs="Main document"/>
 						<componentData id="mschedule" href="schedule.xml" name="schedule" showAs="SCHEDULE (s.S) PROVISIONS AS TOTHE CONDUCT OF BUSINESS AND AFFAIRS OF THE BOARD."/>
 					</componentInfo>
+				    <FRBRformat value="xml"/>
 				</FRBRManifestation>
 			</identification>
 			<publication name="internal" date="1997-08-22" showAs="Internal Journal" number="999"/>
@@ -1741,7 +1743,7 @@
 			</part>
 		</body>
 		<attachments>
-			<componentRef id="at1" href="/ke/act/1997-08-22/3/eng@2003-12-19/schedule" showAs="SCHEDULE (s.S) PROVISIONS AS TOTHE CONDUCT OF BUSINESS AND AFFAIRS OF THE BOARD."/>
+			<componentRef id="at1" src="/ke/act/1997-08-22/3/eng@2003-12-19/schedule" showAs="SCHEDULE (s.S) PROVISIONS AS TOTHE CONDUCT OF BUSINESS AND AFFAIRS OF THE BOARD."/>
 		</attachments>
 	</act>
 </akomaNtoso>

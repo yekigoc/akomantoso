@@ -10,12 +10,14 @@
 					<FRBRuri value="/ak/bill/2009-01-27/5/"/>
 					<FRBRdate date="2009-01-27" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2009-01-27/5/eng@/main"/>
 					<FRBRuri value="/ak/bill/2009-01-27/5/eng@"/>
 					<FRBRdate date="2011-12-19" name="Expression"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2009-01-27/5/eng@/main.xml"/>
@@ -33,11 +35,11 @@
 				<TLCRole id="editor" href="/ontoloak/roles/ita/editor" showAs="Editor of Document"/>
 			</references>
 		</meta>
-		<collectionContent>
-			<componentRef id="refc1" href="#letter" showAs="Letter"/>
-			<componentRef id="refc2" href="#bill" showAs="Bill"/>
-			<componentRef id="refc3" href="#memorandum" showAs="Memorandum"/>
-		</collectionContent>
+		<collectionBody>
+			<componentRef id="refc1" src="#letter" showAs="Letter"/>
+			<componentRef id="refc2" src="#bill" showAs="Bill"/>
+			<componentRef id="refc3" src="#memorandum" showAs="Memorandum"/>
+		</collectionBody>
 	</documentCollection>
 	<components>
 		<component id="letter">
@@ -49,12 +51,14 @@
 							<FRBRuri value="/ak/bill/2009-01-27/5/"/>
 							<FRBRdate date="2009-01-27" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/bill/2009-01-27/5/eng@/main"/>
 							<FRBRuri value="/ak/bill/2009-01-27/5/eng@"/>
 							<FRBRdate date="2011-12-19" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/bill/2009-01-27/5/eng@/main.xml"/>
@@ -80,9 +84,9 @@
                                   Bungeni.</docProponent>
 					</p>
 				</preface>
-				<mainContent>
+				<mainBody>
 					<p>The following Bill which will be introduced in the National Assembly is published for general information.</p>
-				</mainContent>
+				</mainBody>
 				<conclusions>
 					<p>S.E. Isaacs,
 Clerk of the National Assembly.</p>
@@ -98,12 +102,14 @@ Clerk of the National Assembly.</p>
 							<FRBRuri value="/ak/billBody/2009-01-27/5/"/>
 							<FRBRdate date="2009-01-27" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/billBody/2009-01-27/5/eng@/main"/>
 							<FRBRuri value="/ak/billBody/2009-01-27/5/eng@"/>
 							<FRBRdate date="2009-01-27" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/billBody/2009-01-27/5/eng@/main.xml"/>
@@ -196,12 +202,14 @@ This Act may be cited as the Status of Children Act 2009</p>
 							<FRBRuri value="/ak/billReport/2009-01-27/5/"/>
 							<FRBRdate date="2009-01-27" name="Enactment"/>
 							<FRBRauthor href="#parliament" as="#author"/>
+						    <FRBRcountry value="ak"/>
 						</FRBRWork>
 						<FRBRExpression>
 							<FRBRthis value="/ak/billReport/2009-01-27/5/eng@/main"/>
 							<FRBRuri value="/ak/billReport/2009-01-27/5/eng@"/>
 							<FRBRdate date="2010-11-24" name="Expression"/>
 							<FRBRauthor href="#palmirani" as="#editor"/>
+						    <FRBRlanguage language="eng"/>
 						</FRBRExpression>
 						<FRBRManifestation>
 							<FRBRthis value="/ak/billReport/2009-01-27/5/eng@/main.xml"/>
@@ -217,7 +225,7 @@ This Act may be cited as the Status of Children Act 2009</p>
 						<docTitle>EXPLANATORY MEMORANDUM</docTitle>
 					</p>
 				</preface>
-				<mainContent>
+				<mainBody>
 					<container id="ctn1" name="">
 						<p>Section 1 and 2 state the name of the Bill and define the various terms used in the Bill.</p>
 						<p>Section 3 explains the persons and situations to which this legislation can be applied.</p>
@@ -225,7 +233,7 @@ This Act may be cited as the Status of Children Act 2009</p>
 						<p>Section 5 clarifies that all children whether of natural parents, adoptive parents and born in or out of wedlock, have equal status and rights.	
 						</p>
 					</container>
-				</mainContent>
+				</mainBody>
 				<conclusions>
 					<p>
 						<date date="2009-01-27"> the 27th January, 2009.</date>

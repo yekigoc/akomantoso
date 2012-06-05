@@ -11,6 +11,7 @@
 					<componentInfo>
 						<componentData id="wappendix2" href="#wappendix2" name="appendix2" showAs="APPENDIX 2"/>
 					</componentInfo>
+				    <FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix2"/>
@@ -20,6 +21,7 @@
 					<componentInfo>
 						<componentData id="eappendix2" href="#eappendix2" name="appendix2" showAs="APPENDIX 2"/>
 					</componentInfo>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix2.xml"/>
@@ -71,7 +73,7 @@
 				<docTitle>APPENDIX 2</docTitle>
 			</p>
 		</preface>
-		<mainContent>
+		<mainBody>
 			<hcontainer id="hco1" name="members">
 				<heading>Committee Members:</heading>
 				<hcontainer id="hco1-hco1" name="africannationalcongress" class="memberslist">
@@ -155,6 +157,6 @@
 					</content>
 				</hcontainer>
 			</hcontainer>
-		</mainContent>
+		</mainBody>
 	</doc>
 </akomaNtoso>

@@ -9,12 +9,14 @@
 					<FRBRuri value="/ak/bill/2006-12-23/B24/"/>
 					<FRBRdate date="2006-12-23" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
+				    <FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2006-12-23/B24/eng@/main"/>
 					<FRBRuri value="/ak/bill/2006-12-23/B24//eng@"/>
 					<FRBRdate date="2010-11-24" name="Expression"/>
 					<FRBRauthor href="#palmirani" as="#editor"/>
+				    <FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2006-12-23/B24/eng@/main.xml"/>

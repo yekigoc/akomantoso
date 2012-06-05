@@ -8,12 +8,14 @@
                     <FRBRuri value="/za/doc/2005-08-29" />
                     <FRBRdate date="2005-08-20" name="generation" />
                     <FRBRauthor href="#parliament" as="#author" />
+                    <FRBRcountry value="za"/>
                 </FRBRWork>
                 <FRBRExpression>
                     <FRBRthis value="/za/doc/2005-08-29/eng@/main" />
                     <FRBRuri value="/za/doc/2005-08-29/eng@" />
                     <FRBRdate date="2007-05-31" name="markup" />
                     <FRBRauthor href="#cervone" as="#editor" />
+                    <FRBRlanguage language="eng"/>
                 </FRBRExpression>
                 <FRBRManifestation>
                     <FRBRthis value="/za/doc/2005-08-29/eng@/main.xml"/>
@@ -62,7 +64,7 @@
                 <tocItem level="3" href="#reports-NA-itm1">Finance</tocItem>
             </toc>
         </preamble>
-        <mainContent>
+        <mainBody>
             <blockList id="l1">
                 <item id="l1-i1">
                     <heading>ANNOUNCEMENTS</heading>
@@ -208,6 +210,6 @@
                     </blockList >
                 </item>
             </blockList >
-        </mainContent>
+        </mainBody>
     </doc>
 </akomaNtoso>
