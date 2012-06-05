@@ -1,3 +1,4 @@
+#!/bin/bash
 echo on
 die () {
     echo >&2 "$@"
