@@ -15,6 +15,6 @@ pipeline="generate-$target.xpl"
 cp=".:$rootdir/support/lib/*"
 
 (
-cd "$rootdir/$target" ; java -Xms64mb -Xmx256mb -cp "$cp" $calabash "$@" $pipeline 2>&1
+cd "$rootdir/$target" ; java -Xms64m -Xmx256m -cp "$cp" $calabash "$@" $pipeline 2>&1
 )
 
