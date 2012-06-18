@@ -57,7 +57,7 @@
 		</p:input>
 		<p:with-option name="indent" select="false()"/> <!-- FIXME: why indentation does not suppress excess whitespace? -->
 		<p:with-option name="method" select="'xhtml'"/>
-		<p:with-option name="omit-xml-declaration" select="false()"/>
+		<p:with-option name="omit-xml-declaration" select="true()"/>
 		<p:with-option name="doctype-system" select="'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'"/>
 		<p:with-option name="doctype-public" select="'-//W3C//DTD XHTML 1.0 Transitional//EN'"/>
 	</p:store>
