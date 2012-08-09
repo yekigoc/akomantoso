@@ -15,7 +15,7 @@
 		Copyright (C) Africa i-Parliaments
 		
 		
-		Release 07/05/2012 - Akoma Ntoso 2.0
+		Release 07/05/2012 take II - Akoma Ntoso 2.0
 		Complete version.
 		
 		
@@ -4126,6 +4126,7 @@
 			      <xsd:group ref="ANcontainers"/>
 			      <xsd:element ref="recital"/>
 			      <xsd:element ref="citation"/>
+			      <xsd:element ref="componentRef"/>
 		    </xsd:choice>
 		    <xsd:attributeGroup ref="corereq"/>
 	  </xsd:complexType>
