@@ -44,12 +44,29 @@ div#portaltop img {
     margin-bottom:5px;
 }
 
+.styled-select {
+    display:inline;
+}
+
 #doc-notes {
     margin:0 auto;
-    margin-top:3px;
+    padding:3px 0 0 3px;
     color:#ef330e;
     font-size:1em;
-    width:980px;
+    width:auto;
+    display:inline;
+    position:absolute;
+}
+
+#download_txt {
+    margin-left:10px;
+}
+#download_f {
+    margin-left:3px;
+    padding-left:20px;
+    padding-bottom:4px;
+    background-image: url(../images/download-akn-ex.png);
+    width:40px;
 }
 
 /*.styled-select select {
