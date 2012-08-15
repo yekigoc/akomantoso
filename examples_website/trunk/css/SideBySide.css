@@ -92,11 +92,12 @@ pre.c{
 }
 
 #doc_select_text{
-        background-color:#FFFFFF;
-	color:#000000;
-	font-family:Verdana,sans-serif;
-        font-size:10pt;
-        text-align:center;
+    padding-top:10px;
+    background-color:#FFFFFF;
+    color:#000000;
+    font-family:Verdana,sans-serif;
+    font-size:10pt;
+    text-align:center;
 }
 
 #doc_select_text #oSelect{
@@ -106,6 +107,17 @@ pre.c{
 #doc_select_text select{
 	margin-left:5px;
 	width:30%;
+}
+
+.helpers-browser {
+    margin-top:10px;
+    text-align:center;
+}
+.helpers-browser .smallprint{
+    font-family:Verdana,sans-serif;
+    font-size:8pt;
+    margin-bottom:2px;
+    color:#000000;    
 }
 
 #midtext{
@@ -176,12 +188,6 @@ text-align:center;
 #doc_select select{
 	margin-left:5px;
 	width:30%;
-}
-
-#doc_select_text .smallprint{
-    font-family:Verdana,sans-serif;
-    font-size:8pt;
-    margin-bottom:2px;
 }
 
 #outline_loader{

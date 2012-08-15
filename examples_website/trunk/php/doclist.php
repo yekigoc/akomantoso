@@ -22,7 +22,7 @@
 		global $xml_dir, $html_dir, $examples_catalog;
  		$att = 'name';
 		//create the string that contains all the documents names (inside <option> element)
-		$result = '<option value="doc_select">Select a Document</option>';
+		$result = '<option value="doc_select">Select Example</option>';
 		
     	$xml = simplexml_load_file($examples_catalog) or die ("Unable to load XML file!");
         foreach($xml->file as $item)

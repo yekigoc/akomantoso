@@ -19,7 +19,7 @@
 function initialize()
 {
 	//fill the doc list into the select
-	document.getElementById("iefix").innerHTML = '<div class="styled-select"><select id="doc_menu" onchange="getDocument(this)">'  + get_doc_list() + '</select></div>';
+	document.getElementById("doc_menu").innerHTML = ''  + get_doc_list() + '';
 }
 
 /**
@@ -51,7 +51,7 @@ function getDocument(aSelect)
 		var html_doc = retrieveHTMLDocument(aSelect.value,'html_doc');
 		
 		//the description notes for that document
-		var desc_notes = getNotes(aSelect.value,'doc-notes');
+		var desc_notes = getNotes(aSelect.value,'doc-notes');			
 	}
 }
 
@@ -925,7 +925,7 @@ function retrieveXMLDocument(aDocName,aDiv)
      	//when the documentation arrives call the fucntion that fill it into the properly div
      	http_request.onreadystatechange = function()
      	{ 
-     		fillDocumentXML(aDiv,http_request); 
+     		fillDocumentXML(aDiv,http_request, aDocName);
      	};
 
 		//make the syncronus request
@@ -1077,7 +1077,7 @@ function fillDocumentHTML(aDiv,httpRequest)
 
 }
 
-function fillDocumentXML(aDiv,httpRequest)
+function fillDocumentXML(aDiv,httpRequest, DocName)
 {
     if (httpRequest.readyState == 4) 
     {
@@ -1226,7 +1226,7 @@ function fillDocumentXML(aDiv,httpRequest)
 				oSelect.innerHTML = '<select id="oSelect"><option value="all" selected="selected">all</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select>'
 				//set the onchage function to the select
 				oSelect.firstChild.onchange = function()
-				{
+				{			
 					document.getElementById("loader_div").style.display = 'block';
 					document.getElementById("xml_doc").style.display = 'none';
 					var tim = setTimeout("outline('" + document.getElementById("oSelect").value + "')", 500)
@@ -1241,13 +1241,24 @@ function fillDocumentXML(aDiv,httpRequest)
 				//set the outline to level 4
 				document.getElementById("oSelect").options[4].selected = 'selected';
 				outline("4");
+                var oDownloadTxt = document.createElement("span");
+                oDownloadTxt.setAttribute("id","download_txt");                
+                oDownloadTxt.appendChild(document.createTextNode(" download"));	 
+                document.getElementById("doc_select").appendChild(oDownloadTxt);				
+                var oDownload = document.createElement("a");
+                oDownload.setAttribute("id","download_f");
+                oDownload.setAttribute("href","#");
+                oDownload.setAttribute("title","download this example");
+	            document.getElementById("doc_select").appendChild(oDownload);
 			}
 			else
 			{
 				//set the outline to level 4
 				document.getElementById("oSelect").options[4].selected = 'selected';
-				outline("4");
-			}
+				outline("4");			
+			}      
+     		// set download path
+		    document.getElementById("download_f").setAttribute("href","doc/" + DocName + ".xml");			
         } 
         else 
         {
