@@ -92,12 +92,16 @@ pre.c{
 }
 
 #doc_select_text{
-    padding-top:10px;
+    padding:10px 5px;
     background-color:#FFFFFF;
     color:#000000;
     font-family:Verdana,sans-serif;
     font-size:10pt;
+    text-align:left;
+}
+#iefix {
     text-align:center;
+    margin:0 auto;
 }
 
 #doc_select_text #oSelect{

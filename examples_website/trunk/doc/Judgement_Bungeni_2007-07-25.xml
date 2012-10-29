@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
+	<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
 	<judgement>
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#somebody">
 				<FRBRWork>
 					<FRBRthis value="/ak/judgement/2007-07-25/14-2007/main"/>
 					<FRBRuri value="/ak/judgement/2007-07-25/14-2007"/>
 					<FRBRdate date="2007-03-28" name="Hearing"/>
 					<FRBRauthor href="#Scoz" as="#Author"/>
-				    <FRBRcountry value="ak"/>
+					<FRBRcountry value="za"/>
+					<FRBRnumber value="14-2007"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/judgement/2007-07-25/14-2007/eng@/main"/>
 					<FRBRuri value="/ak/judgement/2007-07-25/14-2007/eng@"/>
 					<FRBRdate date="2007-07-25" name="Delivery"/>
-					<FRBRauthor href="#Bungeni" as="#Editor"/>
-					<FRBRauthor href="#Bungeni" as="#Editor"/>
-				    <FRBRlanguage language="eng"/>
+					<FRBRauthor href="#somebody" as="#Editor"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/judgement/2007-07-25/14-2007/eng@/main.xml"/>
-					<FRBRuri value="/ak/judgement/2007-07-25/14-2007/eng@.akn"/>
+					<FRBRuri value="/ak/judgement/2007-07-25/14-2007/eng@/main.akn"/>
 					<FRBRdate date="2009-01-20" name="XMLConversion"/>
-					<FRBRauthor href="#Bungeni" as="#Editor"/>
-					<FRBRauthor href="#Bungeni" as="#Editor"/>
+					<FRBRauthor href="#somebody" as="#Editor"/>
+					<FRBRformat value="xml"/>
 				</FRBRManifestation>
 			</identification>
-			<publication date="2007-07-29" name="Law Report" showAs="BungeniLand Law Journal" number="555"/>
-			<lifecycle source="#bungeni">
-				<eventRef date="2007-07-25" id="e1" source="" type="generation"/>
+			<publication date="2007-07-29" name="Law Report" showAs="somebodyLand Law Journal" number="555"/>
+			<lifecycle source="#somebody">
+				<eventRef date="2007-07-25" id="e1" source="#ro1" type="generation"/>
 			</lifecycle>
-			<workflow source="#bungeni">
-				<step date="2007-03-28" id="a1"/>
+			<workflow source="#somebody">
+				<step date="2007-03-28" id="a1" outcome="#hearingDate" actor="Scoz"/>
 				<step date="2007-07-25" id="a2"/>
 			</workflow>
-			<analysis source="#bungeni">
+			<analysis source="#somebody">
 				<judicial>
 					<result type="deny"/>
 					<supports id="jdc01">
@@ -43,39 +44,42 @@
 					</supports>
 				</judicial>
 			</analysis>
-			<references source="#bungeni">
-				<TLCOrganization id="bungeni" href="/ontology/organization/kn/kn.bungeni" showAs="Bungeni"/>
-				<TLCOrganization id="Scoz" href="/ontology/organization/ak.SoupremeCourt" showAs="SUPREME COURT OF BungeniLand "/>
+			<references source="#somebody">
+				<original id="ro1" href="/ak/judgement/2007-07-25/14-2007/eng@/main" showAs="Original"/>
+				<TLCOrganization id="somebody" href="/ontology/organization/kn/somebody" showAs="somebody"/>
+				<TLCOrganization id="Scoz" href="/ontology/organization/ak.SoupremeCourt" showAs="SUPREME COURT OF BUNGENI"/>
 				<TLCOrganization id="ag" href="/ontology/organization/ak.AttorneyGeneral" showAs="ATTORNEY GENERAL"/>
 				<TLCOrganization id="eac" href="/ontology/organization/ak.EllisAndCompany" showAs="Ellis and company"/>
 				<TLCOrganization id="ssaa" href="/ontology/organization/ak.EtaSangwaAndAssociates" showAs="Eta Sangwa and Associates"/>
 				<TLCOrganization id="lac" href="/ontology/organization/ak.Acme" showAs="ACME"/>
-				<TLCPerson id="smith" href="/ontology/persons/ak.Smith" showAs="SMITH"/>
-				<TLCPerson id="brown" href="/ontology/persons/ak.Brown" showAs="BROWN"/>
+				<TLCPerson id="smith" href="/ontology/person/ak.Smith" showAs="SMITH"/>
+				<TLCPerson id="brown" href="/ontology/person/ak.Brown" showAs="BROWN"/>
 				<TLCPerson id="alfa" href="/ontology/person/judges/ak.alfa" showAs="Alfa, C. J."/>
 				<TLCPerson id="beta" href="/ontology/person/judges/ak.beta" showAs="Beta, D. C. J."/>
-				<TLCPerson id="gamma" href="/ontology/person/judges/ak.gamma" showAs="Gamma"/>
+				<TLCPerson id="gamma" href="/ontology/person/judges/ak.gamma" showAs="Gamma, F.N.M."/>
 				<TLCPerson id="delta" href="/ontology/person/judges/ak.delta" showAs="Delta"/>
 				<TLCPerson id="epsilon" href="/ontology/person/judges/ak.epsilon" showAs="Epsilon, J. J. S."/>
-				<TLCPerson id="zeta" href="/ontology/persons/ak.ZetaB" showAs="Zeta, S. C."/>
-				<TLCPerson id="eta" href="/ontology/persons/ak.Eta" showAs="Eta"/>
-				<TLCPerson id="theta" href="/ontology/persons/ak.Theta" showAs="Theta, S. C"/>
-				<TLCPerson id="iota" href="/ontology/persons/ak.Simuma" showAs="R. Iota"/>
-				<TLCPerson id="kappa" href="/ontology/persons/ak.Kappa" showAs="Mr. E. M. Kappa"/>
-				<TLCPerson id="lambda" href="/ontology/persons/ak.Lambda" showAs="Mr. M. Lambda"/>
-				<TLCPerson id="adam" href="/ontology/person/persons/ak.smith" showAs="John Adam"/>
+				<TLCPerson id="zeta" href="/ontology/person/ak.ZetaB" showAs="Zeta, S. C."/>
+				<TLCPerson id="eta" href="/ontology/person/ak.Eta" showAs="Eta, R. M."/>
+				<TLCPerson id="theta" href="/ontology/person/ak.Theta" showAs="Theta, S. C."/>
+				<TLCPerson id="iota" href="/ontology/person/ak.Simuma" showAs="R. Iota"/>
+				<TLCPerson id="kappa" href="/ontology/person/ak.Kappa" showAs="E. M. Kappa"/>
+				<TLCPerson id="lambda" href="/ontology/person/ak.Lambda" showAs="M. Lambda"/>
+				<TLCPerson id="adam" href="/ontology/person/persons/ak.adam" showAs="John Adam"/>
 				<TLCRole id="Author" href="/ontology/role/Author" showAs="Author of Document"/>
 				<TLCRole id="Editor" href="/ontology/role/Editor" showAs="Editor of Document"/>
 				<TLCRole id="CoEditor" href="/ontology/role/CoEditor" showAs="Co-Editor of Document"/>
 				<TLCRole id="Appellant" href="/ontology/role/Appellant" showAs="Appellant"/>
-				<TLCRole id="FirstRespondant" href="/ontology/role/Respondant" showAs="1st Respondant"/>
-				<TLCRole id="SecondRespondant" href="/ontology/role/Respondant" showAs="2nd Respondant"/>
+				<TLCRole id="FirstRespondent" href="/ontology/role/Respondent" showAs="1st Respondent"/>
+				<TLCRole id="SecondRespondent" href="/ontology/role/Respondant" showAs="2nd Respondent"/>
 				<TLCRole id="AppellantAdvocate" href="/ontology/role/AppellantAdvocate" showAs="Appellant Advocate"/>
-				<TLCRole id="FirstRespondantAdvocate" href="/ontology/role/FirstRespondantAdvocate" showAs="1st Respondant Advocate"/>
-				<TLCRole id="SecondRespondantAdvocate" href="/ontology/role/SecondRespondantAdvocate" showAs="2nd Respondant Advocate"/>
+				<TLCRole id="FirstRespondentAdvocate" href="/ontology/role/FirstRespondentAdvocate" showAs="1st Respondent Advocate"/>
+				<TLCRole id="SecondRespondentAdvocate" href="/ontology/role/SecondRespondentAdvocate" showAs="2nd Respondant Advocate"/>
 				<TLCRole id="AdvocateAssistant" href="/ontology/role/AdvocateAssistant" showAs="Advocate Assistant"/>
+				<TLCEvent id="hearingDate" href="/ontology/role/hearingDate" showAs="Hearing Date"/>
+				<TLCConcept id="minorPerson" href="/ontology/concept/minorPerson" showAs="Minor Person"/>
 			</references>
-			<notes source="#bungeni">
+			<notes source="#somebody">
 				<note id="not1">
 					<p> Some of the content of the motivations was deleted in order to simplify the
                         reading of the example. </p>
@@ -84,8 +88,8 @@
 		</meta>
 		<header>
 			<p class="judgementNumber">
-				<b>Supreme Court Judgment No. <docketNumber>14 of 2007</docketNumber>
-				</b>
+				<span class="preface"> Court Judgment No. <docketNumber>14 of 2007</docketNumber>
+				</span>
 				<!-- Important the neutral citation: methodology for make a citation of law case-->
 				<neutralCitation>Smith v Attorney General and Another (18/2007) [2007] ZMSC 14; SCZ No. 14 of 2007 (25 July 2007) 
 </neutralCitation>
@@ -106,42 +110,42 @@
 				<party id="p1" refersTo="#smith" as="#Appellant">SMITH</party>
 				<span class="rightInline">APPELLANT</span>
 				<eol/> AND <eol/>
-				<party id="p2" refersTo="#ag" as="#FirstRespondant">ATTORNEY GENERAL</party>
+				<party id="p2" refersTo="#ag" as="#FirstRespondent">ATTORNEY GENERAL</party>
 				<span class="rightAndUnderlinedInline">1<sup>st</sup>
                     RESPONDEND</span>
 				<eol/>
-				<party id="p3" refersTo="#brown" as="#SecondRespondant">BROWN</party>
+				<party id="p3" refersTo="#brown" as="#SecondRespondent">BROWN</party>
 				<span class="rightInline">2<sup>nd</sup> RESPONDEND</span>
 			</block>
 			<block name="coram" class="coramContainer" id="coram1">
-				<b>CORAM: <judge id="jud01" refersTo="#alfa">Alfa, C. J.</judge>, 
-				<judge id="jud02" refersTo="#beta"> Beta, D. C. J.</judge>, <judge id="jud03" refersTo="#gamma"> Gamma</judge>, <judge id="jud04" refersTo="#delta"> Delta</judge>, <judge id="jud05" refersTo="#Epsilon"> Epsilon, J. J. S.</judge>
-				</b>
+				<span class="bold">CORAM: <judge id="jud01" refersTo="#alfa">Alfa, C. J.</judge>, 
+				<judge id="jud02" refersTo="#beta"> Beta, D. C. J.</judge>, <judge id="jud03" refersTo="#gamma"> Gamma, F.N.M.</judge>, <judge id="jud04" refersTo="#delta"> Delta</judge>, <judge id="jud05" refersTo="#epsilon"> Epsilon, J. J. S.</judge>
+				</span>
 			</block>
 			<p class="hearingDates"> on <span refersTo="#a2">28<sup>th</sup>
                     March</span> and <docDate id="judgmentDate" date="2007-07-25" refersTo="#e1">25<sup>th</sup> July</docDate>, 2007 </p>
 			<block name="lawyers" class="lawyersContainer" id="lawyers1">
-				<span class="appellantAdvocates"> For the Appellant: <lawyer id="law1" refersTo="#zeta" as="AppellantAdvocate">Mr. B. Zeta, S. C.</lawyer> of <span refersTo="#eac">Ellis and company</span>; assisted by <lawyer id="law2" refersTo="#eta" as="AdvocateAssistant">Mr. R. M. Simeza</lawyer> of <span refersTo="#ssaa">Eta Sangwa and Associates</span>. </span>
+				<span class="appellantAdvocates"> For the Appellant: <lawyer id="law1" refersTo="#zeta" as="#AppellantAdvocate">Mr. Zeta, S. C.</lawyer> of <span refersTo="#eac">Ellis and company</span>; assisted by <lawyer id="law2" refersTo="#eta" as="#AdvocateAssistant">Mr. R. M. Eta</lawyer> of <span refersTo="#ssaa">Eta Sangwa and Associates</span>. </span>
 				<eol/>
-				<span class="firstRespondantAdvocates"> For the 1<sup>st</sup>
-                    Respondent: <lawyer id="law3" refersTo="#theta" as="FirstRespondentAdvocate"> Mr. S.
-                        Theta, S. C</lawyer>, Solicitor General; assisted by <lawyer id="law4" refersTo="#iota" as="AdvocateAssistant">Mrs. R. Iota</lawyer>, Assistant
-                    Senior State advocate and <lawyer id="law5" refersTo="#mk" as="AdvocateAssistant">Mr. E. M. Kappa</lawyer>, Legal Counsel, E. C. Z. </span>
+				<span class="firstRespondentAdvocates"> For the 1<sup>st</sup>
+                    Respondent: <lawyer id="law3" refersTo="#theta" as="#FirstRespondentAdvocate"> Mr.
+                        Theta, S. C.</lawyer>, Solicitor General; assisted by <lawyer id="law4" refersTo="#iota" as="#AdvocateAssistant">Mrs. R. Iota</lawyer>, Assistant
+                    Senior State advocate and <lawyer id="law5" refersTo="#kappa" as="#AdvocateAssistant">Mr. E. M. Kappa</lawyer>, Legal Counsel, E. C. Z. </span>
 				<eol/>
-				<span class="secondRespondantAdvocates"> For the 2<sup>nd</sup>
-                    Respondent: <lawyer id="law6" refersTo="#lambda" as="SecondRespondentAdvocate">Mr. M.
-                        Lambda</lawyer> of <span refersTo="#lac">Lambda and Company</span>. </span>
+				<span class="secondRespondentAdvocates"> For the 2<sup>nd</sup>
+                    Respondent: <lawyer id="law6" refersTo="#lambda" as="#SecondRespondentAdvocate">Mr. M.
+                        Lambda</lawyer> of <span refersTo="#lac">ACME and Company</span>. </span>
 			</block>
 			<p class="judgment">
-				<b class="centered">JUDGMENT</b>
+				<span class="centered">JUDGMENT</span>
 				<eol/>
-				<b>
-					<judge id="jud06" refersTo="#epsilon" as="#Editor">Epsilon, J. S.</judge>
-				</b>
-				<b>delivered the judgment of the Court.</b>
+				<span  class="centered">
+					<judge id="jud06" refersTo="#epsilon" as="#Editor">Epsilon, J. J. S.</judge>
+				</span>
+				<span class="nocenteredrmal">delivered the judgment of the Court.</span>
 			</p>
 			<p>
-				<b class="underlined">Cases referred to:-</b>
+				<span class="bold">Cases referred to:-</span>
 			</p>
 			<ol id="casesReferences" class="casesReferences">
 				<li>
@@ -166,13 +170,13 @@
 				</li>
 			</ol>
 			<p>
-				<b class="underlined">Legislation referred to:</b>
+				<span class="bold">Legislation referred to:</span>
 			</p>
 			<p class="legislationsReferences">
 				<ref id="ref06" href="/ak/act/2006/12">Electoral Act No 12 of 2006</ref>
 			</p>
 			<p>
-				<b class="underlined">Authorities referred to:</b>
+				<span class="bold">Authorities referred to:</span>
 			</p>
 			<ol id="booksReferences" class="booksReferences">
 				<li>
@@ -235,10 +239,10 @@
                     vigorously argued before the lower court and this court but which is also the
                     subject of appeal. </p>
 				<p> As recast by counsel for the 2<sup>nd</sup> respondent and argued
-                    by the parties, the issue was: <b> whether a petition filed into court and not
+                    by the parties, the issue was: <span class="bold"> whether a petition filed into court and not
                         signed by the petitioner herself can be said to be properly before the court
                         and whether or not the court can entertain the petition or indeed allow an
-                        amendment </b>
+                        amendment </span>
 				</p>
 				<p> Mr. Lambda contended before the learned trial Judge that it was a mandatory
                     requirement that the petition is signed by the petitioner in person and not
@@ -282,14 +286,14 @@
 		</judgementBody>
 		<conclusions>
 			<p class="signature">
-				<judge id="jud07" refersTo="#alfa">E. L. Alfa</judge>, <eol/>
-				<b class="underlined">CHIEF JUSTICE.</b>
+				<judge id="jud07" refersTo="#alfa">C. J. Alfa</judge>, <eol/>
+				<span class="signature">CHIEF JUSTICE.</span>
 				<eol/>
-				<judge id="jud08" refersTo="#beta">D.M. Beta</judge>, <eol/>
-				<b class="underlined">DEPUTY CHIEF JUSTICE.</b>
+				<judge id="jud08" refersTo="#beta">D. C. J. Beta</judge>, <eol/>
+				<span class="signature">DEPUTY CHIEF JUSTICE.</span>
 				<eol/>
-				<judge id="jud09" refersTo="#gamma">F.N.M. Gamma</judge>, <eol/>
-				<b class="underlined">SUPREME COURT JUDGE.</b>
+				<judge id="jud09" refersTo="#gamma" as="#CoEditor">F.N.M. Gamma</judge>, <eol/>
+				<span class="signature">SUPREME COURT JUDGE.</span>
 			</p>
 		</conclusions>
 	</judgement>

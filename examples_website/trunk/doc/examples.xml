@@ -1,114 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <examples>
-    <file name="Act_Kenya_1980-01-01@1989-12-15.xml">
-        <desc>versioned act</desc>
-    </file>
-    <file name="Act_Kenya_1989-12-06.xml">
-        <desc>modificatory act</desc>
-    </file>
-    <file name="Act_Kenya_1997-08-22_3@2003-12-19.xml">
-        <desc>versioned act</desc>
-    </file>
-    <file name="Act_Kenya_2003-12-10-short.xml">
-        <desc>modificatory act</desc>
-    </file>
-    <file name="Amendment_Bungeni_2011-07-20.xml">
-        <desc>European Parliament amendment</desc>
-    </file>
-    <file name="Amendment_Bungeni_2009.xml">
-        <desc>multiple linguistic amendment, use of the attribute &lt;code&gt;alternativeTo&lt;/code&gt;</desc>
-    </file>
-    <file name="AmendmentList_Bungeni_2010-10-28v1.xml">
-        <desc/>
-    </file>
-    <file name="AmendmentList_Bungeni_2010-10-28v2.xml">
-        <desc/>
+    <file name="Act_constitution_final-Kenya.xml">
+        <type>act</type>
+        <desc>Act that includes the new version of the constitution. One of the rare Act with preamble.</desc>
+    </file>    
+    <file name="Act_Instrument_Scotland_Subsidiarity_2010.xml">
+        <type>act</type>        
+        <desc>Example of complex structure, with TOC for any chapter, images and table included in the text.</desc>
     </file>  
-    <file name="Bill_Bungeni_2009-01-27.xml">
+    <file name="Act_Kenya_1980-01-01@1989-12-15.xml">
+        <type>act</type>        
+        <desc>Consolidate act with Passive Modifications and Temporal Info block</desc>
+    </file>  
+    <file name="Act_Kenya_1989-12-06.xml">
+        <type>act</type>        
+        <desc>Modificatory act of the Kenya Act 1980-01-01</desc>
+    </file>   
+    <file name="Act_Kenya_1997-08-22_3@2003-12-19.xml">
+        <type>act</type>        
+        <desc>Consolidate act with Passive Modifications and Temporal Info block</desc>
+    </file>  
+    <file name="Act_Kenya_2003-12-10-short.xml">
+        <type>act</type>        
+        <desc>Modificatory act of the Kenya Act 1997-08-22 n. 3 Active Modifications</desc>
+    </file>  
+    <file name="Act_Panama_decreto_223_2010.xml">
+        <type>act</type>        
+        <desc>Example of Panama decree, government act</desc>
+    </file>   
+    <file name="Act_Salvador_Ley_604_1993.xml">
+        <type>act</type>        
+        <desc>Original act</desc>
+    </file>  
+    <file name="Act_Salvador_Ley_604_1993@2006-01-20.xml">
+        <type>act</type>        
+        <desc>Consolidated act with passive modifications, in Spanish</desc>
+    </file>  
+    <file name="Act_Salvador_Ley_912_2005.xml">
+        <type>act</type>        
+        <desc>Modificatory act with active modifications</desc>
+    </file>   
+    <file name="Act_USA_2011-11-29-short.xml">
+        <type>act</type>        
+        <desc>US Act a simple example</desc>
+    </file>  
+    <file name="Amendemet_Bungeni_2011-07-20.xml">
+        <type>amendment</type>
+        <desc>European Parliament amendment with the technique of the double column</desc>
+    </file>  
+    <file name="Amendment_bungeni_2009.xml">
+        <type>amendment</type>        
+        <desc>multiple linguistic amendment, use of the attribute &lt;code&gt;alternativeTo&lt;/code&gt;</desc>
+    </file>  
+    <file name="Amendment_mexico_enmienda_2010-10-07.xml">
+        <type>amendment</type>        
+        <desc>Amendment in Spanish</desc>
+    </file>  
+    <file name="Amendmet_Bungeni_2010-10-28adm1.xml">
+        <type>amendment</type>        
+        <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+    </file>   
+    <file name="Amendmet_Bungeni_2010-10-28adm2.xml">
+        <type>amendment</type>        
+        <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+    </file>     
+    <file name="Amendmet_Bungeni_2010-10-28adm3.xml">
+        <type>amendment</type>        
+        <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+    </file>  
+    <file name="AmendmetList_Bungeni_2010-10-28v1.xml">
+        <type>amendment</type>        
+        <desc>Example of the Amendment list with three amendments included in the same XML file</desc>
+    </file>  
+    <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
+        <type>amendment</type>        
+        <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+    </file>   
+    <file name="Bill_Bungeni_2009-01-27-documentCollection.xml">
+        <type>bill</type>        
         <desc>&lt;code&gt;documentCollection&lt;/code&gt; with &lt;code&gt;ComponentRef&lt;/code&gt; and &lt;code&gt;Component&lt;/code&gt;</desc>
-    </file>
-    <file name="Bill_Bungeni_2010-10-10.xml">
-        <desc>&lt;code&gt;bill&lt;/code&gt; with the memorandum as &lt;code&gt;attachment&lt;/code&gt;</desc>
-    </file>
-    <file name="Bill_Bungeni_2010-10-10-memorandum.xml">
-        <desc>memorandum of the previous bill</desc>
-    </file>
-    <file name="Bill_Bungeni_2011-06-30v1.xml">
+    </file>  
+    <file name="Bill_Bungeni_2010-07-10-mail.xml">
+        <type>bill</type>          
+        <desc>&lt;code&gt;bill&lt;/code&gt; with the memorandum as &lt;code&gt;attachment&lt;/code&gt;. This bill includes active modifications to an existing law</desc>
+    </file>  
+    <file name="Bill_Bungeni_2010-07-10-memorandum.xml">
+        <type>bill</type>          
+        <desc>Memorandum of the previous bill</desc>
+    </file>   
+    <file name="Bill_Bungeni_2010-11-19-coverpage.xml">
+        <type>bill</type>          
+        <desc>Example of cover page</desc>
+    </file>  
+    <file name="Bill_Bungeni_2011-06-30v1-documentCollection.xml">
+        <type>bill</type>          
         <desc>&lt;code&gt;documentCollection&lt;/code&gt; with embedded a &lt;code&gt;bill&lt;/code&gt;, a &lt;code&gt;memorandum&lt;/code&gt;, an &lt;code&gt;annex&lt;/code&gt;.</desc>
-    </file>
-    <file name="Bill_Bungeni_2011-06-30v2.xml">
-        <desc>&lt;code&gt;documentCollection&lt;/code&gt; with &lt;code&gt;ComponentRef&lt;/code&gt; and &lt;code&gt;Component&lt;/code&gt;</desc>
-    </file>
-    <file name="Bill_Bungeni_2011-12-19-collect.xml">
-        <desc>different fragment of neutral examples, like: recitals, citations, conclusions, mmod</desc>
-    </file>
-    <file name="Bill_Kenya_2006-12-19.xml">
-        <desc>old bill translated for maintaining the compatibility with AK 2.0</desc>
-    </file>
+    </file>  
+    <file name="Bill_Bungeni_2011-06-30v2-documentCollection.xml">
+        <type>bill</type>          
+        <desc>&lt;code&gt;documentCollection&lt;/code&gt; with embedded a &lt;code&gt;bill&lt;/code&gt;, a &lt;code&gt;memorandum&lt;/code&gt;, an &lt;code&gt;annex&lt;/code&gt; listed at the end of the document</desc>
+    </file>   
+    <file name="Bill_cl_2005-03-14.xml">
+        <type>bill</type>          
+        <desc>Example of the tradition in Chile for the bill</desc>
+    </file>  
+    <file name="Bill_Kenya_2006-02-10.xml">
+        <type>bill</type>          
+        <desc>Example of complex structure with part, annexes, sections, list into a list, longTitile</desc>
+    </file>   
     <file name="Bill_southAfrica_2006-12-23.xml">
-        <desc>red-line method</desc>
-    </file>
-    <file name="Bill_SouthAfrica_2010-10-10.xml">
-        <desc>old bill with memorandum translated for maintaining the compatibility with AK 2.0</desc>
-    </file>
-    <file name="Bill_SouthAfrica_2010-10-10-memorandum.xml">
-        <desc>memorandum</desc>
-    </file>
-    <file name="Bill_SudAfrica_2003-09-04@20051231.xml">
-        <desc>old bill with memorandum translated for maintaining the compatibility with AK 2.0</desc>
-    </file>
-    <file name="constitution_final-Kenya.xml">
-        <desc>constitution of Kenya, interesting case of use of article in common law</desc>
-    </file>
+        <type>bill</type>          
+        <desc>Red-lining method (strikes and insertions) for marking up the active modifications to another existing act</desc>
+    </file>  
+    <file name="Bill_SudAfrica_2003-09-04.xml">
+        <type>bill</type>          
+        <desc>Particular stucture with articulated preamble</desc>
+    </file>  
+    <file name="Bill_UN_2012.xml">
+        <type>bill</type>          
+        <desc>Draft resolutions of UN in English</desc>
+    </file>   
+    <file name="Bill_UN_2012_ES.xml">
+        <type>bill</type>          
+        <desc>Draft resolutions of UN in English </desc>
+    </file>  
+    <file name="Bill_Uruguay_2011-09-27.xml">
+        <type>bill</type>          
+        <desc>Example of the tradition in Uruguay for the bill with the folder container in the Senate and in the Chamber</desc>
+    </file>  
+    <file name="Bill_US_2010-12-06.xml">
+        <type>bill</type>          
+        <desc>Example of the tradition in US for the bill</desc>
+    </file>   
     <file name="Debate_Bungeni_1995-10-31.xml">
+        <type>debate</type>          
         <desc>debate with &lt;code&gt;scene&lt;/code&gt;, &lt;code&gt;summary&lt;/code&gt;, &lt;code&gt;narrative&lt;/code&gt;</desc>
-    </file>
+    </file>  
+    <file name="Debate_Bungeni_2010-11-12.xml">
+        <type>debate</type>           
+        <desc>Example of debate that includes amendment. Interesting example of mmod, modification in the modification</desc>
+    </file>  
     <file name="Debate_Bungeni_2010-12-07.xml">
-        <desc>several example of debateContent: &lt;code&gt;questions&lt;/code&gt;, &lt;code&gt;pointOfOrder&lt;/code&gt;, &lt;code&gt;ministerialStatements&lt;/code&gt;</desc>
+        <type>debate</type>           
+        <desc>Several example of debateContent: &lt;code&gt;questions&lt;/code&gt;, &lt;code&gt;pointOfOrder&lt;/code&gt;, &lt;code&gt;ministerialStatements&lt;/code&gt;</desc>
     </file>
     <file name="Debate_Bungeni_2011-06-10.xml">
-        <desc>example of &lt;code&gt;vote, Motion, Quorum, Division, Recount, Oral answers to questions&lt;/code&gt;</desc>
-    </file>
-    <file name="Debate_Bungeni_2011-07-03.xml">
-        <desc>Example of debate that includes amendment. Interesting example of mmod, modification in the modification</desc>
-    </file>
-    <file name="Doc_SudAfrica_2005-08-29.xml">
-        <desc>Committe Report</desc>
-    </file>
+        <type>debate</type>           
+        <desc>Example of &lt;code&gt;vote, Motion, Quorum, Division, Recount, Oral answers to questions&lt;/code&gt;</desc>
+    </file>  
+    <file name="Debate_mexico_debate_2010-01-26.xml">
+        <type>debate</type>           
+        <desc>Debate in Spanish with quorum section and metadata</desc>
+    </file>  
     <file name="Judgement_Bungeni_2007-07-25.xml">
-        <desc>classification of the reference. Useful for improving the information retrieval query for discovery the proper case-law.</desc>
-    </file>
+        <type>judgement</type>           
+        <desc>Classification of the reference. Useful for improving the information retrieval query for discovery the proper case-law.</desc>
+    </file>   
     <file name="Judgement_SudAfrica_2008-11-26.xml">
-        <desc>use of the metadata and semantic relationships among the advocates, roles, firms. Useful for improving the information retrieval query for discovery the proper case-law</desc>
-    </file>
+        <type>judgement</type>               
+        <desc>Use of the metadata and semantic relationships among the advocates, roles, firms. Useful for improving the information retrieval query for discovery the proper case-law</desc>
+    </file>  
     <file name="officialGazette_Bungeni_2011-12-23v1.xml">
-        <desc/>
+        <type>official gazette</type>               
+        <desc>Example how to use Official Gazette structure using componentRef that points out to external xml file</desc>
     </file>  
     <file name="officialGazette_Bungeni_2011-12-23v2.xml">
-        <desc/>
-    </file> 
+        <type>official gazette</type>         
+        <desc>Second example where the components are embedded in the same XML file</desc>
+    </file>   
     <file name="OrderOfWeek_Bungeni_2008-03-19.xml">
-        <desc/>
-    </file>
+        <type>order of the week</type>         
+        <desc>Example Order of thr week</desc>
+    </file>  
     <file name="Questions_Bungeni_2010.xml">
-        <desc>question paper</desc>
-    </file>
+        <type>question</type>         
+        <desc>Question paper</desc>
+    </file>  
+    <file name="Report_SudAfrica_2005-08-29.xml">
+        <type>report</type>         
+        <desc>Committe Report</desc>
+    </file>  
     <file name="Report_SudAfrica_2007-03-22.xml">
+        <type>report</type>         
         <desc>Debate Report with 2 annexes</desc>
-    </file>
+    </file>  
     <file name="Report_SudAfrica_2008-11-01.xml">
-        <desc/>
-    </file>
+        <type>report</type>         
+        <desc>Report</desc>
+    </file>  
     <file name="Report_SudAfrica_APPENDIX1_Of_Report_2007-03-22.xml">
-        <desc/>
-    </file>
+        <type>report</type>         
+        <desc>Annex 1 of debate report</desc>
+    </file> 
     <file name="Report_SudAfrica_APPENDIX2_Of_Report_2007-03-22.xml">
-        <desc/>
-    </file>
+        <type>report</type>         
+        <desc>Annex 2 of debate report</desc>
+    </file>  
     <file name="Table_APPENDIX1_2003.xml">
-        <desc>example of usage of  &lt;code&gt;filling&lt;/code&gt;</desc>
-    </file>
+        <type>table</type>         
+        <desc>Example of usage of  &lt;xmp&gt;&lt;fillin&gt;&lt;/xmp&gt;</desc>
+    </file>  
     <file name="Table_APPENDIX1_2007.xml">
-        <desc>example of table where are included articles.</desc>
-    </file>
+        <type>table</type>         
+        <desc>Example of table where are included articles.</desc>
+    </file>  
+    <file name="Table_Traffic_Ke_Schedule10_1954.xml">
+        <type>table</type>         
+        <desc>Example of images and table included in the text</desc>
+    </file>  
 </examples>

@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="./styles/kenya.xsl"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
+	<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
 	<judgement>
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#somebody">
 				<FRBRWork>
 					<FRBRthis value="/za/judgement/2008-11-26/653-07/main"/>
 					<FRBRuri value="/za/judgement/2008-11-26/653-07"/>
 					<FRBRdate date="2008-11-05" name="Hearing"/>
 					<FRBRauthor href="#Scoa" as="#Author"/>
-				    <FRBRcountry value="za"/>
+					<FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/judgement/2008-11-26/653-07/eng@/main"/>
 					<FRBRuri value="/za/judgement/2008-11-26/653-07/eng@"/>
 					<FRBRdate date="2008-11-26" name="Delivery"/>
-					<FRBRauthor href="#Cervone" as="#Editor"/>
-					<FRBRauthor href="#Palmirani" as="#Editor"/>
-				    <FRBRlanguage language="eng"/>
+					<FRBRauthor href="#somebody" as="#Editor"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/judgement/2008-11-26/653-07/eng@/main.xml"/>
 					<FRBRuri value="/za/judgement/2008-11-26/653-07/eng@.akn"/>
-					<FRBRdate date="2009-01-09" name="XMLConversion"/>
-					<FRBRauthor href="#Cervone" as="#Editor"/>
-					<FRBRauthor href="#Palmirani" as="#Editor"/>
+					<FRBRdate date="2012-10-09" name="XMLConversion"/>
+					<FRBRauthor href="#somebody" as="#Editor"/>
 				</FRBRManifestation>
 			</identification>
 			<publication date="2008-11-30" name="Law Report" showAs="Law Report Office Journal" number="555"/>
-			<classification source="#bungeni">
-				<keyword id="delict" value="Delict" showAs="Delict" dictionary=""/>
-				<keyword id="pel" value="pure economic loss" showAs="pure economic loss" dictionary=""/>
-				<keyword id="mo" value="meaning of" showAs="meaning of" dictionary=""/>
-				<keyword id="pcrdw" value="policy considerations relevant in determining wrongfulness" showAs="policy considerations relevant in determining wrongfulness" dictionary=""/>
-				<keyword id="rd" value="remoteness of damage" showAs="remoteness of damage" dictionary=""/>
-				<keyword id="aft" value="application of flexible test" showAs="application of flexible test" dictionary=""/>
+			<classification source="#somebody">
+				<keyword id="delict" value="Delict" showAs="Delict" dictionary="Africa"/>
+				<keyword id="pel" value="pure economic loss" showAs="pure economic loss" dictionary="Africa"/>
+				<keyword id="mo" value="meaning of" showAs="meaning of" dictionary="Africa"/>
+				<keyword id="pcrdw" value="policy considerations relevant in determining wrongfulness" showAs="policy considerations relevant in determining wrongfulness" dictionary="Africa"/>
+				<keyword id="rd" value="remoteness of damage" showAs="remoteness of damage" dictionary="Africa"/>
+				<keyword id="aft" value="application of flexible test" showAs="application of flexible test" dictionary="Africa"/>
 			</classification>
-			<lifecycle source="#bungeni">
-				<eventRef date="2008-11-26" id="e1" source="" type="generation"/>
+			<lifecycle source="#somebody">
+				<eventRef date="2008-11-26" id="e1" source="ro1" type="generation"/>
 			</lifecycle>
-			<workflow source="#bungeni">
+			<workflow source="#somebody">
 				<step date="2007-08-23" id="a1" outcome="#prc1"/>
 				<step date="2008-11-05" id="a2" outcome="#prc2"/>
 			</workflow>
-			<analysis source="#bungeni">
+			<analysis source="#somebody">
 				<judicial>
 					<result type="approve"/>
 					<applies id="jud-an1">
@@ -56,8 +54,8 @@
 					</supports>
 				</judicial>
 			</analysis>
-			<references source="#bungeni">
-				<TLCOrganization id="bungeni" href="/ontology/organization/kn/kn.bungeni" showAs="Bungeni"/>
+			<references source="#somebody">
+				<original id="ro1" href="/za/judgement/2008-11-26/653-07/eng@" showAs="Original"/>
 				<TLCOrganization id="Scoa" href="/ontology/organization/za.SoupremeCourt" showAs="THE SUPREME COURT OF APPEAL REPUBLIC OF SOUTH AFRICA"/>
 				<TLCOrganization id="Hcp" href="/ontology/organization/za.HighCourtPretoria" showAs="High Court, Pretoria"/>
 				<TLCOrganization id="fhs" href="/ontology/organization/za.FourwayHaulage" showAs="FOURWAY HAULAGE SA (PTY) LTD"/>
@@ -71,19 +69,18 @@
 				<TLCPerson id="Dreyer" href="/ontology/person/lawyer/za.dreyer" showAs="DREYER"/>
 				<TLCPerson id="Plessis" href="/ontology/person/lawyer/za.plessis" showAs="PLESISS"/>
 				<TLCPerson id="Kruger" href="/ontology/person/lawyer/za.kruger" showAs="KRUGER"/>
+				<TLCPerson id="somebody" href="/ontology/person/editor/za.somebody" showAs="somebody"/>
 				<TLCRole id="Author" href="/ontology/role/author" showAs="Author of Document"/>
 				<TLCRole id="Editor" href="/ontology/role/editor" showAs="Editor of Document"/>
-				<TLCRole id="CoEditor" href="/ontology/role/coEditor" showAs="Co-Editor of Document"/>
+				<TLCRole id="Co-Editor" href="/ontology/role/coEditor" showAs="Co-Editor of Document"/>
 				<TLCRole id="Appellant" href="/ontology/role/appellant" showAs="Appellant"/>
 				<TLCRole id="Respondent" href="/ontology/role/respondent" showAs="Respondent"/>
 				<TLCRole id="Prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor"/>
-				<TLCRole id="Solicitor" href="/ontology/role/solicitor" showAs="Solicitor"/>
-				<TLCRole id="Correspondent" href="/ontology/role/correspondent" showAs="Correspondent"/>
 				<TLCRole id="jja" href="/ontology/role/judgeofappeal" showAs="jja"/>
 				<TLCProcess id="prc1" href="/ontology/process/firstHearing" showAs="First Hearing"/>
 				<TLCProcess id="prc2" href="/ontology/process/secondHeariring" showAs="Second Hearing"/>
 			</references>
-			<notes source="#bungeni">
+			<notes source="#somebody">
 				<note id="not1">
 					<p>
                         Sections starting at [16] and ending at [35] were deleted in order to simplify 
@@ -106,10 +103,8 @@
 				<b>APPELLANT</b>
 				<eol/>
 				<b>and</b>
-				<eol/>
 				<party id="p2" refersTo="#snra" as="#Respondent">SA NATIONAL ROADS AGENCY LTD</party>
 				<b>RESPONDENT</b>
-				<eol/>
 			</p>
 			<p class="judgementNeutralCitation"> Neutral citation: <docTitle id="docTitle">Fourway Haulage v SA
                     National Roads Agency (653/07)</docTitle>
@@ -138,18 +133,17 @@
                     flexible test</span>
 			</p>
 			<p class="order" refersTo="#a1"> ORDER
-                <b>On appeal from</b>: High Court, Pretoria (Rabie J sitting as court of first
-                instance)<eol/> The appeal is dismissed with costs </p>
+                <b>On appeal from</b>: <organization refersTo="#Hcp" id="org1">High Court, Pretoria  </organization>(Rabie J sitting as court of first
+                instance)  The appeal is dismissed with costs </p>
 			<p class="judgment"> JUDGMENT
-       <judge id="jud06" refersTo="#Brand" as="#Editor">BRAND</judge> JA (
-           <judge id="jud07" refersTo="#Scott" as="#Co-Editor">Scott</judge>, <judge id="jud09" refersTo="#Farlam" as="#Co-Editor">Farlam</judge>,
-           <judge id="jud08" refersTo="#Lewis" as="#Co-Editor">Lewis </judge>et <judge id="jud10" refersTo="#Scott" as="#Co-Editor">Jafta </judge>JJA
-                          <opinion type="agreeing">concurring</opinion>)
+       <judge id="jud06" refersTo="#Brand" as="#Editor">BRAND JA</judge> (<judge id="jud07" refersTo="#Scott" as="#Co-Editor">Scott</judge>, <judge id="jud09" refersTo="#Farlam" as="#Co-Editor">Farlam</judge>,
+           <judge id="jud08" refersTo="#Lewis" as="#Co-Editor">Lewis </judge>et <judge id="jud10" refersTo="#Jafta" as="#Co-Editor">Jafta JJA</judge>
+				<opinion type="agreeing">concurring</opinion>)
        </p>
 		</header>
 		<judgementBody>
 			<background>
-				<blockList id="bac-lis1">
+				<blockList id="list1">
 					<item id="bac-lis1-ite1">
 						<num>[1]</num>
 						<p> The appellant ('Fourway') is a long distance haulier. The respondent
@@ -187,7 +181,7 @@
                             of loss of toll revenue in an amount of <span class="damageAmount">R105 996.67. </span>
 						</p>
 					</item>
-				</blockList >
+				</blockList>
 			</background>
 			<introduction>
 				<blockList id="int-lis1">
@@ -231,7 +225,7 @@
 								<p> Whether the occurrence of the collision necessitated the
                                     decontamination operation and the closure of the road. </p>
 							</item>
-						</blockList >
+						</blockList>
 					</item>
 					<item id="int-lis1-ite3">
 						<num>[6]</num>
@@ -302,7 +296,7 @@
                                     claim by the Agency cannot be regarded as too remote.
                                 </p>
 							</item>
-						</blockList >
+						</blockList>
 					</item>
 					<item id="int-lis1-ite6">
 						<num>[9]</num>
@@ -315,16 +309,16 @@
                                 result from a direct invasion of a subjective right of the person who 
                                 suffered the loss.'
                             </span>
-							<eol/>
-                            And that <eol/>
+							 
+                            And that  
 							<span class="citation">
                                 'the aforesaid rights of the plaintiff. . . 
                                 [ie the Agency's statutory rights to operate a toll road and to collect toll 
                                 fees] were clearly subjective rights worthy of protection and which the 
                                 plaintiff could enforce against other people.'
                             </span>
-							<eol/>
-                            And that <eol/>
+							 
+                            And that  
 							<span class="citation">
                                 '[c]onsequently, the loss suffered by the plaintiff is not a so-called 
                                 pure economic loss, but the direct result of a direct infringement of 
@@ -332,7 +326,7 @@
                             </span>
 						</p>
 					</item>
-				</blockList >
+				</blockList>
 			</introduction>
 			<motivation>
 				<blockList id="mot-lis1">
@@ -350,13 +344,16 @@
                                 but rather in consequence of the negligent act itself, such as loss of profit, 
                                 being put to extra expenses or the diminution in the value of property.'
                             </span>
-                            (See also <ref href="/za/judgment/SA475A/eng@/main.xml#" id="ref12"><i>Lillicrap, Wassenaar and Partners v Pilkington Brothers (SA) 
+                            (See also <ref href="/za/judgment/SA475A/eng@/main.xml#" id="ref12">
+								<i>Lillicrap, Wassenaar and Partners v Pilkington Brothers (SA) 
                                 (Pty) Ltd </i>1985 (1) SA 475 (A) 497I-498H</ref>; Trustees, 
-                          <ref href="/za/judgment/SA138SCA /eng@/main.xml#" id="ref13">  <i>Two Oceans Aquarium Trust v Kantey &amp; Templer (Pty) Ltd</i> 2006 (3) SA 138 (SCA) para 14</ref>; 
-                            <ref href="/za/judgment/SA138SCA /eng@/main.xml#" id="ref14"><i>Wille's Principles of South African Law</i> 9 ed, (General editor: 
+                          <ref href="/za/judgment/SA138SCA /eng@/main.xml#" id="ref13">
+								<i>Two Oceans Aquarium Trust v Kantey &amp; Templer (Pty) Ltd</i> 2006 (3) SA 138 (SCA) para 14</ref>; 
+                            <ref href="/za/judgment/SA138SCA /eng@/main.xml#" id="ref14">
+								<i>Wille's Principles of South African Law</i> 9 ed, (General editor: 
                             Francois du Bois) sv 'Delict' by Daniel Visser, 1105</ref>; 
                           <ref href="/za/law/5 /eng@/main.xml#" id="ref15">  Neethling, Potgieter &amp; Visser, <i>Law of Delict</i>, 5 ed 268 et seq).</ref>
-                        </p>
+						</p>
 					</item>
 					<item id="mot-lis1-ite2">
 						<num>[11]</num>
@@ -391,7 +388,8 @@
                             In the result, conduct causing pure economic loss will only be regarded as wrongful
                             and therefore actionable if public or legal policy considerations require that such
                             conduct, if negligent, should attract legal liability for the resulting damages 
-                            (see eg <ref href="/za/judgment/ 20026SA431SCA/eng@/main.xml#par12" id="ref17"> <i>Minister of Safety and Security v Van Duivenboden</i> 2002 (6) SA 431 (SCA) 
+                            (see eg <ref href="/za/judgment/ 20026SA431SCA/eng@/main.xml#par12" id="ref17">
+								<i>Minister of Safety and Security v Van Duivenboden</i> 2002 (6) SA 431 (SCA) 
                             paras 12 and 22</ref>; <i>Gouda Boerdery BK v Transnet</i>
 							<ref href="/za/judgment/SA490/eng@/main.xml#par12" id="ref18"> 2005 (5) SA 490 (SCA) para 12</ref>; 
                             <i>Telematrix (supra)</i> paras 13-14; <i>Trustees, Two Oceans Aquarium Trust (supra)</i> 
@@ -461,7 +459,7 @@
                             Fourway that can justify a referral back to the trial court.
                         </p>
 					</item>
-				</blockList >
+				</blockList>
 				<p>
 					<noteRef href="#not1" marker="1"/>
 					<omissis>...</omissis>
@@ -476,31 +474,22 @@
                             including the costs of two counsel.
                         </p>
 					</item>
-				</blockList >
+				</blockList>
 			</decision>
 		</judgementBody>
 		<conclusions>
 			<p class="signature">
 				<judge id="jud11" refersTo="#Brand">F D J BRAND</judge>
-				<eol/>
                 JUDGE OF APPEAL
-                
             </p>
 			<p class="appearances">
-                APPEARANCES:<eol/>
-                FOR APPELLANT: <lawyer id="lwy1" refersTo="#Dreyer" for="#appellant" empoweredBy="#Kruger" as="#Prosecutor"> H DREYER SC</lawyer>
-				<eol/>
-				<lawyer id="lwy2" refersTo="#Plessis" for="#appellant" empoweredBy="#Kruger" as="#Prosecutor">A DU PLESSIS </lawyer>
-				<eol/>
+                APPEARANCES: 
+                FOR APPELLANT: <lawyer id="lwy1" refersTo="#Dreyer" for="#Appellant" empoweredBy="#Kruger" as="#Prosecutor"> H DREYER SC</lawyer>
+				<lawyer id="lwy2" refersTo="#Plessis" for="#Appellant" empoweredBy="#Kruger" as="#Prosecutor">A DU PLESSIS </lawyer>
+				 
                 INSTRUCTED BY:	
-                <lawyer id="lwy3" refersTo="#Kruger" for="#appellant" as="#Prosecutor">MACGREGOR STANFORD KRUGER INC, PRETORIA </lawyer>
-				<eol/>
-                CORRESPONDENTS:	E G COOPER ATTORNEYS, BLOEMFONTEIN <eol/>
-                FOR RESPONDENT:	A C FERREIRA SC<eol/>
-                I ELLIS<eol/>
-                INSTRUCTED BY: FRIEDLAND HART INC, PRETORIA<eol/>
-                CORRESPONDENTS:	ISRAEL SACKSTEIN MATSEPES INC, BLOEMFONTEIN
-            </p>
-		</conclusions>	
+                <lawyer id="lwy3" refersTo="#Kruger" for="#Appellant" as="#Prosecutor">MACGREGOR STANFORD KRUGER INC, PRETORIA </lawyer>
+			</p>
+		</conclusions>
 	</judgement>
 </akomaNtoso>

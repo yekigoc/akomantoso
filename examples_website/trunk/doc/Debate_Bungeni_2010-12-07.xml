@@ -1,53 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
 	<debate>
+		<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
 		<!-- debate with scene, summary, narrative -->
-		<!-- several example of debateContent: questions, pointOfOrder, ministerialStatements -->
+		<!-- Several example of debateContent: questions, pointOfOrder, ministerialStatements -->
+		<!-- Inspired to the original http://www.parliament.go.ke/index.php?option=com_docman&task=doc_download&gid=720&Itemid=-->
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#somebody">
 				<FRBRWork>
 					<FRBRthis value="/ak/debaterecord/2010-12-07/main"/>
 					<FRBRuri value="/ak/debaterecord/2010-12-07"/>
 					<FRBRdate date="2010-12-07" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
-				    <FRBRcountry value="ak"/>
+					<FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main"/>
 					<FRBRuri value="/ak/debaterecord/2010-12-07/eng@"/>
 					<FRBRdate date="2010-12-07" name="markup"/>
-					<FRBRauthor href="#palmirani" as="#editor"/>
-				    <FRBRlanguage language="eng"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main.xml"/>
 					<FRBRuri value="/ak/debaterecord/2010-12-07/eng@.akn"/>
 					<FRBRdate date="2012-01-31" name="markup"/>
-					<FRBRauthor href="#palmirani" as="#editor"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
 				</FRBRManifestation>
 			</identification>
 			<publication date="2010-12-08" name="internal" showAs="Internal Use Only" number="234"/>
-			<references source="#bungeni">
-				<TLCOrganization id="bungeni" href="/ontology/organizations/akn/bungeni" showAs="Bungeni"/>
-				<TLCOrganization id="parliament" href="/ontology/organizations/akn/parliament" showAs="Parliament"/>
-				<TLCPerson id="alfa" href="/ontology/persons/akn/parliament/alfa" showAs="Mr Alfa"/>
-				<TLCPerson id="beta" href="/ontology/persons/akn/parliament/beta" showAs="Mr. Beta"/>
-				<TLCPerson id="gamma" href="/ontology/persons/akn/parliament/gamma" showAs="Mr. Gamma"/>
-				<TLCPerson id="delta" href="/ontology/persons/akn/parliament/delta" showAs="Mr. Delta"/>
-				<TLCPerson id="omega" href="/ontology/persons/akn/parliament/omega" showAs="Mr. Omega"/>
-				<TLCRole id="author" href="/ontology/roles/akn/author" showAs="Author of Document"/>
-				<TLCRole id="editor" href="/ontology/roles/ita/editor" showAs="Editor of Document"/>
-				<TLCRole id="speaker" href="/ontology/roles/akn/speaker" showAs="Mr. Speaker"/>
-				<TLCRole id="ms" href="/ontology/roles/akn/ms" showAs="Minister of State, Office of the President"/>
-				<TLCRole id="mh" href="/ontology/roles/akn/mhest" showAs="Minister for Higher Education, Science and Technology
-"/>
+			<references source="#somebody">
+				<original id="ro1" href="/ak/debaterecord/2010-12-07/eng@/main" showAs="Original"/>
+				<TLCPerson id="somebody" href="/ontology/person/akn/somebody" showAs="somebody"/>
+				<TLCOrganization id="parliament" href="/ontology/organization/akn/parliament" showAs="Parliament"/>
+				<TLCPerson id="alfa" href="/ontology/person/akn/parliament/alfa" showAs="Mr Alfa"/>
+				<TLCPerson id="beta" href="/ontology/person/akn/parliament/beta" showAs="Mr. Beta"/>
+				<TLCPerson id="gamma" href="/ontology/person/akn/parliament/gamma" showAs="Mr. Gamma"/>
+				<TLCPerson id="delta" href="/ontology/person/akn/parliament/delta" showAs="Mr. Delta"/>
+				<TLCPerson id="omega" href="/ontology/person/akn/parliament/omega" showAs="Mr. Omega"/>
+				<TLCPerson id="epsilon" href="/ontology/person/akn/parliament/epsilon" showAs="Mr. Epsilon"/>
+				<TLCRole id="author" href="/ontology/role/akn/author" showAs="Author of Document"/>
+				<TLCRole id="editor" href="/ontology/role/ita/editor" showAs="Editor of Document"/>
+				<TLCRole id="speaker" href="/ontology/role/akn/speaker" showAs="Mr. Speaker"/>
+				<TLCRole id="mhest" href="/ontology/role/akn/mhest" showAs="Minister for Higher Education, Science and Technology"/>
+				<TLCRole id="dpm" href="/ontology/role/akn/dpm" showAs="Deputy Prime Ministe"/>
+				<TLCRole id="sec" href="/ontology/role/akn/sec" showAs="Secretary"/>
+				<TLCRole id="pm" href="/ontology/role/akn/pm" showAs="Member of Parliament"/>
 			</references>
 		</meta>
 		<preface>
 			<p class="heading">NATIONAL ASSEMBLY</p>
 			<p class="subheading">OFFICIAL REPORT</p>
-			<p class="center">Tuesday, 7th December, 2010</p>
-			<p class="center">The House met at 2.30 p.m.</p>
+			<p class="center">Tuesday, <docDate date="2010-12-07">7th December, 2010</docDate>
+			</p>
+			<p class="center">The House met at <recordedTime time="2010-12-07T02:30:00+02:00" type="startEvent"/>2.30 p.m.</p>
 		</preface>
 		<debateBody>
 			<debateSection id="sec1" name="preamble">
@@ -61,15 +67,15 @@
 				<other id="pap1-oth1">
 					<p> The following Papers were laid on the Table:-</p>
 					<ul id="pap1-oth1-ul1">
-						<li>Report of the Bungeni Parliament delegation to the 12th Annual Conference of
+						<li>Report of the Parliament delegation to the 12th Annual Conference of
 the Association of Public Accounts Committees of the Republic of Bungeni held
 from 11th to 14th October, 2010 at the  International Conference
-Centre in Bungeni, Africa.</li>
-						<li>Report of the Public Accounts Committee on the Government of Bungeni
+Centre in Bungeni , Africa.</li>
+						<li>Report of the Public Accounts Committee on the Government of Bungeni 
 Accounts for the year 2007/2008.</li>
 					</ul>
 				</other>
-				<narrative>(By Dr. Alfa)</narrative>
+				<narrative>(By <person id="person1234" refersTo="#alfa">Dr. Alfa</person>)</narrative>
 				<other id="pap1-oth2">
 					<ul id="pap1-oth2-ul1">
 						<li>The Quarterly Economic and Budgetary Review, Fourth Quarter, 2009/2010</li>
@@ -82,7 +88,7 @@ Accounts for the year 2007/2008.</li>
 				<heading>NOTICE OF MOTION</heading>
 				<debateSection name="notice" id="nom1-not1">
 					<heading>ADOPTION OF 2007/2008 PAC REPORT</heading>
-					<speech by="gamma">
+					<speech by="#gamma" to="#speaker" as="#pm">
 						<from>Mr. Gamma</from>
 						<p>Mr. Speaker, Sir, I beg to give notice of the following Motion:-</p>
 						<p>THAT, this House adopts the Report of the Public Accounts
@@ -94,8 +100,8 @@ Committee on the Government of Kenya Accounts for the year
 			<questions id="qaa1">
 				<heading>QUESTIONS BY PRIVATE NOTICE</heading>
 				<debateSection name="question" id="qaa1-que1">
-					<heading>ENGINEERING COURSES OFFERED BY BUNGENI UNIVERSITY</heading>
-					<question by="delta" to="mhest">
+					<heading>ENGINEERING COURSES OFFERED BY Bungeni  UNIVERSITY</heading>
+					<question by="#delta" to="#mhest" as="#pm">
 						<from>Mr. Delta</from>
 						<p> Mr. Speaker, Sir, I beg to ask the Minister for Higher Education,
 Science and Technology the following Question by Private Notice.</p>
@@ -113,7 +119,7 @@ graduates are eligible for registration by the ERB?
 </li>
 						</ul>
 					</question>
-					<answer by="beta" as="delta">
+					<answer by="#beta" as="#mhest">
 						<from> The Assistant Minister for Higher Education, Science and Technology
 (Mr. Beta): </from>
 						<p>Mr. Speaker, Sir, I beg to reply.</p>
@@ -134,7 +140,7 @@ I wish to table the list of graduands in the named courses who have not been
 registered by the ERB.</li>
 						</ul>
 					</answer>
-					<summary>(Mr. Beta laid the document on the Table)</summary>
+					<narrative>(Mr. Beta laid the document on the Table)</narrative>
 				</debateSection>
 				<summary>(Question deferred)</summary>
 				<scene>(Laughter)</scene>
@@ -144,7 +150,7 @@ registered by the ERB.</li>
 				<debateSection id="pto1-dbt1" name="pointOfOrder">
 					<heading>DISMAL PERFORMANCE BY HARAMBEE STARS
 IN THE CECAFA CUP TOURNAMENT</heading>
-					<speech by="gamma" to="speaker">
+					<speech by="#gamma" to="#speaker">
 						<from>Mr. Gamma: </from>
 						<p>Mr. Speaker, Sir, I rise to request for a Ministerial Statement
 from the Minister for Youth Affairs and Sports. I wish to request the Minister to
@@ -157,12 +163,12 @@ recently concluded CECAFA Cup Tournament held in Dar es Salaam.</p>
 				<heading>PRESENTATION  OF PETITION</heading>
 				<debateSection id="pts1-dbs1" name="petition">
 					<p>
-						<recordedTime time="2010-12-07T03:50:00" type="endEvent"/>3.50</p>
+						<recordedTime time="2010-12-07T03:50:00+02:00" type="endEvent"/>3.50</p>
 				</debateSection>
 				<debateSection id="pts1-dbs2" name="petition">
-					<speech by="gamma">
+					<speech by="#gamma" to="#speaker">
 						<from>Mr. Gamma:</from>
-						<p> Madam Speaker, honourable members, presentation of a petition under Rule 27 of the Rules of Procedure of the Parliament of Bungeni. This is a humble petition of the people living on X Hills in Y District, represented by Gamma. It states that:</p>
+						<p> Madam Speaker, honourable members, presentation of a petition under Rule 27 of the Rules of Procedure of the Parliament of Bungeni . This is a humble petition of the people living on X Hills in Y District, represented by Gamma. It states that:</p>
 						<p>
 							<extractText>
 "WHEREAS a land dispute has arisen occasioned by a recent claim that Government has been exploring minerals in Osukuru and Rubongi sub-counties, using an aeroplane that has been flying at a very low altitude without clear communication to the occupants;" 
@@ -173,11 +179,10 @@ recently concluded CECAFA Cup Tournament held in Dar es Salaam.</p>
 				</debateSection>
 			</petitions>
 			<ministerialStatements id="mst1">
-				<heading>
-			MINISTERIAL STATEMENT</heading>
+				<heading>MINISTERIAL STATEMENT</heading>
 				<debateSection name="ministerialStatement" id="mst1-issue1">
 					<heading> USE OF PUBLIC FUNDS BY COUNCILORS TO ATTEND PRIVATE MEETING</heading>
-					<speech by="omega">
+					<speech by="#omega" as="#dpm">
 						<from>The Deputy Prime Minister and Minister for Local Government (Mr.Omega): </from>
 						<p>Mr. Speaker, Sir, I wish to make a Statement in response to a request made by Dr. Alfa on Tuesday 30th November, regarding the Ministry of Local Government.</p>
 						<p>Mr. Speaker, Sir, first of all, I wish to inform the House that no authority was
@@ -201,7 +206,7 @@ to be referred to the relevant Departmental Committee)</summary>
 				<heading>COMMUNICATION FROM THE CHAIR</heading>
 				<debateSection id="com1-dbs1" name="com">
 					<heading>DEFERMENT OF ORDER NO.9</heading>
-					<speech by="speaker">
+					<speech by="#speaker">
 						<from>
 Mr. Speaker: </from>
 						<p>Hon. Members, I wish to communicate to the House as follows:
@@ -227,13 +232,14 @@ House on Thursday, 25th November 2010.</p>
 			</proceduralMotions>
 			<adjournment id="adj1">
 				<heading>ADJOURNMENT</heading>
-				<speech by="wetangula" as="tds">
-					<from>Mr. Wetangula</from>
-					<p>Order hon. Members! Tomorrow, hon. Dr. Kituyi, you must start with
-						substantiation of that allegation. Hon. Members, the House stands adjourned
-						until tomorrow, Wednesday, 1st November, 1995 at <recordedTime time="1995-11-01T09:00:00" type="startEvent"/>9.00 a.m.</p>
+				<speech by="#epsilon" as="#sec">
+					<from>Mr. Epsilon</from>
+					<p>The Temporary Deputy Speaker (Mr. Chachu): Hon. Kaino, you will have
+18 minutes next time. Hon. Members, it is time for the interruption of business. The
+House stands adjourned until tomorrow, Wednesday, 8th December, at 9.00 a.m.
+ <recordedTime time="2010-12-08T09:00:00+02:00" type="startEvent"/>9.00 a.m.</p>
 				</speech>
-			    <p>The House rose at <recordedTime time="1995-11-01T06:30:00" type="endEvent"/>6.30 p.m. 
+				<p>The House rose at <recordedTime time="2010-12-07T06:30:00+02:00" type="endEvent"/>6.30 p.m. 
 				</p>
 			</adjournment>
 		</debateBody>
