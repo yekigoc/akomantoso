@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0" xmlns:myTags="http://codexml.cirsfid.unibo.it/myTags">
+	<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
 	<bill contains="originalVersion">
 		<!-- example of bill with red-line method -->
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#editor">
 				<FRBRWork>
 					<FRBRthis value="/ak/bill/2006-12-23/B24/main"/>
-					<FRBRuri value="/ak/bill/2006-12-23/B24/"/>
+					<FRBRuri value="/ak/bill/2006-12-23/B24"/>
 					<FRBRdate date="2006-12-23" name="Enactment"/>
 					<FRBRauthor href="#parliament" as="#author"/>
-				    <FRBRcountry value="ak"/>
+					<FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/bill/2006-12-23/B24/eng@/main"/>
 					<FRBRuri value="/ak/bill/2006-12-23/B24//eng@"/>
 					<FRBRdate date="2010-11-24" name="Expression"/>
-					<FRBRauthor href="#palmirani" as="#editor"/>
-				    <FRBRlanguage language="eng"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/bill/2006-12-23/B24/eng@/main.xml"/>
 					<FRBRuri value="/ak/bill/2006-12-23/B24/eng@/main.akn"/>
 					<FRBRdate date="2010-11-24" name="XMLConversion"/>
-					<FRBRauthor href="#palmirani" as="#editor"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
 				</FRBRManifestation>
 			</identification>
-			<publication id="publication" date="2006-01-26" showAs="Bungeni Gazette" name="BG" number="28426"/>
-			<classification source="#main">
+			<publication id="publication" date="2006-01-26" showAs="Official Gazette" name="BG" number="28426"/>
+			<classification source="#somebody">
 				<keyword value="education" showAs="Education" dictionary="/eurovoc/step1/step2/voce4"/>
 			</classification>
-			<lifecycle source="#bungeni">
+			<lifecycle source="#editor">
 				<eventRef date="2006-01-23" id="e1" source="#ro1" type="generation"/>
 			</lifecycle>
-			<analysis source="#cirsfid">
+			<workflow source="#editor">
+				<step id="step1" date="2005-01-01" actor="#parliament" outcome="#firstReading" as="#legislator" href="/ke/bill/1345/eng@2004-12-15/main">
+					<myTags:proprietary source="#editor">
+						<myWorkFlowTags/>
+					</myTags:proprietary>
+				</step>
+				<step id="step2" date="2005-04-01" actor="#parliament" href="/ke/bill/1345/eng@1979-06-13/main" outcome="#secondReading" as="#legislator"/>
+			</workflow>
+			<analysis source="#somebody">
 				<activeModifications>
 					<textualMod id="amod1" type="insertion">
 						<source href="#mod1"/>
@@ -49,22 +58,25 @@
 					<textualMod id="amod3" type="substitution">
 						<source href="#mod3"/>
 						<destination href="ak/act/1996-10-10/84/main#sec9-subsec1"/>
-						<new href="#mod3-qtd2"/>
+						<new href="#mod3-qtd1"/>
 					</textualMod>
 				</activeModifications>
 			</analysis>
-			<references source="#bungeni">
-				<original id="ro1" href="/ak/bill/2006-12-23/B24/main" showAs="Education Laws Amendment Bill"/>
+			<references source="#editor">
+				<original id="ro1" href="/ak/bill/2006-12-23/B24/main" showAs="Original"/>
 				<activeRef id="ra2" href="ak/act/1996-10-10/84/main" showAs="South African Schools Act"/>
 				<activeRef id="ra3" href="ak/act/1999-05-10/48/main" showAs="Education Act"/>
 				<activeRef id="ra4" href="ak/act/1997-05-10/100/main" showAs="Education Act"/>
 				<activeRef id="ra5" href="ak/act/2001-05-10/50/main" showAs="Education Act"/>
 				<TLCOrganization id="parliament" href="/ontology/organiaktions/akn/parliament" showAs="Parliament"/>
-				<TLCOrganization id="bungeni" href="/ontology/organiaktion/ak/bungeni" showAs="Bungeni"/>
 				<TLCRole id="author" href="/ontology/roles/akn/author" showAs="Author of Document"/>
 				<TLCRole id="editor" href="/ontology/roles/akn/editor" showAs="Editor of Document"/>
-				<TLCPerson id="palmirani" href="akn.user.monica.palmirani.1966-02-28" showAs="Editor"/>
+				<TLCRole id="legislator" href="/ontology/roles/akn/legislator" showAs="Legislator"/>
+				<TLCPerson id="somebody" href="akn.user.monica.somebody.1966-02-28" showAs="somebody"/>
 				<TLCConcept id="assentDate" href="/ontology/concepts/akn/assentDate" showAs="Assent Date"/>
+				<TLCProcess id="firstReading" href="/ontology/process/lkif-core:firstReading" showAs="First Reading"/>
+				<TLCProcess id="secondReading" href="/ontology/process/lkif-core:secondReading" showAs="Second Reading"/>
+				<TLCConcept id="notBinding" href="/ontology/process/lkif-core:notBinding" showAs="Not Binding"/>
 			</references>
 		</meta>
 		<coverPage>
@@ -76,7 +88,7 @@
 		</coverPage>
 		<preface>
 			<p>It is hereby notified that the President has assented to the following Act, which is
-hereby published for general information:-
+hereby published for general information:-<docStatus refersTo="#notBinding"/>
 No. <docNumber>24 of 2005</docNumber>: <docTitle>Education Laws Amendment Act, 2005.</docTitle>
 			</p>
 			<p>
@@ -90,27 +102,50 @@ existing enactments.</p>
 				</authorialNote>
 			</p>
 			<p>(English text signed by the President.)
-					(Assented to <date refersTo="#assentedDate" date="2006-01-23">23 January 2006</date>.)
+					(Assented to <date refersTo="#assentDate" date="2006-01-23">23 January 2006</date>.)
 <docType>ACT</docType>
 			</p>
-			<longTitle>
-				<p>
- To amend the South African Schools Act, 1996, so as to add new definitions; to
-clarify the manner in which disciplinary proceedings must be conducted; to
-provide for a process to establish norms and standards for school funding by means
-of quintiles; to clarify the charging and payment of school fees; to provide for the
-right of a learner to participate in all aspects of the programme of apublic school;
-to provide for the alienation of the assets of a public school; to amend the
-Employment of Educators Act, 1998, so as to provide for the refinement of the
-process of the appointment of educators; to provide for the repeal of laws; and to
-provide for matters connected therewith.</p>
+			<longTitle id="longTitle1">
+				<blockList id="list1">
+					<item id="list1-itm1">
+						<p>To amend the South African Schools Act, 1996, so as to add new definitions; </p>
+					</item>
+					<item id="list1-itm2">
+						<p> to clarify the manner in which disciplinary proceedings must be conducted;</p>
+					</item>
+					<item id="list1-itm3">
+						<p>to provide for a process to establish norms and standards for school funding by means
+of quintiles;</p>
+					</item>
+					<item id="list1-itm4">
+						<p>to clarify the charging and payment of school fees; </p>
+					</item>
+					<item id="list1-itm5">
+						<p>to provide for the right of a learner to participate in all aspects of the programme of apublic school;</p>
+					</item>
+					<item id="list1-itm6">
+						<p>to provide for the alienation of the assets of a public school;</p>
+					</item>
+					<item id="list1-itm7">
+						<p>to amend the Employment of Educators Act, 1998, so as to provide for the refinement of the
+process of the appointment of educators;</p>
+					</item>
+					<item id="list1-itm8">
+						<p>to provide for the repeal of laws; 	</p>
+					</item>
+					<item id="list1-itm9">
+						<p>and to provide for matters connected therewith.</p>
+					</item>
+				</blockList>
 			</longTitle>
 		</preface>
 		<preamble>
-			<p>BE IT ENACTED by the Parliament of the Republic of South Africa, as follows:-</p>
+			<formula>
+				<p>BE IT ENACTED by the Parliament of the Republic of South Africa, as follows:-</p>
+			</formula>
 			<p>
-				<ref id="ref1" href="ak/act/1996-10-10/84/main#sec1">Amendment of section 1 of Act 84 of 1996</ref>, as amended by <ref id="ref2" href="">section 1 of Act 100 of
-1997</ref>, <ref id="ref3" href="">section 6 of Act 48 of 1999</ref> and <ref id="ref4" href="">section 1 of Act 50 of 2002</ref>
+				<ref id="ref1" href="ak/act/1996-10-10/84/main#sec1">Amendment of section 1 of Act 84 of 1996</ref>, as amended by <ref id="ref2" href="ak/act/1997-05-10/100/main">section 1 of Act 100 of
+1997</ref>, <ref id="ref3" href="ak/act/1999-05-10/48/main#sec6">section 6 of Act 48 of 1999</ref> and <ref id="ref4" href="ak/act/2001-05-10/50/main">section 1 of Act 50 of 2002</ref>
 			</p>
 		</preamble>
 		<body>
@@ -118,7 +153,7 @@ provide for matters connected therewith.</p>
 				<num>1.</num>
 				<heading>Amendment of <ref id="ref5" href="ak/act/1996-10-10/84/main#sec1">section 1 of Act 84 of 1996</ref>
 				</heading>
-					<list id="sec1-list1">
+				<list id="sec1-list1">
 					<intro>
 						<p>
 							<ref id="ref6" href="ak/act/1996-10-10/84/main#sec1">Section 1 of the South African Schools Act, 1996</ref>, is hereby amended by-<eol class="numebring"/>
@@ -133,15 +168,15 @@ provide for matters connected therewith.</p>
 										<paragraph id="mod1-qtd2-par1">
 											<content>
 												<p>
-														<ins>
-															<def>‘no fee threshold’</def> means the level of funding per learner contemplated
+													<ins>
+														<def>‘no fee threshold’</def> means the level of funding per learner contemplated
 in the norms and standards for school funding applicable to a public
 school which enables the Minister to declare a school a no fee school in
 terms of this Act;</ins>
 												</p>
 												<p>
-														<ins>
-															<def>‘norms and standards for school funding’</def> means the national norms
+													<ins>
+														<def>‘norms and standards for school funding’</def> means the national norms
 and standards for the funding of schools determined by the Minister in
 terms of section 35;</ins>
 												</p>
@@ -225,7 +260,9 @@ manner contemplated in section  8 against a learner within seven school days aft
 					<point id="sec2-pnt2">
 						<num>(b)</num>
 						<content>
-							<p/>
+							<p>
+								<omissis/>
+							</p>
 						</content>
 					</point>
 				</list>

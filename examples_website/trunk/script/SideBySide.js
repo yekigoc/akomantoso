@@ -12,15 +12,6 @@
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
 	IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.	
 */
-/**
- * This function initialize the app getting the list of the documents stored into the 
- * XML documents directory
- */
-function initialize()
-{
-	//fill the doc list into the select
-	document.getElementById("doc_menu").innerHTML = ''  + get_doc_list() + '';
-}
 
 /**
  * Get the XML version and the HMTL version of the given document
@@ -45,13 +36,13 @@ function getDocument(aSelect)
 		loader('on',"html_doc");
 
 		//the XML version
-		var xml_doc = retrieveXMLDocument(aSelect.value,'xml_doc');
+		var xml_doc = retrieveXMLDocument(aSelect.id,'xml_doc');
 		
 		//the HTML version
-		var html_doc = retrieveHTMLDocument(aSelect.value,'html_doc');
+		var html_doc = retrieveHTMLDocument(aSelect.id,'html_doc');
 		
 		//the description notes for that document
-		var desc_notes = getNotes(aSelect.value,'doc-notes');			
+		var desc_notes = getNotes(aSelect.id,'doc-notes');			
 	}
 }
 

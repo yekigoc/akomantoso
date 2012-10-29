@@ -141,8 +141,8 @@ $().ready(function() {
         type: "v",
         outline: true,
         minLeft: 100, 
-        sizeLeft: 550, 
-        minRight: 100,
+        //sizeLeft: 600, //commenting this gives the 2 panes equal sizes 
+        minRight: 10,
         resizeToWidth: true,
         dock: "left",
         dockSpeed: 200,
@@ -198,4 +198,51 @@ $().ready(function() {
             //alert('top:'+offset.top+'left'+offset.left);
     });  
     
+    // renders the popup and loads the documents from the server via AJAX
+    var render_popup = function() {
+        $('#popup').bPopup({
+            modalClose: false,
+            opacity: 0.4,
+            contentContainer:'.load-content',
+            loadUrl: 'php/sidebyside.php?doc_list=true',
+            positionStyle: 'fixed'
+        });
+    };     
+    
+    // popup
+    $('#select-pop').bind('click', function(e) {
+        e.preventDefault();
+        render_popup();
+    });   
+    
+    // bind() the loaded examples and fire the getDocument() on click.
+    $(".load-content li li a").live("click", function(){
+        console.log(this.id);
+        getDocument(this);
+        $('.bClose').trigger('click');
+        $('#select-pop').html(this.id);
+        return false;
+    });
+     
+    // toggle example categories on popup
+    $(".load-content a[rel='category']").live("click", function(){
+        id = this.id;
+        ul = "ul_" + id;
+        img = "img_" + id;
+        ulElement = document.getElementById(ul);
+        imgElement = document.getElementById(img);
+        if (ulElement){
+            if (ulElement.className == 'closed') {
+                ulElement.className = "open";
+                imgElement.src = "images/opened.gif";
+            } else {
+                ulElement.className = "closed";
+                imgElement.src = "images/closed.gif";
+            }
+        }
+        return false;
+    });     
+    
+    //by default load the popup onload.
+    //render_popup();
 });

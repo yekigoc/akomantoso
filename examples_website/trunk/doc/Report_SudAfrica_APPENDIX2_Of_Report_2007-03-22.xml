@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
+	<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
+	<!-- one of the annexes of the work: /za/report/2007-03-22 -->
 	<doc name="report">
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#somebody">
 				<FRBRWork>
 					<FRBRthis value="/za/report/2007-03-22/main/appendix2"/>
 					<FRBRuri value="/za/report/2007-03-22"/>
 					<FRBRdate date="2007-03-22" name="Generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
 					<componentInfo>
-						<componentData id="wappendix2" href="#wappendix2" name="appendix2" showAs="APPENDIX 2"/>
+						<componentData id="wmain" href="#wmain" name="main" showAs="Main document"/>
+						<componentData id="wappendix1" href="/za/report/2007-03-22/main/appendix1" name="appendix" showAs="APPENDIX 1"/>
+						<componentData id="wappendixe" href="/za/report/2007-03-22/main/appendix2" name="appendix" showAs="APPENDIX 2"/>
 					</componentInfo>
-				    <FRBRcountry value="za"/>
+					<FRBRcountry value="za"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix2"/>
 					<FRBRuri value="/za/report/2007-03-22/eng@"/>
-					<FRBRdate date="2009-02-21" name="Generation"/>
-					<FRBRauthor href="#bungeni" as="#editor"/>
+					<FRBRdate date="2007-03-22" name="Generation"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
 					<componentInfo>
-						<componentData id="eappendix2" href="#eappendix2" name="appendix2" showAs="APPENDIX 2"/>
+						<componentData id="emain" href="#emain" name="main" showAs="Main document"/>
+						<componentData id="eappendix1" href="/za/report/2007-03-22/eng@/main/appendix1" name="appendix" showAs="APPENDIX 1"/>
+						<componentData id="eappendixe" href="/za/report/2007-03-22/eng@/main/appendix2" name="appendix" showAs="APPENDIX 2"/>
 					</componentInfo>
-				    <FRBRlanguage language="eng"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/za/report/2007-03-22/eng@/main/appendix2.xml"/>
 					<FRBRuri value="/za/report/2007-03-22/eng@.akn"/>
-					<FRBRdate date="2009-02-21" name="XMLMarkup"/>
-					<FRBRauthor href="#bungeni" as="#editor"/>
+					<FRBRdate date="2012-02-21" name="XMLMarkup"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
 					<componentInfo>
-						<componentData id="mappendix2" href="annex2.xml" name="appendix2" showAs="APPENDIX 2"/>
+						<componentData id="mmain" href="main.xml" name="main" showAs="Main document"/>
+						<componentData id="mappendix1" href="/za/report/2007-03-22/eng@/main/appendix1.xml" name="appendix" showAs="APPENDIX 1"/>
+						<componentData id="mappendixe" href="/za/report/2007-03-22/eng@/main/appendix2.xml" name="appendix" showAs="APPENDIX 2"/>
 					</componentInfo>
 				</FRBRManifestation>
 			</identification>
 			<publication name="publication" date="2007-03-22" showAs="publication" number="555"/>
-			<classification source="#bungeni">
+			<classification source="#somebody">
 				<keyword value="PORTFOLIO COMMITTEE ON DEFENCE" showAs="PORTFOLIO COMMITTEE ON DEFENCE" dictionary="UNVOC"/>
 				<keyword value="BUDGET OF THE DEPARTMENT OF DEFENCE" showAs="BUDGET OF THE DEPARTMENT OF DEFENCE" dictionary="UNVOC"/>
 			</classification>
-			<lifecycle source="#bungeni">
+			<lifecycle source="#somebody">
 				<eventRef id="e1" date="2007-03-22" source="#ro1" type="generation"/>
 			</lifecycle>
-			<references source="#bungeni">
-				<original id="ro1" href="/za/report/2007-03-22/eng@/main" showAs="Original"/>
-				<TLCOrganization id="parliament" href="/ontology/organization/za/za.parliament" showAs="Parliament of Kenya"/>
-				<TLCOrganization id="bungeni" href="/ontology/organization/za/za.bungeni" showAs="Bungeni"/>
+			<references source="#somebody">
+				<original id="ro1" href="/za/report/2007-03-22/eng@/main/appendix2" showAs="Original"/>
+				<attachmentOf id="rao1" href="/za/report/2007-03-22/eng@/main" showAs="Original"/>
+				<TLCOrganization id="parliament" href="/ontology/organization/za/za.parliament" showAs="Parliament of ZA"/>
+                <TLCPerson id="somebody" href="/ontology/person/ak/somebody" showAs="somebody"/>
 				<TLCRole id="author" href="/ontology/roles/author" showAs="Author"/>
 				<TLCRole id="editor" href="/ontology/roles/editor" showAs="Editor"/>
 				<TLCOrganization id="anc" href="/ontology/organization/za/za.africannationalcongress" showAs="African National Congress"/>
@@ -78,80 +87,80 @@
 				<heading>Committee Members:</heading>
 				<hcontainer id="hco1-hco1" name="africannationalcongress" class="memberslist">
 					<heading>
-						<span refersTo="anc">African National Congress</span>
+						<organization id="org34" refersTo="#anc">African National Congress</organization>
 					</heading>
 					<content>
 						<ul id="hco1-hco1-uli1">
 							<li>
-								<span refersTo="tt">Ms T V Tobias</span> (Chairperson)</li>
+								<person id="person21" refersTo="#tt">Ms T V Tobias</person> (Chairperson)</li>
 							<li>
-								<span refersTo="mb">Mr M Booi</span>
+								<person id="person22" refersTo="#mb">Mr M Booi</person>
 							</li>
 							<li>
-								<span refersTo="mmon">Mr Monareng</span>
+								<person id="person31" refersTo="#mmon">Mr Monareng</person>
 							</li>
 							<li>
-								<span refersTo="pd">Ms P Daniels</span>
+								<person id="person32" refersTo="#pd">Ms P Daniels</person>
 							</li>
 							<li>
-								<span refersTo="js">Mr J Schippers</span>
+								<person id="person33" refersTo="#js">Mr J Schippers</person>
 							</li>
 							<li>
-								<span refersTo="mmoa">Mr Moatshe</span>
+								<person id="person34" refersTo="#mmoa">Mr Moatshe</person>
 							</li>
 							<li>
-								<span refersTo="mp">Mr Phungula</span>
+								<person id="person35" refersTo="#mp">Mr Phungula</person>
 							</li>
 							<li>
-								<span refersTo="aw">Ms A van Wyk</span>
+								<person id="person36" refersTo="#aw">Ms A van Wyk</person>
 							</li>
 							<li>
-								<span refersTo="gk">Dr G W Koornof</span>
+								<person id="person37" refersTo="#gk">Dr G W Koornof</person>
 							</li>
 							<li>
-								<span refersTo="md">Mr Diale</span>
+								<person id="person38" refersTo="#md">Mr Diale</person>
 							</li>
 							<li>
-								<span refersTo="sn">Mr S B Ntuli</span>
+								<person id="person39" refersTo="#sn">Mr S B Ntuli</person>
 							</li>
 						</ul>
 					</content>
 				</hcontainer>
 				<hcontainer id="hco1-hco2" name="democraticalliance" class="memberslist">
 					<heading>
-						<span refersTo="da">Democratic Alliance</span>
+						<organization id="org23" refersTo="#da">Democratic Alliance</organization>
 					</heading>
 					<content>
 						<ul id="hco1-hco2-uli1">
 							<li>
-								<span refersTo="hs">Adv H Schmidt</span>
+								<person id="person40" refersTo="#hs">Adv H Schmidt</person>
 							</li>
 							<li>
-								<span refersTo="ab">Mr A Botha</span>
+								<person id="person41" refersTo="#ab">Mr A Botha</person>
 							</li>
 						</ul>
 					</content>
 				</hcontainer>
 				<hcontainer id="hco1-hco3" name="inkhatafreedomparty" class="memberslist">
 					<heading>
-						<span refersTo="ifp">Inkhata Freedom Party</span>
+						<organization id="org30" refersTo="#ifp">Inkhata Freedom Party</organization>
 					</heading>
 					<content>
 						<ul id="hco1-hco3-uli1">
 							<li>
-								<span refersTo="vn">Mr V Ndlovu</span>
+								<person id="person42" refersTo="#vn">Mr V Ndlovu</person>
 							</li>
 						</ul>
 					</content>
 				</hcontainer>
 				<hcontainer id="hco1-hco4" name="panafricancongress" class="memberslist">
 					<heading>
-						<span refersTo="pac">Pan African Congress</span>
+						<organization id="org43" refersTo="#pac">Pan African Congress</organization>
 					</heading>
 					<content>
 						<ul id="hco1-hco4-uli1">
 							<li>
-								<span refersTo="sp">Dr S Pheko</span>
+								<person id="person44" refersTo="#sp">Dr S Pheko</person>
 							</li>
 						</ul>
 					</content>

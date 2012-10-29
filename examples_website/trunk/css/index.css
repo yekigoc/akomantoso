@@ -141,15 +141,18 @@ div#portaltop img {
     -webkit-border-bottom-right-radius: 5px !important;    
 } 
 
+ul.load-content::-webkit-scrollbar,
 div#maincontainer div::-webkit-scrollbar,
 div#documaincontainer div::-webkit-scrollbar{
     width: 12px;
 }
+ul.load-content::-webkit-scrollbar-track,
 div#maincontainer div::-webkit-scrollbar-track,
 div#documaincontainer div::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
+ul.load-content::-webkit-scrollbar-thumb,
 div#maincontainer div::-webkit-scrollbar-thumb,
 div#documaincontainer div::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -335,4 +338,153 @@ img.full
 }
 .c-del {
     background-color:#ee9999;
+}
+
+/* popup */
+.button {
+    background-color: #b32c13;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.button.small {
+    border-radius: 15px;
+    float: right;
+    margin: 22px 5px 0;
+    padding: 6px 15px;
+}
+.button:hover {
+    background-color: #1e1e1e
+}
+.button>span {
+    font-size: 84%
+}
+.button.bClose {
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: none;
+    font: bold 131% sans-serif;
+    padding: 0 6px 2px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+}
+::-moz-selection {
+    background-color: #2b91af;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background-color: #2b91af;
+    color: #fff;
+    text-shadow: none;
+}
+#popup {
+    background-color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 25px 5px #999;
+    color: #111;
+    display: none;
+    min-width: 450px;
+    padding: 25px;
+}
+#popup .logo {
+    color: #2B91AF;
+    font: bold 325% 'Petrona',sans;
+}
+.lt-ie9 .bModal {
+    background-color: #000
+}
+.load-content {
+    width:800px;
+    height:auto;
+    max-height:300px;
+    overflow: auto;
+    overflow-x: hidden;    
+}
+.load-content,
+.load-content ul {
+    display:block;
+    list-style-type:none;
+    margin:0 !important;
+    padding:0 !important;   
+}
+.load-content span.category
+{
+    display: inline;
+    color: #000;
+    padding: 0 12px;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    font-size:1.2em;
+}
+.load-content li li a {
+    display: inline;
+    text-decoration: none;
+    font-weight: normal;  
+}
+.load-content li li {
+    border-bottom:1px solid #ddd;
+    margin:0;
+    margin-left:30px;
+    padding:5px 0;
+    cursor:pointer;
+}
+.load-content li li:last {
+    border-bottom:0 none;  
+}
+.load-content li li a {
+    font-size:1.2em;  
+}
+.load-content li li:active,
+.load-content li li:hover {
+    background-color: #eee;
+}
+
+.load-content .open {
+	display: block;
+	}
+.load-content .closed {
+	display: none;
+	}     
+.load-content li img {
+	vertical-align: middle;
+}
+.load-content xmp {
+    display:inline;
+}
+/* button */
+.classname {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#B32C13 !important;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 14px;
+	text-decoration:none !important;
+	text-shadow:1px 1px 0px #ffffff;
+}.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.classname:active {
+	position:relative;
+	top:1px;
 }

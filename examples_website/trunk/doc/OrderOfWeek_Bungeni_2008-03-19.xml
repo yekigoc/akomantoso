@@ -1,60 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd" xmlns="http://www.akomantoso.org/2.0">
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.akomantoso.org/2.0 ./akomantoso20.xsd"  xmlns="http://www.akomantoso.org/2.0">
+	<!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
+
 	<debateReport name="orderOfDay" contains="originalVersion">
 		<meta>
-			<identification source="#bungeni">
+			<identification source="#somebody">
 				<FRBRWork>
 					<FRBRthis value="/ak/report/2011-08-04/main"/>
 					<FRBRuri value="/ak/report/2011-08-04"/>
 					<FRBRdate date="2011-08-04" name="generation"/>
 					<FRBRauthor href="#parliament" as="#author"/>
-				    <FRBRcountry value="ak"/>
+					<FRBRcountry value="ak"/>
 				</FRBRWork>
 				<FRBRExpression>
 					<FRBRthis value="/ak/report/2011-08-04/eng@/main"/>
 					<FRBRuri value="/ak/report/2011-08-04/eng@"/>
 					<FRBRdate date="2012-01-05" name="markup"/>
-					<FRBRauthor href="#cervone" as="#editor"/>
-				    <FRBRlanguage language="eng"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
+					<FRBRlanguage language="eng"/>
 				</FRBRExpression>
 				<FRBRManifestation>
 					<FRBRthis value="/ak/report/2011-08-04/eng@/main.xml"/>
 					<FRBRuri value="/ak/report/2011-08-04/eng@.akn"/>
 					<FRBRdate date="2012-01-05" name="publication"/>
-					<FRBRauthor href="#cervone" as="#editor"/>
+					<FRBRauthor href="#somebody" as="#editor"/>
 				</FRBRManifestation>
 			</identification>
 			<publication date="2011-08-04" name="internal" showAs="Internal Use Only" number="555"/>
-			<lifecycle source="#bungeni">
+			<lifecycle source="#somebody">
 				<eventRef id="e1" date="2011-08-04" source="#ro1" type="generation"/>
 			</lifecycle>
-			<references source="#bungeni">
-				<original id="ro1" href="/ak/report/2011-08-04/eng@/main" showAs="original"/>
-				<TLCOrganization id="bungeni" href="/ontology/organization/ak/bungeni" showAs="Bungeni"/>
-				<TLCPerson id="palmirani" href="/ontology/persons/it/editors/cervone" showAs="Monica Palmirani"/>
+			<references source="#somebody">
+				<original id="ro1" href="/ak/report/2011-08-04/eng@/main" showAs="Original"/>
+				<TLCPerson id="somebody" href="/ontology/persons/it/editors/somebody" showAs="Monica somebody"/>
 				<TLCOrganization id="parliament" href="/ontology/organizations/ak/parliament" showAs="Parliament"/>
 				<TLCRole id="author" href="/ontology/roles/ak/author" showAs="Author of Document"/>
 				<TLCRole id="editor" href="/ontology/roles/it/editor" showAs="Editor of Document"/>
 			</references>
-			<notes source="">
+			<notes source="#somebody">
 				<note id="note1">
 					<p>
 						* Denotes Motions of which Notices have been given
 					</p>
 				</note>
 				<note id="note2">
-					<p>**Denotes Motion of which Notice has not been given		</p>
+					<p>**Denotes Motion of which Notice has not been given</p>
 				</note>
 			</notes>
 		</meta>
 		<coverPage id="cp1">
-			<container id="sbd1" name="sbd1">
+			<container id="sbd1" name="coverPage">
 				<p>REPUBLIC OF BUNGENI</p>
 				<p>NATIONAL ASSEMBLY</p>
 				<p>PROGRAMME OF PARLIAMENTARY BUSINESS</p>
-				<p>WEEK COMMENCING TUESDAY 9TH AUGUST, 2011</p>
+				<p>WEEK COMMENCING <date date="2011-08-09">TUESDAY 9TH AUGUST, 2011</date>
+				</p>
 				<p>
-					<session>* 10<sup>TH</sup> PARLIAMENT * 4<sup>ND</sup>SESSION</session>
+					<legislature value="10">* 10<sup>TH</sup> PARLIAMENT </legislature>* <session value="4">4<sup>ND</sup>SESSION</session>
 				</p>
 			</container>
 		</coverPage>
@@ -73,7 +75,7 @@
 			<p>REPUBLIC OF KENYA</p>
 			<p>NATIONAL ASSEMBLY</p>
 			<p>
-				<session>TENTH PARLIAMENT (FOURTH SESSION)</session>
+				<legislature value="10">TENTH PARLIAMENT</legislature> (<session value="4">FOURTH SESSION</session>)
 			</p>
 			<p>
 				<docType>PROGRAMME OF PARLIAMENTARY BUSINESS</docType>
@@ -114,30 +116,29 @@ Bill (Bill No. 26 of 2011)</li>
 					<num>B. </num>
 					<heading>MEMORANDUM FROM H.E. THE PRESIDENT ON THE PRICECONTROL (ESSENTIAL GOODS) BILL 2009</heading>
 				</debateSection>
-			
-			<debateSection id="dbs3" name="memorandumOfBill">
-				<num>c. </num>
-				<heading>MEMORANDUM FROM H.E. THE PRESIDENT ON THE
+				<debateSection id="dbs3" name="memorandumOfBill">
+					<num>c. </num>
+					<heading>MEMORANDUM FROM H.E. THE PRESIDENT ON THE
 INDEMNITY (REPEAL) BILL 2010</heading>
-			</debateSection>
-			<noticesOfMotion id="day1-eve1">
-				<num>D.</num>
-				<heading>MOTION – (Leader of the Delegation)</heading>
-				<other>
-					<p>
-						<span class="indented">THAT,</span>  this House adopts the Report of a Parliamentary delegation on a
+				</debateSection>
+				<noticesOfMotion id="day1-eve1">
+					<num>D.</num>
+					<heading>MOTION – (Leader of the Delegation)</heading>
+					<other>
+						<p>
+							<span class="indented">THAT,</span>  this House adopts the Report of a Parliamentary delegation on a
 study tour to Somaliland from 22<sup>nd</sup> to 29<sup>th</sup> December, 2009, laid on the Table of the
 House on Tuesday, March 02, 2010. </p>
-				</other>
-			</noticesOfMotion>
-			<debateSection id="day1-eve2" name="anyother">
-				<num>E. </num>
-				<other>
-					<p>
+					</other>
+				</noticesOfMotion>
+				<debateSection id="day1-eve2" name="anyother">
+					<num>E. </num>
+					<other>
+						<p>
                             Any Other Government Business.
                         </p>
-				</other>
-			</debateSection>
+					</other>
+				</debateSection>
 			</debateSection>
 			<debateSection id="day2" name="day">
 				<debateSection id="day2-mor" name="morningsitting">
@@ -159,16 +160,16 @@ House on Tuesday, March 02, 2010. </p>
 							<noteRef href="#note1" marker="*"/>MOTION – (Ministry of Agriculture)</heading>
 						<other>
 							<p>
-								<span class="indented">THAT,</span>  appreciating the critical role Bungeni Farmers Association (KFA) once
+								<span class="indented">THAT,</span>  appreciating the critical role BUNGENI Farmers Association (KFA) once
 played in the Agricultural Sector as reliable supply chain for farm inputs and a
 marketing conduit for produce; Noting with deep concern that the collapse of the
-65,000 Member KFA has adversely affected the welfare of the Bungenian farmer and
+65,000 Member KFA has adversely affected the welfare of the BUNGENIan farmer and
 stability of the agricultural sector; Aware that the said collapse of KFA was a
 consequence of mismanagement and abandonment by Government; Acknowledging
 that the gallant efforts by farmers to revive KFA have been hampered by a heavy
 burden of bad debts accumulated by reason of the said mismanagement and
 Government inertia; Concerned that various creditors, including National Bank of
-Bungeni, Barclays Bank and Workers, are moving to auction properties of KFA, further
+BUNGENI, Barclays Bank and Workers, are moving to auction properties of KFA, further
 encumbering the noble revival efforts; Convinced that the immediate resuscitation of
 KFA is a matter of strategic national importance; this House urges the Government to
 immediately avail a grant of Kshs. 1.3 Billion to KFA to help clear the bad debts and

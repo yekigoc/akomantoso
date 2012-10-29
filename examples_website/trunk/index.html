@@ -25,7 +25,8 @@
         <link type="text/css" rel="stylesheet" href="css/index.css"/>    
         <link type="text/css" rel="stylesheet" href="css/jquery.qtip.css"/>
         
-        <script type="text/javascript" language="javascript" src="script/jquery.js"></script>  
+        <script type="text/javascript" language="javascript" src="script/jquery.js"></script> 
+        <script type="text/javascript" language="javascript" src="script/jquery.bpopup-0.7.0.min.js"></script>         
         <script type="text/javascript" language="javscript" src="script/jquery.scrollTo-min.js"></script>
         <script type="text/javascript" language="javascript" src="script/jquery.cookie.js"></script>   
         <script type="text/javascript" language="javascript" src="script/splitter.js"></script>
@@ -37,7 +38,7 @@
         <script type="text/javascript" language="javascript" src="script/application.js"></script>
         <script type="text/javascript" language="javascript" src="script/custom.js"></script>
     </head>
-    <body onload="initialize()">
+    <body>
         <div id="header">
             <div id="portaltop">
                 <div id="wip-tip">The content on this site is still under revision. For clarifications and suggestions please contact us on this email address: <a href='mailto:info@parliaments.info?subject=Akoma Ntoso Examples'>info@parliaments.info</a></div>
@@ -57,18 +58,18 @@
                <a class="menu-external" title="Used to generate Subschema for Akoma Ntoso documents" href="http://generator.akomantoso.org">subschema generator</a>	                
             </span>
             <div id="doc_select_text">  
-                The Akoma Ntoso examples below are presented as XML on the left pane and rendered as HTML on the right pane. 
-                If you click on any XML element on the left you will see highlighted the HTML representation of the text on 
-                the right as well as the corresponding technical documentation. Clicking on the text on the right will display 
-                the corresponding XML element on the left.<br/><br/>              
-                <span id="iefix">
-                        <div class="styled-select"><select id="doc_menu" onchange="getDocument(this)"><option>Loading... </option></select></div>
-                    <span id="doc-notes">&#160;</span>
-                </span>
+                Please click on "examples" below to choose a document you want to see the Akoma Ntoso XML. On the left panel you will see the actual XML. On the right panel the example rendered in HTML.
+                If you click on any XML element on the left you will see highlighted the HTML representation of the text on the right, as well as the corresponding technical documentation in the relative tab. Vice versa, by clicking on the text on the right, it will display the corresponding XML element on the left.
+                <br/><br/>
+                You can download the examples by clicking on the download icon <img src="images/download-akn-ex.png" /> on the left panel and you can maximise the example window by clicking on the icon on the far end of the right panel.
+                Examples written by Monica Palmirani of the University Of Bologna <a href="mailto:monica.palmirani@unibo.it">monica.palmirani@unibo.it</a>                             
             </div>
+            <div id="iefix">
+                <a href="#" id="select-pop" class="classname">examples</a>
+            </div>            
             <div class="helpers-browser">  
-                <span class="smallprint"> <i>(best viewed with Firefox 10 or older, Opera or Safari - they can be viewed with 
-                    IE 9 too but performance will be slow.)</i></span>
+                <span class="smallprint"> <i>(best viewed with Firefox 8 or newer, Opera or Safari - they can be viewed with 
+                IE 9 too but performance will be slow.)</i></span>
             </div>            
             <div class="helpers-wrapper">
                 <div id="leftist" style="float:left;" class="helpers">
@@ -147,5 +148,13 @@
           an initiative of <a href="http://www.un.org/esa/desa/">United Nations Department of Economic and Social Affairs (UNDESA)</a>
           </div>
         </div>
+        
+        <!-- popup -->
+        <div id="popup">
+            <span class="button bClose"><span>X</span></span>
+            <ul class="load-content open">
+                <li>Loading...</li>
+            </ul>
+        </div>        
     </body>
 </html>

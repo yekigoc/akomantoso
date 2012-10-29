@@ -22,14 +22,42 @@
 		global $xml_dir, $html_dir, $examples_catalog;
  		$att = 'name';
 		//create the string that contains all the documents names (inside <option> element)
-		$result = '<option value="doc_select">Select Example</option>';
+		$result = '';
 		
     	$xml = simplexml_load_file($examples_catalog) or die ("Unable to load XML file!");
-        foreach($xml->file as $item)
-        {
-            $text = str_replace("_"," ",$item->attributes()->$att);
-            $result .= "<option value='".substr($item->attributes()->$att,0,-4)."'>".$text."</option>";
-        }
+    	
+        $typesListXml = $xml->xpath('file/type');
+
+        if (!empty($typesListXml)) {
+            $typesList = array();
+            foreach ($typesListXml as $typeXml) {
+                $typesList[] = (string)$typeXml;
+            }
+        
+            //sort by types return unique
+            $typesList = array_unique($typesList);
+        
+            $itemForType = array();
+            $count = 0;
+            $count_1 = 0;
+            foreach ($typesList as $type) {
+                $count++;
+                $rawData = $xml->xpath('file[type="' . $type . '"]');
+                $result .= '<li><a id="item'.$count.'" rel="category"><img src="images/closed.gif" alt="" id="img_item'.$count.'"></a><span class="category">'.$type.'</span><ul id="ul_item'.$count.'" class="closed">';
+                if (!empty($rawData)) {
+                    foreach ($rawData as $rawItem) {
+                        $count_1++;
+                        //$itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
+                        $text = str_replace("_"," ",$rawItem->attributes()->$att);
+                        $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";
+                    }
+                }
+                $result .= '</ul></li>';
+            }
+        
+        } 	
+    	//var_dump($itemForType);
+
         return $result;
         
 		/*$optionsA = Array();
