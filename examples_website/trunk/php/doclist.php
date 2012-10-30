@@ -40,16 +40,31 @@
             $itemForType = array();
             $count = 0;
             $count_1 = 0;
+            $count_2 = 0;
             foreach ($typesList as $type) {
+                $uctype = ucfirst($type);
                 $count++;
                 $rawData = $xml->xpath('file[type="' . $type . '"]');
-                $result .= '<li><a id="item'.$count.'" rel="category"><img src="images/closed.gif" alt="" id="img_item'.$count.'"></a><span class="category">'.$type.'</span><ul id="ul_item'.$count.'" class="closed">';
+                $result .= '<li><a id="item'.$count.'" rel="category"><img src="images/closed.gif" alt="" id="img_item'.$count.'"></a><span class="category">'.$uctype.'</span><ul id="ul_item'.$count.'" class="closed">';
                 if (!empty($rawData)) {
                     foreach ($rawData as $rawItem) {
                         $count_1++;
-                        //$itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
-                        $text = str_replace("_"," ",$rawItem->attributes()->$att);
-                        $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";
+                        // if it has linked documents within
+                        if (!empty($rawItem->linked)) {
+                            $itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
+                            $text = str_replace("_"," ",$rawItem->attributes()->$att);
+                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]<ul>";
+                                $linkedData = $rawItem->xpath('linked/file');
+                                foreach ($linkedData as $linkedItem) {
+                                    $count_2++;
+                                    $result .= "<li id='item".$count."_".$count_1."_".$count_2."'><a id='".substr($linkedItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$linkedItem->desc."</a> [<span id='".substr($linkedItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";
+                                }
+                            $result .= "</ul></li>";                            
+                        } else {
+                            $itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
+                            $text = str_replace("_"," ",$rawItem->attributes()->$att);
+                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";                            
+                        }                      
                     }
                 }
                 $result .= '</ul></li>';

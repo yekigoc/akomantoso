@@ -198,16 +198,22 @@ $().ready(function() {
             //alert('top:'+offset.top+'left'+offset.left);
     });  
     
+    
+    // load the examples on the background
+    $.get('php/sidebyside.php?doc_list=true', function(data) {
+        $('.load-content').html(data);
+        $('#select-pop').html("examples");
+    });    
     // renders the popup and loads the documents from the server via AJAX
     var render_popup = function() {
         $('#popup').bPopup({
             modalClose: false,
             opacity: 0.4,
             contentContainer:'.load-content',
-            loadUrl: 'php/sidebyside.php?doc_list=true',
+            //loadUrl: 'php/sidebyside.php?doc_list=true',
             positionStyle: 'fixed'
         });
-    };     
+    };      
     
     // popup
     $('#select-pop').bind('click', function(e) {
@@ -217,10 +223,9 @@ $().ready(function() {
     
     // bind() the loaded examples and fire the getDocument() on click.
     $(".load-content li li a").live("click", function(){
-        console.log(this.id);
         getDocument(this);
         $('.bClose').trigger('click');
-        $('#select-pop').html(this.id);
+        $('#document-title').html(this.rel + " - " + this.innerHTML);
         return false;
     });
      

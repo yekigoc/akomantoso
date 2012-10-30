@@ -42,7 +42,7 @@ function getDocument(aSelect)
 		var html_doc = retrieveHTMLDocument(aSelect.id,'html_doc');
 		
 		//the description notes for that document
-		var desc_notes = getNotes(aSelect.id,'doc-notes');			
+		//var desc_notes = getNotes(aSelect.id,'doc-notes');			
 	}
 }
 
