@@ -92,14 +92,14 @@ pre.c{
 }
 
 #doc_select_text{
-    padding:10px 5px;
+    padding:10px 5px 0 5px;
     background-color:#FFFFFF;
     color:#000000;
     font-family:Verdana,sans-serif;
-    font-size:10pt;
+    font-size:1em;
     text-align:left;
 }
-#iefix {
+.center-row {
     text-align:center;
     margin:0 auto;
 }

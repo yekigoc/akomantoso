@@ -59,23 +59,37 @@
     <file name="Amendmet_Bungeni_2010-10-28adm1.xml">
         <type>amendment</type>        
         <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+        <linked>
+            <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
+                <type>amendment</type>        
+                <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+            </file>             
+        </linked>
     </file>   
     <file name="Amendmet_Bungeni_2010-10-28adm2.xml">
         <type>amendment</type>        
         <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+        <linked>
+            <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
+                <type>amendment</type>        
+                <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+            </file>             
+        </linked>        
     </file>     
     <file name="Amendmet_Bungeni_2010-10-28adm3.xml">
         <type>amendment</type>        
         <desc>External XML file linked to the AmendmentList_Bungeni_2010-10-28v2.xml</desc>
+        <linked>
+            <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
+                <type>amendment</type>        
+                <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+            </file>             
+        </linked>        
     </file>  
     <file name="AmendmetList_Bungeni_2010-10-28v1.xml">
         <type>amendment</type>        
         <desc>Example of the Amendment list with three amendments included in the same XML file</desc>
-    </file>  
-    <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
-        <type>amendment</type>        
-        <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
-    </file>   
+    </file>    
     <file name="Bill_Bungeni_2009-01-27-documentCollection.xml">
         <type>bill</type>        
         <desc>&lt;code&gt;documentCollection&lt;/code&gt; with &lt;code&gt;ComponentRef&lt;/code&gt; and &lt;code&gt;Component&lt;/code&gt;</desc>
@@ -170,7 +184,7 @@
     </file>   
     <file name="OrderOfWeek_Bungeni_2008-03-19.xml">
         <type>order of the week</type>         
-        <desc>Example Order of thr week</desc>
+        <desc>Example Order of the week</desc>
     </file>  
     <file name="Questions_Bungeni_2010.xml">
         <type>question</type>         
@@ -183,19 +197,21 @@
     <file name="Report_SudAfrica_2007-03-22.xml">
         <type>report</type>         
         <desc>Debate Report with 2 annexes</desc>
-    </file>  
+        <linked>
+            <file name="Report_SudAfrica_APPENDIX1_Of_Report_2007-03-22.xml">
+                <type>report</type>         
+                <desc>Annex 1 of debate report</desc>
+            </file> 
+            <file name="Report_SudAfrica_APPENDIX2_Of_Report_2007-03-22.xml">
+                <type>report</type>         
+                <desc>Annex 2 of debate report</desc>
+            </file>             
+        </linked>
+    </file>    
     <file name="Report_SudAfrica_2008-11-01.xml">
         <type>report</type>         
         <desc>Report</desc>
-    </file>  
-    <file name="Report_SudAfrica_APPENDIX1_Of_Report_2007-03-22.xml">
-        <type>report</type>         
-        <desc>Annex 1 of debate report</desc>
-    </file> 
-    <file name="Report_SudAfrica_APPENDIX2_Of_Report_2007-03-22.xml">
-        <type>report</type>         
-        <desc>Annex 2 of debate report</desc>
-    </file>  
+    </file>     
     <file name="Table_APPENDIX1_2003.xml">
         <type>table</type>         
         <desc>Example of usage of  &lt;xmp&gt;&lt;fillin&gt;&lt;/xmp&gt;</desc>

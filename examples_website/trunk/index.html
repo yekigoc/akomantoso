@@ -58,15 +58,19 @@
                <a class="menu-external" title="Used to generate Subschema for Akoma Ntoso documents" href="http://generator.akomantoso.org">subschema generator</a>	                
             </span>
             <div id="doc_select_text">  
-                Please click on "examples" below to choose a document you want to see the Akoma Ntoso XML. On the left panel you will see the actual XML. On the right panel the example rendered in HTML.
+                Please click on "examples" below to see the Akoma Ntoso XML of that document. On the left panel you will see the actual XML. On the right panel the example rendered in HTML.
                 If you click on any XML element on the left you will see highlighted the HTML representation of the text on the right, as well as the corresponding technical documentation in the relative tab. Vice versa, by clicking on the text on the right, it will display the corresponding XML element on the left.
                 <br/><br/>
-                You can download the examples by clicking on the download icon <img src="images/download-akn-ex.png" /> on the left panel and you can maximise the example window by clicking on the icon on the far end of the right panel.
+                You can download the visible example by clicking on the download icon <img src="images/download-akn-ex.png" /> on the left panel and you can maximise the example window by clicking on the icon <img src="images/fullscreen-icon.gif"/> on the far end of the right panel.
+                <br/>
                 Examples written by Monica Palmirani of the University Of Bologna <a href="mailto:monica.palmirani@unibo.it">monica.palmirani@unibo.it</a>                             
             </div>
-            <div id="iefix">
-                <a href="#" id="select-pop" class="classname">examples</a>
-            </div>            
+            <div id="iefix" class="center-row">
+                <a href="#" id="select-pop" class="classname">loading...</a>
+            </div>   
+            <div class="center-row">
+                <span id="document-title" class="document-title">...</span>
+            </div>               
             <div class="helpers-browser">  
                 <span class="smallprint"> <i>(best viewed with Firefox 8 or newer, Opera or Safari - they can be viewed with 
                 IE 9 too but performance will be slow.)</i></span>
@@ -99,7 +103,7 @@
                         </ul>
                     </div>
                     <div id="doc_select" class="rounded-five-top">
-                        <span id="iefix">&nbsp;</span>
+                        <span>&nbsp;</span>
                     </div>
                     <div id="loader_div" class="loader rounded-five-bottom"><img class="loader" src="loader/ajax-loader.gif" /></div>
                     <div id="xml_doc" class="rounded-five-bottom"></div>
