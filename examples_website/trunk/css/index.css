@@ -438,12 +438,20 @@ img.full
 .load-content li ul li:last {
     border-bottom:0 none;  
 }
+.load-content li li a:link,
 .load-content li li a {
-    font-size:1.2em;  
+    font-size:1.1em; 
+    color:#111;
+}
+.load-content li li a:hover { 
+    color:#333 !important;
 }
 .load-content li li:active,
 .load-content li li:hover {
     background-color: #eee;
+}
+.load-content li li a code { 
+    color:#b32c13 !important;
 }
 
 .load-content .open {

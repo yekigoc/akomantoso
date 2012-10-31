@@ -72,7 +72,7 @@
         <linked>
             <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
                 <type>amendment</type>        
-                <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+                <desc>Example of the Amendment list with three &lt;code&gt;componentRef&lt;/code&gt; that points out to external XML file</desc>
             </file>             
         </linked>        
     </file>     
@@ -82,7 +82,7 @@
         <linked>
             <file name="AmendmetList_Bungeni_2010-10-28v2.xml">
                 <type>amendment</type>        
-                <desc>Example of the Amendment list with three componentRef that points out to external XML file</desc>
+                <desc>Example of the Amendment list with three &lt;code&gt;componentRef&lt;/code&gt; that points out to external XML file</desc>
             </file>             
         </linked>        
     </file>  
@@ -100,7 +100,7 @@
     </file>  
     <file name="Bill_Bungeni_2010-07-10-memorandum.xml">
         <type>bill</type>          
-        <desc>Memorandum of the previous bill</desc>
+        <desc>Memorandum of the previous &lt;code&gt;bill&lt;/code&gt;</desc>
     </file>   
     <file name="Bill_Bungeni_2010-11-19-coverpage.xml">
         <type>bill</type>          
@@ -116,11 +116,11 @@
     </file>   
     <file name="Bill_cl_2005-03-14.xml">
         <type>bill</type>          
-        <desc>Example of the tradition in Chile for the bill</desc>
+        <desc>Example of the tradition in Chile for the &lt;code&gt;bill&lt;/code&gt;</desc>
     </file>  
     <file name="Bill_Kenya_2006-02-10.xml">
         <type>bill</type>          
-        <desc>Example of complex structure with part, annexes, sections, list into a list, longTitile</desc>
+        <desc>Example of complex structure with &lt;code&gt;part&lt;/code&gt;, annexes, &lt;code&gt;section&lt;/code&gt;, &lt;code&gt;list&lt;/code&gt; into a list, &lt;code&gt;longTitile&lt;/code&gt;</desc>
     </file>   
     <file name="Bill_southAfrica_2006-12-23.xml">
         <type>bill</type>          
@@ -140,11 +140,11 @@
     </file>  
     <file name="Bill_Uruguay_2011-09-27.xml">
         <type>bill</type>          
-        <desc>Example of the tradition in Uruguay for the bill with the folder container in the Senate and in the Chamber</desc>
+        <desc>Example of the tradition in Uruguay for the &lt;code&gt;bill&lt;/code&gt; with the folder container in the Senate and in the Chamber</desc>
     </file>  
     <file name="Bill_US_2010-12-06.xml">
         <type>bill</type>          
-        <desc>Example of the tradition in US for the bill</desc>
+        <desc>Example of the tradition in US for the &lt;code&gt;bill&lt;/code&gt;</desc>
     </file>   
     <file name="Debate_Bungeni_1995-10-31.xml">
         <type>debate</type>          
@@ -152,7 +152,7 @@
     </file>  
     <file name="Debate_Bungeni_2010-11-12.xml">
         <type>debate</type>           
-        <desc>Example of debate that includes amendment. Interesting example of mmod, modification in the modification</desc>
+        <desc>Example of debate that includes amendment. Interesting example of &lt;code&gt;mmod&lt;/code&gt;, modification in the modification</desc>
     </file>  
     <file name="Debate_Bungeni_2010-12-07.xml">
         <type>debate</type>           
@@ -176,7 +176,7 @@
     </file>  
     <file name="officialGazette_Bungeni_2011-12-23v1.xml">
         <type>official gazette</type>               
-        <desc>Example how to use Official Gazette structure using componentRef that points out to external xml file</desc>
+        <desc>Example how to use Official Gazette structure using &lt;code&gt;componentRef&lt;/code&gt; that points out to external xml file</desc>
     </file>  
     <file name="officialGazette_Bungeni_2011-12-23v2.xml">
         <type>official gazette</type>         
