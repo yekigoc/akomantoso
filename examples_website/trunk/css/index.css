@@ -199,10 +199,6 @@ div#documaincontainer div::-webkit-scrollbar-thumb {
     width:20px;
     cursor:pointer;
 }
-.menu-external {
-    padding-right:12px;
-    background:transparent url(../images/ext-link.png) no-repeat top right;
-}
 
 /*
  * Splitter container. Set this to the desired width and height
