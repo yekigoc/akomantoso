@@ -113,6 +113,34 @@
     	return $result;
     }
     
+	function generic_listing() {
+	
+        global $result, $optionsA;
+        
+        $aknElements = array();
+        $xml = simplexml_load_file("../doc/akomantoso20.xsd") or die ("Unable to load XML file!");
+        $filesListXml = $xml->xpath('//xsd:element');
+        
+        if (!empty($filesListXml)) {
+            foreach ($filesListXml as $fileXml) {
+                if (!empty($fileXml->attributes()->name)) {
+                    $aknElements[] = (string)$fileXml->attributes()->name;
+                }
+             }    
+        }  
+        natcasesort($aknElements);
+             
+        $result .= '<ul class="listblock">';
+        foreach ($aknElements as $o)
+         {     
+                if (!empty($fileXml->attributes()->name)) {
+                    $result .= '<li><a href="#'.$o.'" name="'.$o.'" onclick="return false;">'.$o.'</a></li>';
+                }
+        }               		       
+        $result .= '</ul>';         
+    	return $result;
+    }    
+    
 	function categorical_listing() {
 	
         global $result, $optionsA;
@@ -188,6 +216,9 @@
     elseif($_GET['type']=='categorical') {
         echo categorical_listing();
     }
+    elseif($_GET['type']=='generic') {
+        echo generic_listing();
+    }    
     elseif($_GET['type']=='releases') {
         if($_GET['no'])
             echo releases_notes($_GET['no']);

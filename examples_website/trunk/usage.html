@@ -20,26 +20,26 @@
         <script type="text/javascript" language="javascript" src="script/config.js"></script>
         <script type="text/javascript" language="javascript" src="script/schema-toggle.js"></script>
         <script type="text/javascript" language="javascript" src="script/application.js"></script>        
-        <script type="text/javascript" language="javascript" src="script/listings.js"></script> 
+        <script type="text/javascript" language="javascript" src="script/usage.js"></script> 
     </head>
     <body >
         <div id="docu-header">
-        <div id="portaltop">
-            <div id="wip-tip">The content on this site is still under revision. For clarifications and suggestions please contact us on this email address: <a href='mailto:info@parliaments.info?subject=Akoma Ntoso Documentation'>info@parliaments.info</a></div>
-            <img src="./images/akoma-banner-docu.png" border="0" usemap="#map" />
-            <map name="map">
-                <area shape="rect" coords="11,4,192,106" href="http://www.akomantoso.org" />
-                <area shape="rect" coords="841,9,956,52" alt="Africa i-Parliaments website" href="http://www.parliaments.info" />
-                <area shape="rect" coords="840,70,957,115" alt="Bungeni - Parliamentary Information System" href="http://www.bungeni.org" />                      
-            </map>    		
+            <div id="portaltop">
+                <div id="wip-tip">The content on this site is still under revision. For clarifications and suggestions please contact us on this email address: <a href='mailto:info@parliaments.info?subject=Akoma Ntoso Documentation'>info@parliaments.info</a></div>
+                <img src="./images/akoma-banner-docu.png" border="0" usemap="#map" />
+                <map name="map">
+                    <area shape="rect" coords="11,4,192,106" href="http://www.akomantoso.org" />
+                    <area shape="rect" coords="841,9,956,52" alt="Africa i-Parliaments website" href="http://www.parliaments.info" />
+                    <area shape="rect" coords="840,70,957,115" alt="Bungeni - Parliamentary Information System" href="http://www.bungeni.org" />                      
+                </map>    		
             </div>
             <div class="related-sites">
                 <ol>
                     <li><a class="menu-external" title="external link to www.akomantoso.org" href="http://www.akomantoso.org/">akoma ntoso</a></li>
                     <li><a class="menu-external" title="Schema releases" href="schema-releases.html">schema releases</a></li>
                     <li><a class="menu-external" title="An assortment of Akoma Ntoso legislative documents." href="index.html">schema examples</a></li>
-                    <li><a class="menu-external" title="Listing of elements and their occurences in the examples." href="usage.html">elements usage</a></li>
-                    <li><a href='#' class="menu-parent this" title='Akoma Ntoso elements listed alphabetically and in categories'>technical documentation</a>
+                    <li><a class="menu-external this" title="Listing of elements and their occurences in the examples." href="usage.html">elements usage</a></li>
+                    <li><a href='#' class="menu-parent" title='Akoma Ntoso elements listed alphabetically and in categories'>technical documentation</a>
                         <ol>
                             <li><a class="menu-external" href='alphabetical.html' title='Alphabetical listing of all Akoma Ntoso elements.'>alphabetically</a></li>
                             <li><a class="menu-external" href='categorical.html' title='Schema categories of all Akoma Ntoso elements'>schema categories</a></li>
@@ -49,12 +49,12 @@
                 </ol>
             </div>
             <div class="header-text-centered">  
-               				<br/>Expand an alphabet on the left pane to view available elements, click on any element to view its technical documentation on the right pane.<br/><br/>
-                    <span class="smallprint"> <i>(best viewed with Firefox 10 or older, Opera or Safari - they can be viewed with IE 9 too but performance 
-                        will be 
-                        slow.)</i><br/>
-        		    </span>
-                </div>
+                <br/>Expand an alphabet on the left pane to view available elements, click on any element to view its technical documentation on the right pane.<br/><br/>
+                <span class="smallprint"> <i>(best viewed with Firefox 10 or older, Opera or Safari - they can be viewed with IE 9 too but performance 
+                    will be 
+                    slow.)</i><br/>
+                </span>
+            </div>
             <div class="helpers-wrapper">
                 <div id="leftist" style="float:left;" class="helpers">
                     <img src="images/information.png" alt="Left Info"/>
@@ -70,20 +70,18 @@
         <div id="documaincontainer" class="rounded-eigh splitter-section">
             
             <div id="DocuLeftPane" class="xmlcode">
-                    <div id="intro_xml" style="display:none;">
-                        <ul>
-                            <li>Clicking on any element on this pane will open the techincal documentation describing the element 
-                                on the right pane</li>
-                            <li> Click on the [-] or [+] signs to expand a category.</li>
-                        </ul>
+                <div id="intro_xml" style="display:none;">
+                    <ul>
+                        <li>Clicking on any element on this pane to show all the example documents where it is used on the right pane</li>
+                    </ul>
+                </div>
+                
+                <div class="doc-pane-area">
+                    <div class="doc-pane-title-holder rounded-five-top">
+                        <p class="doc-pane-title">akomantoso elements </p>
                     </div>
-                    
-                    <div class="doc-pane-area">
-                        <div class="doc-pane-title-holder rounded-five-top">
-                            <p class="doc-pane-title">alphabetical listing </p>
-                        </div>
-                        <div id="alisting_doc" class="toggle-content-b doc-pane-content-holder rounded-five-bottom">&nbsp;</div>
-                    </div>                    
+                    <div id="alisting_doc" class="toggle-content-b doc-pane-content-holder rounded-five-bottom">&nbsp;</div>
+                </div>                    
             </div>
             
             <div id="DocuRightPane">
@@ -102,9 +100,9 @@
                 <div id="loader_div" class="loader rounded-five-bottom"><img class="loader" src="loader/ajax-loader.gif" /></div>
                 <div class="doc-pane-area">
                     <div class="doc-pane-title-holder rounded-five-top">
-                        <p class="doc-pane-title">technical documentation </p>
+                        <p class="doc-pane-title"> occurences of element  </p>
                     </div>
-                    <div id="tec_doc" class="toggle-content-b doc-pane-tech-content-holder rounded-five-bottom">&nbsp;</div>
+                    <div id="tec_doc" class="toggle-content-b doc-pane-usage-content-holder rounded-five-bottom">&nbsp;</div>
                 </div>
             </div>
         </div>   
@@ -113,9 +111,8 @@
             <div id="ex-footer" class="rounded-eigh">
                 <p>&copy;2000 - 2012</p>
             </div>    
-          <div class="colophonWrapper">      
-          an initiative of <a href="http://www.un.org/esa/desa/">United Nations Department of Economic and Social Affairs (UNDESA)</a>
-          </div>
+            <div class="colophonWrapper"> an initiative of <a href="http://www.un.org/esa/desa/">United Nations Department of Economic and Social Affairs (UNDESA)</a>
+            </div>
         </div>
     </body>
 </html>
