@@ -8,7 +8,7 @@
         <type>act</type>        
         <desc>Example of complex structure, with TOC for any chapter, images and table included in the text.</desc>
     </file>  
-    <file name="Act_Kenya_1980-01-01@1989-12-15.xml">
+    <file name="Act_Kenya_1980-01-01_1989-12-15.xml">
         <type>act</type>        
         <desc>Consolidate act with Passive Modifications and Temporal Info block</desc>
     </file>  
@@ -16,7 +16,7 @@
         <type>act</type>        
         <desc>Modificatory act of the Kenya Act 1980-01-01</desc>
     </file>   
-    <file name="Act_Kenya_1997-08-22_3@2003-12-19.xml">
+    <file name="Act_Kenya_1997-08-22_3_2003-12-19.xml">
         <type>act</type>        
         <desc>Consolidate act with Passive Modifications and Temporal Info block</desc>
     </file>  
@@ -32,7 +32,7 @@
         <type>act</type>        
         <desc>Original act</desc>
     </file>  
-    <file name="Act_Salvador_Ley_604_1993@2006-01-20.xml">
+    <file name="Act_Salvador_Ley_604_1993_2006-01-20.xml">
         <type>act</type>        
         <desc>Consolidated act with passive modifications, in Spanish</desc>
     </file>  

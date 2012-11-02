@@ -53,17 +53,17 @@
                         if (!empty($rawItem->linked)) {
                             $itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
                             $text = str_replace("_"," ",$rawItem->attributes()->$att);
-                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]<ul>";
+                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span href='#'>".$text."</span>]<ul>";
                                 $linkedData = $rawItem->xpath('linked/file');
                                 foreach ($linkedData as $linkedItem) {
                                     $count_2++;
-                                    $result .= "<li id='item".$count."_".$count_1."_".$count_2."'><a id='".substr($linkedItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$linkedItem->desc."</a> [<span id='".substr($linkedItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";
+                                    $result .= "<li id='item".$count."_".$count_1."_".$count_2."'><a id='".substr($linkedItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$linkedItem->desc."</a> [<span href='#'>".$text."</span>]</li>";
                                 }
                             $result .= "</ul></li>";                            
                         } else {
                             $itemForType[$type][] = $rawItem->attributes()->$att . ' - ' . $rawItem->desc;
                             $text = str_replace("_"," ",$rawItem->attributes()->$att);
-                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span id='".substr($rawItem->attributes()->$att,0,-4)."' href='#'>".$text."</span>]</li>";                            
+                            $result .= "<li id='item".$count."_".$count_1."'><a id='".substr($rawItem->attributes()->$att,0,-4)."' rel='".$uctype."' href='#'>".$rawItem->desc."</a> [<span href='#'>".$text."</span>]</li>";                            
                         }                      
                     }
                 }

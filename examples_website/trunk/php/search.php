@@ -26,6 +26,7 @@ if (!empty($filesListXml)) {
     $doc->formatOutput = true;
     $doc->preserveWhiteSpace = false;  
     
+    $none = true;
     foreach ($filesListXml as $fileXml) {
       
         $docName = $fileXml->attributes()->name;
@@ -36,13 +37,14 @@ if (!empty($filesListXml)) {
         if ($elements->length == 0) {
             continue;
         }  
-        echo "<div class='title-link-wrapper'><a class='title-link menu-external' ref='".$docName."' href='#'>".$docName."</a></div>";
+        echo "<div class='title-link-wrapper'><a class='title-link menu-external' title='View this on schema examples' ref='".$docName."' href='index.html#".$docName."'>".$docName."</a></div>";
         $data = array();
         foreach ($elements as $node) {
-        
+            
             if(!empty($node)) {           
                 $aNode = $doc->saveXML($node);
                 echo get_document($aNode);
+                $none = false;
             }
             
             /*
@@ -56,6 +58,9 @@ if (!empty($filesListXml)) {
             */            
         }  
         echo "<hr />";        
+    }
+    if($none) {
+        echo "<div>No document found with that element</div>";
     }
 }
 

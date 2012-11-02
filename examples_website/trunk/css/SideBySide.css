@@ -414,6 +414,10 @@ margin-left:-15px;
 .doc-pane-usage-content-holder > * {
     padding-left:10px;
 }
+.doc-pane-usage-content-holder ul {
+    list-style-image: none !important;
+    list-style-type: none !important;
+}
 .title-link-wrapper {
     width:100%;
     height:17px;

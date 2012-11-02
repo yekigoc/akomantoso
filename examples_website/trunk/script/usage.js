@@ -312,29 +312,36 @@ $().ready(function() {
     var get_docs_and_highlight = function(doc) {
         $.get('php/search.php?el_documentation='+doc+'&type=technical', function(data) {
             $('#tec_doc').html(data);
+            collapseAllinDiv('tec_doc');             
         });
         
         //highlight left pane with active tech_doc  
         $('#alisting_doc').find('a').css('color', '#008000');
-        $('#alisting_doc').find('a[name="'+doc+'"]').css({color: '#b32b13',display: 'block'});        
+        $('#alisting_doc').find('a[name="'+doc+'"]').css({color: '#b32b13',display: 'block'});            
+    };  
+        
+    /**
+     * open all the elements given id of div
+     */
+    var collapseAllinDiv = function(div_id) {
+    	//get all the elements in the XML div
+    	var $allSpanElements = $('span[class="expander"]');    	
+    	$allSpanElements.html('[ + ] ');
+    	$allSpanElements.parent().next().css('display', 'none');
     };    
     
    //JQUERY AJAX MUMBO-JUMBO    
-   $("#alisting_doc a, #tec_doc a, #tec_doc area").live("click", function(){
+   $("#alisting_doc a, #tec_doc area").live("click", function(){
         doc = $(this).attr('name');
-    
+        $("#current_el").html(doc);
         get_docs_and_highlight(doc);
         
-        collapseAll();
         $('#alisting_doc').find('a[name="'+doc+'"]').closest('span').css('display', 'inline');
         if($(this).attr("href") !== "#") {
                 $('#alisting_doc').find('.expander').html('[ + ] ');
                 $('#alisting_doc').find('a[name="'+doc+'"]').closest('span').prev("pre").children(".expander").html('[ -&nbsp; ] ');
          }
-        else {
-            //$('#alisting_doc').find('.expander').html('[ + ] ');
-            //$('#alisting_doc').find('a[name="'+doc+'"]').closest('span').prev().children(":first").html('[ -&nbsp; ] ');
-        }
+        else { }
         //scroll to the section
         $("#alisting_doc").stop().scrollTo('a[name="'+doc+'"]', {speed:1000}); 
             
