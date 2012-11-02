@@ -203,6 +203,19 @@ $().ready(function() {
     $.get('php/sidebyside.php?doc_list=true', function(data) {
         $('.load-content').html(data);
         $('#select-pop').html("examples");
+        
+        //Example on page-load get example
+        if(window.location.hash) {
+            full_doc_name = window.location.hash.slice(1);
+            doc_name = full_doc_name.substring(0, full_doc_name.length - 4);
+
+            var popup = $('#popup');
+            example_to_load = popup.find('#'+doc_name+'').eq(0);
+            console.log($('#'+doc_name+''));
+            getDocument(example_to_load[0]); // converting DOM to JQuery Element
+            $('.bClose').trigger('click');
+            $('#document-title').html(example_to_load[0].rel + " - " + example_to_load[0].innerHTML);     
+        }         
     });    
     // renders the popup and loads the documents from the server via AJAX
     var render_popup = function() {
@@ -226,6 +239,7 @@ $().ready(function() {
         getDocument(this);
         $('.bClose').trigger('click');
         $('#document-title').html(this.rel + " - " + this.innerHTML);
+        window.location.href.split('#')[0];
         return false;
     });
      
@@ -246,7 +260,7 @@ $().ready(function() {
             }
         }
         return false;
-    });     
+    });              
     
     //by default load the popup onload.
     //render_popup();

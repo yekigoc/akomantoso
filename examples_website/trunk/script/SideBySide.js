@@ -19,31 +19,23 @@
  */
 function getDocument(aSelect)
 {
-	//if the document name is the menu header returns
-	if (aSelect.value == 'doc_select')
-		return;
-	//otherwise get the HMTL and the XML version of the document and fill them into the index HTML
-	else
-	{
+	//start the ajax loader
+	miniLoaderHtml('on');
 
-		//start the ajax loader
-		miniLoaderHtml('on');
+	//start the ajax loader
+	loader('on',"xml_doc");
 
-		//start the ajax loader
-		loader('on',"xml_doc");
+	//start the ajax loader
+	loader('on',"html_doc");
 
-		//start the ajax loader
-		loader('on',"html_doc");
-
-		//the XML version
-		var xml_doc = retrieveXMLDocument(aSelect.id,'xml_doc');
-		
-		//the HTML version
-		var html_doc = retrieveHTMLDocument(aSelect.id,'html_doc');
-		
-		//the description notes for that document
-		//var desc_notes = getNotes(aSelect.id,'doc-notes');			
-	}
+	//the XML version
+	var xml_doc = retrieveXMLDocument(aSelect.id,'xml_doc');
+	
+	//the HTML version
+	var html_doc = retrieveHTMLDocument(aSelect.id,'html_doc');
+	
+	//the description notes for that document
+	//var desc_notes = getNotes(aSelect.id,'doc-notes');			
 }
 
 function getNotes(aDocName,aDiv)
