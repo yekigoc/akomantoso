@@ -20,6 +20,7 @@ param 1 = the path to which you want to deploy to, this can be an absolute path 
 param 2 = web server prefix. if you are deploying as http://domain.com/webprefix/ then set this as /webprefix
 if you are deploying directly under a domain e.g. http://domain.com , dont set param 2.
 
+You will need to delete the deploy to folder before running the command e.g. if you deployed in ../web_live you will need to delete the ../web_live folder and recreate it before running : ./install.sh ../web_live
 
 THE BELOW INFORMATION IS OUT OF DATE !
 
