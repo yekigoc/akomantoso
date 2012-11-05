@@ -61,7 +61,13 @@ div#portaltop img {
 #download_txt {
     margin-left:10px;
 }
-#download_f {
+.download-all {
+    margin:0 auto;
+    text-align:center;
+    padding-top:5px;
+    width:auto;
+}
+.download-xml {
     margin-left:3px;
     padding-left:20px;
     padding-bottom:4px;

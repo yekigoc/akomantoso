@@ -1232,6 +1232,7 @@ function fillDocumentXML(aDiv,httpRequest, DocName)
                 oDownload.setAttribute("id","download_f");
                 oDownload.setAttribute("href","#");
                 oDownload.setAttribute("title","download this example");
+                oDownload.setAttribute("class","download-xml");
 	            document.getElementById("doc_select").appendChild(oDownload);
 			}
 			else
@@ -1241,7 +1242,7 @@ function fillDocumentXML(aDiv,httpRequest, DocName)
 				outline("4");			
 			}      
      		// set download path
-		    document.getElementById("download_f").setAttribute("href","doc/" + DocName + ".xml");			
+		    document.getElementById("download_f").setAttribute("href","php/download.php?file=" + DocName + ".xml");			
         } 
         else 
         {
