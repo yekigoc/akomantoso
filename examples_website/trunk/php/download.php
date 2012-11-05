@@ -42,9 +42,9 @@ if ($file == 'all') {
     header('Content-type: text/xml');
     header("Pragma: no-cache");
     // It will be given this name
-    header('Content-Disposition: attachment; filename="'.$file.'.zip"');
+    header('Content-Disposition: attachment; filename="'.$file.'"');
     // The XML source
-    readfile('../doc/'.$file.'.zip');
+    readfile('../doc/'.$file);
 }
 
 /* 
