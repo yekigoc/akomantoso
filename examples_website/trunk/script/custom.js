@@ -211,7 +211,6 @@ $().ready(function() {
 
             var popup = $('#popup');
             example_to_load = popup.find('#'+doc_name+'').eq(0);
-            console.log($('#'+doc_name+''));
             getDocument(example_to_load[0]); // converting DOM to JQuery Element
             $('.bClose').trigger('click');
             $('#document-title').html(example_to_load[0].rel + " - " + example_to_load[0].innerHTML);     
