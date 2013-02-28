@@ -171,7 +171,7 @@ text-align:center;
 }
 
 /* menu bar */
-ol {
+.related-sites ol {
 	font-family: arial; 
 	font-size: 12px; 
 	list-style: none; 
@@ -179,39 +179,39 @@ ol {
 	padding: 0; 
 	position: relative
 }
-ol li {
+.related-sites ol li {
 	float: left; 
 	margin: 0 5px 5px 0; 
 	position: relative;
 }
-ol li a, 
-ol li:hover ol li a {
+.related-sites ol li a, 
+.related-sites ol li:hover ol li a {
 	color: #fff; 
 	padding: 5px; 
 	text-decoration: none; 
 	display: block; 
 	white-space: nowrap
 }
-ol li:hover ol li a {
+.related-sites ol li:hover ol li a {
 	color:#fff !important;
 }
 
-ol li:hover a {
+.related-sites ol li:hover a {
 	background-color: #444442; 
 	color: #f4f4f4;
 }
-ol li ol {
+.related-sites ol li ol {
 	left: 0; 
 	position: absolute; 
 	top: 24px; 
 	display: none;
     width:inherit;	
 }
-ol li ol li {   
+.related-sites ol li ol li {   
 	margin-bottom:0;
 	width:100%;
 }
-ol li:hover ol {
+.related-sites ol li:hover ol {
 	display: block; 
 	position: absolute
 }
