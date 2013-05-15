@@ -1,2 +1,2 @@
-https://akomantoso.googlecode.com/svn/release/trunk/schemas2.0/akomantoso20.dpp.xml akomantoso20.dpp.xml
+https://akomantoso.googlecode.com/svn/release/trunk/schema/akomantoso30.dpp.xml akomantoso20.dpp.xml
 
