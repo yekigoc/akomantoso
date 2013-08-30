@@ -1,5 +1,8 @@
 #summary table of contents
 
+ * [Tagging_a_New_Release Managing Akoma Ntoso Documenation and Examples]
+     * [Adding_a_Schema_Release Updating schema-releases website]
+
  * [Using_Akoma_Ntoso_URIs Using URIs in Akoma Ntoso]
  * [Using_URI_to_differentiate_actors Using URI naming conventions: an example]
  * [Using_Questions_typology Questions Typology]
