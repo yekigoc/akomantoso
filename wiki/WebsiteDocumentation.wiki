@@ -1,5 +1,10 @@
 #summary This page details how to use the scripts in /svn/scripts to generate the documentation and other websites on the akomantoso.org portal
 
+= Pre-requisites =
+Generating the latest documentation may require the website files and the Akoma Ntoso schema be added into the repository. The two items below will guide on how to accomplish this:
+   * [Tagging_a_New_Release Adding a new release tag to the repository]
+   * [Adding_a_Schema_Release Updating schema-releases website]
+
 = Introduction =
 
 You will need to install xsltproc wget and php5-cli
