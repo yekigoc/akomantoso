@@ -47,3 +47,8 @@ svn commit -m "Tagging YYYY-MM-DD release" --username your@email.address
 }}}
 
 *NB:* You will be prompted for a password which you can retrieve from here https://code.google.com/hosting/settings when you are logged into your google account.
+
+
+== Next Steps ==
+   * [Adding_a_Schema_Release Updating schema-releases website]
+   * [WebsiteDocumentation Generating documentation and examples website]
