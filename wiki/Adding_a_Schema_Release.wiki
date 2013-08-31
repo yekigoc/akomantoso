@@ -69,5 +69,5 @@ Rename it to *release-#.xsd"
 
 Finally checkin the changes and regenerate the website.
 
-TODO
-Link to generate_docs
+== Next Step ==
+[WebsiteDocumentation Generating documentation and examples website]
