@@ -1,0 +1,3 @@
+AKOMA NTOSO ("Architecture for Knowledge-Oriented Management of African Normative Texts using Open Standards and Ontologies") is a standard that defines a “machine readable” set of simple technology-neutral representations (XML) of parliamentary, legislative and judiciary documents in order to enable easy and effective search, retrieval and exchange of such documents.
+
+The AKOMA NTOSO XML schema for parliamentary, legislative and judiciary documents will not just “publish” documents online, as most institutions are currently doing, but will allow these documents to be “accessible” with in its structure and components as well as their main semantic components.

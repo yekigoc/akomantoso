@@ -1,0 +1,20 @@
+  * Managing Akoma Ntoso documenation and examples website
+    * [Adding a new release tag to the repository](Tagging_a_New_Release.md)
+    * [Updating schema-releases website](Adding_a_Schema_Release.md)
+    * [Generating documentation and examples website](WebsiteDocumentation.md)
+
+  * Using Akoma Ntoso
+    * [Using URIs in Akoma Ntoso](Using_Akoma_Ntoso_URIs.md)
+    * [Using URI naming conventions: an example](Using_URI_to_differentiate_actors.md)
+    * [Questions Typology](Using_Questions_typology.md)
+    * [Uses of @by attribute](Using_the_by_attribute.md)
+    * [Proprietary](Using_Proprietary.md)
+    * [DebateRecord elements in stand-alone documents](Using_debaterecord_elements_in_standalone_documents.md)
+    * [RDF in Akoma Ntoso](Using_RDF_with_Akoma_Ntoso.md)
+    * [Marking private content](Using_markup_for_privacy_purposes.md)
+    * [Using Recital ](Using_recital.md)
+    * [Dates in Akoma Ntoso documents](Using_dates.md)
+    * [Marking up Quorum in Debates ](Note_Quorum.md)
+    * [Difference between lifecycle and workflow ](Note_Lifecycle_and_Workflows.md)
+    * [Representing non-national authorities ](Note_country_code_for_non_country_entities.md)
+    * [Permissions in Akoma Ntoso documents ](Note_permissions.md)
